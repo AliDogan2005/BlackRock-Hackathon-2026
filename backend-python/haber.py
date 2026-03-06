@@ -2,6 +2,10 @@ import json
 import os
 import sys
 
+# .env dosyasından environment variable'larını yükle
+from dotenv import load_dotenv
+load_dotenv()
+
 # VS Code / farklı Python kullanımında paket hatası verirse bu mesaj çıkar
 try:
     import requests  # type: ignore[import-untyped]
@@ -18,9 +22,9 @@ import threading
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-# API Keys: önce ortam değişkeni, yoksa buradaki değer (OPENAI geçerli key istiyor)
-MARKETAUX_TOKEN = os.environ.get("MARKETAUX_TOKEN", "t8OdFQtrW9oPqbQbDx2KFQ26Dx2rShr7kqYdFzvI")
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")  # Set OPENAI_API_KEY in env; never commit a real key
+# API Keys: environment variable'lardan oku (asla kodda key'i commit etme!)
+MARKETAUX_TOKEN = os.environ.get("MARKETAUX_TOKEN", "")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 _openai_client = openai.OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 NEWS_JSON_PATH = "news.json"
