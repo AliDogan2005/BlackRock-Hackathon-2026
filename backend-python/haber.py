@@ -10,6 +10,7 @@ load_dotenv()
 try:
     import requests  # type: ignore[import-untyped]
     import openai  # type: ignore[import-untyped]
+    from flask import Flask, request, jsonify  # REST API için
 except ImportError as e:
     print("ERROR [IMPORT] Missing package:", e)
     print("Fix: In VS Code open Terminal (Ctrl+`) and run:")
@@ -22,6 +23,9 @@ import threading
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+# Flask app oluştur
+app = Flask(__name__)
+
 # API Keys: environment variable'lardan oku (asla kodda key'i commit etme!)
 MARKETAUX_TOKEN = os.environ.get("MARKETAUX_TOKEN", "")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
@@ -29,7 +33,8 @@ _openai_client = openai.OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else No
 
 NEWS_JSON_PATH = "news.json"
 POLL_INTERVAL_SECONDS = 60  # kaç saniyede bir yeni haber bakılacak
-SERVER_PORT = 8080  # haberlerin sunulduğu port (news.json bu porttan erişilir)
+FLASK_PORT = 8000  # Flask REST API port
+SERVER_PORT = 5001  # HTTP server port (news.json serve etmek için)
 
 marketaux_url = (
     f"https://api.marketaux.com/v1/news/all"
@@ -132,6 +137,75 @@ def save_news(all_items):
         print(f"ERROR [FILE_WRITE] Cannot write {NEWS_JSON_PATH}: {e}")
 
 
+# ==================== FLASK REST API ENDPOINTS ====================
+
+@app.route('/api/analyze-news', methods=['POST'])
+def api_analyze_news():
+    """REST API endpoint for Spring Boot to call - analyze news text and return affected stocks."""
+    try:
+        data = request.get_json()
+        if not data or 'text' not in data:
+            return jsonify({"status": "error", "message": "Missing 'text' field"}), 400
+
+        news_text = data['text']
+
+        # Analyze with OpenAI
+        ai_comment = analyze_with_openai(news_text)
+
+        # Parse the AI comment to extract affected stocks
+        affected_shares = extract_affected_shares(ai_comment)
+
+        return jsonify({
+            "status": "success",
+            "text": news_text,
+            "ai_comment": ai_comment,
+            "affected_shares": affected_shares,
+            "timestamp": datetime.utcnow().isoformat() + "Z"
+        }), 200
+
+    except Exception as e:
+        print(f"ERROR [API] {str(e)}")
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+@app.route('/api/news', methods=['GET'])
+def api_get_news():
+    """REST API endpoint to get all news items."""
+    try:
+        with open(NEWS_JSON_PATH, 'r', encoding='utf-8') as f:
+            news_items = json.load(f)
+        return jsonify({"status": "success", "items": news_items}), 200
+    except FileNotFoundError:
+        return jsonify({"status": "success", "items": []}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+def extract_affected_shares(ai_comment: str) -> list:
+    """Extract affected shares from AI comment."""
+    affected = []
+    symbols = ['AAPL', 'TSLA', 'AMZN', 'MSFT', 'GOOGL', 'META', 'NVDA']
+
+    for symbol in symbols:
+        if symbol in ai_comment:
+            # Determine impact based on keywords
+            impact = "positive"
+            if any(word in ai_comment.lower() for word in ["negative", "bearish", "down", "sell", "risk"]):
+                impact = "negative"
+            elif any(word in ai_comment.lower() for word in ["neutral", "stable"]):
+                impact = "neutral"
+
+            affected.append({
+                "symbol": symbol,
+                "impact": impact,
+                "score": 0.7
+            })
+
+    return affected
+
+
+# ==================== HTTP SERVER FOR news.json ====================
+
 class NewsHandler(BaseHTTPRequestHandler):
     """Serves news.json on GET / or GET /news.json"""
     def do_GET(self):
@@ -166,7 +240,17 @@ def run_server():
     server.serve_forever()
 
 
+def run_flask_server():
+    """Run Flask REST API server."""
+    print(f"INFO [FLASK] REST API starting on http://localhost:{FLASK_PORT}")
+    print(f"INFO [FLASK] Endpoints:")
+    print(f"  - POST http://localhost:{FLASK_PORT}/api/analyze-news")
+    print(f"  - GET  http://localhost:{FLASK_PORT}/api/news")
+    app.run(host="0.0.0.0", port=FLASK_PORT, debug=False, use_reloader=False)
+
+
 def main():
+    """Main loop - fetch news and analyze with OpenAI."""
     # Load existing entries so we keep history and avoid duplicates across restarts
     all_items = load_existing_news()
     known_titles = {item.get("title") for item in all_items if isinstance(item, dict)}
@@ -216,9 +300,16 @@ def main():
 
 
 if __name__ == "__main__":
+    # Start Flask REST API server in background
+    flask_thread = threading.Thread(target=run_flask_server, daemon=True)
+    flask_thread.start()
+
+    # Start HTTP server for news.json in background
     server_thread = threading.Thread(target=run_server, daemon=True)
     server_thread.start()
+
     try:
         main()
     except KeyboardInterrupt:
         print("INFO [SHUTDOWN] Stopped by user.")
+

@@ -57,6 +57,9 @@ public class User {
     @Builder.Default
     private Set<UserToken> userTokens = new HashSet<>();
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private UserWallet wallet;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
