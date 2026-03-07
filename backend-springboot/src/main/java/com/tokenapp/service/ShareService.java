@@ -318,5 +318,64 @@ public class ShareService {
                 .purchasedAt(userToken.getPurchasedAt())
                 .build();
     }
+
+    @Transactional
+    public java.util.Map<String, Object> syncSharesFromPricesData(java.util.Map<String, Object> pricesData) {
+        log.info("Syncing shares from prices data");
+
+        java.util.Map<String, Object> result = new java.util.HashMap<>();
+        int synced = 0;
+        int created = 0;
+
+        if (pricesData == null || pricesData.isEmpty()) {
+            log.warn("No prices data provided for sync");
+            result.put("synced", 0);
+            result.put("created", 0);
+            result.put("message", "No data to sync");
+            return result;
+        }
+
+        for (java.util.Map.Entry<String, Object> entry : pricesData.entrySet()) {
+            String shareName = entry.getKey();
+            Object priceData = entry.getValue();
+
+            if (priceData instanceof java.util.Map) {
+                java.util.Map<String, Object> priceMap = (java.util.Map<String, Object>) priceData;
+
+                try {
+                    BigDecimal price = new BigDecimal(priceMap.getOrDefault("price", "0").toString());
+
+                    Share existingShare = shareRepository.findByName(shareName).orElse(null);
+
+                    if (existingShare != null) {
+                        // Update existing share
+                        existingShare.setCurrentValue(price);
+                        shareRepository.save(existingShare);
+                        synced++;
+                        log.info("Updated share: {} with price: {}", shareName, price);
+                    } else {
+                        // Create new share (only if it doesn't exist)
+                        Share newShare = Share.builder()
+                                .name(shareName)
+                                .description("Auto-synced from prices data")
+                                .totalTokens(1000L)
+                                .currentValue(price)
+                                .isActive(true)
+                                .build();
+                        shareRepository.save(newShare);
+                        created++;
+                        log.info("Created new share: {} with price: {}", shareName, price);
+                    }
+                } catch (Exception e) {
+                    log.error("Error processing share {}: {}", shareName, e.getMessage());
+                }
+            }
+        }
+
+        result.put("synced", synced);
+        result.put("created", created);
+        result.put("message", "Successfully synced " + synced + " shares and created " + created + " new shares");
+        return result;
+    }
 }
 
