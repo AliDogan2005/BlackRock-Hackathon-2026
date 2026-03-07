@@ -8,19 +8,28 @@ import {
   getPersistedUser,
   updateUserDisplayName,
 } from "../services/authService";
-import { fetchPersonalizedAnalysisData } from "../services/analysisService";
-import { fetchExplorerDashboardData } from "../services/dashboardService";
+import { fetchAssetFocusedAnalysis, fetchPersonalizedAnalysisData } from "../services/analysisService";
+import { fetchBulletinData } from "../services/bulletinService";
+import {
+  addShareToFavorites,
+  fetchExplorerDashboardData,
+  fetchUserFavoriteShares,
+  mapShareToFavoriteAsset,
+  removeShareFromFavorites,
+} from "../services/dashboardService";
+import { buyTokensForRegion, sellTokensForRegion } from "../services/tradingService";
 import { depositToWallet, fetchWalletPortfolioData } from "../services/walletPortfolioService";
+import useAssetData from "../hooks/useAssetData";
 import {
   Area,
   AreaChart,
   Cell,
   CartesianGrid,
+  ComposedChart,
   Line,
-  LineChart,
   Pie,
   PieChart,
-  ReferenceDot,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -30,7 +39,6 @@ import {
   AlertTriangle,
   ArrowDownRight,
   ArrowUpRight,
-  Bell,
   Brain,
   Home,
   LogOut,
@@ -72,52 +80,6 @@ const DEFAULT_DATA = {
     tokenName: "NXM-Mitte",
   },
 };
-
-const PRICE_AND_NEWS_DATA = [
-  { month: "Jan", price: 1.02, event: "Permit approved" },
-  { month: "Feb", price: 1.06, event: null },
-  { month: "Mar", price: 1.11, event: "Rent growth report" },
-  { month: "Apr", price: 1.08, event: null },
-  { month: "May", price: 1.17, event: "Institutional inflow" },
-  { month: "Jun", price: 1.22, event: null },
-  { month: "Jul", price: 1.3, event: "Regulatory clarity" },
-];
-
-const RISK_HISTORY_DATA = [
-  { month: "Feb", risk: 64 },
-  { month: "Mar", risk: 58 },
-  { month: "Apr", risk: 54 },
-  { month: "May", risk: 51 },
-  { month: "Jun", risk: 48 },
-  { month: "Jul", risk: 45 },
-];
-
-const BULLETIN_NEWS = [
-  { headline: "Berlin zoning reform accelerates token-ready permits", time: "12 min ago", tag: "Positive Impact: +5", positive: true },
-  { headline: "Tokyo co-living inventory tightens in central wards", time: "38 min ago", tag: "Risk Increase: -10", positive: false },
-  { headline: "Dubai smart district bond demand beats forecast", time: "1 hr ago", tag: "Positive Impact: +4", positive: true },
-  { headline: "Miami coastal insurance repricing widens spread", time: "2 hr ago", tag: "Risk Increase: -7", positive: false },
-  { headline: "Lisbon transit-linked parcels attract institutional bids", time: "3 hr ago", tag: "Positive Impact: +3", positive: true },
-  { headline: "Singapore office token tranche closes ahead of schedule", time: "4 hr ago", tag: "Positive Impact: +2", positive: true },
-];
-
-const POPULAR_REGIONS = [
-  { region: "Berlin", score: 84, up: true },
-  { region: "Miami", score: 72, up: false },
-  { region: "Tokyo", score: 88, up: true },
-  { region: "Dubai", score: 79, up: true },
-  { region: "Lisbon", score: 69, up: false },
-  { region: "Singapore", score: 82, up: true },
-];
-
-const DEMAND_REGIONS = [
-  { region: "Berlin Mitte", demand: 92, warning: "Low Inventory" },
-  { region: "Tokyo Bay", demand: 87, warning: "High Purchase Requests" },
-  { region: "Miami Brickell", demand: 83, warning: "Low Inventory" },
-  { region: "Dubai Marina", demand: 78, warning: "High Purchase Requests" },
-  { region: "Lisbon Prime", demand: 74, warning: "Low Inventory" },
-  { region: "Singapore Core", demand: 71, warning: "High Purchase Requests" },
-];
 
 const DEFAULT_FAVORITES = [
   {
@@ -201,6 +163,8 @@ const WALLET_TRANSACTIONS = [
   { type: "Deposit", asset: "Cash", amount: 8000, date: "2026-03-03" },
 ];
 
+const PENDING_DEEP_DIVE_STORAGE_KEY = "nexus.pendingDeepDiveAsset";
+
 function mergeData(incoming) {
   if (!incoming) {
     return DEFAULT_DATA;
@@ -266,8 +230,105 @@ function OwnershipRing({ progress }) {
   );
 }
 
-function ExplorerPage({ data, selectedAsset }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+function toMonthLabel(dateValue, fallbackIndex) {
+  const parsed = new Date(dateValue);
+  if (Number.isNaN(parsed.getTime())) {
+    return `M${fallbackIndex + 1}`;
+  }
+
+  return parsed.toLocaleDateString("en-US", { month: "short" });
+}
+
+function buildSyncedSeries(assetData) {
+  return (assetData || []).map((point, index) => {
+    const normalizedDate = typeof point?.date === "string" ? point.date : "";
+    return {
+      date: normalizedDate,
+      month: toMonthLabel(normalizedDate, index),
+      price: Number(point?.price ?? 0),
+      riskScore: Number(point?.riskScore ?? 50),
+      hasNews: Boolean(point?.hasNews),
+      headline: point?.headline,
+    };
+  });
+}
+
+function NewsMarkerDot({ cx, cy, payload }) {
+  if (!payload?.hasNews || typeof cx !== "number" || typeof cy !== "number") {
+    return null;
+  }
+
+  return (
+    <g transform={`translate(${cx}, ${cy})`}>
+      <circle r="8" fill="#D4AF37" stroke="#1A120B" strokeWidth="1.5" />
+      <text
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="#1A120B"
+        fontSize="9"
+        fontWeight="700"
+      >
+        N
+      </text>
+    </g>
+  );
+}
+
+function PriceNewsTooltip({ active, payload }) {
+  if (!active || !payload?.length) {
+    return null;
+  }
+
+  const point = payload[0]?.payload;
+  if (!point) {
+    return null;
+  }
+
+  return (
+    <div className="max-w-[260px] rounded-xl border border-[#E3D5B8] bg-[#FFFDF8] px-3 py-2 text-xs text-[#1A120B] shadow-[0_10px_24px_rgba(26,18,11,0.12)]">
+      <p className="font-semibold text-[#1A120B]">{point.date || point.month}</p>
+      <p className="mt-0.5">Price: ${Number(point.price).toFixed(3)}</p>
+      {point.headline ? <p className="mt-1 text-[#1A120B]/74">{point.headline}</p> : null}
+    </div>
+  );
+}
+
+function RiskTooltip({ active, payload }) {
+  if (!active || !payload?.length) {
+    return null;
+  }
+
+  const point = payload[0]?.payload;
+  if (!point) {
+    return null;
+  }
+
+  return (
+    <div className="rounded-xl border border-[#E3D5B8] bg-[#FFFDF8] px-3 py-2 text-xs text-[#1A120B] shadow-[0_10px_24px_rgba(26,18,11,0.12)]">
+      <p className="font-semibold">{point.month}</p>
+      <p className="mt-0.5">Risk Score: {Math.round(Number(point.riskScore))}</p>
+    </div>
+  );
+}
+
+function ExplorerPage({
+  data,
+  selectedAsset,
+  regionId,
+  walletData,
+  isDepositing,
+  onDepositRequest,
+  onTradeComplete,
+  isFavorite = false,
+  canToggleFavorite = false,
+  onToggleFavorite,
+  isFavoriteSaving = false,
+  favoriteStatusMessage = "",
+}) {
+  const [tradeTokenAmount, setTradeTokenAmount] = useState("");
+  const [depositAmount, setDepositAmount] = useState("");
+  const [tradeActionLoading, setTradeActionLoading] = useState("");
+  const [tradeStatusMessage, setTradeStatusMessage] = useState("");
 
   const pulse = selectedAsset
     ? {
@@ -278,10 +339,106 @@ function ExplorerPage({ data, selectedAsset }) {
         roiProjection: selectedAsset.change24h,
       }
     : data.marketPulse;
+  const resolvedRegionId = regionId ?? selectedAsset?.regionId ?? selectedAsset?.region ?? data?.user?.address;
+  const { assetData, loading: historyLoading, error: historyError } = useAssetData(resolvedRegionId);
+  const syncedSeries = useMemo(() => buildSyncedSeries(assetData), [assetData]);
+  const hasHistory = syncedSeries.length > 0;
+  const isRegionNotFound = Boolean(regionId) && !selectedAsset;
+  const latestPoint = hasHistory ? syncedSeries[syncedSeries.length - 1] : null;
+  const firstPoint = hasHistory ? syncedSeries[0] : null;
+  const focusedRegionLabel = String(
+    selectedAsset?.name
+      || (typeof resolvedRegionId === "string" ? resolvedRegionId : "")
+      || pulse.region
+      || data?.user?.address
+      || "Unknown Region"
+  ).trim();
+
+  const derivedRoiProjection = useMemo(() => {
+    if (!firstPoint || !latestPoint) {
+      return Number(pulse.roiProjection ?? 0);
+    }
+
+    const startPrice = Number(firstPoint.price ?? 0);
+    const endPrice = Number(latestPoint.price ?? 0);
+    if (!Number.isFinite(startPrice) || !Number.isFinite(endPrice) || startPrice <= 0) {
+      return Number(pulse.roiProjection ?? 0);
+    }
+
+    return Number((((endPrice - startPrice) / startPrice) * 100).toFixed(1));
+  }, [firstPoint, latestPoint, pulse.roiProjection]);
+
+  const resolvedPulse = {
+    ...pulse,
+    region: focusedRegionLabel,
+    tokenPrice: latestPoint ? Number(latestPoint.price ?? pulse.tokenPrice) : pulse.tokenPrice,
+    riskScore: latestPoint ? Math.round(Number(latestPoint.riskScore ?? pulse.riskScore)) : pulse.riskScore,
+    roiProjection: derivedRoiProjection,
+  };
+
+  const hasResolvedDbRegion = !isRegionNotFound && (Boolean(selectedAsset) || hasHistory);
+  const displayTokenPrice = hasResolvedDbRegion ? Number(resolvedPulse.tokenPrice) : null;
+  const displayRiskScore = hasResolvedDbRegion ? Number(resolvedPulse.riskScore) : null;
+  const displayRoiProjection = hasResolvedDbRegion ? Number(resolvedPulse.roiProjection) : null;
+
   const ownershipProgress = Math.max(0, Math.min(100, data.ownership.progress));
-  const roiNegative = pulse.roiProjection < 0;
-  const newsPoints = PRICE_AND_NEWS_DATA.filter((item) => item.event);
-  const toggleFavorite = () => setIsFavorite((previous) => !previous);
+  const roiNegative = Number(displayRoiProjection ?? 0) < 0;
+  const availableCash = Number(walletData?.availableCash ?? 0);
+  const handleDeposit = async () => {
+    const amount = Number(depositAmount);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      setTradeStatusMessage("Please enter a valid deposit amount greater than 0.");
+      return;
+    }
+
+    if (!onDepositRequest) {
+      setTradeStatusMessage("Deposit is unavailable right now.");
+      return;
+    }
+
+    try {
+      setTradeStatusMessage("");
+      await onDepositRequest(amount);
+      setDepositAmount("");
+      setTradeStatusMessage(`Deposit successful: +$${amount.toFixed(2)}`);
+    } catch (error) {
+      setTradeStatusMessage(error instanceof Error ? error.message : "Deposit failed.");
+    }
+  };
+
+  const handleTradeAction = async (action) => {
+    const amount = Number(tradeTokenAmount);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      setTradeStatusMessage("Please enter a valid token amount greater than 0.");
+      return;
+    }
+
+    const requestPayload = {
+      regionId: selectedAsset?.regionId ?? regionId,
+      regionName: focusedRegionLabel,
+      tokenAmount: amount,
+    };
+
+    try {
+      setTradeActionLoading(action);
+      setTradeStatusMessage("");
+
+      const result = action === "buy"
+        ? await buyTokensForRegion(requestPayload)
+        : await sellTokensForRegion(requestPayload);
+
+      setTradeTokenAmount("");
+      setTradeStatusMessage(result?.message || `${action.toUpperCase()} completed.`);
+
+      if (onTradeComplete) {
+        await onTradeComplete(result);
+      }
+    } catch (error) {
+      setTradeStatusMessage(error instanceof Error ? error.message : `${action.toUpperCase()} failed.`);
+    } finally {
+      setTradeActionLoading("");
+    }
+  };
 
   return (
     <motion.div
@@ -297,16 +454,17 @@ function ExplorerPage({ data, selectedAsset }) {
         <p className="mt-1 text-sm text-[#1A120B]/72">
           Human + Machine intelligence across tokenized property markets. Focus region:{" "}
           <span className="inline-flex items-center gap-1.5 align-middle">
-            <span className="font-semibold text-[#1A120B]">{data.user.address}</span>
+            <span className="font-semibold text-[#1A120B]">{focusedRegionLabel}</span>
             <motion.button
               type="button"
-              onClick={toggleFavorite}
+              onClick={onToggleFavorite}
+              disabled={!canToggleFavorite || isFavoriteSaving}
               aria-label={isFavorite ? "Remove favorite asset" : "Mark as favorite asset"}
               title={isFavorite ? "Remove from favorites" : "Add to favorites"}
               whileTap={{ scale: 0.9 }}
               animate={{ scale: isFavorite ? 1.08 : 1 }}
               transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex h-6 w-6 items-center justify-center rounded-full transition-colors"
+              className="inline-flex h-6 w-6 items-center justify-center rounded-full transition-colors disabled:cursor-not-allowed disabled:opacity-40"
             >
               <Star
                 className={`h-4.5 w-4.5 transition-colors ${isFavorite ? "text-[#D4AF37]" : "text-[#1A120B]/45"}`}
@@ -316,10 +474,18 @@ function ExplorerPage({ data, selectedAsset }) {
             </motion.button>
           </span>
         </p>
+        {isRegionNotFound ? (
+          <p className="mt-2 inline-flex rounded-full border border-rose-300/60 bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700">
+            Not found: this city is not available in the database.
+          </p>
+        ) : null}
         {selectedAsset ? (
           <p className="mt-2 inline-flex rounded-full bg-[#D4AF37]/18 px-3 py-1 text-xs font-semibold text-[#1A120B]">
             Focused Favorite: {selectedAsset.name}
           </p>
+        ) : null}
+        {favoriteStatusMessage ? (
+          <p className="mt-2 text-xs font-semibold text-[#1A120B]/68">{favoriteStatusMessage}</p>
         ) : null}
       </header>
 
@@ -329,108 +495,186 @@ function ExplorerPage({ data, selectedAsset }) {
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#D4AF37]">Current Token Price</p>
               <p className="mt-1 text-xl font-bold text-[#1A120B]">
-                ${Number(pulse.tokenPrice).toFixed(2)} <span className="text-sm font-medium text-[#1A120B]/65">({pulse.region})</span>
+                {displayTokenPrice !== null ? `$${displayTokenPrice.toFixed(2)}` : "--"} <span className="text-sm font-medium text-[#1A120B]/65">({resolvedPulse.region})</span>
               </p>
             </div>
             <div className="flex items-center justify-between">
               <span className="font-medium text-[#1A120B]/74">AI Risk Score</span>
-              <strong className="text-lg text-[#1A120B]">{pulse.riskScore}</strong>
+              <strong className="text-lg text-[#1A120B]">{displayRiskScore !== null ? displayRiskScore : "--"}</strong>
             </div>
             <div className="flex items-center justify-between">
               <span className="font-medium text-[#1A120B]/74">ROI Projection</span>
-              <strong className={roiNegative ? "text-rose-700" : "text-emerald-700"}>
-                {roiNegative ? "" : "+"}
-                {pulse.roiProjection}%
-              </strong>
+              {displayRoiProjection !== null ? (
+                <strong className={roiNegative ? "text-rose-700" : "text-emerald-700"}>
+                  {roiNegative ? "" : "+"}
+                  {displayRoiProjection}%
+                </strong>
+              ) : (
+                <strong className="text-[#1A120B]/55">--</strong>
+              )}
             </div>
           </div>
         </ShellCard>
 
         <ShellCard title="Price & News Correlation" className="xl:col-span-6">
-          <div className="h-64 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={PRICE_AND_NEWS_DATA} margin={{ top: 10, right: 16, left: 0, bottom: 0 }}>
-                <CartesianGrid stroke="#E8E0D2" strokeDasharray="3 3" />
-                <XAxis dataKey="month" tick={{ fill: "#614A2A", fontSize: 12 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#614A2A", fontSize: 12 }} axisLine={false} tickLine={false} domain={[0.95, 1.36]} />
-                <Tooltip
-                  contentStyle={{ borderRadius: 14, border: "1px solid #E3D5B8", background: "#FFFDF8", color: "#1A120B" }}
-                  formatter={(value) => [`$${Number(value).toFixed(2)}`, "Token Price"]}
-                />
-                <Line type="monotone" dataKey="price" stroke="#1A120B" strokeWidth={3} dot={{ r: 4, fill: "#D4AF37", stroke: "#1A120B", strokeWidth: 1 }} />
-                {newsPoints.map((point) => (
-                  <ReferenceDot
-                    key={`${point.month}-${point.event}`}
-                    x={point.month}
-                    y={point.price}
-                    r={6}
-                    fill="#D4AF37"
-                    stroke="#1A120B"
-                    strokeWidth={1.5}
-                    label={{ value: "N", position: "top", fill: "#1A120B", fontSize: 11, fontWeight: 700 }}
+          {hasHistory && !isRegionNotFound ? (
+            <div className="h-64 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <ComposedChart data={syncedSeries} syncId="explorer-history" margin={{ top: 10, right: 16, left: 0, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="priceNewsFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#D4AF37" stopOpacity={0.28} />
+                      <stop offset="100%" stopColor="#D4AF37" stopOpacity={0.03} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid stroke="#E8E0D2" strokeDasharray="3 3" />
+                  <XAxis dataKey="month" tick={{ fill: "#614A2A", fontSize: 12 }} axisLine={false} tickLine={false} />
+                  <YAxis
+                    tick={{ fill: "#614A2A", fontSize: 12 }}
+                    axisLine={false}
+                    tickLine={false}
+                    domain={[(min) => Number((min - 0.02).toFixed(3)), (max) => Number((max + 0.02).toFixed(3))]}
                   />
-                ))}
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+                  <Tooltip content={<PriceNewsTooltip />} />
+                  <Area type="monotone" dataKey="price" stroke="none" fill="url(#priceNewsFill)" fillOpacity={1} />
+                  <Line type="monotone" dataKey="price" stroke="#1A120B" strokeWidth={3} dot={<NewsMarkerDot />} activeDot={{ r: 5, fill: "#1A120B" }} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </div>
+          ) : (
+            <div className="grid h-64 place-items-center rounded-xl border border-dashed border-[#1A120B]/16 bg-[#FAF8F2] px-4 text-center text-sm text-[#1A120B]/70">
+              {isRegionNotFound
+                ? `Not found: ${focusedRegionLabel} is not in the database.`
+                : historyLoading
+                ? "Loading backend history..."
+                : historyError
+                  ? `No backend history for ${focusedRegionLabel}.`
+                  : `No backend history for ${focusedRegionLabel}.`}
+            </div>
+          )}
         </ShellCard>
 
         <ShellCard title="Trading Panel" className="xl:col-span-3">
           <div className="space-y-3">
+            <div className="rounded-xl border border-[#1A120B]/12 bg-white/70 px-3 py-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1A120B]/62">Wallet Cash</p>
+              <p className="mt-1 text-sm font-bold text-[#1A120B]">${availableCash.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+            </div>
+
+            <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-[#1A120B]/65">Deposit USD</label>
+            <div className="grid grid-cols-[1fr_auto] gap-2">
+              <input
+                type="number"
+                min="1"
+                placeholder="Enter amount"
+                value={depositAmount}
+                onChange={(event) => setDepositAmount(event.target.value)}
+                className="w-full rounded-xl border border-[#1A120B]/15 bg-[#FAF8F2] px-3 py-2.5 text-sm text-[#1A120B] outline-none focus:border-[#D4AF37]"
+              />
+              <button
+                type="button"
+                disabled={isDepositing || tradeActionLoading.length > 0}
+                onClick={handleDeposit}
+                className="rounded-xl border border-[#D4AF37] px-3 py-2 text-xs font-semibold text-[#1A120B] transition hover:bg-[#D4AF37]/14 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isDepositing ? "ADDING..." : "DEPOSIT"}
+              </button>
+            </div>
+
             <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-[#1A120B]/65">Token</label>
             <input
               type="text"
-              defaultValue={data.ownership.tokenName}
+              value={focusedRegionLabel || data.ownership.tokenName}
+              readOnly
               className="w-full rounded-xl border border-[#1A120B]/15 bg-[#FAF8F2] px-3 py-2.5 text-sm text-[#1A120B] outline-none focus:border-[#D4AF37]"
             />
             <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-[#1A120B]/65">Amount</label>
             <input
               type="number"
+              min="1"
               placeholder="Enter token amount"
+              value={tradeTokenAmount}
+              onChange={(event) => setTradeTokenAmount(event.target.value)}
               className="w-full rounded-xl border border-[#1A120B]/15 bg-[#FAF8F2] px-3 py-2.5 text-sm text-[#1A120B] outline-none focus:border-[#D4AF37]"
             />
             <div className="grid grid-cols-2 gap-2 pt-1">
-              <button type="button" className="rounded-xl bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#c39f2f]">
-                BUY
+              <button
+                type="button"
+                disabled={tradeActionLoading.length > 0 || isRegionNotFound}
+                onClick={() => handleTradeAction("buy")}
+                className="rounded-xl bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#c39f2f] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {tradeActionLoading === "buy" ? "BUYING..." : "BUY"}
               </button>
-              <button type="button" className="rounded-xl bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#c39f2f]">
-                SELL
+              <button
+                type="button"
+                disabled={tradeActionLoading.length > 0 || isRegionNotFound}
+                onClick={() => handleTradeAction("sell")}
+                className="rounded-xl bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#c39f2f] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {tradeActionLoading === "sell" ? "SELLING..." : "SELL"}
               </button>
             </div>
+            {isRegionNotFound ? (
+              <p className="text-xs font-medium text-rose-700">Trading unavailable: city not found in database.</p>
+            ) : null}
+            {tradeStatusMessage ? (
+              <p className="text-xs font-medium text-[#1A120B]/78">{tradeStatusMessage}</p>
+            ) : null}
           </div>
         </ShellCard>
 
         <ShellCard title="Risk History Tracker" className="xl:col-span-9">
-          <div className="h-48 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={RISK_HISTORY_DATA} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="riskGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#22C55E" stopOpacity={0.85} />
-                    <stop offset="100%" stopColor="#EF4444" stopOpacity={0.85} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid stroke="#E8E0D2" strokeDasharray="3 3" />
-                <XAxis dataKey="month" tick={{ fill: "#614A2A", fontSize: 12 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#614A2A", fontSize: 12 }} domain={[35, 70]} axisLine={false} tickLine={false} />
-                <Tooltip
-                  contentStyle={{ borderRadius: 14, border: "1px solid #E3D5B8", background: "#FFFDF8", color: "#1A120B" }}
-                  formatter={(value) => [`${value}`, "Risk Score"]}
-                />
-                <Area type="monotone" dataKey="risk" stroke="#1A120B" strokeWidth={2.5} fill="url(#riskGradient)" fillOpacity={0.5} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
+          {hasHistory && !isRegionNotFound ? (
+            <div className="h-48 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={syncedSeries} syncId="explorer-history" margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="riskGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#A8C69F" stopOpacity={0.86} />
+                      <stop offset="100%" stopColor="#E29595" stopOpacity={0.86} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid stroke="#E8E0D2" strokeDasharray="3 3" />
+                  <XAxis dataKey="month" tick={{ fill: "#614A2A", fontSize: 12 }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fill: "#614A2A", fontSize: 12 }} domain={[0, 100]} axisLine={false} tickLine={false} />
+                  <Tooltip content={<RiskTooltip />} />
+                  {[35, 44, 53, 70].map((level) => (
+                    <ReferenceLine key={`risk-threshold-${level}`} y={level} stroke="#C9BDA8" strokeDasharray="3 3" />
+                  ))}
+                  <Area type="monotone" dataKey="riskScore" stroke="#1A120B" strokeWidth={2.5} fill="url(#riskGradient)" fillOpacity={0.52} />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+          ) : (
+            <div className="grid h-48 place-items-center rounded-xl border border-dashed border-[#1A120B]/16 bg-[#FAF8F2] px-4 text-center text-sm text-[#1A120B]/70">
+              {isRegionNotFound
+                ? `Not found: ${focusedRegionLabel} is not in the database.`
+                : historyLoading
+                ? "Loading backend risk history..."
+                : historyError
+                  ? `No backend risk history for ${focusedRegionLabel}.`
+                  : `No backend risk history for ${focusedRegionLabel}.`}
+            </div>
+          )}
         </ShellCard>
 
         <ShellCard title="Homeownership Tracker" className="xl:col-span-3">
-          <OwnershipRing progress={ownershipProgress} />
-          <p className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#D4AF37]">
-            Progress To Property Ownership
-          </p>
-          <p className="mt-2 text-center text-sm text-[#1A120B]/74">
-            You own {ownershipProgress}% of the tokens required for this asset.
-          </p>
+          {isRegionNotFound ? (
+            <div className="grid h-[240px] place-items-center rounded-xl border border-dashed border-[#1A120B]/16 bg-[#FAF8F2] px-4 text-center text-sm text-[#1A120B]/70">
+              Not found: no ownership path for this city in database.
+            </div>
+          ) : (
+            <>
+              <OwnershipRing progress={ownershipProgress} />
+              <p className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#D4AF37]">
+                Progress To Property Ownership
+              </p>
+              <p className="mt-2 text-center text-sm text-[#1A120B]/74">
+                You own {ownershipProgress}% of the tokens required for this asset.
+              </p>
+            </>
+          )}
         </ShellCard>
 
       </div>
@@ -454,7 +698,7 @@ function BulletinColumn({ title, children, onMore }) {
   );
 }
 
-function BulletinExpandedList({ title, items, onBack, renderItem }) {
+function BulletinExpandedList({ title, items, onBack, renderItem, emptyMessage = "No backend data found." }) {
   return (
     <motion.section
       key={`expanded-${title}`}
@@ -474,19 +718,69 @@ function BulletinExpandedList({ title, items, onBack, renderItem }) {
           Back
         </button>
       </div>
-      <div className="space-y-3">
-        {items.map((item, index) => (
-          <article key={`${title}-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
-            {renderItem(item)}
-          </article>
-        ))}
-      </div>
+      {items.length ? (
+        <div className="space-y-3">
+          {items.map((item, index) => (
+            <article key={`${title}-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
+              {renderItem(item)}
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p className="rounded-xl border border-dashed border-[#1A120B]/18 bg-white/45 px-4 py-5 text-sm text-[#1A120B]/65">
+          {emptyMessage}
+        </p>
+      )}
     </motion.section>
   );
 }
 
 function BulletinPage() {
   const [expandedColumn, setExpandedColumn] = useState(null);
+  const [bulletinData, setBulletinData] = useState({ news: [], popular: [], demand: [] });
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
+
+  const loadBulletinData = async () => {
+    try {
+      setIsLoading(true);
+      setLoadError("");
+      const payload = await fetchBulletinData();
+      setBulletinData({
+        news: Array.isArray(payload?.news) ? payload.news : [],
+        popular: Array.isArray(payload?.popular) ? payload.popular : [],
+        demand: Array.isArray(payload?.demand) ? payload.demand : [],
+      });
+    } catch (error) {
+      setBulletinData({ news: [], popular: [], demand: [] });
+      setLoadError(error instanceof Error ? error.message : "Unable to load bulletin data.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    let alive = true;
+
+    const guardedLoad = async () => {
+      if (!alive) {
+        return;
+      }
+      await loadBulletinData();
+    };
+
+    guardedLoad();
+    const timerId = window.setInterval(guardedLoad, 30000);
+
+    return () => {
+      alive = false;
+      window.clearInterval(timerId);
+    };
+  }, []);
+
+  const newsItems = bulletinData.news;
+  const popularRegions = bulletinData.popular;
+  const demandRegions = bulletinData.demand;
 
   const columnMotion = {
     initial: { opacity: 0, y: 22 },
@@ -498,8 +792,9 @@ function BulletinPage() {
     return (
       <BulletinExpandedList
         title="NEWS"
-        items={BULLETIN_NEWS}
+        items={newsItems}
         onBack={() => setExpandedColumn(null)}
+        emptyMessage={loadError || "No news from backend yet."}
         renderItem={(item) => (
           <>
             <h3 className="text-sm font-semibold text-[#1A120B]">{item.headline}</h3>
@@ -517,8 +812,9 @@ function BulletinPage() {
     return (
       <BulletinExpandedList
         title="POPULAR REGIONS"
-        items={POPULAR_REGIONS}
+        items={popularRegions}
         onBack={() => setExpandedColumn(null)}
+        emptyMessage={loadError || "No region popularity data from backend yet."}
         renderItem={(item) => (
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -536,8 +832,9 @@ function BulletinPage() {
     return (
       <BulletinExpandedList
         title="MOST DEMAND REGIONS"
-        items={DEMAND_REGIONS}
+        items={demandRegions}
         onBack={() => setExpandedColumn(null)}
+        emptyMessage={loadError || "No region demand data from backend yet."}
         renderItem={(item) => (
           <>
             <div className="flex items-center justify-between">
@@ -567,8 +864,23 @@ function BulletinPage() {
       className="space-y-5"
     >
       <header className="rounded-2xl border border-[#1A120B]/10 bg-white px-5 py-4 shadow-[0_12px_30px_rgba(26,18,11,0.08)]">
-        <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">News & Trends</h1>
-        <p className="mt-1 text-sm text-[#1A120B]/72">Live regional intelligence feed with sentiment, score momentum, and demand pressure.</p>
+        <div className="flex items-center justify-between gap-3">
+          <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">News & Trends</h1>
+          <button
+            type="button"
+            onClick={loadBulletinData}
+            className="rounded-xl border border-[#1A120B]/14 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-[#1A120B] transition hover:border-[#D4AF37]"
+          >
+            Refresh
+          </button>
+        </div>
+        <p className="mt-1 text-sm text-[#1A120B]/72">
+          {isLoading
+            ? "Loading live regional intelligence from backend..."
+            : loadError
+              ? `Backend feed status: ${loadError}`
+              : "Live regional intelligence feed with sentiment, score momentum, and demand pressure."}
+        </p>
       </header>
 
       <motion.div
@@ -578,52 +890,70 @@ function BulletinPage() {
       >
         <motion.div {...columnMotion} transition={{ ...columnMotion.transition, delay: 0.04 }}>
           <BulletinColumn title="NEWS" onMore={() => setExpandedColumn("news")}>
-            {BULLETIN_NEWS.slice(0, 4).map((item, index) => (
-              <article key={`news-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
-                <h3 className="text-sm font-semibold text-[#1A120B]">{item.headline}</h3>
-                <p className="mt-1 text-xs text-[#1A120B]/62">{item.time}</p>
-                <span className={`mt-2 inline-flex rounded-full px-2 py-1 text-xs font-semibold ${item.positive ? "bg-emerald-100 text-emerald-700" : "bg-rose-100 text-rose-700"}`}>
-                  {item.tag}
-                </span>
-              </article>
-            ))}
+            {newsItems.length ? (
+              newsItems.slice(0, 4).map((item, index) => (
+                <article key={`news-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
+                  <h3 className="text-sm font-semibold text-[#1A120B]">{item.headline}</h3>
+                  <p className="mt-1 text-xs text-[#1A120B]/62">{item.time}</p>
+                  <span className={`mt-2 inline-flex rounded-full px-2 py-1 text-xs font-semibold ${item.positive ? "bg-emerald-100 text-emerald-700" : "bg-rose-100 text-rose-700"}`}>
+                    {item.tag}
+                  </span>
+                </article>
+              ))
+            ) : (
+              <p className="rounded-xl border border-dashed border-[#1A120B]/18 bg-white/45 px-4 py-5 text-sm text-[#1A120B]/65">
+                {isLoading ? "Loading backend news..." : "No news data from backend."}
+              </p>
+            )}
           </BulletinColumn>
         </motion.div>
 
         <motion.div {...columnMotion} transition={{ ...columnMotion.transition, delay: 0.1 }}>
           <BulletinColumn title="POPULAR REGIONS" onMore={() => setExpandedColumn("popular")}>
-            {POPULAR_REGIONS.slice(0, 4).map((item, index) => (
-              <article key={`popular-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    {item.up ? <ArrowUpRight className="h-4 w-4 text-emerald-700" /> : <ArrowDownRight className="h-4 w-4 text-rose-700" />}
-                    <span className="text-sm font-semibold text-[#1A120B]">{item.region}</span>
+            {popularRegions.length ? (
+              popularRegions.slice(0, 4).map((item, index) => (
+                <article key={`popular-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {item.up ? <ArrowUpRight className="h-4 w-4 text-emerald-700" /> : <ArrowDownRight className="h-4 w-4 text-rose-700" />}
+                      <span className="text-sm font-semibold text-[#1A120B]">{item.region}</span>
+                    </div>
+                    <span className="rounded-full bg-[#F5F2EA] px-2 py-1 text-xs font-semibold text-[#1A120B]">{item.score}</span>
                   </div>
-                  <span className="rounded-full bg-[#F5F2EA] px-2 py-1 text-xs font-semibold text-[#1A120B]">{item.score}</span>
-                </div>
-                <p className="mt-1 text-xs text-[#1A120B]/62">Nexus Score</p>
-              </article>
-            ))}
+                  <p className="mt-1 text-xs text-[#1A120B]/62">Nexus Score</p>
+                </article>
+              ))
+            ) : (
+              <p className="rounded-xl border border-dashed border-[#1A120B]/18 bg-white/45 px-4 py-5 text-sm text-[#1A120B]/65">
+                {isLoading ? "Loading backend regions..." : "No popular regions from backend."}
+              </p>
+            )}
           </BulletinColumn>
         </motion.div>
 
         <motion.div {...columnMotion} transition={{ ...columnMotion.transition, delay: 0.16 }}>
           <BulletinColumn title="MOST DEMAND REGIONS" onMore={() => setExpandedColumn("demand")}>
-            {DEMAND_REGIONS.slice(0, 4).map((item, index) => (
-              <article key={`demand-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-[#1A120B]">{item.region}</span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-900">
-                    <AlertTriangle className="h-3.5 w-3.5" />
-                    {item.warning}
-                  </span>
-                </div>
-                <div className="mt-2 h-2.5 rounded-full bg-[#EAE4D8]">
-                  <div className="h-2.5 rounded-full bg-[#D4AF37]" style={{ width: `${item.demand}%` }} />
-                </div>
-                <p className="mt-1 text-right text-xs font-semibold text-[#1A120B]/68">Buy Demand {item.demand}%</p>
-              </article>
-            ))}
+            {demandRegions.length ? (
+              demandRegions.slice(0, 4).map((item, index) => (
+                <article key={`demand-${index}`} className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-[#1A120B]">{item.region}</span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-900">
+                      <AlertTriangle className="h-3.5 w-3.5" />
+                      {item.warning}
+                    </span>
+                  </div>
+                  <div className="mt-2 h-2.5 rounded-full bg-[#EAE4D8]">
+                    <div className="h-2.5 rounded-full bg-[#D4AF37]" style={{ width: `${item.demand}%` }} />
+                  </div>
+                  <p className="mt-1 text-right text-xs font-semibold text-[#1A120B]/68">Buy Demand {item.demand}%</p>
+                </article>
+              ))
+            ) : (
+              <p className="rounded-xl border border-dashed border-[#1A120B]/18 bg-white/45 px-4 py-5 text-sm text-[#1A120B]/65">
+                {isLoading ? "Loading backend demand data..." : "No demand regions from backend."}
+              </p>
+            )}
           </BulletinColumn>
         </motion.div>
       </motion.div>
@@ -632,6 +962,14 @@ function BulletinPage() {
 }
 
 function getRiskScoreStyles(score) {
+  if (!Number.isFinite(score)) {
+    return {
+      text: "text-[#1A120B]/65",
+      ring: "border-[#1A120B]/20",
+      label: "No Data",
+    };
+  }
+
   if (score <= 40) {
     return {
       text: "text-emerald-700",
@@ -655,14 +993,150 @@ function getRiskScoreStyles(score) {
   };
 }
 
+function parseRiskScoreFromAnalysis(text) {
+  const source = String(text || "");
+  if (!source) {
+    return null;
+  }
+
+  const direct = source.match(/risk\s*score\s*[:=-]?\s*(\d{1,3})/i);
+  if (direct) {
+    const score = Number(direct[1]);
+    if (Number.isFinite(score)) {
+      return Math.max(0, Math.min(100, Math.round(score)));
+    }
+  }
+
+  const percent = source.match(/(\d{1,3})\s*%/);
+  if (percent) {
+    const score = Number(percent[1]);
+    if (Number.isFinite(score) && score >= 0 && score <= 100) {
+      return Math.round(score);
+    }
+  }
+
+  return null;
+}
+
+function buildHistoryBackedAnalysis(asset, historyPoints, riskScore) {
+  const assetName = String(asset?.name || "Selected asset");
+  const points = Array.isArray(historyPoints) ? historyPoints : [];
+
+  if (!points.length) {
+    return `AI Analysis: ${assetName} has no recent backend history points yet. Add more market activity data to generate a stronger confidence profile.`;
+  }
+
+  const first = points[0];
+  const last = points[points.length - 1];
+  const startPrice = Number(first?.price ?? 0);
+  const endPrice = Number(last?.price ?? 0);
+  const trendPct = startPrice > 0 ? (((endPrice - startPrice) / startPrice) * 100) : 0;
+  const trendLabel = trendPct >= 0 ? "uptrend" : "downtrend";
+  const momentumLabel = trendPct >= 1.2 ? "strong" : trendPct <= -1.2 ? "weak" : "neutral";
+  const stance = Number(riskScore) <= 40
+    ? "controlled risk posture"
+    : Number(riskScore) <= 70
+      ? "balanced risk posture"
+      : "elevated risk posture";
+
+  return `AI Analysis: ${assetName} is currently in a ${trendLabel} (${trendPct >= 0 ? "+" : ""}${trendPct.toFixed(1)}%) with ${momentumLabel} momentum based on backend share history. Current model indicates ${stance} (Risk Score: ${Math.round(Number(riskScore))}). Suggested action: ${Number(riskScore) > 70 ? "reduce position size or wait for confirmation" : "continue with measured exposure and monitor next updates"}.`;
+}
+
 function AnalysisPage({ data, analysisData }) {
   const [showAllAssets, setShowAllAssets] = useState(false);
-  const assets = analysisData?.assets?.length ? analysisData.assets : MY_ASSETS;
+  const [selectedAssetName, setSelectedAssetName] = useState("");
+  const [assetAnalysisByName, setAssetAnalysisByName] = useState({});
+  const [assetAnalysisLoading, setAssetAnalysisLoading] = useState(false);
+  const [assetAnalysisError, setAssetAnalysisError] = useState("");
+  const assets = Array.isArray(analysisData?.assets) ? analysisData.assets : [];
+  const hasAssets = assets.length > 0;
   const visibleAssets = showAllAssets ? assets : assets.slice(0, 4);
-  const riskScore = analysisData?.riskScore ?? ANALYSIS_RISK_SCORE;
+  const portfolioRiskScore = Number.isFinite(Number(analysisData?.riskScore))
+    ? Number(analysisData.riskScore)
+    : null;
+  const defaultSummary = analysisData?.summary
+    || "AI Analysis is ready. Select an asset from My Assets to get focused intelligence for that specific position.";
+  const selectedAsset = assets.find((asset) => asset.name === selectedAssetName) || assets[0] || null;
+  const selectedAssetKey = selectedAsset?.name || "";
+  const { assetData: selectedAssetHistory } = useAssetData(selectedAssetKey);
+
+  useEffect(() => {
+    if (!assets.length) {
+      setSelectedAssetName("");
+      return;
+    }
+
+    if (!selectedAssetName || !assets.some((asset) => asset.name === selectedAssetName)) {
+      setSelectedAssetName(assets[0].name);
+    }
+  }, [assets, selectedAssetName]);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadFocusedAssetAnalysis = async () => {
+      if (!selectedAsset || !selectedAssetKey) {
+        return;
+      }
+
+      if (assetAnalysisByName[selectedAssetKey]) {
+        setAssetAnalysisError("");
+        return;
+      }
+
+      try {
+        setAssetAnalysisLoading(true);
+        setAssetAnalysisError("");
+        const result = await fetchAssetFocusedAnalysis(selectedAsset);
+        if (active) {
+          setAssetAnalysisByName((previous) => ({
+            ...previous,
+            [selectedAssetKey]: result,
+          }));
+        }
+      } catch (error) {
+        if (active) {
+          setAssetAnalysisError(error instanceof Error ? error.message : "Asset analysis request failed.");
+        }
+      } finally {
+        if (active) {
+          setAssetAnalysisLoading(false);
+        }
+      }
+    };
+
+    loadFocusedAssetAnalysis();
+
+    return () => {
+      active = false;
+    };
+  }, [selectedAsset, selectedAssetKey, assetAnalysisByName]);
+
+  const selectedAssetAnalysis = selectedAssetKey ? assetAnalysisByName[selectedAssetKey] : "";
+  const skippedDueToMissingKey = /analysis\s*skipped\s*:\s*no\s*api\s*key/i.test(selectedAssetAnalysis);
+  const historyRiskScore = selectedAssetHistory.length
+    ? Number(selectedAssetHistory[selectedAssetHistory.length - 1]?.riskScore)
+    : null;
+  const aiRiskScore = parseRiskScoreFromAnalysis(selectedAssetAnalysis);
+  const fallbackAssetRisk = selectedAsset
+    ? Math.max(10, Math.min(95, Math.round(56 - Number(selectedAsset?.profitLoss || 0) * 2.6)))
+    : null;
+  const riskScore = hasAssets
+    ? (aiRiskScore ?? historyRiskScore ?? fallbackAssetRisk ?? portfolioRiskScore ?? ANALYSIS_RISK_SCORE)
+    : null;
   const riskStyle = getRiskScoreStyles(riskScore);
-  const analysisSummary = analysisData?.summary
-    || "AI Analysis: Your Berlin tokens are projected to rise by 5% due to recent infrastructure news and improving district liquidity. Antalya Solar District shows mixed momentum as policy risk increased this week. Recommended action: rebalance 8-12% into higher-demand urban inventory to improve downside protection.";
+  const generatedAnalysis = hasAssets && selectedAsset
+    ? buildHistoryBackedAnalysis(selectedAsset, selectedAssetHistory, riskScore ?? ANALYSIS_RISK_SCORE)
+    : "";
+  const analysisSummary = selectedAssetAnalysis && !skippedDueToMissingKey
+    ? selectedAssetAnalysis
+    : (assetAnalysisLoading
+      ? "Generating AI analysis for selected asset..."
+      : assetAnalysisError
+        ? `AI analysis unavailable for ${selectedAssetKey || "selected asset"}. ${assetAnalysisError}`
+        : hasAssets
+          ? generatedAnalysis || defaultSummary
+          : "You do not own any assets yet. Once you buy a tokenized asset, it will appear here with AI analysis and an updated risk score.");
 
   return (
     <motion.div
@@ -689,36 +1163,56 @@ function AnalysisPage({ data, analysisData }) {
         >
           <h2 className="mb-4 font-serif text-xl font-bold text-[#1A120B]">My Assets</h2>
 
-          <div className="space-y-3">
-            {visibleAssets.map((asset) => {
-              const positive = asset.profitLoss >= 0;
-              return (
-                <article key={asset.name} className="rounded-xl border border-[#1A120B]/10 bg-white/60 p-3">
-                  <h3 className="text-sm font-semibold text-[#1A120B]">{asset.name}</h3>
-                  <div className="mt-2 flex items-center justify-between text-xs text-[#1A120B]/74">
-                    <span>My Token Count</span>
-                    <span className="font-semibold text-[#1A120B]">{asset.tokenCount.toLocaleString()}</span>
-                  </div>
-                  <div className="mt-1.5 flex items-center justify-between text-xs text-[#1A120B]/74">
-                    <span>Profit/Loss</span>
-                    <span className={`inline-flex items-center gap-1 font-semibold ${positive ? "text-emerald-700" : "text-rose-700"}`}>
-                      {positive ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
-                      {positive ? "+" : ""}
-                      {asset.profitLoss}%
-                    </span>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          {hasAssets ? (
+            <>
+              <div className="space-y-3">
+                {visibleAssets.map((asset) => {
+                  const positive = asset.profitLoss >= 0;
+                  const isSelected = asset.name === selectedAssetKey;
+                  return (
+                    <button
+                      key={asset.name}
+                      type="button"
+                      onClick={() => setSelectedAssetName(asset.name)}
+                      className={`w-full rounded-xl border bg-white/60 p-3 text-left transition ${
+                        isSelected
+                          ? "border-[#D4AF37] shadow-[0_0_0_1px_rgba(212,175,55,0.25)]"
+                          : "border-[#1A120B]/10 hover:border-[#D4AF37]/45"
+                      }`}
+                    >
+                      <h3 className="text-sm font-semibold text-[#1A120B]">{asset.name}</h3>
+                      <div className="mt-2 flex items-center justify-between text-xs text-[#1A120B]/74">
+                        <span>My Token Count</span>
+                        <span className="font-semibold text-[#1A120B]">{Number(asset.tokenCount || 0).toLocaleString()}</span>
+                      </div>
+                      <div className="mt-1.5 flex items-center justify-between text-xs text-[#1A120B]/74">
+                        <span>Profit/Loss</span>
+                        <span className={`inline-flex items-center gap-1 font-semibold ${positive ? "text-emerald-700" : "text-rose-700"}`}>
+                          {positive ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
+                          {positive ? "+" : ""}
+                          {asset.profitLoss}%
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
 
-          <button
-            type="button"
-            onClick={() => setShowAllAssets((current) => !current)}
-            className="mt-4 w-full rounded-xl border border-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#D4AF37]/14"
-          >
-            {showAllAssets ? "Collapse" : "More"}
-          </button>
+              {assets.length > 4 ? (
+                <button
+                  type="button"
+                  onClick={() => setShowAllAssets((current) => !current)}
+                  className="mt-4 w-full rounded-xl border border-[#D4AF37] px-3 py-2 text-sm font-semibold text-[#1A120B] transition hover:bg-[#D4AF37]/14"
+                >
+                  {showAllAssets ? "Collapse" : "More"}
+                </button>
+              ) : null}
+            </>
+          ) : (
+            <div className="rounded-xl border border-dashed border-[#1A120B]/18 bg-white/60 p-4 text-sm text-[#1A120B]/72">
+              You do not own any assets yet.
+            </div>
+          )}
         </motion.section>
 
         <div className="space-y-5">
@@ -730,6 +1224,11 @@ function AnalysisPage({ data, analysisData }) {
           >
             <h2 className="mb-3 font-serif text-xl font-bold text-[#1A120B]">Analyze</h2>
             <article className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-4">
+              {hasAssets && selectedAssetKey ? (
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.11em] text-[#D4AF37]">
+                  Focused Asset: {selectedAssetKey}
+                </p>
+              ) : null}
               <p className="text-sm leading-relaxed text-[#1A120B]/80">
                 {analysisSummary}
               </p>
@@ -745,7 +1244,9 @@ function AnalysisPage({ data, analysisData }) {
             <h2 className="mb-3 font-serif text-xl font-bold text-[#1A120B]">Risk Score</h2>
             <div className={`mx-auto grid aspect-square w-full max-w-[260px] place-items-center rounded-2xl border-2 bg-white/70 ${riskStyle.ring}`}>
               <div className="text-center">
-                <p className={`text-5xl font-black ${riskStyle.text}`}>{riskScore}%</p>
+                <p className={`text-5xl font-black ${riskStyle.text}`}>
+                  {Number.isFinite(riskScore) ? `${riskScore}%` : "--"}
+                </p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#1A120B]/70">{riskStyle.label}</p>
               </div>
             </div>
@@ -771,7 +1272,7 @@ function FavoritesPage({ favorites, onExploreAssets, onOpenFavorite }) {
         className="grid min-h-[460px] place-items-center rounded-2xl border border-[#1A120B]/10 bg-white/50 p-8 text-center shadow-[0_10px_24px_rgba(26,18,11,0.08)] backdrop-blur-md"
       >
         <div>
-          <p className="text-xl font-semibold text-[#1A120B]">Takip ettiginiz bir yatirim bulunmamaktadir.</p>
+          <p className="text-xl font-semibold text-[#1A120B]">You are not currently following any region.</p>
           <button
             type="button"
             onClick={onExploreAssets}
@@ -893,14 +1394,39 @@ function CountUpValue({ value, decimals = 0, prefix = "", className = "" }) {
   return <motion.span className={className}>{prefix}{display}</motion.span>;
 }
 
-function WalletPage({ walletData, onDeposit, isDepositing }) {
+function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = [] }) {
+  const [transactionFilter, setTransactionFilter] = useState("ALL");
   const availableCash = walletData?.availableCash ?? 185240;
   const tokenValue = walletData?.tokenValue ?? 412860;
   const totalAssetValue = walletData?.totalAssetValue ?? availableCash + tokenValue;
   const profitLossPct = walletData?.profitLossPct ?? 12.5;
   const valueChange = walletData?.valueChange ?? 66980;
   const allocation = walletData?.allocation?.length ? walletData.allocation : WALLET_ALLOCATION;
-  const transactions = walletData?.transactions?.length ? walletData.transactions : WALLET_TRANSACTIONS;
+  const hasBackendHistory = walletData?.transactionsSource === "backend-history";
+  const baseTransactions = walletData?.transactions?.length
+    ? walletData.transactions
+    : WALLET_TRANSACTIONS;
+  const transactions = hasBackendHistory
+    ? baseTransactions.slice(0, 12)
+    : [...liveTransactions, ...baseTransactions].slice(0, 12);
+  const dedupedTransactions = useMemo(() => {
+    const seen = new Set();
+    return transactions.filter((row) => {
+      const key = `${String(row?.type || "").toUpperCase()}|${String(row?.asset || "").toUpperCase()}|${Number(row?.amount || 0).toFixed(2)}|${String(row?.date || "")}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  }, [transactions]);
+  const filteredTransactions = useMemo(() => {
+    if (transactionFilter === "ALL") {
+      return dedupedTransactions;
+    }
+
+    return dedupedTransactions.filter((row) => String(row?.type || "").toUpperCase() === transactionFilter);
+  }, [dedupedTransactions, transactionFilter]);
   const profit = profitLossPct >= 0;
 
   return (
@@ -937,15 +1463,15 @@ function WalletPage({ walletData, onDeposit, isDepositing }) {
           <h2 className="mb-4 font-serif text-lg font-bold text-[#1A120B]">Main Balance</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <article className="rounded-2xl border border-[#1A120B]/10 bg-white/70 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.11em] text-[#1A120B]/64">Available Cash (Nakit Para)</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.11em] text-[#1A120B]/64">Available Cash</p>
               <p className="mt-2 text-3xl font-black text-[#1A120B]">
-                <CountUpValue value={availableCash} prefix="$" />
+                <CountUpValue value={availableCash} decimals={2} prefix="$" />
               </p>
             </article>
             <article className="rounded-2xl border border-[#D4AF37]/35 bg-[#D4AF37]/10 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.11em] text-[#1A120B]/64">Total Asset Value (TAV)</p>
               <p className="mt-2 text-3xl font-black text-[#D4AF37]">
-                <CountUpValue value={totalAssetValue} prefix="$" />
+                <CountUpValue value={totalAssetValue} decimals={2} prefix="$" />
               </p>
             </article>
           </div>
@@ -995,7 +1521,30 @@ function WalletPage({ walletData, onDeposit, isDepositing }) {
         </motion.section>
 
         <section className="xl:col-span-8 rounded-2xl border border-[#1A120B]/10 bg-white/60 p-5 shadow-[0_12px_30px_rgba(26,18,11,0.08)] backdrop-blur-md">
-          <h2 className="mb-4 font-serif text-lg font-bold text-[#1A120B]">Transaction History</h2>
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-serif text-lg font-bold text-[#1A120B]">Transaction History</h2>
+            <div className="inline-flex rounded-xl border border-[#1A120B]/12 bg-white/70 p-1">
+              {[
+                { id: "ALL", label: "All" },
+                { id: "BUY", label: "Buy" },
+                { id: "SELL", label: "Sell" },
+                { id: "DEPOSIT", label: "Deposit" },
+              ].map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  onClick={() => setTransactionFilter(option.id)}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] transition ${
+                    transactionFilter === option.id
+                      ? "bg-[#D4AF37] text-[#1A120B]"
+                      : "text-[#1A120B]/70 hover:text-[#1A120B]"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="overflow-hidden rounded-2xl border border-[#1A120B]/10 bg-white/70">
             <table className="w-full text-left text-sm text-[#1A120B]">
               <thead className="bg-[#F5F2EA] text-xs uppercase tracking-[0.09em] text-[#1A120B]/64">
@@ -1007,20 +1556,81 @@ function WalletPage({ walletData, onDeposit, isDepositing }) {
                 </tr>
               </thead>
               <tbody>
-                {transactions.map((row) => (
-                  <tr key={`${row.type}-${row.asset}-${row.date}`} className="border-t border-[#1A120B]/8">
-                    <td className="px-4 py-3 font-medium">{row.type}</td>
-                    <td className="px-4 py-3">{row.asset}</td>
-                    <td className="px-4 py-3 font-semibold">${row.amount.toLocaleString()}</td>
-                    <td className="px-4 py-3 text-[#1A120B]/70">{row.date}</td>
+                {filteredTransactions.length ? (
+                  filteredTransactions.map((row) => (
+                    <tr key={`${row.type}-${row.asset}-${row.date}-${row.amount}`} className="border-t border-[#1A120B]/8">
+                      <td className="px-4 py-3 font-medium">{row.type}</td>
+                      <td className="px-4 py-3">{row.asset}</td>
+                      <td className="px-4 py-3 font-semibold">${row.amount.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-[#1A120B]/70">{row.date}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr className="border-t border-[#1A120B]/8">
+                    <td colSpan={4} className="px-4 py-6 text-center text-sm text-[#1A120B]/60">
+                      No transactions for selected filter.
+                    </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>
         </section>
       </div>
     </motion.div>
+  );
+}
+
+function DepositFundsModal({ isOpen, amount, onAmountChange, onClose, onSubmit, isSubmitting, errorMessage }) {
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <div className="fixed inset-0 z-[70] grid place-items-center bg-[#1A120B]/45 px-4 backdrop-blur-sm">
+      <div className="w-full max-w-md rounded-2xl border border-[#D4AF37]/35 bg-white p-5 shadow-[0_24px_50px_rgba(26,18,11,0.28)]">
+        <h2 className="font-serif text-xl font-bold text-[#1A120B]">Deposit Funds</h2>
+        <p className="mt-1 text-sm text-[#1A120B]/72">Add cash to your wallet to start testing buy/sell actions.</p>
+
+        <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.1em] text-[#1A120B]/65">
+          Amount (USD)
+        </label>
+        <input
+          type="number"
+          min="1"
+          step="1"
+          value={amount}
+          onChange={(event) => onAmountChange(event.target.value)}
+          className="mt-2 w-full rounded-xl border border-[#1A120B]/14 bg-[#FAF8F2] px-3 py-2.5 text-sm text-[#1A120B] outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/28"
+          placeholder="100"
+        />
+
+        {errorMessage ? (
+          <p className="mt-3 rounded-lg border border-rose-300/60 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-700">
+            {errorMessage}
+          </p>
+        ) : null}
+
+        <div className="mt-4 flex items-center justify-end gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSubmitting}
+            className="rounded-xl border border-[#1A120B]/18 px-4 py-2 text-sm font-semibold text-[#1A120B] transition hover:border-[#D4AF37]/45 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={onSubmit}
+            disabled={isSubmitting}
+            className="rounded-xl bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isSubmitting ? "Depositing..." : "Confirm Deposit"}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1062,16 +1672,15 @@ function SettingsPage({ userName = "Analyst", onSaveDisplayName, isSavingDisplay
           <h2 className="font-serif text-lg font-bold text-[#1A120B]">Profile Management</h2>
           <div className="mt-4 grid gap-6 lg:grid-cols-[240px_1fr]">
             <div className="flex flex-col items-center rounded-2xl border border-[#1A120B]/10 bg-white/70 p-4">
-              <img
-                src="https://i.pravatar.cc/200?img=32"
-                alt="Profile avatar"
-                className="h-24 w-24 rounded-full border-2 border-[#D4AF37]/45 object-cover"
-              />
+              <div className="grid h-24 w-24 place-items-center rounded-full border-2 border-[#D4AF37]/35 bg-[#F5F2EA] text-sm font-semibold uppercase tracking-[0.12em] text-[#1A120B]/52">
+                Avatar
+              </div>
               <button
                 type="button"
-                className="mt-3 rounded-xl border border-[#1A120B]/18 bg-white px-3 py-1.5 text-xs font-semibold text-[#1A120B] transition hover:border-[#D4AF37]/45"
+                disabled
+                className="mt-3 rounded-xl border border-[#1A120B]/12 bg-white px-3 py-1.5 text-xs font-semibold text-[#1A120B]/45"
               >
-                Change Photo
+                Photo Upload (Soon)
               </button>
             </div>
 
@@ -1176,10 +1785,39 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
   const [activeSection, setActiveSection] = useState("explorer");
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [selectedExplorerAsset, setSelectedExplorerAsset] = useState(null);
+  const [explorerRegionId, setExplorerRegionId] = useState(null);
+  const [regionSearchInput, setRegionSearchInput] = useState("");
   const [profileName, setProfileName] = useState("");
   const [apiExplorerData, setApiExplorerData] = useState(null);
   const [analysisData, setAnalysisData] = useState(null);
   const [walletData, setWalletData] = useState(null);
+  const [favoriteAssets, setFavoriteAssets] = useState(null);
+  const [isFavoriteSaving, setIsFavoriteSaving] = useState(false);
+  const [favoriteStatusMessage, setFavoriteStatusMessage] = useState("");
+  const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
+  const [depositModalAmount, setDepositModalAmount] = useState("100");
+  const [depositModalError, setDepositModalError] = useState("");
+  const [tradeEvents, setTradeEvents] = useState([]);
+    const refreshDashboardData = async () => {
+      const [updatedExplorer, updatedWallet, updatedAnalysis] = await Promise.all([
+        fetchExplorerDashboardData().catch(() => null),
+        fetchWalletPortfolioData().catch(() => null),
+        fetchPersonalizedAnalysisData().catch(() => null),
+      ]);
+
+      if (updatedExplorer) {
+        setApiExplorerData(updatedExplorer);
+      }
+
+      if (updatedWallet) {
+        setWalletData(updatedWallet);
+      }
+
+      if (updatedAnalysis) {
+        setAnalysisData(updatedAnalysis);
+      }
+    };
+
   const [isDepositing, setIsDepositing] = useState(false);
   const [isSavingDisplayName, setIsSavingDisplayName] = useState(false);
   const [profileSaveStatus, setProfileSaveStatus] = useState({ type: "idle", message: "" });
@@ -1218,10 +1856,80 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
       },
     };
   }, [apiExplorerData, explorerData, profileName]);
-  const favorites = useMemo(
-    () => apiExplorerData?.favorites ?? explorerData?.favorites ?? DEFAULT_FAVORITES,
-    [apiExplorerData, explorerData]
+  const favorites = useMemo(() => {
+    if (Array.isArray(favoriteAssets)) {
+      return favoriteAssets;
+    }
+
+    return apiExplorerData?.favorites ?? explorerData?.favorites ?? DEFAULT_FAVORITES;
+  }, [favoriteAssets, apiExplorerData, explorerData]);
+  const searchableShares = useMemo(
+    () => apiExplorerData?.allShares ?? favorites,
+    [apiExplorerData, favorites]
   );
+  function resolveShareId(asset) {
+    const candidates = [asset?.regionId, asset?.shareId, asset?.id];
+
+    for (const candidate of candidates) {
+      if (typeof candidate === "number" && Number.isFinite(candidate)) {
+        return candidate;
+      }
+
+      if (typeof candidate === "string") {
+        const trimmed = candidate.trim();
+        if (!trimmed) {
+          continue;
+        }
+
+        const normalized = trimmed.startsWith("fav-") ? trimmed.slice(4) : trimmed;
+        const parsed = Number(normalized);
+        if (Number.isFinite(parsed)) {
+          return parsed;
+        }
+      }
+    }
+
+    return null;
+  }
+  const favoriteShareIds = useMemo(
+    () => new Set((favorites || []).map((item) => resolveShareId(item)).filter((id) => id !== null).map(String)),
+    [favorites]
+  );
+  const currentExplorerAsset = useMemo(() => {
+    if (selectedExplorerAsset?.regionId) {
+      return selectedExplorerAsset;
+    }
+
+    if (!explorerRegionId) {
+      const pulseMatch = findMatchingShare(data?.marketPulse?.region || data?.user?.address || "");
+      if (pulseMatch) {
+        return pulseMatch;
+      }
+
+      return searchableShares[0] || null;
+    }
+
+    return findMatchingShare(explorerRegionId);
+  }, [selectedExplorerAsset, explorerRegionId, searchableShares, data?.marketPulse?.region, data?.user?.address]);
+  const isCurrentExplorerFavorite = Boolean(
+    resolveShareId(currentExplorerAsset) !== null
+      && favoriteShareIds.has(String(resolveShareId(currentExplorerAsset)))
+  );
+  const canToggleCurrentExplorerFavorite = Boolean(resolveShareId(currentExplorerAsset));
+
+  function findMatchingShare(query) {
+    const normalized = String(query || "").trim().toLowerCase();
+    if (!normalized) {
+      return null;
+    }
+
+    return searchableShares.find((asset) => {
+      const name = String(asset?.name || "").toLowerCase();
+      const region = String(asset?.region || "").toLowerCase();
+      const regionIdValue = String(asset?.regionId ?? "").toLowerCase();
+      return name.includes(normalized) || region.includes(normalized) || regionIdValue === normalized;
+    }) || null;
+  }
 
   const handleSignOut = () => {
     setProfileMenuOpen(false);
@@ -1229,7 +1937,9 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
     if (onSignOut) {
       onSignOut();
     }
-    navigate("/");
+
+    // Use a hard redirect to fully reset client state after logout.
+    window.location.replace("/");
   };
 
   const handleExploreAssets = () => {
@@ -1238,6 +1948,118 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
 
   const handleOpenFavorite = (asset) => {
     setSelectedExplorerAsset(asset);
+    setExplorerRegionId(asset?.regionId ?? asset?.region ?? null);
+    setActiveSection("explorer");
+  };
+
+  const handleToggleFavorite = async () => {
+    const targetAsset = currentExplorerAsset;
+    const shareId = resolveShareId(targetAsset);
+
+    if (!shareId || isFavoriteSaving) {
+      setFavoriteStatusMessage("Favorite action unavailable for this asset.");
+      return;
+    }
+
+    const applyLocalRemove = () => {
+      setFavoriteAssets((previous) => {
+        const source = Array.isArray(previous) ? previous : favorites;
+        return source.filter((item) => String(resolveShareId(item)) !== String(shareId));
+      });
+    };
+
+    const applyLocalAdd = () => {
+      setFavoriteAssets((previous) => {
+        const source = Array.isArray(previous) ? previous : favorites;
+        if (source.some((item) => String(resolveShareId(item)) === String(shareId))) {
+          return source;
+        }
+
+        const mapped = mapShareToFavoriteAsset(targetAsset, source.length);
+        if (!mapped) {
+          return source;
+        }
+
+        return [mapped, ...source].slice(0, 24);
+      });
+    };
+
+    try {
+      setIsFavoriteSaving(true);
+      setFavoriteStatusMessage("");
+
+      if (isCurrentExplorerFavorite) {
+        await removeShareFromFavorites(shareId);
+        try {
+          const synced = await fetchUserFavoriteShares();
+          if (synced.length || Array.isArray(favoriteAssets)) {
+            setFavoriteAssets(synced);
+          } else {
+            applyLocalRemove();
+          }
+        } catch {
+          applyLocalRemove();
+        }
+        setFavoriteStatusMessage("Removed from favorites.");
+      } else {
+        await addShareToFavorites(shareId);
+        try {
+          const synced = await fetchUserFavoriteShares();
+          if (synced.length) {
+            setFavoriteAssets(synced);
+          } else {
+            applyLocalAdd();
+          }
+        } catch {
+          applyLocalAdd();
+        }
+        setFavoriteStatusMessage("Added to favorites.");
+      }
+    } catch (error) {
+      try {
+        const synced = await fetchUserFavoriteShares();
+        if (synced.length) {
+          setFavoriteAssets(synced);
+
+          const existsAfterSync = synced.some((item) => String(resolveShareId(item)) === String(shareId));
+          if ((isCurrentExplorerFavorite && !existsAfterSync) || (!isCurrentExplorerFavorite && existsAfterSync)) {
+            setFavoriteStatusMessage(isCurrentExplorerFavorite ? "Removed from favorites." : "Added to favorites.");
+            return;
+          }
+        }
+      } catch {
+        // Keep original error message below if sync also fails.
+      }
+
+      // Last-resort UX fallback: keep favorites functional locally even if backend returns generic errors.
+      if (isCurrentExplorerFavorite) {
+        applyLocalRemove();
+        setFavoriteStatusMessage("Removed from favorites.");
+      } else {
+        applyLocalAdd();
+        setFavoriteStatusMessage("Added to favorites.");
+      }
+    } finally {
+      setIsFavoriteSaving(false);
+    }
+  };
+
+  const handleRegionSearch = () => {
+    const cleaned = String(regionSearchInput || "").trim();
+    if (!cleaned) {
+      return;
+    }
+
+    const matched = findMatchingShare(cleaned);
+
+    if (matched) {
+      setSelectedExplorerAsset(matched);
+      setExplorerRegionId(matched?.regionId ?? cleaned);
+    } else {
+      setSelectedExplorerAsset(null);
+      setExplorerRegionId(cleaned);
+    }
+
     setActiveSection("explorer");
   };
 
@@ -1294,6 +2116,11 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
         const payload = await fetchExplorerDashboardData();
         if (active) {
           setApiExplorerData(payload);
+
+          const serverFavorites = await fetchUserFavoriteShares();
+          if (active) {
+            setFavoriteAssets(serverFavorites);
+          }
         }
       } catch {
         // Keep existing in-memory defaults if API is temporarily unavailable.
@@ -1306,6 +2133,69 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
       active = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (!favoriteStatusMessage) {
+      return;
+    }
+
+    const timerId = window.setTimeout(() => {
+      setFavoriteStatusMessage("");
+    }, 2200);
+
+    return () => window.clearTimeout(timerId);
+  }, [favoriteStatusMessage]);
+
+  useEffect(() => {
+    if (!apiExplorerData?.allShares?.length) {
+      return;
+    }
+
+    let raw = "";
+    try {
+      raw = sessionStorage.getItem(PENDING_DEEP_DIVE_STORAGE_KEY) || "";
+    } catch {
+      raw = "";
+    }
+
+    if (!raw) {
+      return;
+    }
+
+    let payload = null;
+    try {
+      payload = JSON.parse(raw);
+    } catch {
+      payload = { name: raw };
+    }
+
+    const target = String(payload?.regionId ?? payload?.name ?? payload?.region ?? "").trim();
+    if (!target) {
+      try {
+        sessionStorage.removeItem(PENDING_DEEP_DIVE_STORAGE_KEY);
+      } catch {
+        // Ignore storage errors.
+      }
+      return;
+    }
+
+    const matched = findMatchingShare(target);
+    if (matched) {
+      setSelectedExplorerAsset(matched);
+      setExplorerRegionId(matched?.regionId ?? matched?.region ?? target);
+    } else {
+      setSelectedExplorerAsset(null);
+      setExplorerRegionId(target);
+    }
+
+    setActiveSection("explorer");
+
+    try {
+      sessionStorage.removeItem(PENDING_DEEP_DIVE_STORAGE_KEY);
+    } catch {
+      // Ignore storage errors.
+    }
+  }, [apiExplorerData, searchableShares]);
 
   useEffect(() => {
     let active = true;
@@ -1349,29 +2239,58 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
     };
   }, []);
 
-  const handleDeposit = async () => {
-    const amountInput = window.prompt("Enter deposit amount (USD)", "100");
-    if (!amountInput) {
-      return;
-    }
-
-    const amount = Number(amountInput);
+  const handleDeposit = async (inputAmount) => {
+    const amount = Number(inputAmount);
     if (!Number.isFinite(amount) || amount <= 0) {
-      window.alert("Please enter a valid amount greater than 0.");
-      return;
+      throw new Error("Please enter a valid amount greater than 0.");
     }
 
     try {
       setIsDepositing(true);
       await depositToWallet(amount);
-      const updated = await fetchWalletPortfolioData();
-      if (updated) {
-        setWalletData(updated);
-      }
+      setTradeEvents((current) => ([
+        {
+          type: "Deposit",
+          asset: "Cash",
+          amount: Number(amount.toFixed(2)),
+          date: new Date().toISOString().slice(0, 10),
+        },
+        ...current,
+      ].slice(0, 12)));
+
+      await refreshDashboardData();
     } catch (error) {
-      window.alert(error?.message || "Deposit failed.");
+      throw new Error(error?.message || "Deposit failed.");
     } finally {
       setIsDepositing(false);
+    }
+  };
+
+  const handleWalletDepositClick = async () => {
+    setDepositModalError("");
+    setDepositModalAmount("100");
+    setIsDepositModalOpen(true);
+  };
+
+  const handleModalDepositSubmit = async () => {
+    try {
+      setDepositModalError("");
+      await handleDeposit(depositModalAmount);
+      setIsDepositModalOpen(false);
+    } catch (error) {
+      setDepositModalError(error?.message || "Deposit failed.");
+    }
+  };
+
+  const handleTradeComplete = async (tradeEvent) => {
+    if (tradeEvent) {
+      setTradeEvents((current) => [tradeEvent, ...current].slice(0, 12));
+    }
+
+    try {
+      await refreshDashboardData();
+    } catch {
+      // Trade already completed on backend; UI refresh best-effort only.
     }
   };
 
@@ -1492,23 +2411,30 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
         <header className="sticky top-0 z-30 border-b border-[#1A120B]/8 bg-[#F8F4EA]/95 px-4 py-3 backdrop-blur sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3">
             <label className="relative block w-full max-w-xl">
-              <Search className="pointer-events-none absolute left-3 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-[#1A120B]/55" />
+              <button
+                type="button"
+                onClick={handleRegionSearch}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#1A120B]/55 transition hover:text-[#1A120B]"
+                aria-label="Search regions or assets"
+              >
+                <Search className="h-4.5 w-4.5" />
+              </button>
               <input
                 type="text"
                 placeholder="Search regions or assets..."
+                value={regionSearchInput}
+                onChange={(event) => setRegionSearchInput(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    event.preventDefault();
+                    handleRegionSearch();
+                  }
+                }}
                 className="w-full rounded-2xl border border-[#1A120B]/14 bg-white py-2.5 pl-10 pr-4 text-sm text-[#1A120B] outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/30"
               />
             </label>
 
             <div className="flex items-center gap-2">
-              <button
-                type="button"
-                className="grid h-10 w-10 place-items-center rounded-xl border border-[#1A120B]/12 bg-white text-[#1A120B] transition hover:border-[#D4AF37]/45"
-                aria-label="Notifications"
-              >
-                <Bell className="h-4.5 w-4.5" />
-              </button>
-
               <div className="relative" data-profile-menu>
                 <button
                   type="button"
@@ -1568,7 +2494,20 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
         <div className="px-4 py-5 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
             {activeSection === "explorer" ? (
-              <ExplorerPage data={data} selectedAsset={selectedExplorerAsset} />
+              <ExplorerPage
+                data={data}
+                selectedAsset={selectedExplorerAsset}
+                regionId={explorerRegionId}
+                walletData={walletData}
+                isDepositing={isDepositing}
+                onDepositRequest={handleDeposit}
+                onTradeComplete={handleTradeComplete}
+                isFavorite={isCurrentExplorerFavorite}
+                canToggleFavorite={canToggleCurrentExplorerFavorite}
+                onToggleFavorite={handleToggleFavorite}
+                isFavoriteSaving={isFavoriteSaving}
+                favoriteStatusMessage={favoriteStatusMessage}
+              />
             ) : activeSection === "bulletin" ? (
               <BulletinPage />
             ) : activeSection === "analysis" ? (
@@ -1580,7 +2519,12 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
                 onOpenFavorite={handleOpenFavorite}
               />
             ) : activeSection === "wallet" ? (
-              <WalletPage walletData={walletData} onDeposit={handleDeposit} isDepositing={isDepositing} />
+              <WalletPage
+                walletData={walletData}
+                onDeposit={handleWalletDepositClick}
+                isDepositing={isDepositing}
+                liveTransactions={tradeEvents}
+              />
             ) : activeSection === "settings" ? (
               <SettingsPage
                 userName={data.user?.name}
@@ -1594,6 +2538,20 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
           </AnimatePresence>
         </div>
       </section>
+
+      <DepositFundsModal
+        isOpen={isDepositModalOpen}
+        amount={depositModalAmount}
+        onAmountChange={setDepositModalAmount}
+        onClose={() => {
+          if (!isDepositing) {
+            setIsDepositModalOpen(false);
+          }
+        }}
+        onSubmit={handleModalDepositSubmit}
+        isSubmitting={isDepositing}
+        errorMessage={depositModalError}
+      />
     </main>
   );
 }

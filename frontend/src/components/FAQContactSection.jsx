@@ -146,15 +146,6 @@ export default function FAQContactSection() {
           </form>
         </div>
       </div>
-
-      <button
-        type="button"
-        aria-label="Open NEXUS Bot support"
-        className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full border border-nexus-primary-espresso/15 bg-white/90 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-nexus-primary-espresso shadow-lg shadow-nexus-primary-espresso/10 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-nexus-primary-gold/40 hover:bg-white"
-      >
-        <span className="inline-flex h-2 w-2 rounded-full bg-nexus-primary-gold" />
-        NEXUS Bot
-      </button>
     </section>
   );
 }

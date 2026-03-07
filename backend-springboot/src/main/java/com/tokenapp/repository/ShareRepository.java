@@ -12,4 +12,6 @@ public interface ShareRepository extends JpaRepository<Share, Long> {
     List<Share> findByIsActiveTrue();
     boolean existsByName(String name);
     Optional<Share> findByName(String name);
+    Optional<Share> findFirstByNameIgnoreCaseAndIsActiveTrue(String name);
+    Optional<Share> findFirstByNameContainingIgnoreCaseAndIsActiveTrue(String namePart);
 }

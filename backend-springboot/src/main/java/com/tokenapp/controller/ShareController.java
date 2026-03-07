@@ -1,9 +1,9 @@
 package com.tokenapp.controller;
 
 import com.tokenapp.dto.BuyTokenRequest;
-import com.tokenapp.dto.CreateShareRequest;
 import com.tokenapp.dto.ShareResponse;
 import com.tokenapp.dto.UserTokenResponse;
+import com.tokenapp.exception.BadRequestException;
 import com.tokenapp.security.JwtTokenProvider;
 import com.tokenapp.service.ShareService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,8 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -124,13 +122,17 @@ public class ShareController {
     private Long getCurrentUserId() {
         String token = getJwtFromRequest();
 
+        if (!StringUtils.hasText(token)) {
+            throw new BadRequestException("Authorization token is missing");
+        }
+
         if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)) {
             Long userId = jwtTokenProvider.getUserIdFromToken(token);
             log.info("Extracted userId from JWT: {}", userId);
             return userId;
         }
 
-        throw new RuntimeException("Invalid or missing JWT token");
+        throw new BadRequestException("Invalid or expired JWT token");
     }
 
 

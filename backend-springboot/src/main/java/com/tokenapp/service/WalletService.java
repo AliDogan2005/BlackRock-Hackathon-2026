@@ -2,6 +2,7 @@ package com.tokenapp.service;
 
 import com.tokenapp.entity.User;
 import com.tokenapp.entity.UserWallet;
+import com.tokenapp.entity.Transaction;
 import com.tokenapp.dto.WalletBalanceResponse;
 import com.tokenapp.dto.DepositRequest;
 import com.tokenapp.repository.UserRepository;
@@ -22,6 +23,9 @@ public class WalletService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TransactionService transactionService;
 
     /**
      * Kullanıcı bakiyesini getir
@@ -62,6 +66,16 @@ public class WalletService {
         if ("MOCK".equalsIgnoreCase(request.getPaymentMethod())) {
             wallet.addBalance(request.getAmount());
             userWalletRepository.save(wallet);
+
+            transactionService.recordTransaction(
+                userId,
+                Transaction.TransactionType.DEPOSIT,
+                null,
+                0L,
+                request.getAmount(),
+                "Deposited funds into wallet"
+            );
+
             log.info("Deposit successful. New balance: {} USD", wallet.getBalance());
 
             return new WalletBalanceResponse(

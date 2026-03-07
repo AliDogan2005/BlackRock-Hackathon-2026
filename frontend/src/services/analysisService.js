@@ -77,3 +77,38 @@ export async function fetchPersonalizedAnalysisData() {
     summary: buildSummary(assets, riskScore),
   };
 }
+
+function buildAssetAnalysisPrompt(asset) {
+  const name = String(asset?.name || "Unknown Asset").trim();
+  const tokenCount = toNumber(asset?.tokenCount, 0);
+  const profitLoss = toNumber(asset?.profitLoss, 0);
+  const profitPrefix = profitLoss >= 0 ? "+" : "";
+
+  return `Analyze this tokenized real-estate asset: ${name}. Current token holdings: ${tokenCount}. Recent performance: ${profitPrefix}${profitLoss}%. Return a concise investment intelligence note with risk posture, momentum direction, and recommended action.`;
+}
+
+export async function fetchAssetFocusedAnalysis(asset) {
+  if (!asset?.name) {
+    return "No asset selected for AI analysis.";
+  }
+
+  const token = getPersistedToken();
+  const prompt = buildAssetAnalysisPrompt(asset);
+
+  const response = await fetch(buildUrl("/api/news/analyze"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+    body: JSON.stringify({ text: prompt }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Asset analysis request failed (${response.status})`);
+  }
+
+  const payload = await response.json();
+  const text = String(payload?.ai_comment || payload?.comment || "").trim();
+  return text || "AI analysis could not produce output for this asset right now.";
+}

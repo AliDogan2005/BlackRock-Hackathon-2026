@@ -1,26 +1,26 @@
 export default function WhatIsNexusSection() {
   const pillars = [
     {
-      title: "Fractional RWA Tokenization",
-      subtitle: "Physical assets, digitally accessible",
+      title: "Fractional Property Ownership",
+      subtitle: "The Saving Phase",
       description:
-        "Access institutional-grade real-world assets such as property and transport fleets through fractional ownership and transparent on-chain records.",
+        "Save by the square meter. Access geographical real estate tokens starting with small amounts. Build equity in high-growth regions without the need for a massive down payment.",
       accent: "bg-nexus-primary-gold",
       badge: "Human + Machine",
     },
     {
-      title: "AI-Driven Risk Analysis",
-      subtitle: "Powered by our risk engine",
+      title: "Macro & Sentiment Scoring",
+      subtitle: "The Intelligence Phase",
       description:
-        "Our intelligence layer continuously scans market signals, asset health, and macro indicators to deliver adaptive risk scoring and portfolio guidance.",
+        "Institutional-grade risk management. Our AI engine combines global macro regimes with local municipal news to provide real-time buy/sell signals and risk scores.",
       accent: "bg-nexus-secondary-growth",
       badge: "Machine Intelligence",
     },
     {
-      title: "Instant Liquidity",
-      subtitle: "Move capital without friction",
+      title: "Direct Deed Conversion",
+      subtitle: "The Goal Phase",
       description:
-        "Convert portfolio positions into actionable liquidity with near real-time settlement pathways designed for modern asset ecosystems.",
+        "No credit checks, no interest rates. Once you reach your token threshold, convert your digital portfolio directly into physical homeownership through our partner network.",
       accent: "bg-nexus-primary-espresso",
       badge: "Human Decision",
     },

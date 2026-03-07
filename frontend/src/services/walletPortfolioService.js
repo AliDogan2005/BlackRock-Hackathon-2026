@@ -77,6 +77,26 @@ function buildTransactions(positions) {
     }));
 }
 
+function toDisplayType(type) {
+  const normalized = String(type || "").trim().toUpperCase();
+  if (!normalized) {
+    return "Transaction";
+  }
+
+  return normalized.charAt(0) + normalized.slice(1).toLowerCase();
+}
+
+function mapTransactionHistory(rows) {
+  const list = Array.isArray(rows) ? rows : [];
+
+  return list.slice(0, 12).map((row) => ({
+    type: toDisplayType(row?.type),
+    asset: row?.shareName || "Cash",
+    amount: Math.abs(toNumber(row?.amount, 0)),
+    date: row?.transactionDate ? String(row.transactionDate).slice(0, 10) : "-",
+  }));
+}
+
 export async function fetchWalletPortfolioData() {
   const token = getPersistedToken();
   const user = getPersistedUser();
@@ -85,9 +105,10 @@ export async function fetchWalletPortfolioData() {
     return null;
   }
 
-  const [balancePayload, portfolioPayload] = await Promise.all([
+  const [balancePayload, portfolioPayload, transactionPayload] = await Promise.all([
     requestJson("/api/wallet/balance", token),
     requestJson(`/api/users/${user.userId}/portfolio`, token).catch(() => []),
+    requestJson("/api/transactions/my-history", token).catch(() => []),
   ]);
 
   const availableCash = toNumber(balancePayload?.balance, 0);
@@ -110,6 +131,9 @@ export async function fetchWalletPortfolioData() {
   const profitLossPct = Number(clamp((avgOwnership - 6) / 2.1, -18, 24).toFixed(1));
   const valueChange = Number((totalAssetValue * (profitLossPct / 100)).toFixed(0));
 
+  const backendTransactions = mapTransactionHistory(transactionPayload);
+  const transactionsSource = backendTransactions.length ? "backend-history" : "portfolio-fallback";
+
   return {
     availableCash,
     tokenValue,
@@ -117,7 +141,8 @@ export async function fetchWalletPortfolioData() {
     profitLossPct,
     valueChange,
     allocation: buildAllocation(positions, availableCash, totalAssetValue),
-    transactions: buildTransactions(positions),
+    transactions: backendTransactions.length ? backendTransactions : buildTransactions(positions),
+    transactionsSource,
   };
 }
 

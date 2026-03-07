@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import useAssetData from "../hooks/useAssetData";
 
 const defaultAssets = [
   {
@@ -85,10 +85,63 @@ const cardVariants = {
 };
 
 export default function AssetDashboard({ onOpenDeepDive }) {
-  const { assets: dataAssets, loading, error } = useAssetData(
-    "http://localhost:8080/api/assets",
-    defaultAssets
-  );
+  const [dataAssets, setDataAssets] = useState(defaultAssets);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    let active = true;
+
+    const fetchAssets = async () => {
+      try {
+        setLoading(true);
+        setError("");
+
+        const response = await fetch("http://localhost:8080/api/shares");
+        if (!response.ok) {
+          throw new Error(`Request failed (${response.status})`);
+        }
+
+        const payload = await response.json();
+        const shares = Array.isArray(payload) ? payload : [];
+
+        const mapped = shares.slice(0, 4).map((share, index) => {
+          const totalTokens = Number(share?.totalTokens ?? 1);
+          const availableTokens = Number(share?.availableTokens ?? totalTokens);
+          const utilization = totalTokens > 0 ? (totalTokens - availableTokens) / totalTokens : 0;
+          const riskScore = Math.max(20, Math.min(95, Math.round(35 + utilization * 45)));
+          const direction = index % 3 === 0 ? -1 : 1;
+          const roi = Number((direction * (1.1 + utilization * 4.2)).toFixed(1));
+
+          return {
+            name: String(share?.name || `Asset ${index + 1}`),
+            region: String(share?.name || `Asset ${index + 1}`),
+            riskScore,
+            roi,
+          };
+        });
+
+        if (active) {
+          setDataAssets(mapped.length ? mapped : defaultAssets);
+        }
+      } catch (requestError) {
+        if (active) {
+          setDataAssets(defaultAssets);
+          setError(requestError instanceof Error ? requestError.message : "Unable to load live assets");
+        }
+      } finally {
+        if (active) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchAssets();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const skeletonCards = Array.from({ length: 4 }, (_, idx) => idx);
 

@@ -50,7 +50,6 @@ public class UserService {
         if (updatedUser.getLastName() != null) {
             user.setLastName(updatedUser.getLastName());
         }
-
         User savedUser = userRepository.save(user);
         log.info("User updated successfully with id: {}", userId);
 

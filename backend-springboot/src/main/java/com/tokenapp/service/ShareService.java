@@ -22,7 +22,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -43,6 +48,8 @@ public class ShareService {
 
     @Autowired
     private TransactionService transactionService;
+
+    private static final DateTimeFormatter HISTORY_DATE_FORMAT = DateTimeFormatter.ISO_LOCAL_DATE;
 
     @Transactional
     public ShareResponse createShare(CreateShareRequest createShareRequest) {
@@ -79,6 +86,13 @@ public class ShareService {
         Share share = shareRepository.findById(shareId)
                 .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
         return convertToShareResponse(share);
+    }
+
+    public List<AssetHistoryPointResponse> getHistoricalTokenData(String regionId) {
+        Share share = resolveShareForHistory(regionId)
+                .orElseThrow(() -> new ResourceNotFoundException("No active share found for region: " + regionId));
+
+        return buildHistorySeries(share);
     }
 
     @Transactional
@@ -260,15 +274,17 @@ public class ShareService {
         Share share = shareRepository.findById(shareId)
                 .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
 
-        // Check if share is already in favorites by comparing IDs instead of using contains()
-        boolean alreadyFavorited = user.getFavoriteShares().stream()
-                .anyMatch(s -> s.getId().equals(shareId));
-
-        if (alreadyFavorited) {
-            throw new BadRequestException("Share is already in favorites");
+        if (user.getFavoriteShares() == null) {
+            user.setFavoriteShares(new java.util.HashSet<>());
         }
 
-        user.getFavoriteShares().add(share);
+        // Idempotent add: if already favorited, do not fail.
+        boolean added = user.getFavoriteShares().add(share);
+        if (!added) {
+            log.info("Share {} is already in favorites for user {}", shareId, userId);
+            return;
+        }
+
         userRepository.save(user);
         log.info("Share {} added to favorites for user {}", shareId, userId);
     }
@@ -283,24 +299,35 @@ public class ShareService {
         Share share = shareRepository.findById(shareId)
                 .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
 
+        if (user.getFavoriteShares() == null) {
+            log.info("Favorites list is empty for user {}, nothing to remove", userId);
+            return;
+        }
+
         // Check if share is in favorites by comparing IDs instead of using contains()
         boolean found = user.getFavoriteShares().removeIf(s -> s.getId().equals(shareId));
 
         if (!found) {
-            throw new BadRequestException("Share is not in favorites");
+            log.info("Share {} was not in favorites for user {}", shareId, userId);
+            return;
         }
 
         userRepository.save(user);
         log.info("Share {} removed from favorites for user {}", shareId, userId);
     }
 
+    @Transactional(readOnly = true)
     public List<ShareResponse> getUserFavoriteShares(Long userId) {
         log.info("Fetching favorite shares for user {}", userId);
 
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
 
-        return user.getFavoriteShares().stream()
+        java.util.Set<Share> favorites = user.getFavoriteShares() == null
+            ? java.util.Collections.emptySet()
+            : user.getFavoriteShares();
+
+        return favorites.stream()
                 .map(this::convertToShareResponse)
                 .collect(Collectors.toList());
     }

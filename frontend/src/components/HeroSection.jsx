@@ -100,11 +100,11 @@ export default function HeroSection({ onExploreAssets }) {
         <motion.div variants={heroItem} className="relative flex flex-col items-start md:items-end md:self-center md:text-right">
           <div className="w-full max-w-2xl rounded-3xl border border-nexus-primary-straw-yellow/22 bg-white/10 p-6 shadow-2xl shadow-black/35 md:ml-auto md:max-w-xl lg:max-w-2xl lg:p-8">
             <h1 className="text-4xl font-black leading-tight text-nexus-primary-beige sm:text-5xl lg:text-[3.3rem] [font-family:'Sora','Manrope','Segoe_UI',sans-serif]">
-              The Future of Wealth: Physical Assets, Digital Intelligence.
+              The Future of Homeownership: Geometric Saving, Physical Reality.
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-nexus-primary-beige/82 sm:text-lg">
-              Invest with precision across modern portfolios, where tangible value meets machine intelligence, robust risk oversight, and institutional discipline.
+              Invest in geographical real estate tokens with Human + Machine AI-driven precision. Build your fractional portfolio to unlock your physical home with zero credit barriers.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 md:justify-end">
