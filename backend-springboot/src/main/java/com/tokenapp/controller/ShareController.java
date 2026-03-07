@@ -90,7 +90,37 @@ public class ShareController {
         return ResponseEntity.ok(response);
     }
 
-    // Helper method to get current user ID from JWT token
+    @PostMapping("/{shareId}/favorite")
+    public ResponseEntity<Map<String, String>> addShareToFavorites(@PathVariable Long shareId) {
+        log.info("Add share {} to favorites", shareId);
+        Long userId = getCurrentUserId();
+        shareService.addFavorite(userId, shareId);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Share added to favorites successfully");
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{shareId}/favorite")
+    public ResponseEntity<Map<String, String>> removeShareFromFavorites(@PathVariable Long shareId) {
+        log.info("Remove share {} from favorites", shareId);
+        Long userId = getCurrentUserId();
+        shareService.removeFavorite(userId, shareId);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Share removed from favorites successfully");
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/user/favorites")
+    public ResponseEntity<List<ShareResponse>> getUserFavoriteShares() {
+        log.info("Get user favorite shares");
+        Long userId = getCurrentUserId();
+        List<ShareResponse> favoriteShares = shareService.getUserFavoriteShares(userId);
+        return ResponseEntity.ok(favoriteShares);
+    }
+
+    // ...existing code...
     private Long getCurrentUserId() {
         String token = getJwtFromRequest();
 
