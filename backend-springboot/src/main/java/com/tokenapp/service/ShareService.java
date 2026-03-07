@@ -94,13 +94,6 @@ public class ShareService {
         return convertToShareResponse(share);
     }
 
-    public List<AssetHistoryPointResponse> getHistoricalTokenData(String regionId) {
-        Share share = resolveShareForHistory(regionId)
-                .orElseThrow(() -> new ResourceNotFoundException("No active share found for region: " + regionId));
-
-        return buildHistorySeries(share);
-    }
-
     @Transactional
     public UserTokenResponse buyTokens(Long userId, BuyTokenRequest buyTokenRequest) {
         log.info("User {} attempting to buy {} tokens of share {}", userId, buyTokenRequest.getTokenAmount(), buyTokenRequest.getShareId());
@@ -430,20 +423,20 @@ public class ShareService {
             throw new BadRequestException("User does not hold any tokens for this share");
         }
 
-        // Calculate total buy value from transactions
-        BigDecimal totalBuyValue = transactionRepository.calculateTotalBuyValueForShare(userId, shareId);
+        // Cost basis for CURRENT holdings (not full historical buys)
+        BigDecimal currentCostBasis = calculateCurrentHoldingCostBasis(userId, shareId, userToken.getTokenAmount());
 
         // Current value of holdings
         BigDecimal currentTotalValue = share.getCurrentValue()
                 .multiply(BigDecimal.valueOf(userToken.getTokenAmount()));
 
         // Calculate profit/loss
-        BigDecimal profitLoss = currentTotalValue.subtract(totalBuyValue);
+        BigDecimal profitLoss = currentTotalValue.subtract(currentCostBasis);
 
         // Calculate percentage
         Double profitLossPercentage = 0.0;
-        if (totalBuyValue.compareTo(BigDecimal.ZERO) > 0) {
-            profitLossPercentage = (profitLoss.doubleValue() / totalBuyValue.doubleValue()) * 100;
+        if (currentCostBasis.compareTo(BigDecimal.ZERO) > 0) {
+            profitLossPercentage = (profitLoss.doubleValue() / currentCostBasis.doubleValue()) * 100;
         }
 
         log.info("Profit/Loss for share {}: {} ({}%)", shareId, profitLoss, profitLossPercentage);
@@ -474,31 +467,28 @@ public class ShareService {
                     .build();
         }
 
-        BigDecimal totalBuyValue = BigDecimal.ZERO;
+        BigDecimal totalCostBasis = BigDecimal.ZERO;
         BigDecimal totalCurrentValue = BigDecimal.ZERO;
-        Long totalTokensOwned = 0L;
         java.util.List<ProfitLossResponse> profitLossByShare = new java.util.ArrayList<>();
 
         for (UserToken userToken : userTokens) {
             Share share = userToken.getShare();
             Long tokenAmount = userToken.getTokenAmount();
 
-            // Calculate buy value for this share
-            BigDecimal shareBuyValue = transactionRepository.calculateTotalBuyValueForShare(userId, share.getId());
-            totalBuyValue = totalBuyValue.add(shareBuyValue);
+            // Cost basis for CURRENT holdings of this share
+            BigDecimal shareCostBasis = calculateCurrentHoldingCostBasis(userId, share.getId(), tokenAmount);
+            totalCostBasis = totalCostBasis.add(shareCostBasis);
 
             // Calculate current value
             BigDecimal shareCurrentValue = share.getCurrentValue()
                     .multiply(BigDecimal.valueOf(tokenAmount));
             totalCurrentValue = totalCurrentValue.add(shareCurrentValue);
 
-            totalTokensOwned += tokenAmount;
-
             // Build profit/loss for this share
-            BigDecimal shareProfitLoss = shareCurrentValue.subtract(shareBuyValue);
+            BigDecimal shareProfitLoss = shareCurrentValue.subtract(shareCostBasis);
             Double shareProfitLossPercentage = 0.0;
-            if (shareBuyValue.compareTo(BigDecimal.ZERO) > 0) {
-                shareProfitLossPercentage = (shareProfitLoss.doubleValue() / shareBuyValue.doubleValue()) * 100;
+            if (shareCostBasis.compareTo(BigDecimal.ZERO) > 0) {
+                shareProfitLossPercentage = (shareProfitLoss.doubleValue() / shareCostBasis.doubleValue()) * 100;
             }
 
             profitLossByShare.add(ProfitLossResponse.builder()
@@ -510,10 +500,10 @@ public class ShareService {
         }
 
         // Calculate total profit/loss
-        BigDecimal totalProfitLoss = totalCurrentValue.subtract(totalBuyValue);
+        BigDecimal totalProfitLoss = totalCurrentValue.subtract(totalCostBasis);
         Double totalProfitLossPercentage = 0.0;
-        if (totalBuyValue.compareTo(BigDecimal.ZERO) > 0) {
-            totalProfitLossPercentage = (totalProfitLoss.doubleValue() / totalBuyValue.doubleValue()) * 100;
+        if (totalCostBasis.compareTo(BigDecimal.ZERO) > 0) {
+            totalProfitLossPercentage = (totalProfitLoss.doubleValue() / totalCostBasis.doubleValue()) * 100;
         }
 
         log.info("Portfolio profit/loss for user {}: {} ({}%)", userId, totalProfitLoss, totalProfitLossPercentage);
@@ -523,6 +513,70 @@ public class ShareService {
                 .totalProfitLossPercentage(totalProfitLossPercentage)
                 .profitLossByShare(profitLossByShare)
                 .build();
+    }
+
+    private BigDecimal calculateCurrentHoldingCostBasis(Long userId, Long shareId, Long currentTokenAmount) {
+        if (currentTokenAmount == null || currentTokenAmount <= 0) {
+            return BigDecimal.ZERO;
+        }
+
+        List<Transaction> transactions = transactionRepository.findByUserIdAndShareIdOrderByTransactionDateAsc(userId, shareId);
+        if (transactions == null || transactions.isEmpty()) {
+            return BigDecimal.ZERO;
+        }
+
+        long runningTokenBalance = 0L;
+        BigDecimal runningCostBasis = BigDecimal.ZERO;
+
+        for (Transaction tx : transactions) {
+            if (tx == null || tx.getType() == null) {
+                continue;
+            }
+
+            long qty = tx.getTokenAmount() == null ? 0L : tx.getTokenAmount();
+            BigDecimal amount = tx.getAmount() == null ? BigDecimal.ZERO : tx.getAmount();
+
+            if (qty <= 0) {
+                continue;
+            }
+
+            if (tx.getType() == Transaction.TransactionType.BUY) {
+                runningTokenBalance += qty;
+                runningCostBasis = runningCostBasis.add(amount);
+                continue;
+            }
+
+            if (tx.getType() == Transaction.TransactionType.SELL) {
+                if (runningTokenBalance <= 0) {
+                    continue;
+                }
+
+                long qtyToRemove = Math.min(qty, runningTokenBalance);
+                BigDecimal avgUnitCost = runningCostBasis.divide(
+                        BigDecimal.valueOf(runningTokenBalance),
+                        10,
+                        RoundingMode.HALF_UP
+                );
+                BigDecimal removedCost = avgUnitCost.multiply(BigDecimal.valueOf(qtyToRemove));
+
+                runningCostBasis = runningCostBasis.subtract(removedCost);
+                runningTokenBalance -= qtyToRemove;
+            }
+        }
+
+        if (runningTokenBalance <= 0 || runningCostBasis.compareTo(BigDecimal.ZERO) <= 0) {
+            return BigDecimal.ZERO;
+        }
+
+        BigDecimal avgRemainingUnitCost = runningCostBasis.divide(
+                BigDecimal.valueOf(runningTokenBalance),
+                10,
+                RoundingMode.HALF_UP
+        );
+
+        return avgRemainingUnitCost
+                .multiply(BigDecimal.valueOf(currentTokenAmount))
+                .setScale(2, RoundingMode.HALF_UP);
     }
 }
 

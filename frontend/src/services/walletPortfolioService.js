@@ -97,6 +97,97 @@ function mapTransactionHistory(rows) {
   }));
 }
 
+function normalizeShareKey(value) {
+  return String(value || "").trim().toUpperCase();
+}
+
+function deriveProfitLossFromTransactions(positions, transactionRows) {
+  const holdings = Array.isArray(positions) ? positions : [];
+  const rows = Array.isArray(transactionRows) ? transactionRows.slice() : [];
+
+  if (!holdings.length || !rows.length) {
+    return null;
+  }
+
+  const sortedRows = rows.sort((a, b) => {
+    const ta = new Date(a?.transactionDate || 0).getTime();
+    const tb = new Date(b?.transactionDate || 0).getTime();
+    return ta - tb;
+  });
+
+  const byShare = new Map();
+
+  sortedRows.forEach((row) => {
+    const shareKey = normalizeShareKey(row?.shareName);
+    const type = String(row?.type || "").toUpperCase();
+    const qty = Math.max(0, toNumber(row?.tokenAmount, 0));
+    const amount = Math.max(0, toNumber(row?.amount, 0));
+
+    if (!shareKey || qty <= 0 || (type !== "BUY" && type !== "SELL")) {
+      return;
+    }
+
+    const state = byShare.get(shareKey) || { qty: 0, cost: 0 };
+
+    if (type === "BUY") {
+      state.qty += qty;
+      state.cost += amount;
+      byShare.set(shareKey, state);
+      return;
+    }
+
+    if (state.qty <= 0 || state.cost <= 0) {
+      byShare.set(shareKey, state);
+      return;
+    }
+
+    const qtyToRemove = Math.min(qty, state.qty);
+    const avgCost = state.cost / state.qty;
+    state.cost = Math.max(0, state.cost - avgCost * qtyToRemove);
+    state.qty = Math.max(0, state.qty - qtyToRemove);
+    byShare.set(shareKey, state);
+  });
+
+  let currentMarketValue = 0;
+  let currentCostBasis = 0;
+
+  holdings.forEach((position) => {
+    const shareKey = normalizeShareKey(position?.asset);
+    const heldQty = Math.max(0, toNumber(position?.tokenAmount, 0));
+    const unitPrice = Math.max(0, toNumber(position?.unitPrice, 0));
+
+    if (!shareKey || heldQty <= 0) {
+      return;
+    }
+
+    currentMarketValue += heldQty * unitPrice;
+
+    const state = byShare.get(shareKey);
+    if (!state || state.qty <= 0 || state.cost <= 0) {
+      return;
+    }
+
+    const avgRemainingCost = state.cost / state.qty;
+    currentCostBasis += avgRemainingCost * heldQty;
+  });
+
+  if (currentCostBasis <= 0) {
+    return null;
+  }
+
+  const valueChange = currentMarketValue - currentCostBasis;
+  const profitLossPct = (valueChange / currentCostBasis) * 100;
+
+  if (!Number.isFinite(valueChange) || !Number.isFinite(profitLossPct)) {
+    return null;
+  }
+
+  return {
+    valueChange: Number(valueChange.toFixed(2)),
+    profitLossPct: Number(profitLossPct.toFixed(2)),
+  };
+}
+
 export async function fetchWalletPortfolioData() {
   const token = getPersistedToken();
   const user = getPersistedUser();
@@ -105,10 +196,11 @@ export async function fetchWalletPortfolioData() {
     return null;
   }
 
-  const [balancePayload, portfolioPayload, transactionPayload] = await Promise.all([
+  const [balancePayload, portfolioPayload, transactionPayload, profitLossPayload] = await Promise.all([
     requestJson("/api/wallet/balance", token),
     requestJson(`/api/users/${user.userId}/portfolio`, token).catch(() => []),
     requestJson("/api/transactions/my-history", token).catch(() => []),
+    requestJson("/api/shares/profit-loss/portfolio", token).catch(() => null),
   ]);
 
   const availableCash = toNumber(balancePayload?.balance, 0);
@@ -116,7 +208,9 @@ export async function fetchWalletPortfolioData() {
   const positions = Array.isArray(portfolioPayload)
     ? portfolioPayload.map((row) => ({
         asset: row.shareName || "Unknown Asset",
-        value: toNumber(row.currentValue, 0),
+        tokenAmount: toNumber(row.tokenAmount, 0),
+        unitPrice: toNumber(row.currentValue, 0),
+        value: toNumber(row.currentValue, 0) * toNumber(row.tokenAmount, 0),
         ownershipPercentage: toNumber(row.ownershipPercentage, 0),
         purchasedAt: row.purchasedAt,
       }))
@@ -128,8 +222,26 @@ export async function fetchWalletPortfolioData() {
   const avgOwnership = positions.length
     ? positions.reduce((sum, row) => sum + row.ownershipPercentage, 0) / positions.length
     : 8;
-  const profitLossPct = Number(clamp((avgOwnership - 6) / 2.1, -18, 24).toFixed(1));
-  const valueChange = Number((totalAssetValue * (profitLossPct / 100)).toFixed(0));
+  const fallbackProfitLossPct = Number(clamp((avgOwnership - 6) / 2.1, -18, 24).toFixed(1));
+  const fallbackValueChange = Number((totalAssetValue * (fallbackProfitLossPct / 100)).toFixed(2));
+
+  const backendProfitLossPct = toNumber(profitLossPayload?.totalProfitLossPercentage, Number.NaN);
+  const backendValueChange = toNumber(profitLossPayload?.totalProfitLoss, Number.NaN);
+  const hasBackendProfitLoss = Number.isFinite(backendProfitLossPct) && Number.isFinite(backendValueChange);
+  const txDerivedProfitLoss = deriveProfitLossFromTransactions(positions, transactionPayload);
+  const hasTxDerivedProfitLoss = Number.isFinite(txDerivedProfitLoss?.profitLossPct)
+    && Number.isFinite(txDerivedProfitLoss?.valueChange);
+
+  const profitLossPct = hasBackendProfitLoss
+    ? Number(backendProfitLossPct.toFixed(2))
+    : hasTxDerivedProfitLoss
+      ? Number(txDerivedProfitLoss.profitLossPct.toFixed(2))
+      : fallbackProfitLossPct;
+  const valueChange = hasBackendProfitLoss
+    ? Number(backendValueChange.toFixed(2))
+    : hasTxDerivedProfitLoss
+      ? Number(txDerivedProfitLoss.valueChange.toFixed(2))
+      : fallbackValueChange;
 
   const backendTransactions = mapTransactionHistory(transactionPayload);
   const transactionsSource = backendTransactions.length ? "backend-history" : "portfolio-fallback";
@@ -143,6 +255,11 @@ export async function fetchWalletPortfolioData() {
     allocation: buildAllocation(positions, availableCash, totalAssetValue),
     transactions: backendTransactions.length ? backendTransactions : buildTransactions(positions),
     transactionsSource,
+    profitLossSource: hasBackendProfitLoss
+      ? "backend-profit-loss"
+      : hasTxDerivedProfitLoss
+        ? "transactions-derived"
+        : "derived-fallback",
   };
 }
 

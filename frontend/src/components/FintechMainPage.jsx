@@ -1399,8 +1399,8 @@ function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = []
   const availableCash = walletData?.availableCash ?? 185240;
   const tokenValue = walletData?.tokenValue ?? 412860;
   const totalAssetValue = walletData?.totalAssetValue ?? availableCash + tokenValue;
-  const profitLossPct = walletData?.profitLossPct ?? 12.5;
-  const valueChange = walletData?.valueChange ?? 66980;
+  const profitLossPct = Number(walletData?.profitLossPct ?? 12.5);
+  const valueChange = Number(walletData?.valueChange ?? 66980);
   const allocation = walletData?.allocation?.length ? walletData.allocation : WALLET_ALLOCATION;
   const hasBackendHistory = walletData?.transactionsSource === "backend-history";
   const baseTransactions = walletData?.transactions?.length
@@ -1428,6 +1428,7 @@ function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = []
     return dedupedTransactions.filter((row) => String(row?.type || "").toUpperCase() === transactionFilter);
   }, [dedupedTransactions, transactionFilter]);
   const profit = profitLossPct >= 0;
+  const profitAmountAbsolute = Math.abs(valueChange);
 
   return (
     <motion.div
@@ -1482,11 +1483,10 @@ function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = []
           <div className="rounded-2xl border border-[#1A120B]/10 bg-white/70 p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.11em] text-[#1A120B]/64">Total Profit/Loss</p>
             <p className={`mt-2 text-3xl font-black ${profit ? "text-emerald-700" : "text-rose-700"}`}>
-              <CountUpValue value={profitLossPct} decimals={1} prefix={profit ? "+" : ""} />%
+              <CountUpValue value={profitLossPct} decimals={2} prefix={profit ? "+" : ""} />%
             </p>
             <p className={`mt-2 text-sm font-semibold ${profit ? "text-emerald-700" : "text-rose-700"}`}>
-              {profit ? "+" : ""}$
-              <CountUpValue value={valueChange} />
+              <CountUpValue value={profitAmountAbsolute} decimals={2} prefix={profit ? "+$" : "-$"} />
             </p>
           </div>
         </section>

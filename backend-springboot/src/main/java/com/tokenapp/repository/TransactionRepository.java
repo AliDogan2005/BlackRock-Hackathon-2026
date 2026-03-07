@@ -14,6 +14,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findByUserIdAndTypeOrderByTransactionDateDesc(Long userId, Transaction.TransactionType type);
 
     List<Transaction> findByUserIdAndShareIdOrderByTransactionDateDesc(Long userId, Long shareId);
+    List<Transaction> findByUserIdAndShareIdOrderByTransactionDateAsc(Long userId, Long shareId);
 
     @Query("SELECT COALESCE(SUM(t.amount), 0) FROM Transaction t WHERE t.user.id = :userId AND t.share.id = :shareId AND t.type = 'BUY'")
     BigDecimal calculateTotalBuyValueForShare(@Param("userId") Long userId, @Param("shareId") Long shareId);

@@ -116,12 +116,6 @@ export default function HeroSection({ onExploreAssets }) {
                 Explore Assets
               </button>
 
-              <button
-                type="button"
-                className="rounded-full border border-nexus-primary-beige/35 px-7 py-3 text-sm font-semibold text-nexus-primary-beige transition duration-300 ease-premium hover:border-nexus-primary-gold/65 hover:text-nexus-primary-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nexus-primary-gold focus-visible:ring-offset-2 focus-visible:ring-offset-nexus-primary-espresso"
-              >
-                Learn More
-              </button>
             </div>
           </div>
         </motion.div>
