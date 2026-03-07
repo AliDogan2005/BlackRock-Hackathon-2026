@@ -5,14 +5,17 @@ import com.tokenapp.dto.CreateShareRequest;
 import com.tokenapp.dto.ShareResponse;
 import com.tokenapp.dto.UserTokenResponse;
 import com.tokenapp.entity.Share;
+import com.tokenapp.entity.Transaction;
 import com.tokenapp.entity.User;
 import com.tokenapp.entity.UserToken;
+import com.tokenapp.entity.UserWallet;
 import com.tokenapp.exception.BadRequestException;
 import com.tokenapp.exception.DuplicateResourceException;
 import com.tokenapp.exception.ResourceNotFoundException;
 import com.tokenapp.repository.ShareRepository;
 import com.tokenapp.repository.UserRepository;
 import com.tokenapp.repository.UserTokenRepository;
+import com.tokenapp.repository.UserWalletRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +37,12 @@ public class ShareService {
 
     @Autowired
     private UserTokenRepository userTokenRepository;
+
+    @Autowired
+    private UserWalletRepository userWalletRepository;
+
+    @Autowired
+    private TransactionService transactionService;
 
     @Transactional
     public ShareResponse createShare(CreateShareRequest createShareRequest) {
@@ -90,6 +99,24 @@ public class ShareService {
             throw new BadRequestException("Token amount must be greater than 0");
         }
 
+        // Calculate required amount
+        BigDecimal requiredAmount = share.getCurrentValue()
+                .multiply(BigDecimal.valueOf(buyTokenRequest.getTokenAmount()));
+
+        // Get user wallet and check balance
+        UserWallet wallet = userWalletRepository.findByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Wallet not found for user id: " + userId));
+
+        if (wallet.getBalance().compareTo(requiredAmount) < 0) {
+            throw new BadRequestException("Insufficient balance in wallet. Required: $" + requiredAmount +
+                    ", Available: $" + wallet.getBalance());
+        }
+
+        // Deduct amount from wallet
+        wallet.setBalance(wallet.getBalance().subtract(requiredAmount));
+        userWalletRepository.save(wallet);
+        log.info("Deducted ${} from user {} wallet", requiredAmount, userId);
+
         // Check if user already owns tokens of this share
         UserToken existingUserToken = userTokenRepository.findByUserIdAndShareId(userId, buyTokenRequest.getShareId()).orElse(null);
 
@@ -114,7 +141,17 @@ public class ShareService {
         userToken.setOwnershipPercentage(ownershipPercentage);
         userTokenRepository.save(userToken);
 
-        log.info("User {} successfully bought {} tokens of share {}", userId, buyTokenRequest.getTokenAmount(), buyTokenRequest.getShareId());
+        // Record transaction
+        transactionService.recordTokenTransaction(
+                userId,
+                Transaction.TransactionType.BUY,
+                share.getId(),
+                share.getName(),
+                buyTokenRequest.getTokenAmount(),
+                requiredAmount
+        );
+
+        log.info("User {} successfully bought {} tokens of share {} for ${}", userId, buyTokenRequest.getTokenAmount(), buyTokenRequest.getShareId(), requiredAmount);
 
         return convertToUserTokenResponse(userToken, share);
     }
@@ -150,6 +187,21 @@ public class ShareService {
             throw new BadRequestException("Insufficient tokens to sell");
         }
 
+        // Calculate sale amount
+        Share share = userToken.getShare();
+        BigDecimal saleAmount = share.getCurrentValue()
+                .multiply(BigDecimal.valueOf(tokenAmountToSell));
+
+        // Record transaction BEFORE modifying token amount
+        transactionService.recordTokenTransaction(
+                userId,
+                Transaction.TransactionType.SELL,
+                share.getId(),
+                share.getName(),
+                tokenAmountToSell,
+                saleAmount
+        );
+
         // Reduce token amount
         userToken.setTokenAmount(userToken.getTokenAmount() - tokenAmountToSell);
 
@@ -162,8 +214,9 @@ public class ShareService {
             double ownershipPercentage = (userToken.getTokenAmount().doubleValue() / userToken.getShare().getTotalTokens()) * 100;
             userToken.setOwnershipPercentage(ownershipPercentage);
             userTokenRepository.save(userToken);
-            log.info("User {} successfully sold {} tokens", userId, tokenAmountToSell);
         }
+
+        log.info("User {} successfully sold {} tokens for ${}", userId, tokenAmountToSell, saleAmount);
     }
 
     @Transactional
