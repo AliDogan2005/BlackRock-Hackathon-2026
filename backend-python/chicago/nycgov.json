@@ -1,0 +1,3477 @@
+[
+  {
+    "id": "07-26-23",
+    "source_url": "https://www.nyc.gov/assets/planning/rss/press_releases_rss.xml",
+    "title": "What They’re Saying: Experts and Impacted Communities Support City of Yes for Carbon Neutrality Initiative",
+    "description": "NEW YORK – The City Planning Commission today held a public hearing on City of Yes for Carbon Neutrality, the first of Mayor Adams’ three “City of Yes” zoning proposals. City of Yes for Carbon Neutrality is a citywide zoning amendment that would modernize the city’s Zoning Resolution to facilitate climate action, clean energy, and resiliency by removing barriers to greener energy, buildings, transportation, and water and waste systems.",
+    "link": "https://www.nyc.gov/site/planning/about/press-releases/pr-20230726.page",
+    "published_at": "Thu, 27 Jul 2023 08:34:55 EST",
+    "fetched_at": "2026-03-06T21:31:47.211750+00:00",
+    "topic": "infrastructure",
+    "risk_level": "medium",
+    "potential_level": "high",
+    "segment": "growth_opportunity",
+    "commentary_en": "The City of Yes for Carbon Neutrality initiative aims to modernize zoning regulations, which can significantly impact real estate development and infrastructure projects in New York City. By facilitating cleaner energy and more sustainable building practices, this initiative could lead to increased investment in green infrastructure and eco-friendly developments.",
+    "reason_en": "This news item is relevant because it addresses a citywide zoning amendment that will remove barriers to sustainable development. Such changes can lead to increased investment in real estate projects that prioritize climate resilience and energy efficiency, potentially reshaping the local market and attracting new investments in green technologies and infrastructure.",
+    "expected_growth_areas": [],
+    "expected_growth_neighborhoods": [],
+    "signals": [
+      "Zoning amendments facilitating sustainable development",
+      "Support from experts and communities for climate action",
+      "Potential for increased investment in green infrastructure"
+    ],
+    "analysis_status": "completed",
+    "analyzed_at": "2026-03-06T22:18:34.979365+00:00",
+    "state": "New York",
+    "city": "New York City",
+    "geography_type_area": "borough",
+    "geography_type_neighborhood": "nta",
+    "area_catalog": [
+      "Bronx",
+      "Brooklyn",
+      "Manhattan",
+      "Queens",
+      "Staten Island"
+    ],
+    "neighborhood_catalog": [
+      "Allerton",
+      "Alley Pond Park",
+      "Annadale-Huguenot-Prince's Bay-Woodrow",
+      "Arden Heights-Rossville",
+      "Astoria (Central)",
+      "Astoria (East)-Woodside (North)",
+      "Astoria (North)-Ditmars-Steinway",
+      "Astoria Park",
+      "Auburndale",
+      "Baisley Park",
+      "Barren Island-Floyd Bennett Field",
+      "Bath Beach",
+      "Bay Ridge",
+      "Bay Terrace-Clearview",
+      "Bayside",
+      "Bedford Park",
+      "Bedford-Stuyvesant (East)",
+      "Bedford-Stuyvesant (West)",
+      "Bellerose",
+      "Belmont",
+      "Bensonhurst",
+      "Borough Park",
+      "Breezy Point-Belle Harbor-Rockaway Park-Broad Channel",
+      "Brighton Beach",
+      "Bronx Park",
+      "Brooklyn Heights",
+      "Brooklyn Navy Yard",
+      "Brownsville",
+      "Bushwick (East)",
+      "Bushwick (West)",
+      "Calvary & Mount Zion Cemeteries",
+      "Calvert Vaux Park",
+      "Cambria Heights",
+      "Canarsie",
+      "Canarsie Park & Pier",
+      "Carroll Gardens-Cobble Hill-Gowanus-Red Hook",
+      "Castle Hill-Unionport",
+      "Central Park",
+      "Chelsea-Hudson Yards",
+      "Chinatown-Two Bridges",
+      "Claremont Park",
+      "Claremont Village-Claremont (East)",
+      "Clinton Hill",
+      "Co-op City",
+      "College Point",
+      "Concourse-Concourse Village",
+      "Coney Island-Sea Gate",
+      "Corona",
+      "Crotona Park",
+      "Crotona Park East",
+      "Crown Heights (North)",
+      "Crown Heights (South)",
+      "Cunningham Park",
+      "Cypress Hills",
+      "Douglaston-Little Neck",
+      "Downtown Brooklyn-DUMBO-Boerum Hill",
+      "Dyker Beach Park",
+      "Dyker Heights",
+      "East Elmhurst",
+      "East Flatbush-Erasmus",
+      "East Flatbush-Farragut",
+      "East Flatbush-Remsen Village",
+      "East Flatbush-Rugby",
+      "East Flushing",
+      "East Harlem (North)",
+      "East Harlem (South)",
+      "East Midtown-Turtle Bay",
+      "East New York (North)",
+      "East New York-City Line",
+      "East New York-New Lots",
+      "East Village",
+      "East Williamsburg",
+      "Eastchester-Edenwald-Baychester",
+      "Elmhurst",
+      "Far Rockaway-Bayswater",
+      "Ferry Point Park-St. Raymond Cemetery",
+      "Financial District-Battery Park City",
+      "Flatbush",
+      "Flatbush (West)-Ditmas Park-Parkville",
+      "Flatlands",
+      "Flushing Meadows-Corona Park",
+      "Flushing-Willets Point",
+      "Fordham Heights",
+      "Forest Hills",
+      "Forest Park",
+      "Fort Greene",
+      "Fort Hamilton",
+      "Fort Totten",
+      "Fort Wadsworth",
+      "Fresh Meadows-Utopia",
+      "Freshkills Park (North)",
+      "Freshkills Park (South)",
+      "Glen Oaks-Floral Park-New Hyde Park",
+      "Glendale",
+      "Gramercy",
+      "Grasmere-Arrochar-South Beach-Dongan Hills",
+      "Gravesend (East)-Homecrest",
+      "Gravesend (South)",
+      "Gravesend (West)",
+      "Great Kills Park",
+      "Great Kills-Eltingville",
+      "Green-Wood Cemetery",
+      "Greenpoint",
+      "Greenwich Village",
+      "Hamilton Heights-Sugar Hill",
+      "Harlem (North)",
+      "Harlem (South)",
+      "Hart Island",
+      "Hell's Kitchen",
+      "Highbridge",
+      "Highbridge Park",
+      "Highland Park-Cypress Hills Cemeteries (North)",
+      "Highland Park-Cypress Hills Cemeteries (South)",
+      "Hoffman & Swinburne Islands",
+      "Hollis",
+      "Holy Cross Cemetery",
+      "Howard Beach-Lindenwood",
+      "Hunts Point",
+      "Hutchinson Metro Center",
+      "Inwood",
+      "Inwood Hill Park",
+      "Jackson Heights",
+      "Jacob Riis Park-Fort Tilden-Breezy Point Tip",
+      "Jamaica",
+      "Jamaica Bay (East)",
+      "Jamaica Bay (West)",
+      "Jamaica Estates-Holliswood",
+      "Jamaica Hills-Briarwood",
+      "John F. Kennedy International Airport",
+      "Kensington",
+      "Kew Gardens",
+      "Kew Gardens Hills",
+      "Kingsbridge Heights-Van Cortlandt Village",
+      "Kingsbridge-Marble Hill",
+      "Kissena Park",
+      "LaGuardia Airport",
+      "Laurelton",
+      "Lincoln Terrace Park",
+      "Long Island City-Hunters Point",
+      "Longwood",
+      "Lower East Side",
+      "Madison",
+      "Manhattanville-West Harlem",
+      "Mapleton-Midwood (West)",
+      "Marine Park-Mill Basin-Bergen Beach",
+      "Marine Park-Plumb Island",
+      "Mariner's Harbor-Arlington-Graniteville",
+      "Maspeth",
+      "McGuire Fields",
+      "Melrose",
+      "Middle Village",
+      "Middle Village Cemetery",
+      "Midtown South-Flatiron-Union Square",
+      "Midtown-Times Square",
+      "Midwood",
+      "Miller Field",
+      "Montefiore Cemetery",
+      "Morningside Heights",
+      "Morris Park",
+      "Morrisania",
+      "Mott Haven-Port Morris",
+      "Mount Eden-Claremont (West)",
+      "Mount Hebron & Cedar Grove Cemeteries",
+      "Mount Hope",
+      "Mount Olivet & All Faiths Cemeteries",
+      "Murray Hill-Broadway Flushing",
+      "Murray Hill-Kips Bay",
+      "New Dorp-Midland Beach",
+      "New Springville-Willowbrook-Bulls Head-Travis",
+      "North & South Brother Islands",
+      "North Corona",
+      "Norwood",
+      "Oakland Gardens-Hollis Hills",
+      "Oakwood-Richmondtown",
+      "Ocean Hill",
+      "Old Astoria-Hallets Point",
+      "Ozone Park",
+      "Ozone Park (North)",
+      "Park Slope",
+      "Parkchester",
+      "Pelham Bay Park",
+      "Pelham Bay-Country Club-City Island",
+      "Pelham Gardens",
+      "Pelham Parkway-Van Nest",
+      "Pomonok-Electchester-Hillcrest",
+      "Port Richmond",
+      "Prospect Heights",
+      "Prospect Lefferts Gardens-Wingate",
+      "Prospect Park",
+      "Queens Village",
+      "Queensboro Hill",
+      "Queensbridge-Ravenswood-Dutch Kills",
+      "Randall's Island",
+      "Rego Park",
+      "Richmond Hill",
+      "Ridgewood",
+      "Rikers Island",
+      "Riverdale-Spuyten Duyvil",
+      "Rockaway Beach-Arverne-Edgemere",
+      "Rockaway Community Park",
+      "Rosebank-Shore Acres-Park Hill",
+      "Rosedale",
+      "Sheepshead Bay-Manhattan Beach-Gerritsen Beach",
+      "Shirley Chisholm State Park",
+      "Snug Harbor",
+      "SoHo-Little Italy-Hudson Square",
+      "Soundview Park",
+      "Soundview-Bruckner-Bronx River",
+      "Soundview-Clason Point",
+      "South Jamaica",
+      "South Ozone Park",
+      "South Richmond Hill",
+      "South Williamsburg",
+      "Spring Creek Park",
+      "Spring Creek-Starrett City",
+      "Springfield Gardens (North)-Rochdale Village",
+      "Springfield Gardens (South)-Brookville",
+      "St. Albans",
+      "St. George-New Brighton",
+      "St. John Cemetery",
+      "St. Michael's Cemetery",
+      "Stuyvesant Town-Peter Cooper Village",
+      "Sunnyside",
+      "Sunnyside Yards (North)",
+      "Sunnyside Yards (South)",
+      "Sunset Park (Central)",
+      "Sunset Park (East)-Borough Park (West)",
+      "Sunset Park (West)",
+      "The Battery-Governors Island-Ellis Island-Liberty Island",
+      "The Evergreens Cemetery",
+      "Throgs Neck-Schuylerville",
+      "Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights",
+      "Tompkinsville-Stapleton-Clifton-Fox Hills",
+      "Tottenville-Charleston",
+      "Tremont",
+      "Tribeca-Civic Center",
+      "United Nations",
+      "University Heights (North)-Fordham",
+      "University Heights (South)-Morris Heights",
+      "Upper East Side-Carnegie Hill",
+      "Upper East Side-Lenox Hill-Roosevelt Island",
+      "Upper East Side-Yorkville",
+      "Upper West Side (Central)",
+      "Upper West Side-Lincoln Square",
+      "Upper West Side-Manhattan Valley",
+      "Van Cortlandt Park",
+      "Wakefield-Woodlawn",
+      "Washington Heights (North)",
+      "Washington Heights (South)",
+      "West Farms",
+      "West New Brighton-Silver Lake-Grymes Hill",
+      "West Village",
+      "Westchester Square",
+      "Westerleigh-Castleton Corners",
+      "Whitestone-Beechhurst",
+      "Williamsbridge-Olinville",
+      "Williamsburg",
+      "Windsor Terrace-South Slope",
+      "Woodhaven",
+      "Woodlawn Cemetery",
+      "Woodside",
+      "Yankee Stadium-Macombs Dam Park"
+    ],
+    "impact_analysis": {
+      "summary_en": "The City of Yes for Carbon Neutrality initiative aims to modernize zoning regulations, which can significantly impact real estate development and infrastructure projects in New York City. By facilitating cleaner energy and more sustainable building practices, this initiative could lead to increased investment in green infrastructure and eco-friendly developments.",
+      "max_impacted": {
+        "areas": [
+          {
+            "name": "Manhattan",
+            "impact_score": 80,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "Manhattan, being a central hub for business and innovation, is expected to attract significant investment in sustainable infrastructure, enhancing its real estate market and overall urban resilience.",
+            "evidence_signals": [
+              "high demand for sustainable office spaces",
+              "investment in public transportation improvements"
+            ]
+          },
+          {
+            "name": "Brooklyn",
+            "impact_score": 75,
+            "impact_direction": "positive",
+            "confidence": 85,
+            "reason_en": "Brooklyn is likely to benefit from the modernization of zoning laws, leading to enhanced green building projects and increased housing demand in eco-friendly developments.",
+            "evidence_signals": [
+              "growing interest in sustainable living",
+              "existing initiatives for green spaces"
+            ]
+          },
+          {
+            "name": "Bronx",
+            "impact_score": 70,
+            "impact_direction": "positive",
+            "confidence": 80,
+            "reason_en": "The Bronx may see increased investment in green infrastructure and housing developments that align with carbon neutrality goals, potentially boosting local real estate and job opportunities.",
+            "evidence_signals": [
+              "support for clean energy initiatives",
+              "community engagement in climate action"
+            ]
+          },
+          {
+            "name": "Queens",
+            "impact_score": 65,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "Queens may experience a moderate boost in housing demand and infrastructure improvements as the city pushes for greener initiatives, though the impact may vary by neighborhood.",
+            "evidence_signals": [
+              "diverse community support for climate initiatives",
+              "potential for new green projects"
+            ]
+          },
+          {
+            "name": "Staten Island",
+            "impact_score": 50,
+            "impact_direction": "neutral",
+            "confidence": 70,
+            "reason_en": "Staten Island may see some benefits from the carbon neutrality initiative, but the overall impact is expected to be limited due to its more suburban nature and lower density compared to other boroughs.",
+            "evidence_signals": [
+              "less urban development pressure",
+              "limited existing infrastructure for large-scale green projects"
+            ]
+          }
+        ],
+        "neighborhoods": [
+          {
+            "name": "Midtown-Times Square",
+            "impact_score": 90,
+            "impact_direction": "positive",
+            "confidence": 95,
+            "reason_en": "Midtown-Times Square is likely to be a focal point for the initiative, leading to substantial investments in sustainability and infrastructure improvements, greatly enhancing its appeal.",
+            "evidence_signals": [
+              "central business district focus",
+              "high levels of investment interest"
+            ]
+          },
+          {
+            "name": "Downtown Brooklyn-DUMBO-Boerum Hill",
+            "impact_score": 85,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "This area is a key site for new developments and is likely to benefit significantly from the push for carbon neutrality and green building practices.",
+            "evidence_signals": [
+              "high levels of new construction",
+              "strong demand for sustainable living spaces"
+            ]
+          },
+          {
+            "name": "Midtown South-Flatiron-Union Square",
+            "impact_score": 85,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "This area is expected to see significant investment in green infrastructure and buildings, enhancing property values and attracting new residents focused on sustainability.",
+            "evidence_signals": [
+              "high demand for sustainable living",
+              "investment in urban green spaces"
+            ]
+          },
+          {
+            "name": "Brooklyn Navy Yard",
+            "impact_score": 80,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "The Navy Yard is a hub for innovation and may attract substantial investment in sustainable projects.",
+            "evidence_signals": [
+              "High potential for new green developments",
+              "Strong support for sustainability initiatives"
+            ]
+          },
+          {
+            "name": "Chelsea-Hudson Yards",
+            "impact_score": 80,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "This area is a hub for new developments and is likely to benefit significantly from the push for carbon neutrality and green building practices.",
+            "evidence_signals": [
+              "high levels of new construction",
+              "strong demand for sustainable living spaces"
+            ]
+          }
+        ]
+      },
+      "min_impacted": {
+        "areas": [
+          {
+            "name": "Staten Island",
+            "impact_score": 50,
+            "impact_direction": "neutral",
+            "confidence": 70,
+            "reason_en": "Staten Island may see some benefits from the carbon neutrality initiative, but the overall impact is expected to be limited due to its more suburban nature and lower density compared to other boroughs.",
+            "evidence_signals": [
+              "less urban development pressure",
+              "limited existing infrastructure for large-scale green projects"
+            ]
+          },
+          {
+            "name": "Queens",
+            "impact_score": 65,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "Queens may experience a moderate boost in housing demand and infrastructure improvements as the city pushes for greener initiatives, though the impact may vary by neighborhood.",
+            "evidence_signals": [
+              "diverse community support for climate initiatives",
+              "potential for new green projects"
+            ]
+          },
+          {
+            "name": "Bronx",
+            "impact_score": 70,
+            "impact_direction": "positive",
+            "confidence": 80,
+            "reason_en": "The Bronx may see increased investment in green infrastructure and housing developments that align with carbon neutrality goals, potentially boosting local real estate and job opportunities.",
+            "evidence_signals": [
+              "support for clean energy initiatives",
+              "community engagement in climate action"
+            ]
+          },
+          {
+            "name": "Brooklyn",
+            "impact_score": 75,
+            "impact_direction": "positive",
+            "confidence": 85,
+            "reason_en": "Brooklyn is likely to benefit from the modernization of zoning laws, leading to enhanced green building projects and increased housing demand in eco-friendly developments.",
+            "evidence_signals": [
+              "growing interest in sustainable living",
+              "existing initiatives for green spaces"
+            ]
+          },
+          {
+            "name": "Manhattan",
+            "impact_score": 80,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "Manhattan, being a central hub for business and innovation, is expected to attract significant investment in sustainable infrastructure, enhancing its real estate market and overall urban resilience.",
+            "evidence_signals": [
+              "high demand for sustainable office spaces",
+              "investment in public transportation improvements"
+            ]
+          }
+        ],
+        "neighborhoods": [
+          {
+            "name": "Montefiore Cemetery",
+            "impact_score": 5,
+            "impact_direction": "neutral",
+            "confidence": 20,
+            "reason_en": "The cemetery is not expected to be affected by the initiative, as it does not engage with urban development or sustainability efforts.",
+            "evidence_signals": [
+              "no urban development",
+              "limited community engagement"
+            ]
+          },
+          {
+            "name": "Mount Hebron & Cedar Grove Cemeteries",
+            "impact_score": 5,
+            "impact_direction": "neutral",
+            "confidence": 20,
+            "reason_en": "The cemeteries are not expected to be affected by the initiative, as they do not engage with urban development or sustainability efforts.",
+            "evidence_signals": [
+              "no urban development",
+              "limited community engagement"
+            ]
+          },
+          {
+            "name": "Mount Olivet & All Faiths Cemeteries",
+            "impact_score": 5,
+            "impact_direction": "neutral",
+            "confidence": 20,
+            "reason_en": "The cemeteries are not expected to be affected by the initiative, as they do not engage with urban development or sustainability efforts.",
+            "evidence_signals": [
+              "no urban development",
+              "limited community engagement"
+            ]
+          },
+          {
+            "name": "Hart Island",
+            "impact_score": 10,
+            "impact_direction": "neutral",
+            "confidence": 50,
+            "reason_en": "Hart Island is primarily a burial site and is less likely to see direct impact from the carbon neutrality initiative, leading to a neutral effect.",
+            "evidence_signals": [
+              "limited residential development",
+              "focus on climate action in urban areas"
+            ]
+          },
+          {
+            "name": "Holy Cross Cemetery",
+            "impact_score": 10,
+            "impact_direction": "neutral",
+            "confidence": 50,
+            "reason_en": "As a cemetery, Holy Cross is unlikely to experience any significant impact from the carbon neutrality initiative.",
+            "evidence_signals": [
+              "limited residential development",
+              "focus on climate action in urban areas"
+            ]
+          }
+        ]
+      },
+      "all_area_scores": [
+        {
+          "name": "Bronx",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The Bronx may see increased investment in green infrastructure and housing developments that align with carbon neutrality goals, potentially boosting local real estate and job opportunities.",
+          "evidence_signals": [
+            "support for clean energy initiatives",
+            "community engagement in climate action"
+          ]
+        },
+        {
+          "name": "Brooklyn",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "Brooklyn is likely to benefit from the modernization of zoning laws, leading to enhanced green building projects and increased housing demand in eco-friendly developments.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "existing initiatives for green spaces"
+          ]
+        },
+        {
+          "name": "Manhattan",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "Manhattan, being a central hub for business and innovation, is expected to attract significant investment in sustainable infrastructure, enhancing its real estate market and overall urban resilience.",
+          "evidence_signals": [
+            "high demand for sustainable office spaces",
+            "investment in public transportation improvements"
+          ]
+        },
+        {
+          "name": "Queens",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Queens may experience a moderate boost in housing demand and infrastructure improvements as the city pushes for greener initiatives, though the impact may vary by neighborhood.",
+          "evidence_signals": [
+            "diverse community support for climate initiatives",
+            "potential for new green projects"
+          ]
+        },
+        {
+          "name": "Staten Island",
+          "impact_score": 50,
+          "impact_direction": "neutral",
+          "confidence": 70,
+          "reason_en": "Staten Island may see some benefits from the carbon neutrality initiative, but the overall impact is expected to be limited due to its more suburban nature and lower density compared to other boroughs.",
+          "evidence_signals": [
+            "less urban development pressure",
+            "limited existing infrastructure for large-scale green projects"
+          ]
+        }
+      ],
+      "all_neighborhood_scores": [
+        {
+          "name": "Allerton",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investment in green infrastructure and energy-efficient buildings, positively impacting real estate values.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Alley Pond Park",
+          "impact_score": 40,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the park may benefit from improved environmental measures, direct real estate impacts are less clear.",
+          "evidence_signals": [
+            "Potential for enhanced park facilities",
+            "Limited residential development nearby"
+          ]
+        },
+        {
+          "name": "Annadale-Huguenot-Prince's Bay-Woodrow",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The initiative could encourage sustainable development in suburban areas, boosting housing demand.",
+          "evidence_signals": [
+            "Interest in eco-friendly homes",
+            "Local support for sustainability initiatives"
+          ]
+        },
+        {
+          "name": "Arden Heights-Rossville",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to Annadale, this area may see increased interest in green developments, positively affecting real estate.",
+          "evidence_signals": [
+            "Community interest in sustainable living",
+            "Potential for new eco-friendly projects"
+          ]
+        },
+        {
+          "name": "Astoria (Central)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Astoria's urban setting may attract significant investment in green infrastructure, enhancing property values.",
+          "evidence_signals": [
+            "High density of residential buildings",
+            "Active community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Astoria (East)-Woodside (North)",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The area's mixed-use developments may benefit from the initiative, leading to increased housing demand.",
+          "evidence_signals": [
+            "Growing interest in eco-friendly living",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Astoria (North)-Ditmars-Steinway",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "This area may see a boost in property values due to the initiative's focus on sustainability and green energy.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Astoria Park",
+          "impact_score": 45,
+          "impact_direction": "mixed",
+          "confidence": 55,
+          "reason_en": "While the park may benefit from environmental improvements, the direct impact on real estate is uncertain.",
+          "evidence_signals": [
+            "Potential for enhanced park facilities",
+            "Limited residential development nearby"
+          ]
+        },
+        {
+          "name": "Auburndale",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to increased interest in sustainable housing options in this suburban area.",
+          "evidence_signals": [
+            "Community interest in eco-friendly homes",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Baisley Park",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The area may see a rise in property values as sustainable developments become more attractive to buyers.",
+          "evidence_signals": [
+            "Growing interest in eco-friendly living",
+            "Local support for sustainability initiatives"
+          ]
+        },
+        {
+          "name": "Barren Island-Floyd Bennett Field",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Limited residential development in this area may result in minimal impact from the initiative.",
+          "evidence_signals": [
+            "Low population density",
+            "Limited commercial activity"
+          ]
+        },
+        {
+          "name": "Bath Beach",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may encourage sustainable development, positively affecting local real estate.",
+          "evidence_signals": [
+            "Interest in eco-friendly housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bay Ridge",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Bay Ridge's urban character may attract significant investment in green infrastructure and housing.",
+          "evidence_signals": [
+            "High density of residential buildings",
+            "Active community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Bay Terrace-Clearview",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to increased interest in sustainable housing options in this suburban area.",
+          "evidence_signals": [
+            "Community interest in eco-friendly homes",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bayside",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The area may see a boost in property values due to the initiative's focus on sustainability and green energy.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Bedford Park",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investment in green infrastructure and energy-efficient buildings.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bedford-Stuyvesant (East)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "This area may attract significant investment in green infrastructure, enhancing property values.",
+          "evidence_signals": [
+            "High density of residential buildings",
+            "Active community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Bedford-Stuyvesant (West)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Similar to the East side, this area may see increased investment in sustainable developments.",
+          "evidence_signals": [
+            "Growing interest in eco-friendly living",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bellerose",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to increased interest in sustainable housing options in this suburban area.",
+          "evidence_signals": [
+            "Community interest in eco-friendly homes",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Belmont",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The initiative may encourage sustainable development, positively affecting local real estate.",
+          "evidence_signals": [
+            "Interest in eco-friendly housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bensonhurst",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investment in green infrastructure and energy-efficient buildings.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Borough Park",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The area may see a boost in property values due to the initiative's focus on sustainability and green energy.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Breezy Point-Belle Harbor-Rockaway Park-Broad Channel",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to increased interest in sustainable housing options in this coastal area.",
+          "evidence_signals": [
+            "Community interest in eco-friendly homes",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Brighton Beach",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may encourage sustainable development, positively affecting local real estate.",
+          "evidence_signals": [
+            "Interest in eco-friendly housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bronx Park",
+          "impact_score": 40,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the park may benefit from improved environmental measures, direct real estate impacts are less clear.",
+          "evidence_signals": [
+            "Potential for enhanced park facilities",
+            "Limited residential development nearby"
+          ]
+        },
+        {
+          "name": "Brooklyn Heights",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "Brooklyn Heights is likely to see significant investment in green infrastructure, enhancing property values.",
+          "evidence_signals": [
+            "High density of residential buildings",
+            "Active community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Brooklyn Navy Yard",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "The Navy Yard is a hub for innovation and may attract substantial investment in sustainable projects.",
+          "evidence_signals": [
+            "High potential for new green developments",
+            "Strong support for sustainability initiatives"
+          ]
+        },
+        {
+          "name": "Brownsville",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investment in green infrastructure and energy-efficient buildings.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bushwick (East)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Bushwick is likely to attract investment in sustainable developments, enhancing property values.",
+          "evidence_signals": [
+            "Growing interest in eco-friendly living",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Bushwick (West)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Similar to the East side, this area may see increased investment in sustainable developments.",
+          "evidence_signals": [
+            "Growing interest in eco-friendly living",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Calvary & Mount Zion Cemeteries",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Minimal residential development in this area may result in little impact from the initiative.",
+          "evidence_signals": [
+            "Low population density",
+            "Limited commercial activity"
+          ]
+        },
+        {
+          "name": "Calvert Vaux Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Limited residential development nearby may result in minimal impact from the initiative.",
+          "evidence_signals": [
+            "Low population density",
+            "Limited commercial activity"
+          ]
+        },
+        {
+          "name": "Cambria Heights",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to increased interest in sustainable housing options in this suburban area.",
+          "evidence_signals": [
+            "Community interest in eco-friendly homes",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Canarsie",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investment in green infrastructure and energy-efficient buildings.",
+          "evidence_signals": [
+            "Increased demand for sustainable housing",
+            "Potential for new green projects"
+          ]
+        },
+        {
+          "name": "Canarsie Park & Pier",
+          "impact_score": 40,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the park may benefit from improved environmental measures, direct real estate impacts are less clear.",
+          "evidence_signals": [
+            "Potential for enhanced park facilities",
+            "Limited residential development nearby"
+          ]
+        },
+        {
+          "name": "Carroll Gardens-Cobble Hill-Gowanus-Red Hook",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The initiative is likely to enhance green infrastructure and energy efficiency in this area, which is already experiencing redevelopment and rising property values.",
+          "evidence_signals": [
+            "increased demand for green buildings",
+            "ongoing redevelopment projects"
+          ]
+        },
+        {
+          "name": "Castle Hill-Unionport",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the initiative may promote cleaner energy and infrastructure improvements, the area may not see immediate effects due to existing economic challenges.",
+          "evidence_signals": [
+            "potential for future investment",
+            "current economic limitations"
+          ]
+        },
+        {
+          "name": "Central Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 70,
+          "reason_en": "Central Park itself is unlikely to be directly affected by zoning changes, but surrounding areas may benefit indirectly.",
+          "evidence_signals": [
+            "proximity to urban development",
+            "limited direct impact on park land"
+          ]
+        },
+        {
+          "name": "Chelsea-Hudson Yards",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "This area is a hub for new developments and is likely to benefit significantly from the push for carbon neutrality and green building practices.",
+          "evidence_signals": [
+            "high levels of new construction",
+            "strong demand for sustainable living spaces"
+          ]
+        },
+        {
+          "name": "Chinatown-Two Bridges",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, enhancing livability and attracting investment.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Claremont Park",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see some benefits from broader city initiatives, but local economic conditions may limit immediate impacts.",
+          "evidence_signals": [
+            "limited local investment",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "Claremont Village-Claremont (East)",
+          "impact_score": 45,
+          "impact_direction": "mixed",
+          "confidence": 55,
+          "reason_en": "While there may be some positive impacts from the initiative, the area's economic challenges could hinder significant changes.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "existing economic barriers"
+          ]
+        },
+        {
+          "name": "Clinton Hill",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The area is likely to benefit from increased investment in green infrastructure and energy efficiency, aligning with community values.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "ongoing neighborhood revitalization"
+          ]
+        },
+        {
+          "name": "Co-op City",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The initiative may provide opportunities for energy improvements, but the area's unique housing structure may limit broader impacts.",
+          "evidence_signals": [
+            "potential for energy upgrades",
+            "complex housing dynamics"
+          ]
+        },
+        {
+          "name": "College Point",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see some indirect benefits from citywide initiatives, but local economic conditions may limit immediate effects.",
+          "evidence_signals": [
+            "limited local development",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "Concourse-Concourse Village",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, enhancing livability and attracting investment.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Coney Island-Sea Gate",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the initiative may promote cleaner energy, the area's recovery from past challenges may limit immediate impacts.",
+          "evidence_signals": [
+            "ongoing recovery efforts",
+            "potential for future investment"
+          ]
+        },
+        {
+          "name": "Corona",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The area may benefit from infrastructure improvements, but existing socio-economic challenges could limit the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "economic barriers to investment"
+          ]
+        },
+        {
+          "name": "Crotona Park",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The initiative may have some indirect benefits, but local economic conditions may limit immediate effects.",
+          "evidence_signals": [
+            "limited local investment",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "Crotona Park East",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to Crotona Park, the area may see some indirect benefits from broader city initiatives.",
+          "evidence_signals": [
+            "limited local investment",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "Crown Heights (North)",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The area is likely to benefit from increased investment in green infrastructure and energy efficiency, aligning with community values.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "ongoing neighborhood revitalization"
+          ]
+        },
+        {
+          "name": "Crown Heights (South)",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Similar to Crown Heights (North), this area is likely to see benefits from the initiative.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Cunningham Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The park itself is unlikely to be directly affected by zoning changes, but surrounding areas may benefit indirectly.",
+          "evidence_signals": [
+            "limited direct impact on park land",
+            "proximity to urban development"
+          ]
+        },
+        {
+          "name": "Cypress Hills",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The initiative may provide opportunities for energy improvements, but the area's unique housing structure may limit broader impacts.",
+          "evidence_signals": [
+            "potential for energy upgrades",
+            "complex housing dynamics"
+          ]
+        },
+        {
+          "name": "Douglaston-Little Neck",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see some indirect benefits from citywide initiatives, but local economic conditions may limit immediate effects.",
+          "evidence_signals": [
+            "limited local development",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "Downtown Brooklyn-DUMBO-Boerum Hill",
+          "impact_score": 85,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "This area is a key site for new developments and is likely to benefit significantly from the push for carbon neutrality and green building practices.",
+          "evidence_signals": [
+            "high levels of new construction",
+            "strong demand for sustainable living spaces"
+          ]
+        },
+        {
+          "name": "Dyker Beach Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The park itself is unlikely to be directly affected by zoning changes, but surrounding areas may benefit indirectly.",
+          "evidence_signals": [
+            "limited direct impact on park land",
+            "proximity to urban development"
+          ]
+        },
+        {
+          "name": "Dyker Heights",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see some indirect benefits from citywide initiatives, but local economic conditions may limit immediate effects.",
+          "evidence_signals": [
+            "limited local development",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "East Elmhurst",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The initiative may promote cleaner energy and infrastructure improvements, but the area may not see immediate effects due to existing economic challenges.",
+          "evidence_signals": [
+            "potential for future investment",
+            "current economic limitations"
+          ]
+        },
+        {
+          "name": "East Flatbush-Erasmus",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to East Elmhurst, the area may benefit from infrastructure improvements, but existing socio-economic challenges could limit the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "economic barriers to investment"
+          ]
+        },
+        {
+          "name": "East Flatbush-Farragut",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to East Elmhurst, the area may benefit from infrastructure improvements, but existing socio-economic challenges could limit the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "economic barriers to investment"
+          ]
+        },
+        {
+          "name": "East Flatbush-Remsen Village",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to East Elmhurst, the area may benefit from infrastructure improvements, but existing socio-economic challenges could limit the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "economic barriers to investment"
+          ]
+        },
+        {
+          "name": "East Flatbush-Rugby",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to East Elmhurst, the area may benefit from infrastructure improvements, but existing socio-economic challenges could limit the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "economic barriers to investment"
+          ]
+        },
+        {
+          "name": "East Flushing",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see some indirect benefits from citywide initiatives, but local economic conditions may limit immediate effects.",
+          "evidence_signals": [
+            "limited local development",
+            "potential for gradual improvements"
+          ]
+        },
+        {
+          "name": "East Harlem (North)",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, enhancing livability and attracting investment.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "East Harlem (South)",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Similar to East Harlem (North), this area is likely to see benefits from the initiative.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "East Midtown-Turtle Bay",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "This area is likely to benefit significantly from the push for carbon neutrality and green building practices, given its high property values and ongoing developments.",
+          "evidence_signals": [
+            "high levels of new construction",
+            "strong demand for sustainable living spaces"
+          ]
+        },
+        {
+          "name": "East New York (North)",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, enhancing livability and attracting investment.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "East New York-City Line",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to East New York (North), this area is likely to see benefits from the initiative.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "East New York-New Lots",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to East New York (North), this area is likely to see benefits from the initiative.",
+          "evidence_signals": [
+            "community support for sustainability",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "East Village",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The East Village is likely to see increased investment in green infrastructure and energy-efficient buildings, aligning with the goals of the Carbon Neutrality Initiative.",
+          "evidence_signals": [
+            "increased demand for sustainable housing",
+            "potential for new green projects"
+          ]
+        },
+        {
+          "name": "East Williamsburg",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "East Williamsburg may benefit from redevelopment projects focused on sustainability, attracting new residents and businesses interested in eco-friendly practices.",
+          "evidence_signals": [
+            "interest in sustainable development",
+            "potential for new green spaces"
+          ]
+        },
+        {
+          "name": "Eastchester-Edenwald-Baychester",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the initiative may lead to some improvements in infrastructure, the overall impact on real estate may be moderate due to existing economic conditions.",
+          "evidence_signals": [
+            "potential for infrastructure upgrades",
+            "mixed community response"
+          ]
+        },
+        {
+          "name": "Elmhurst",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Elmhurst could see benefits from improved energy efficiency measures and community engagement in sustainability efforts.",
+          "evidence_signals": [
+            "community support for green initiatives",
+            "increased local investment"
+          ]
+        },
+        {
+          "name": "Far Rockaway-Bayswater",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact may be limited due to existing infrastructure challenges, although some improvements could arise from the initiative.",
+          "evidence_signals": [
+            "existing infrastructure issues",
+            "limited immediate investment"
+          ]
+        },
+        {
+          "name": "Ferry Point Park-St. Raymond Cemetery",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "This area may see minimal impact as it is primarily residential with limited commercial development opportunities.",
+          "evidence_signals": [
+            "low commercial activity",
+            "residential focus"
+          ]
+        },
+        {
+          "name": "Financial District-Battery Park City",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "As a hub for business and finance, this area is likely to attract significant investment in green buildings and infrastructure, enhancing its appeal.",
+          "evidence_signals": [
+            "high commercial interest in sustainability",
+            "existing green building initiatives"
+          ]
+        },
+        {
+          "name": "Flatbush",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Flatbush may experience growth in housing demand as new sustainable projects are developed, appealing to environmentally conscious residents.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "potential for new housing developments"
+          ]
+        },
+        {
+          "name": "Flatbush (West)-Ditmas Park-Parkville",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "This area could see a boost in property values as green initiatives enhance the neighborhood's appeal.",
+          "evidence_signals": [
+            "increased property interest",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Flatlands",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The impact may be moderate, with potential for some improvements in infrastructure but limited immediate real estate effects.",
+          "evidence_signals": [
+            "mixed community engagement",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Flushing Meadows-Corona Park",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "This area may benefit from enhanced park facilities and green spaces, attracting more visitors and residents interested in sustainability.",
+          "evidence_signals": [
+            "increased park usage",
+            "community interest in green spaces"
+          ]
+        },
+        {
+          "name": "Flushing-Willets Point",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Flushing-Willets Point could see redevelopment opportunities focused on sustainability, improving local infrastructure.",
+          "evidence_signals": [
+            "potential for redevelopment",
+            "interest in sustainable projects"
+          ]
+        },
+        {
+          "name": "Fordham Heights",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The area may experience some benefits from infrastructure improvements, but overall real estate impact could be limited.",
+          "evidence_signals": [
+            "mixed community response",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Forest Hills",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Forest Hills may see increased demand for eco-friendly housing options as community interest in sustainability grows.",
+          "evidence_signals": [
+            "growing demand for sustainable housing",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Forest Park",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park may benefit from enhancements and increased visitation, leading to potential local business growth.",
+          "evidence_signals": [
+            "increased park usage",
+            "local business interest in sustainability"
+          ]
+        },
+        {
+          "name": "Fort Greene",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Fort Greene is likely to attract significant investment in green infrastructure and housing, enhancing its desirability.",
+          "evidence_signals": [
+            "high interest in sustainable development",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Fort Hamilton",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The impact may be moderate, with potential for some improvements but limited immediate effects on real estate.",
+          "evidence_signals": [
+            "mixed community engagement",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Fort Totten",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The area may see minimal impact due to its existing infrastructure and limited commercial development.",
+          "evidence_signals": [
+            "low commercial activity",
+            "residential focus"
+          ]
+        },
+        {
+          "name": "Fort Wadsworth",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Similar to Fort Totten, the impact is expected to be limited with little commercial development.",
+          "evidence_signals": [
+            "low commercial activity",
+            "residential focus"
+          ]
+        },
+        {
+          "name": "Fresh Meadows-Utopia",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "This area may see increased interest in sustainable housing and infrastructure improvements.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "potential for new housing developments"
+          ]
+        },
+        {
+          "name": "Freshkills Park (North)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The park may benefit from enhancements and increased visitation, leading to potential local business growth.",
+          "evidence_signals": [
+            "increased park usage",
+            "local business interest in sustainability"
+          ]
+        },
+        {
+          "name": "Freshkills Park (South)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Similar to the North section, this area may see benefits from park enhancements and increased community engagement.",
+          "evidence_signals": [
+            "increased park usage",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Glen Oaks-Floral Park-New Hyde Park",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The impact may be moderate, with potential for some improvements but limited immediate effects on real estate.",
+          "evidence_signals": [
+            "mixed community engagement",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Glendale",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Glendale could see increased interest in sustainable housing options as community interest in sustainability grows.",
+          "evidence_signals": [
+            "growing demand for sustainable housing",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Gramercy",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Gramercy is likely to attract significant investment in green infrastructure and housing, enhancing its desirability.",
+          "evidence_signals": [
+            "high interest in sustainable development",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Grasmere-Arrochar-South Beach-Dongan Hills",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The area may experience some benefits from infrastructure improvements, but overall real estate impact could be limited.",
+          "evidence_signals": [
+            "mixed community response",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Gravesend (East)-Homecrest",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "This area may see growth in housing demand as new sustainable projects are developed, appealing to environmentally conscious residents.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "potential for new housing developments"
+          ]
+        },
+        {
+          "name": "Gravesend (South)",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The impact may be moderate, with potential for some improvements but limited immediate effects on real estate.",
+          "evidence_signals": [
+            "mixed community engagement",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Gravesend (West)",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to Gravesend (South), the impact may be moderate with limited immediate effects.",
+          "evidence_signals": [
+            "mixed community engagement",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Great Kills Park",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The park may benefit from enhancements and increased visitation, leading to potential local business growth.",
+          "evidence_signals": [
+            "increased park usage",
+            "local business interest in sustainability"
+          ]
+        },
+        {
+          "name": "Great Kills-Eltingville",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "This area may see increased interest in sustainable housing options as community interest in sustainability grows.",
+          "evidence_signals": [
+            "growing demand for sustainable housing",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Green-Wood Cemetery",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The cemetery may see minimal impact as it is primarily a historical site with limited development potential.",
+          "evidence_signals": [
+            "low commercial activity",
+            "historical site focus"
+          ]
+        },
+        {
+          "name": "Greenpoint",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Greenpoint is likely to attract significant investment in green infrastructure and housing, enhancing its desirability.",
+          "evidence_signals": [
+            "high interest in sustainable development",
+            "community support for green initiatives"
+          ]
+        },
+        {
+          "name": "Greenwich Village",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "As a culturally rich area, Greenwich Village is likely to see substantial investment in green projects, boosting its appeal.",
+          "evidence_signals": [
+            "high commercial interest in sustainability",
+            "existing green building initiatives"
+          ]
+        },
+        {
+          "name": "Hamilton Heights-Sugar Hill",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "This area may experience growth in housing demand as new sustainable projects are developed, appealing to environmentally conscious residents.",
+          "evidence_signals": [
+            "growing interest in sustainable living",
+            "potential for new housing developments"
+          ]
+        },
+        {
+          "name": "Harlem (North)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The City of Yes for Carbon Neutrality initiative is likely to enhance green infrastructure and energy efficiency in Harlem (North), attracting investment and potentially increasing housing demand.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Harlem (South)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Similar to Harlem (North), the initiative will likely improve infrastructure and attract investment in Harlem (South), boosting housing demand and redevelopment opportunities.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Hart Island",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Hart Island is primarily a burial site and is less likely to see direct impact from the carbon neutrality initiative, leading to a neutral effect.",
+          "evidence_signals": [
+            "limited residential development",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Hell's Kitchen",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Hell's Kitchen may benefit from improved infrastructure and green initiatives, leading to increased property values and housing demand.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Highbridge",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Highbridge could see some benefits from the initiative, but existing economic challenges may limit the overall impact on real estate and redevelopment.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Highbridge Park",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Highbridge Park may see some improvements in green space but is unlikely to experience significant real estate impacts.",
+          "evidence_signals": [
+            "focus on park improvements",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "Highland Park-Cypress Hills Cemeteries (North)",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "This area is primarily a cemetery and is not expected to see significant impacts from the initiative.",
+          "evidence_signals": [
+            "limited residential development",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Highland Park-Cypress Hills Cemeteries (South)",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to the northern section, this area is primarily a cemetery and will likely not see significant impacts.",
+          "evidence_signals": [
+            "limited residential development",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Hoffman & Swinburne Islands",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "These islands are not residentially developed and are unlikely to see any significant impact from the initiative.",
+          "evidence_signals": [
+            "limited development potential",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Hollis",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Hollis may see some benefits from the initiative, but the overall impact on housing demand and redevelopment is uncertain.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Holy Cross Cemetery",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "As a cemetery, Holy Cross is unlikely to experience any significant impact from the carbon neutrality initiative.",
+          "evidence_signals": [
+            "limited residential development",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Howard Beach-Lindenwood",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Howard Beach-Lindenwood may see some improvements in infrastructure, but overall impacts on real estate are expected to be limited.",
+          "evidence_signals": [
+            "focus on local infrastructure",
+            "limited redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "Hunts Point",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Hunts Point is likely to benefit significantly from the initiative due to its focus on improving local infrastructure and sustainability, which could attract investment.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Hutchinson Metro Center",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may enhance the attractiveness of Hutchinson Metro Center for businesses and investors, leading to increased development.",
+          "evidence_signals": [
+            "potential for green projects",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Inwood",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Inwood is expected to see positive impacts from the initiative, with potential for increased housing demand and investment in green infrastructure.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Inwood Hill Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Inwood Hill Park may see some improvements, but as a park, it is unlikely to have significant real estate impacts.",
+          "evidence_signals": [
+            "focus on park improvements",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "Jackson Heights",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Jackson Heights may benefit from improved infrastructure and sustainability initiatives, leading to increased property values.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Jacob Riis Park-Fort Tilden-Breezy Point Tip",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "This area is primarily recreational and is unlikely to see significant impacts from the initiative.",
+          "evidence_signals": [
+            "limited residential development",
+            "focus on climate action in urban areas"
+          ]
+        },
+        {
+          "name": "Jamaica",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Jamaica is likely to benefit from the initiative through enhanced infrastructure and increased housing demand.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Jamaica Bay (East)",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Jamaica Bay (East) may see some environmental improvements, but real estate impacts are expected to be minimal.",
+          "evidence_signals": [
+            "focus on environmental sustainability",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "Jamaica Bay (West)",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to the East, Jamaica Bay (West) is expected to see minimal real estate impacts from the initiative.",
+          "evidence_signals": [
+            "focus on environmental sustainability",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "Jamaica Estates-Holliswood",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "This area may see increased property values and housing demand due to the initiative's focus on sustainability.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Jamaica Hills-Briarwood",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Jamaica Hills-Briarwood is expected to benefit from the initiative, leading to increased housing demand and investment.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "John F. Kennedy International Airport",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "The airport may see some benefits from infrastructure improvements, but overall impacts on surrounding areas are uncertain.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Kensington",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Kensington is likely to benefit from the initiative through improved infrastructure and increased housing demand.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Kew Gardens",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Kew Gardens may see increased property values and housing demand due to the initiative's focus on sustainability.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Kew Gardens Hills",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "This area is expected to benefit from the initiative, leading to increased housing demand and investment.",
+          "evidence_signals": [
+            "urban redevelopment potential",
+            "increased focus on sustainability"
+          ]
+        },
+        {
+          "name": "Kingsbridge Heights-Van Cortlandt Village",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Kingsbridge Heights may see some benefits from the initiative, but existing economic challenges may limit the overall impact.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Kingsbridge-Marble Hill",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Similar to Kingsbridge Heights, this area may see some benefits, but economic challenges could limit impacts.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Kissena Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Kissena Park is primarily a recreational area and is unlikely to see significant real estate impacts.",
+          "evidence_signals": [
+            "focus on park improvements",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "LaGuardia Airport",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "LaGuardia may see some benefits from infrastructure improvements, but overall impacts on surrounding areas are uncertain.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Laurelton",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Laurelton may see some benefits from the initiative, but the overall impact on housing demand is uncertain.",
+          "evidence_signals": [
+            "potential for green projects",
+            "economic disparities in the area"
+          ]
+        },
+        {
+          "name": "Lincoln Terrace Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Lincoln Terrace Park may see some improvements, but as a park, it is unlikely to have significant real estate impacts.",
+          "evidence_signals": [
+            "focus on park improvements",
+            "limited residential development"
+          ]
+        },
+        {
+          "name": "Long Island City-Hunters Point",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "Long Island City-Hunters Point is expected to see significant benefits from the initiative, with increased investment and housing demand due to its focus on sustainability.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Longwood",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Longwood is likely to benefit from the initiative through enhanced infrastructure and increased housing demand.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "community support for climate action"
+          ]
+        },
+        {
+          "name": "Lower East Side",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The Lower East Side is likely to see increased investment in green infrastructure and housing as a result of the carbon neutrality initiative, which aligns with community interests in sustainability.",
+          "evidence_signals": [
+            "support for climate action",
+            "potential for green redevelopment"
+          ]
+        },
+        {
+          "name": "Madison",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Madison may experience a boost in housing demand and redevelopment opportunities due to the city's commitment to sustainable practices, which can attract environmentally conscious residents.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Manhattanville-West Harlem",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "This area is poised for significant redevelopment as the initiative encourages investment in green buildings and infrastructure, enhancing property values and community resilience.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for increased capital allocation"
+          ]
+        },
+        {
+          "name": "Mapleton-Midwood (West)",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While there may be some positive effects from the initiative, the impact is expected to be moderate due to existing infrastructure and community priorities that may not fully align with the initiative.",
+          "evidence_signals": [
+            "local infrastructure needs",
+            "community priorities may vary"
+          ]
+        },
+        {
+          "name": "Marine Park-Mill Basin-Bergen Beach",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be minimal in this area, as local development is less focused on urban sustainability and more on residential stability.",
+          "evidence_signals": [
+            "limited urban redevelopment",
+            "focus on residential stability"
+          ]
+        },
+        {
+          "name": "Marine Park-Plumb Island",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Similar to Marine Park-Mill Basin-Bergen Beach, this area is not expected to see significant changes due to the initiative, as local priorities may not align with sustainability goals.",
+          "evidence_signals": [
+            "low urban development interest",
+            "community focus on existing amenities"
+          ]
+        },
+        {
+          "name": "Mariner's Harbor-Arlington-Graniteville",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The area may see some minor improvements in infrastructure but overall impact is expected to be limited due to existing community dynamics and development patterns.",
+          "evidence_signals": [
+            "existing community dynamics",
+            "limited new investment"
+          ]
+        },
+        {
+          "name": "Maspeth",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Maspeth may experience some positive effects from the initiative, particularly in terms of infrastructure upgrades, but overall impact will depend on local engagement with the initiative.",
+          "evidence_signals": [
+            "potential for infrastructure upgrades",
+            "community engagement levels"
+          ]
+        },
+        {
+          "name": "McGuire Fields",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be very limited in this area, with little direct connection to urban development or sustainability efforts.",
+          "evidence_signals": [
+            "low urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Melrose",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Melrose is likely to benefit from increased investment in green infrastructure and housing, aligning with community goals for sustainability and resilience.",
+          "evidence_signals": [
+            "support for climate initiatives",
+            "potential for green investment"
+          ]
+        },
+        {
+          "name": "Middle Village",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Middle Village may see some benefits from the initiative, but the overall impact will depend on local acceptance and integration of sustainable practices.",
+          "evidence_signals": [
+            "community acceptance of sustainability",
+            "potential for mixed-use development"
+          ]
+        },
+        {
+          "name": "Middle Village Cemetery",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 30,
+          "reason_en": "The cemetery is unlikely to be affected by the initiative, as it does not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Midtown South-Flatiron-Union Square",
+          "impact_score": 85,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "This area is expected to see significant investment in green infrastructure and buildings, enhancing property values and attracting new residents focused on sustainability.",
+          "evidence_signals": [
+            "high demand for sustainable living",
+            "investment in urban green spaces"
+          ]
+        },
+        {
+          "name": "Midtown-Times Square",
+          "impact_score": 90,
+          "impact_direction": "positive",
+          "confidence": 95,
+          "reason_en": "Midtown-Times Square is likely to be a focal point for the initiative, leading to substantial investments in sustainability and infrastructure improvements, greatly enhancing its appeal.",
+          "evidence_signals": [
+            "central business district focus",
+            "high levels of investment interest"
+          ]
+        },
+        {
+          "name": "Midwood",
+          "impact_score": 55,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Midwood may see some positive effects from the initiative, particularly in terms of infrastructure improvements, but local priorities may dilute the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "existing infrastructure needs"
+          ]
+        },
+        {
+          "name": "Miller Field",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 35,
+          "reason_en": "The area is unlikely to see any significant impact from the initiative, as it does not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Montefiore Cemetery",
+          "impact_score": 5,
+          "impact_direction": "neutral",
+          "confidence": 20,
+          "reason_en": "The cemetery is not expected to be affected by the initiative, as it does not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Morningside Heights",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Morningside Heights is likely to benefit from increased investment in green infrastructure and housing, aligning with community goals for sustainability and resilience.",
+          "evidence_signals": [
+            "support for climate initiatives",
+            "potential for green investment"
+          ]
+        },
+        {
+          "name": "Morris Park",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Morris Park may see some benefits from the initiative, but the overall impact will depend on local acceptance and integration of sustainable practices.",
+          "evidence_signals": [
+            "community acceptance of sustainability",
+            "potential for mixed-use development"
+          ]
+        },
+        {
+          "name": "Morrisania",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Morrisania is likely to see increased investment in green infrastructure and housing as a result of the carbon neutrality initiative, which aligns with community interests in sustainability.",
+          "evidence_signals": [
+            "support for climate action",
+            "potential for green redevelopment"
+          ]
+        },
+        {
+          "name": "Mott Haven-Port Morris",
+          "impact_score": 80,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "This area is poised for significant redevelopment as the initiative encourages investment in green buildings and infrastructure, enhancing property values and community resilience.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for increased capital allocation"
+          ]
+        },
+        {
+          "name": "Mount Eden-Claremont (West)",
+          "impact_score": 55,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Mount Eden-Claremont may see some positive effects from the initiative, particularly in terms of infrastructure improvements, but local priorities may dilute the overall impact.",
+          "evidence_signals": [
+            "community interest in sustainability",
+            "existing infrastructure needs"
+          ]
+        },
+        {
+          "name": "Mount Hebron & Cedar Grove Cemeteries",
+          "impact_score": 5,
+          "impact_direction": "neutral",
+          "confidence": 20,
+          "reason_en": "The cemeteries are not expected to be affected by the initiative, as they do not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Mount Hope",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be minimal in this area, as local development is less focused on urban sustainability.",
+          "evidence_signals": [
+            "low urban development interest",
+            "community focus on existing amenities"
+          ]
+        },
+        {
+          "name": "Mount Olivet & All Faiths Cemeteries",
+          "impact_score": 5,
+          "impact_direction": "neutral",
+          "confidence": 20,
+          "reason_en": "The cemeteries are not expected to be affected by the initiative, as they do not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "Murray Hill-Broadway Flushing",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Murray Hill is likely to benefit from increased investment in green infrastructure and housing, aligning with community goals for sustainability and resilience.",
+          "evidence_signals": [
+            "support for climate initiatives",
+            "potential for green investment"
+          ]
+        },
+        {
+          "name": "Murray Hill-Kips Bay",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Murray Hill-Kips Bay is expected to see significant investment in green infrastructure and buildings, enhancing property values and attracting new residents focused on sustainability.",
+          "evidence_signals": [
+            "high demand for sustainable living",
+            "investment in urban green spaces"
+          ]
+        },
+        {
+          "name": "New Dorp-Midland Beach",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be minimal in this area, as local development is less focused on urban sustainability.",
+          "evidence_signals": [
+            "low urban development interest",
+            "community focus on existing amenities"
+          ]
+        },
+        {
+          "name": "New Springville-Willowbrook-Bulls Head-Travis",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "This area may see some minor improvements in infrastructure but overall impact is expected to be limited due to existing community dynamics and development patterns.",
+          "evidence_signals": [
+            "existing community dynamics",
+            "limited new investment"
+          ]
+        },
+        {
+          "name": "North & South Brother Islands",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 30,
+          "reason_en": "The islands are unlikely to see any significant impact from the initiative, as they do not engage with urban development or sustainability efforts.",
+          "evidence_signals": [
+            "no urban development",
+            "limited community engagement"
+          ]
+        },
+        {
+          "name": "North Corona",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "North Corona may see some benefits from the initiative, but the overall impact will depend on local acceptance and integration of sustainable practices.",
+          "evidence_signals": [
+            "community acceptance of sustainability",
+            "potential for mixed-use development"
+          ]
+        },
+        {
+          "name": "Norwood",
+          "impact_score": 55,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Norwood may experience a boost in housing demand and redevelopment opportunities due to the city's commitment to sustainable practices, which can attract environmentally conscious residents.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Oakland Gardens-Hollis Hills",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be minimal in this area, as local development is less focused on urban sustainability.",
+          "evidence_signals": [
+            "low urban development interest",
+            "community focus on existing amenities"
+          ]
+        },
+        {
+          "name": "Oakwood-Richmondtown",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact of the carbon neutrality initiative is expected to be minimal in this area, as local development is less focused on urban sustainability.",
+          "evidence_signals": [
+            "low urban development interest",
+            "community focus on existing amenities"
+          ]
+        },
+        {
+          "name": "Ocean Hill",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Ocean Hill is likely to see increased investment in green infrastructure and housing as a result of the carbon neutrality initiative, which aligns with community interests in sustainability.",
+          "evidence_signals": [
+            "support for climate action",
+            "potential for green redevelopment"
+          ]
+        },
+        {
+          "name": "Old Astoria-Hallets Point",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative promotes clean energy and modern infrastructure, which could enhance property values and attract investment in this area.",
+          "evidence_signals": [
+            "zoning amendment for clean energy",
+            "increased demand for greener buildings"
+          ]
+        },
+        {
+          "name": "Ozone Park",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "As a residential area, improvements in energy efficiency and infrastructure could lead to increased housing demand and redevelopment opportunities.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Ozone Park (North)",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Similar to Ozone Park, this area may see benefits from the initiative through enhanced infrastructure and energy efficiency.",
+          "evidence_signals": [
+            "zoning changes for greener buildings",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "Park Slope",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Park Slope is known for its community engagement and sustainability efforts, making it likely to benefit significantly from the initiative.",
+          "evidence_signals": [
+            "strong community support for climate action",
+            "increased property values due to sustainability"
+          ]
+        },
+        {
+          "name": "Parkchester",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "potential for energy-efficient upgrades",
+            "community interest in sustainability"
+          ]
+        },
+        {
+          "name": "Pelham Bay Park",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the park itself may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Pelham Bay-Country Club-City Island",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The initiative may indirectly benefit this area through improved infrastructure, but direct impacts are less likely.",
+          "evidence_signals": [
+            "zoning changes may affect nearby areas",
+            "community interest in climate initiatives"
+          ]
+        },
+        {
+          "name": "Pelham Gardens",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As a residential area, it may see benefits from improved energy efficiency and infrastructure linked to the initiative.",
+          "evidence_signals": [
+            "potential for increased housing demand",
+            "community support for sustainability"
+          ]
+        },
+        {
+          "name": "Pelham Parkway-Van Nest",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to Pelham Gardens, this area could benefit from enhanced infrastructure and energy efficiency initiatives.",
+          "evidence_signals": [
+            "zoning changes for greener energy",
+            "community interest in climate action"
+          ]
+        },
+        {
+          "name": "Pomonok-Electchester-Hillcrest",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The initiative may lead to improvements in local infrastructure, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Port Richmond",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As a community that may benefit from infrastructure improvements, it could see increased investment due to the initiative.",
+          "evidence_signals": [
+            "community support for climate initiatives",
+            "potential for redevelopment"
+          ]
+        },
+        {
+          "name": "Prospect Heights",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "This area is likely to see significant benefits from the initiative due to its focus on sustainability and community engagement.",
+          "evidence_signals": [
+            "strong community support for climate action",
+            "increased property values due to sustainability"
+          ]
+        },
+        {
+          "name": "Prospect Lefferts Gardens-Wingate",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "potential for energy-efficient upgrades",
+            "community interest in sustainability"
+          ]
+        },
+        {
+          "name": "Prospect Park",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the park itself may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Queens Village",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Queensboro Hill",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to Queens Village, this area could benefit from enhanced infrastructure and energy efficiency initiatives.",
+          "evidence_signals": [
+            "zoning changes for greener energy",
+            "community interest in climate action"
+          ]
+        },
+        {
+          "name": "Queensbridge-Ravenswood-Dutch Kills",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "This area is likely to see significant benefits from the initiative due to its focus on sustainability and community engagement.",
+          "evidence_signals": [
+            "strong community support for climate action",
+            "increased property values due to sustainability"
+          ]
+        },
+        {
+          "name": "Randall's Island",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "While the island may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Rego Park",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Richmond Hill",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As a residential area, it may see benefits from improved energy efficiency and infrastructure linked to the initiative.",
+          "evidence_signals": [
+            "potential for increased housing demand",
+            "community support for sustainability"
+          ]
+        },
+        {
+          "name": "Ridgewood",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Rikers Island",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Limited direct impact expected due to the nature of the island's use, but potential for indirect benefits to surrounding areas.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Riverdale-Spuyten Duyvil",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Rockaway Beach-Arverne-Edgemere",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "This area is likely to see significant benefits from the initiative due to its focus on sustainability and community engagement.",
+          "evidence_signals": [
+            "strong community support for climate action",
+            "increased property values due to sustainability"
+          ]
+        },
+        {
+          "name": "Rockaway Community Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "While the park itself may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Rosebank-Shore Acres-Park Hill",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Rosedale",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As a residential area, it may see benefits from improved energy efficiency and infrastructure linked to the initiative.",
+          "evidence_signals": [
+            "potential for increased housing demand",
+            "community support for sustainability"
+          ]
+        },
+        {
+          "name": "Sheepshead Bay-Manhattan Beach-Gerritsen Beach",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Shirley Chisholm State Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "While the park itself may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Snug Harbor",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Limited direct impact expected due to the nature of the area, but potential for indirect benefits to surrounding communities.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "SoHo-Little Italy-Hudson Square",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "This area is likely to see significant benefits from the initiative due to its focus on sustainability and community engagement.",
+          "evidence_signals": [
+            "strong community support for climate action",
+            "increased property values due to sustainability"
+          ]
+        },
+        {
+          "name": "Soundview Park",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "While the park itself may not see direct impacts, surrounding areas could benefit from increased investment in green infrastructure.",
+          "evidence_signals": [
+            "focus on climate resilience",
+            "indirect benefits to nearby communities"
+          ]
+        },
+        {
+          "name": "Soundview-Bruckner-Bronx River",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Soundview-Clason Point",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to Soundview-Bruckner-Bronx River, this area could benefit from enhanced infrastructure and energy efficiency initiatives.",
+          "evidence_signals": [
+            "zoning changes for greener energy",
+            "community interest in climate action"
+          ]
+        },
+        {
+          "name": "South Jamaica",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "South Ozone Park",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative is likely to enhance local infrastructure and promote cleaner energy solutions, which could increase property values and attract new investments in South Ozone Park.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "increased demand for greener buildings"
+          ]
+        },
+        {
+          "name": "South Richmond Hill",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "As a community that may benefit from improved energy efficiency and infrastructure upgrades, South Richmond Hill could see a rise in housing demand and redevelopment opportunities.",
+          "evidence_signals": [
+            "modernization of zoning for climate action",
+            "potential for increased capital allocation"
+          ]
+        },
+        {
+          "name": "South Williamsburg",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The focus on carbon neutrality and sustainable development aligns with the ongoing trends in South Williamsburg, likely boosting real estate interest and investment.",
+          "evidence_signals": [
+            "facilitation of greener buildings",
+            "increased interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Spring Creek Park",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the initiative may improve local environmental conditions, the direct impact on real estate may be moderate due to existing infrastructure limitations.",
+          "evidence_signals": [
+            "zoning changes for environmental benefits",
+            "potential for mixed-use developments"
+          ]
+        },
+        {
+          "name": "Spring Creek-Starrett City",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Similar to Spring Creek Park, the area may see some benefits from the initiative, but existing conditions may limit the overall impact on housing demand.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for community engagement in redevelopment"
+          ]
+        },
+        {
+          "name": "Springfield Gardens (North)-Rochdale Village",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting property values and community development.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "Springfield Gardens (South)-Brookville",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As with the northern part of Springfield Gardens, the focus on sustainability may enhance local real estate and attract new investments.",
+          "evidence_signals": [
+            "modernization of zoning laws",
+            "potential for increased housing demand"
+          ]
+        },
+        {
+          "name": "St. Albans",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The initiative may provide some environmental benefits, but the direct impact on real estate and redevelopment could be limited.",
+          "evidence_signals": [
+            "zoning changes for climate action",
+            "community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "St. George-New Brighton",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The emphasis on carbon neutrality may lead to infrastructure improvements and increased interest in sustainable living, positively affecting real estate.",
+          "evidence_signals": [
+            "facilitation of greener energy solutions",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "St. John Cemetery",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "As a cemetery, the direct impact from the initiative is likely to be minimal, with little effect on local real estate or redevelopment.",
+          "evidence_signals": [
+            "limited direct impact on housing",
+            "no significant redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "St. Michael's Cemetery",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Similar to St. John Cemetery, the impact of the initiative on this geography is expected to be minimal.",
+          "evidence_signals": [
+            "limited direct impact on housing",
+            "no significant redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "Stuyvesant Town-Peter Cooper Village",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The initiative aligns with the community's focus on sustainability, likely leading to increased property values and interest in redevelopment.",
+          "evidence_signals": [
+            "support for climate action initiatives",
+            "potential for enhanced community engagement"
+          ]
+        },
+        {
+          "name": "Sunnyside",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Sunnyside may benefit from improved infrastructure and energy systems, leading to increased housing demand and investment opportunities.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "increased interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Sunnyside Yards (North)",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The area is likely to see significant investment and redevelopment opportunities as a result of the initiative, enhancing local real estate.",
+          "evidence_signals": [
+            "facilitation of greener buildings",
+            "potential for increased capital allocation"
+          ]
+        },
+        {
+          "name": "Sunnyside Yards (South)",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Similar to the northern section, the southern part of Sunnyside Yards is expected to benefit from the initiative, boosting local investment.",
+          "evidence_signals": [
+            "modernization of zoning for climate action",
+            "increased demand for sustainable developments"
+          ]
+        },
+        {
+          "name": "Sunset Park (Central)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The initiative is likely to enhance local infrastructure and promote cleaner energy solutions, which could increase property values and attract new investments in Sunset Park.",
+          "evidence_signals": [
+            "zoning amendments facilitating clean energy",
+            "increased demand for greener buildings"
+          ]
+        },
+        {
+          "name": "Sunset Park (East)-Borough Park (West)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "As with Central Sunset Park, this area may see significant benefits from the initiative, leading to increased housing demand and redevelopment.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Sunset Park (West)",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The emphasis on sustainability and climate action is likely to positively impact real estate and attract new investments in this area.",
+          "evidence_signals": [
+            "facilitation of greener energy solutions",
+            "increased interest in sustainable living"
+          ]
+        },
+        {
+          "name": "The Battery-Governors Island-Ellis Island-Liberty Island",
+          "impact_score": 50,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the initiative may improve environmental conditions, the direct impact on real estate may be moderate due to the nature of these locations.",
+          "evidence_signals": [
+            "limited direct impact on housing",
+            "no significant redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "The Evergreens Cemetery",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "As a cemetery, the direct impact from the initiative is likely to be minimal, with little effect on local real estate or redevelopment.",
+          "evidence_signals": [
+            "limited direct impact on housing",
+            "no significant redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "Throgs Neck-Schuylerville",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting property values and community development.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While the initiative may provide some environmental benefits, the direct impact on real estate and redevelopment could be limited.",
+          "evidence_signals": [
+            "zoning changes for climate action",
+            "potential for mixed-use developments"
+          ]
+        },
+        {
+          "name": "Tompkinsville-Stapleton-Clifton-Fox Hills",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The focus on carbon neutrality may lead to infrastructure improvements and increased interest in sustainable living, positively affecting real estate.",
+          "evidence_signals": [
+            "facilitation of greener energy solutions",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Tottenville-Charleston",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "The initiative may improve local environmental conditions, but the direct impact on real estate may be moderate due to existing infrastructure limitations.",
+          "evidence_signals": [
+            "zoning changes for environmental benefits",
+            "potential for mixed-use developments"
+          ]
+        },
+        {
+          "name": "Tremont",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting property values and community development.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "Tribeca-Civic Center",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "The initiative aligns with the upscale nature of Tribeca, likely leading to increased property values and interest in sustainable developments.",
+          "evidence_signals": [
+            "support for climate action initiatives",
+            "potential for enhanced community engagement"
+          ]
+        },
+        {
+          "name": "United Nations",
+          "impact_score": 50,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the initiative may improve environmental conditions, the direct impact on real estate may be moderate due to the nature of this location.",
+          "evidence_signals": [
+            "limited direct impact on housing",
+            "no significant redevelopment opportunities"
+          ]
+        },
+        {
+          "name": "University Heights (North)-Fordham",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and energy systems, positively impacting property values and community development.",
+          "evidence_signals": [
+            "zoning amendments for clean energy",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "University Heights (South)-Morris Heights",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Similar to the northern section, the southern part of University Heights is expected to benefit from the initiative, boosting local investment.",
+          "evidence_signals": [
+            "modernization of zoning for climate action",
+            "increased demand for sustainable developments"
+          ]
+        },
+        {
+          "name": "Upper East Side-Carnegie Hill",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "The initiative aligns with the upscale nature of the Upper East Side, likely leading to increased property values and interest in sustainable developments.",
+          "evidence_signals": [
+            "support for climate action initiatives",
+            "potential for enhanced community engagement"
+          ]
+        },
+        {
+          "name": "Upper East Side-Lenox Hill-Roosevelt Island",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "Similar to Carnegie Hill, this area is likely to see significant benefits from the initiative, leading to increased housing demand and redevelopment.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Upper East Side-Yorkville",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "The emphasis on sustainability and climate action is likely to positively impact real estate and attract new investments in this area.",
+          "evidence_signals": [
+            "facilitation of greener energy solutions",
+            "increased interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Upper West Side (Central)",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "The initiative aligns with the upscale nature of the Upper West Side, likely leading to increased property values and interest in sustainable developments.",
+          "evidence_signals": [
+            "support for climate action initiatives",
+            "potential for enhanced community engagement"
+          ]
+        },
+        {
+          "name": "Upper West Side-Lincoln Square",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "Similar to Central Upper West Side, this area is likely to see significant benefits from the initiative, leading to increased housing demand and redevelopment.",
+          "evidence_signals": [
+            "focus on climate action",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Upper West Side-Manhattan Valley",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "The emphasis on sustainability and climate action is likely to positively impact real estate and attract new investments in this area.",
+          "evidence_signals": [
+            "facilitation of greener energy solutions",
+            "increased interest in sustainable living"
+          ]
+        },
+        {
+          "name": "Van Cortlandt Park",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative promotes green spaces and climate resilience, which could enhance the park's environment and attract more visitors.",
+          "evidence_signals": [
+            "increased funding for green projects",
+            "community support for climate initiatives"
+          ]
+        },
+        {
+          "name": "Wakefield-Woodlawn",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The zoning changes may lead to improved infrastructure and housing that supports sustainability, benefiting the community.",
+          "evidence_signals": [
+            "potential for new sustainable housing",
+            "community interest in green development"
+          ]
+        },
+        {
+          "name": "Washington Heights (North)",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The initiative could lead to investments in energy-efficient buildings, positively impacting local real estate.",
+          "evidence_signals": [
+            "interest in energy-efficient renovations",
+            "community engagement in sustainability discussions"
+          ]
+        },
+        {
+          "name": "Washington Heights (South)",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Similar to Washington Heights (North), this area may see benefits from improved infrastructure and energy efficiency initiatives.",
+          "evidence_signals": [
+            "support for green energy projects",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "West Farms",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improved public services and infrastructure, enhancing the area's appeal.",
+          "evidence_signals": [
+            "community support for infrastructure improvements",
+            "interest in sustainable development"
+          ]
+        },
+        {
+          "name": "West New Brighton-Silver Lake-Grymes Hill",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the initiative may have some positive effects, the direct impact on this area may be limited due to existing infrastructure.",
+          "evidence_signals": [
+            "limited current investment in green projects",
+            "mixed community interest"
+          ]
+        },
+        {
+          "name": "West Village",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "As a high-demand area, the initiative could significantly enhance property values and attract eco-conscious residents.",
+          "evidence_signals": [
+            "high demand for sustainable living",
+            "existing community initiatives supporting green spaces"
+          ]
+        },
+        {
+          "name": "Westchester Square",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improvements in local infrastructure and housing, benefiting the community.",
+          "evidence_signals": [
+            "interest in local development projects",
+            "community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Westerleigh-Castleton Corners",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact of the initiative may be minimal in this area, with limited direct benefits expected.",
+          "evidence_signals": [
+            "low current investment in sustainability",
+            "community focus on other issues"
+          ]
+        },
+        {
+          "name": "Whitestone-Beechhurst",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The initiative may not significantly affect this area, as it is less likely to see immediate changes.",
+          "evidence_signals": [
+            "limited community engagement in climate initiatives",
+            "existing infrastructure challenges"
+          ]
+        },
+        {
+          "name": "Williamsbridge-Olinville",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative could lead to improvements in local infrastructure and housing, benefiting the community.",
+          "evidence_signals": [
+            "interest in local development projects",
+            "community engagement in sustainability"
+          ]
+        },
+        {
+          "name": "Williamsburg",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 85,
+          "reason_en": "As a trendy area, the initiative could further enhance property values and attract eco-conscious residents and businesses.",
+          "evidence_signals": [
+            "high demand for sustainable living",
+            "existing community initiatives supporting green spaces"
+          ]
+        },
+        {
+          "name": "Windsor Terrace-South Slope",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative may lead to increased investments in green infrastructure, positively impacting local real estate.",
+          "evidence_signals": [
+            "community support for green projects",
+            "interest in sustainable development"
+          ]
+        },
+        {
+          "name": "Woodhaven",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improved infrastructure and housing that supports sustainability, benefiting the community.",
+          "evidence_signals": [
+            "potential for new sustainable housing",
+            "community interest in green development"
+          ]
+        },
+        {
+          "name": "Woodlawn Cemetery",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The cemetery is less likely to be affected by the initiative, as it does not directly relate to residential or commercial development.",
+          "evidence_signals": [
+            "limited relevance to zoning changes",
+            "focus on preservation rather than development"
+          ]
+        },
+        {
+          "name": "Woodside",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The initiative may lead to improved infrastructure and housing that supports sustainability, benefiting the community.",
+          "evidence_signals": [
+            "potential for new sustainable housing",
+            "community interest in green development"
+          ]
+        },
+        {
+          "name": "Yankee Stadium-Macombs Dam Park",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The initiative could enhance the area around the stadium with improved infrastructure and green spaces, attracting more visitors.",
+          "evidence_signals": [
+            "increased funding for green projects",
+            "community support for climate initiatives"
+          ]
+        }
+      ]
+    }
+  }
+]

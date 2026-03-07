@@ -1,0 +1,3287 @@
+[
+  {
+    "id": "https://www.dallascitynews.net/?p=24877",
+    "source_url": "https://www.dallascitynews.net/feed",
+    "title": "Dallas City Council Approves Agreement for Fair Park Community Park Development",
+    "description": "The Dallas City Council today voted to authorize the City Manager and the Park and Recreation Board to execute a […]",
+    "link": "https://www.dallascitynews.net/dallas-city-council-approves-agreement-for-fair-park-community-park-development",
+    "published_at": "Wed, 25 Feb 2026 20:09:32 +0000",
+    "fetched_at": "2026-03-06T19:30:06.600834+00:00",
+    "topic": "infrastructure",
+    "risk_level": "medium",
+    "potential_level": "medium",
+    "segment": "balanced_watch",
+    "signals": [
+      "increased property values",
+      "enhanced community amenities",
+      "potential for further investment"
+    ],
+    "analysis_status": "completed",
+    "analyzed_at": "2026-03-06T22:17:37.631886+00:00",
+    "commentary_en": "The approval of the Fair Park Community Park Development by the Dallas City Council indicates a significant investment in local infrastructure, which can enhance the attractiveness of the surrounding area for both residents and businesses. This development may lead to increased property values and stimulate further investment in the vicinity.",
+    "reason_en": "This news item is relevant as it involves the development of a community park, which is a key aspect of urban infrastructure. Such developments can improve quality of life, attract new residents, and potentially lead to increased real estate demand and investment opportunities in the area. The medium risk level reflects potential disruptions during construction, while the medium potential level indicates the likelihood of positive economic impacts.",
+    "expected_growth_areas": [
+      "Fair Park"
+    ],
+    "expected_growth_neighborhoods": [],
+    "state": "Texas",
+    "city": "Dallas",
+    "geography_type_area": "council_district",
+    "geography_type_neighborhood": "neighborhood_association",
+    "area_catalog": [
+      "Council District 1",
+      "Council District 10",
+      "Council District 11",
+      "Council District 12",
+      "Council District 13",
+      "Council District 14",
+      "Council District 2",
+      "Council District 3",
+      "Council District 4",
+      "Council District 5",
+      "Council District 6",
+      "Council District 7",
+      "Council District 8",
+      "Council District 9"
+    ],
+    "neighborhood_catalog": [
+      "Adelaide NA",
+      "Alger Park/ Ash Creek NA",
+      "Arcadia Park NA",
+      "Arden Terrace NA",
+      "Arlington Park NA",
+      "Bachman/NW Highway Community Association",
+      "Beckley Estates NA",
+      "Beckley/Saner - NA",
+      "Belmont Addition Conservation District",
+      "Belmont NA",
+      "Beverly Hills NA",
+      "Bexar Street Connection Association",
+      "Bickers Park Neighborhood Association",
+      "Bishop Arts NA",
+      "Bluffview Association",
+      "Bonton NA",
+      "BORDELLO COMMUNITY CRIME WATCH NA",
+      "Bottom NA",
+      "Bradford Estates NA",
+      "Braeburn Glen NA",
+      "Brentwood NA",
+      "Brettonwoods NA",
+      "Briarwood Crime Watch Neighborhood Association",
+      "Briarwood NA",
+      "Bruton Terrace",
+      "Bryan Place NA",
+      "Buckner Terrace HOA",
+      "Caillet Crime Watch Program",
+      "Caruth Hills & Homeplace NA (CHHNA)",
+      "Casa Linda Estates NA (CLENA)",
+      "Casa Linda Forest NA",
+      "Casa Linda NA",
+      "Casa View Crime Watch 1130",
+      "Casa View Haven NA (CVHNA)",
+      "Casa View Heights Crime Watch 1156",
+      "Casa View Oaks Neighborhood Watch",
+      "Cedar Creek Ranch NA",
+      "Cedar Crest NA",
+      "Cedar Crest Village Neighborhood & Civic Club",
+      "Cedar Vista",
+      "Cedars Neighborhood Association",
+      "Chapel Valley NA",
+      "Cherry Valley NA",
+      "Claremont Addition NA",
+      "Cochran Heights NA",
+      "College Terrace Neighborhood Group",
+      "Creekside NA",
+      "Deep Ellum Community Association",
+      "Deep Ellum Neighbors",
+      "Design District North",
+      "Devonshire NA",
+      "Dolphin Heights NA",
+      "Downtown Residents Council",
+      "East Dallas Coalition for Affordable Housing",
+      "East Kessler Park NA",
+      "East Lake June Neighborhood Crime Watch",
+      "Eastwood NA",
+      "Edgemont Park Residents Association",
+      "Edgewood NA",
+      "El Tivoli Place NA",
+      "Elderwood NA",
+      "Elm Thicket - Northpark NA",
+      "Elmwood NA",
+      "Fair Park Estates NA",
+      "Fakes Park Place NA",
+      "Five Mile Neighborhood Crime Watch Association",
+      "Forest Court NA",
+      "Forest Hills NA",
+      "Forest Lakes Greenbelt Association",
+      "Forest Meadow NA",
+      "Fort Worth Ave Development Group",
+      "Frankford Meadows NA",
+      "Friends of State -Thomas",
+      "Gilbert-Emory Neighborhood Association",
+      "Glen Meadow Neighborhood Association",
+      "Glencoe Park NA",
+      "Glendale Heights Neighborhood Association",
+      "Glenview NA",
+      "Greenland Hills NA",
+      "Hampton Hills NA",
+      "Heart of Oak Cliff",
+      "Henderson NA",
+      "Hidden Valley NA",
+      "Hideaway Valley NA",
+      "Highland Hills Community Liaison Assoc/Crime Watch",
+      "Highlands of McKamy (IV & V Community Improvement Association)",
+      "Hillcrest Forest NA",
+      "Hillside NA",
+      "Hillside Oaks",
+      "Hillview Terrace NA",
+      "HMMS Neighborhood Association & Crime Watch",
+      "Hockaday NA",
+      "Hollywood Santa Monica NA",
+      "Homestead Neighborhood Association",
+      "Horizon Estates Association",
+      "Independence Park NA (IPNA)",
+      "Joppa Freedmans Town Association",
+      "Junius Heights Historic District",
+      "Kenningston Homeowners CW",
+      "Kessler Heights NA",
+      "Kessler Neighbors United NA",
+      "Kessler Plaza/Ravinia Heights Neighborhood Association",
+      "Kidd Springs NA",
+      "Kiest Forest Estates NA",
+      "Kiest Park Community Group",
+      "Kimball Square Neighborhood Association",
+      "Kings Highway Conservation District",
+      "Kleberg NA",
+      "Kleberg Neighborhood Alliance",
+      "Knox Armstrong NA",
+      "L Streets Neighborhood Association",
+      "L.O. Daniel NA",
+      "La Bajada Neighborhood Community Association",
+      "Lake Highlands Estates NA",
+      "Lake Park Estates NA, Inc. (LPENA)",
+      "Lake Ridge Estates (LRE FAN Club)",
+      "Lakeland Hills NA",
+      "Lakes of Preston Hollow, Inc.",
+      "Lakewood Heights NA",
+      "Lakewood NA(LNA)",
+      "Lakewood Trails NA",
+      "Ledbetter NA",
+      "Liberty Heights NA & CW",
+      "Little Casa View + Casa View Art Association",
+      "Little Casa View NA",
+      "Little Forest Hills NA",
+      "Little Mexico Residents Council",
+      "Lochwood NA",
+      "Los Altos NA",
+      "Love Field West NA",
+      "Lower Greenville NA (LGNA)",
+      "Lowest Greenville West NA",
+      "Malcolm X Grand Corridor Association",
+      "Maple Lawn NA",
+      "Meadows NA",
+      "Meridian at Kessler Park",
+      "Merriman Park/University Manor NA",
+      "Mill City NA",
+      "Monopoly Place Duplexes",
+      "Moss Farm Alliance (MFA)",
+      "Mount Auburn NA",
+      "Mountain Creek Neighborhood Alliance",
+      "Munger Place Historic District Association",
+      "Neighborhood Planning Group",
+      "North Oaklawn NA",
+      "Northaven Park NA, Inc.",
+      "Northern Hills NA",
+      "Northwest Dallas Improvement League, Inc.",
+      "Northwood Estates Neighborhood Association",
+      "Oak Cliff Gardens CW/NA",
+      "Oak Park Estates NA",
+      "Oakland Terrace NA",
+      "Oaklawn Heights",
+      "Old Lake Highlands NA",
+      "Owenwood NA",
+      "Park Central NA",
+      "Park Forest Neighborhood Group",
+      "Park Towers Condominiums Assoc.",
+      "Parkdale Lawnview Association of Neighbors",
+      "Pecan Heights Neighborhood",
+      "Pemberton Hill/Great trinity Forest NA",
+      "Peninsula NA",
+      "Perry Heights NA",
+      "Phillis Wheatley Neighbors",
+      "Pleasant Grove \"A Community Striving to Thrive\"",
+      "Pleasant Grove Unidos NA",
+      "Polk Terrace NA",
+      "Polk-Vernon NA",
+      "Preston Citadel Club NA",
+      "Preston Hollow West NA",
+      "Preston Port Estates Crime Watch",
+      "Preston Royal NW NA",
+      "Prestonwood on the Park NA (POPNA)",
+      "Queen City NA",
+      "Rawlins-Hall Group NA",
+      "Red Bird-Hampton NA",
+      "Residents United for Change & Opportunity (RUFCO)",
+      "Richardson and North Dallas Coalition Organization (RANDCO Inc)",
+      "Richland Park Estates NA (RPENA)",
+      "Ridgewood Park NA",
+      "Rose Garden Neighborhood Improvement League",
+      "Royal Highlands Village NA",
+      "Royal Northaven NA",
+      "Royalwood Estate NA",
+      "Ruthmeade Place",
+      "Rylie NA",
+      "Samuel Peak Creek NA",
+      "Santa Fe NA & Crime Watch",
+      "Schreiber Community Volunteer NA",
+      "Shady Hills NA",
+      "Shore Acres Beautification Club",
+      "Singing Hills NA",
+      "SOHIP NA",
+      "South Blvd/ Park Row Historic District NA",
+      "South Central Civic League NA",
+      "South East Dallas Civic Association, Inc.",
+      "Southern Hills NA",
+      "St. Andrews NA",
+      "St. Augustine Heights NA",
+      "St. Philips Neighborhood Association",
+      "Stevens Park Estates NA",
+      "Stevens Park Village NA",
+      "Sunset Hill Association of Neighbors",
+      "Swiss Ave Historic District Association",
+      "Tenth Street Residential Association",
+      "The Uptown NA (TUNA)",
+      "Truett Area Crime Watch",
+      "Turtle Creek Association",
+      "Twelve Hill Nature Center",
+      "Twin Oaks NA",
+      "University Meadows NA",
+      "University Terrace NA",
+      "Urbandale NA",
+      "Valley View",
+      "Vickery Meadow Improvement District (VMID)",
+      "Vickery Place NA",
+      "Vickery Together NA",
+      "Victory Gardens NA & CW",
+      "Walnut Ridge Neighborhood Association (WRNA)",
+      "Waterford on the Park NA",
+      "Webb Royal Crime Watch",
+      "WendelkinDriskell NA",
+      "West Kessler NA",
+      "Westmoreland Heights NA",
+      "Westmoreland Park",
+      "Wheatland Meadows/Wisdom Terrace",
+      "Whispering Hills NA",
+      "White Rock Forest",
+      "White Rock NA",
+      "White Rock Valley NA",
+      "Wilshire Heights NA",
+      "Winnetka Heights NA",
+      "Woodbriar",
+      "Woodlawn Neighborhood Association",
+      "Woods - Sugarberry NA",
+      "Wynnewood Heights NA",
+      "Wynnewood Hills NA",
+      "Wynnewood North NA",
+      "Zoo Creek Park Neighborhood Association"
+    ],
+    "impact_analysis": {
+      "summary_en": "The approval of the Fair Park Community Park Development by the Dallas City Council indicates a significant investment in local infrastructure, which can enhance the attractiveness of the surrounding area for both residents and businesses. This development may lead to increased property values and stimulate further investment in the vicinity.",
+      "max_impacted": {
+        "areas": [
+          {
+            "name": "Council District 1",
+            "impact_score": 75,
+            "impact_direction": "positive",
+            "confidence": 80,
+            "reason_en": "The development at Fair Park is likely to enhance recreational opportunities and attract more visitors, positively impacting real estate and local businesses in Council District 1.",
+            "evidence_signals": [
+              "increased foot traffic",
+              "improved park facilities"
+            ]
+          },
+          {
+            "name": "Council District 9",
+            "impact_score": 70,
+            "impact_direction": "positive",
+            "confidence": 80,
+            "reason_en": "Council District 9 is likely to see significant benefits from the Fair Park development, including increased property values and local business opportunities.",
+            "evidence_signals": [
+              "high community engagement",
+              "proximity to Fair Park"
+            ]
+          },
+          {
+            "name": "Council District 8",
+            "impact_score": 65,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "The Fair Park development is expected to positively impact Council District 8 by enhancing local amenities and attracting new residents.",
+            "evidence_signals": [
+              "increased local investment",
+              "community interest in development"
+            ]
+          },
+          {
+            "name": "Council District 2",
+            "impact_score": 60,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "The development at Fair Park is expected to enhance the attractiveness of Council District 2, leading to increased housing demand and investment.",
+            "evidence_signals": [
+              "increased property interest",
+              "local business growth"
+            ]
+          },
+          {
+            "name": "Council District 3",
+            "impact_score": 55,
+            "impact_direction": "positive",
+            "confidence": 70,
+            "reason_en": "Council District 3 is likely to see a positive impact from the Fair Park development, particularly in terms of local infrastructure improvements.",
+            "evidence_signals": [
+              "community engagement",
+              "planned infrastructure upgrades"
+            ]
+          }
+        ],
+        "neighborhoods": [
+          {
+            "name": "Fair Park Estates NA",
+            "impact_score": 85,
+            "impact_direction": "positive",
+            "confidence": 90,
+            "reason_en": "The development of Fair Park Community Park is likely to significantly enhance the local environment, increase property values, and attract more residents and businesses to the area.",
+            "evidence_signals": [
+              "Increased park amenities",
+              "Higher foot traffic and community engagement"
+            ]
+          },
+          {
+            "name": "Cedar Crest NA",
+            "impact_score": 60,
+            "impact_direction": "positive",
+            "confidence": 70,
+            "reason_en": "Cedar Crest NA may see some benefits from the development due to its proximity to Fair Park, potentially leading to increased interest in the area.",
+            "evidence_signals": [
+              "Proximity to Fair Park",
+              "Potential for increased housing demand"
+            ]
+          },
+          {
+            "name": "Fort Worth Ave Development Group",
+            "impact_score": 60,
+            "impact_direction": "positive",
+            "confidence": 80,
+            "reason_en": "The development of Fair Park Community Park is likely to enhance the attractiveness of the Fort Worth Ave area, potentially increasing real estate demand and investment.",
+            "evidence_signals": [
+              "increased foot traffic",
+              "enhanced community amenities"
+            ]
+          },
+          {
+            "name": "Kimball Square Neighborhood Association",
+            "impact_score": 60,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "The development of Fair Park Community Park is likely to enhance local amenities, increasing property values and attracting new residents.",
+            "evidence_signals": [
+              "increased local amenities",
+              "potential rise in housing demand"
+            ]
+          },
+          {
+            "name": "Lakewood NA(LNA)",
+            "impact_score": 60,
+            "impact_direction": "positive",
+            "confidence": 75,
+            "reason_en": "The development of Fair Park is expected to significantly enhance local amenities, positively impacting Lakewood NA.",
+            "evidence_signals": [
+              "enhanced local amenities",
+              "increased housing demand"
+            ]
+          }
+        ]
+      },
+      "min_impacted": {
+        "areas": [
+          {
+            "name": "Council District 11",
+            "impact_score": 20,
+            "impact_direction": "neutral",
+            "confidence": 50,
+            "reason_en": "Council District 11 is further away from Fair Park, leading to a low expected impact on local real estate and infrastructure.",
+            "evidence_signals": [
+              "distance from development",
+              "low local engagement"
+            ]
+          },
+          {
+            "name": "Council District 12",
+            "impact_score": 25,
+            "impact_direction": "neutral",
+            "confidence": 55,
+            "reason_en": "Similar to Council District 11, the distance from Fair Park limits the expected impact on real estate and housing demand.",
+            "evidence_signals": [
+              "limited local investment",
+              "low visibility of development"
+            ]
+          },
+          {
+            "name": "Council District 10",
+            "impact_score": 30,
+            "impact_direction": "neutral",
+            "confidence": 60,
+            "reason_en": "While Council District 10 may benefit indirectly from the Fair Park development, the direct impact on real estate and infrastructure is expected to be minimal.",
+            "evidence_signals": [
+              "limited proximity to Fair Park",
+              "existing infrastructure"
+            ]
+          },
+          {
+            "name": "Council District 6",
+            "impact_score": 30,
+            "impact_direction": "neutral",
+            "confidence": 55,
+            "reason_en": "Council District 6 is not expected to see significant changes due to the Fair Park development, leading to a neutral impact score.",
+            "evidence_signals": [
+              "distance from Fair Park",
+              "low local engagement"
+            ]
+          },
+          {
+            "name": "Council District 5",
+            "impact_score": 35,
+            "impact_direction": "neutral",
+            "confidence": 60,
+            "reason_en": "The impact of the Fair Park development on Council District 5 is expected to be limited due to distance and existing infrastructure.",
+            "evidence_signals": [
+              "low visibility of development",
+              "existing community priorities"
+            ]
+          }
+        ],
+        "neighborhoods": [
+          {
+            "name": "Cedars Neighborhood Association",
+            "impact_score": 0,
+            "impact_direction": "neutral",
+            "confidence": 0,
+            "reason_en": "No credible localized impact was identified for this geography from the article.",
+            "evidence_signals": []
+          },
+          {
+            "name": "Chapel Valley NA",
+            "impact_score": 0,
+            "impact_direction": "neutral",
+            "confidence": 0,
+            "reason_en": "No credible localized impact was identified for this geography from the article.",
+            "evidence_signals": []
+          },
+          {
+            "name": "Deep Ellum Neighbors",
+            "impact_score": 0,
+            "impact_direction": "neutral",
+            "confidence": 0,
+            "reason_en": "No credible localized impact was identified for this geography from the article.",
+            "evidence_signals": []
+          },
+          {
+            "name": "Design District North",
+            "impact_score": 0,
+            "impact_direction": "neutral",
+            "confidence": 0,
+            "reason_en": "No credible localized impact was identified for this geography from the article.",
+            "evidence_signals": []
+          },
+          {
+            "name": "Arlington Park NA",
+            "impact_score": 10,
+            "impact_direction": "neutral",
+            "confidence": 40,
+            "reason_en": "Arlington Park NA is likely to see little to no direct impact from the Fair Park development.",
+            "evidence_signals": [
+              "Distance from Fair Park",
+              "Limited community engagement"
+            ]
+          }
+        ]
+      },
+      "all_area_scores": [
+        {
+          "name": "Council District 1",
+          "impact_score": 75,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The development at Fair Park is likely to enhance recreational opportunities and attract more visitors, positively impacting real estate and local businesses in Council District 1.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "improved park facilities"
+          ]
+        },
+        {
+          "name": "Council District 10",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While Council District 10 may benefit indirectly from the Fair Park development, the direct impact on real estate and infrastructure is expected to be minimal.",
+          "evidence_signals": [
+            "limited proximity to Fair Park",
+            "existing infrastructure"
+          ]
+        },
+        {
+          "name": "Council District 11",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Council District 11 is further away from Fair Park, leading to a low expected impact on local real estate and infrastructure.",
+          "evidence_signals": [
+            "distance from development",
+            "low local engagement"
+          ]
+        },
+        {
+          "name": "Council District 12",
+          "impact_score": 25,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to Council District 11, the distance from Fair Park limits the expected impact on real estate and housing demand.",
+          "evidence_signals": [
+            "limited local investment",
+            "low visibility of development"
+          ]
+        },
+        {
+          "name": "Council District 13",
+          "impact_score": 40,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Council District 13 may see some positive effects from increased visitors to Fair Park, but the overall impact on housing demand is uncertain.",
+          "evidence_signals": [
+            "potential for increased local business",
+            "mixed community response"
+          ]
+        },
+        {
+          "name": "Council District 14",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Council District 14 is likely to benefit from the Fair Park development through improved local amenities and increased property values.",
+          "evidence_signals": [
+            "community support for development",
+            "proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Council District 2",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The development at Fair Park is expected to enhance the attractiveness of Council District 2, leading to increased housing demand and investment.",
+          "evidence_signals": [
+            "increased property interest",
+            "local business growth"
+          ]
+        },
+        {
+          "name": "Council District 3",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Council District 3 is likely to see a positive impact from the Fair Park development, particularly in terms of local infrastructure improvements.",
+          "evidence_signals": [
+            "community engagement",
+            "planned infrastructure upgrades"
+          ]
+        },
+        {
+          "name": "Council District 4",
+          "impact_score": 45,
+          "impact_direction": "mixed",
+          "confidence": 65,
+          "reason_en": "Council District 4 may experience some benefits from the Fair Park development, but the overall impact on housing and investment is uncertain.",
+          "evidence_signals": [
+            "mixed community feedback",
+            "potential for local business growth"
+          ]
+        },
+        {
+          "name": "Council District 5",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact of the Fair Park development on Council District 5 is expected to be limited due to distance and existing infrastructure.",
+          "evidence_signals": [
+            "low visibility of development",
+            "existing community priorities"
+          ]
+        },
+        {
+          "name": "Council District 6",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Council District 6 is not expected to see significant changes due to the Fair Park development, leading to a neutral impact score.",
+          "evidence_signals": [
+            "distance from Fair Park",
+            "low local engagement"
+          ]
+        },
+        {
+          "name": "Council District 7",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Council District 7 may benefit from increased recreational opportunities and local business growth due to the Fair Park development.",
+          "evidence_signals": [
+            "community support for development",
+            "potential for increased visitors"
+          ]
+        },
+        {
+          "name": "Council District 8",
+          "impact_score": 65,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development is expected to positively impact Council District 8 by enhancing local amenities and attracting new residents.",
+          "evidence_signals": [
+            "increased local investment",
+            "community interest in development"
+          ]
+        },
+        {
+          "name": "Council District 9",
+          "impact_score": 70,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "Council District 9 is likely to see significant benefits from the Fair Park development, including increased property values and local business opportunities.",
+          "evidence_signals": [
+            "high community engagement",
+            "proximity to Fair Park"
+          ]
+        }
+      ],
+      "all_neighborhood_scores": [
+        {
+          "name": "Adelaide NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development at Fair Park may increase local interest and property values in nearby neighborhoods like Adelaide NA due to improved amenities.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Increased community engagement"
+          ]
+        },
+        {
+          "name": "Alger Park/ Ash Creek NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The Fair Park development could lead to increased foot traffic and interest in Alger Park/Ash Creek, enhancing local real estate appeal.",
+          "evidence_signals": [
+            "Potential for increased visitors",
+            "Community revitalization efforts"
+          ]
+        },
+        {
+          "name": "Arcadia Park NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 50,
+          "reason_en": "While Arcadia Park NA is somewhat distant, the overall enhancement of Fair Park may have a trickle-down effect on property values.",
+          "evidence_signals": [
+            "Indirect benefits from nearby developments",
+            "Community interest in local parks"
+          ]
+        },
+        {
+          "name": "Arden Terrace NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Arden Terrace NA is expected to be minimal as it is further from Fair Park, but some local interest may arise.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited direct benefits"
+          ]
+        },
+        {
+          "name": "Arlington Park NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "Arlington Park NA is likely to see little to no direct impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited community engagement"
+          ]
+        },
+        {
+          "name": "Bachman/NW Highway Community Association",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "This area may benefit from increased traffic and interest in the Fair Park area, potentially boosting local businesses.",
+          "evidence_signals": [
+            "Increased traffic",
+            "Potential for local business growth"
+          ]
+        },
+        {
+          "name": "Beckley Estates NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Beckley Estates NA may see a rise in property values as Fair Park becomes a more attractive destination.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Increased community amenities"
+          ]
+        },
+        {
+          "name": "Beckley/Saner - NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Similar to Beckley Estates, this area could benefit from the Fair Park development through increased local interest.",
+          "evidence_signals": [
+            "Community engagement",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Belmont Addition Conservation District",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The conservation district may attract more visitors and potential residents due to the Fair Park improvements.",
+          "evidence_signals": [
+            "Increased tourism",
+            "Enhanced local amenities"
+          ]
+        },
+        {
+          "name": "Belmont NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Belmont NA could see a positive impact from the Fair Park development, leading to increased property values.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Community interest in local events"
+          ]
+        },
+        {
+          "name": "Beverly Hills NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Beverly Hills NA is somewhat distant from Fair Park, resulting in limited direct impact.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited engagement"
+          ]
+        },
+        {
+          "name": "Bexar Street Connection Association",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "This association may benefit from increased connectivity and interest in the Fair Park area.",
+          "evidence_signals": [
+            "Potential for increased connectivity",
+            "Community revitalization"
+          ]
+        },
+        {
+          "name": "Bickers Park Neighborhood Association",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Bickers Park NA may see some benefits from the Fair Park development, particularly in terms of local engagement.",
+          "evidence_signals": [
+            "Increased community activities",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Bishop Arts NA",
+          "impact_score": 35,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "Bishop Arts NA is likely to see significant benefits from the Fair Park development, enhancing its appeal as a cultural hub.",
+          "evidence_signals": [
+            "Cultural proximity",
+            "Increased tourism"
+          ]
+        },
+        {
+          "name": "Bluffview Association",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Bluffview may experience minimal impact due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited direct benefits"
+          ]
+        },
+        {
+          "name": "Bonton NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Bonton NA could see a positive impact from the Fair Park development, potentially increasing local investment.",
+          "evidence_signals": [
+            "Community revitalization efforts",
+            "Increased local interest"
+          ]
+        },
+        {
+          "name": "BORDELLO COMMUNITY CRIME WATCH NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "This area is likely to see little to no impact from the Fair Park development.",
+          "evidence_signals": [
+            "Limited engagement",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Bottom NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Bottom NA is expected to experience minimal impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Bradford Estates NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Bradford Estates NA may benefit from increased interest in the Fair Park area, leading to potential property value increases.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Community engagement"
+          ]
+        },
+        {
+          "name": "Braeburn Glen NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Braeburn Glen NA is likely to see minimal impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited engagement"
+          ]
+        },
+        {
+          "name": "Brentwood NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Brentwood NA may see some benefits from the Fair Park development through increased local interest.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for local investment"
+          ]
+        },
+        {
+          "name": "Brettonwoods NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Brettonwoods NA is expected to experience minimal impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local engagement"
+          ]
+        },
+        {
+          "name": "Briarwood Crime Watch Neighborhood Association",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "This area may benefit from increased community activities and interest due to the Fair Park development.",
+          "evidence_signals": [
+            "Increased community engagement",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Briarwood NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Briarwood NA could see a positive impact from the Fair Park development, particularly in terms of local engagement.",
+          "evidence_signals": [
+            "Increased community activities",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Bruton Terrace",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Bruton Terrace may see some benefits from the Fair Park development through increased local interest.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for local investment"
+          ]
+        },
+        {
+          "name": "Bryan Place NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Bryan Place NA is likely to see significant benefits from the Fair Park development, enhancing its appeal as a residential area.",
+          "evidence_signals": [
+            "Increased property values",
+            "Community engagement"
+          ]
+        },
+        {
+          "name": "Buckner Terrace HOA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Buckner Terrace HOA may benefit from increased interest in the Fair Park area, leading to potential property value increases.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Community revitalization efforts"
+          ]
+        },
+        {
+          "name": "Caillet Crime Watch Program",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "This area is likely to see little to no impact from the Fair Park development.",
+          "evidence_signals": [
+            "Limited engagement",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Caruth Hills & Homeplace NA (CHHNA)",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Caruth Hills & Homeplace NA may experience minimal impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Casa Linda Estates NA (CLENA)",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Casa Linda Estates NA may see a positive impact from the Fair Park development, potentially increasing local investment.",
+          "evidence_signals": [
+            "Community revitalization efforts",
+            "Increased local interest"
+          ]
+        },
+        {
+          "name": "Casa Linda Forest NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 55,
+          "reason_en": "Casa Linda Forest NA could benefit from increased interest in the Fair Park area, leading to potential property value increases.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Community engagement"
+          ]
+        },
+        {
+          "name": "Casa Linda NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Casa Linda NA may see a positive impact from the Fair Park development, particularly in terms of local engagement.",
+          "evidence_signals": [
+            "Increased community activities",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Casa View Crime Watch 1130",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "This area is likely to see little to no impact from the Fair Park development.",
+          "evidence_signals": [
+            "Limited engagement",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Casa View Haven NA (CVHNA)",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Casa View Haven NA may experience minimal impact from the Fair Park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Casa View Heights Crime Watch 1156",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "This area is likely to see little to no impact from the Fair Park development.",
+          "evidence_signals": [
+            "Limited engagement",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Casa View Oaks Neighborhood Watch",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Casa View Oaks is quite distant from Fair Park, and any potential negative impacts from increased traffic or changes in the area are expected to be minimal.",
+          "evidence_signals": [
+            "Significant distance from Fair Park",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Cedar Creek Ranch NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Similar to Casa View Oaks, Cedar Creek Ranch NA is far from Fair Park, leading to negligible impacts from the park development.",
+          "evidence_signals": [
+            "Geographical separation",
+            "Minimal local relevance"
+          ]
+        },
+        {
+          "name": "Cedar Crest NA",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Cedar Crest NA may see some benefits from the development due to its proximity to Fair Park, potentially leading to increased interest in the area.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased housing demand"
+          ]
+        },
+        {
+          "name": "Cedar Crest Village Neighborhood & Civic Club",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "While this area is closer than some others, the impact is still expected to be limited due to its specific focus and community structure.",
+          "evidence_signals": [
+            "Proximity but limited engagement",
+            "Community focus on local issues"
+          ]
+        },
+        {
+          "name": "Cedar Vista",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "Cedar Vista is likely to experience little to no direct impact from the Fair Park development, as it is not in close proximity.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Lack of direct connection to Fair Park"
+          ]
+        },
+        {
+          "name": "Cedars Neighborhood Association",
+          "impact_score": 0,
+          "impact_direction": "neutral",
+          "confidence": 0,
+          "reason_en": "No credible localized impact was identified for this geography from the article.",
+          "evidence_signals": []
+        },
+        {
+          "name": "Chapel Valley NA",
+          "impact_score": 0,
+          "impact_direction": "neutral",
+          "confidence": 0,
+          "reason_en": "No credible localized impact was identified for this geography from the article.",
+          "evidence_signals": []
+        },
+        {
+          "name": "Cherry Valley NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Cherry Valley NA is also distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "Claremont Addition NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Claremont Addition NA is similarly far from Fair Park, leading to minimal expected effects from the development.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Limited engagement with park initiatives"
+          ]
+        },
+        {
+          "name": "Cochran Heights NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Cochran Heights NA is not expected to see significant impacts from the Fair Park development due to its distance.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "College Terrace Neighborhood Group",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "College Terrace is far from Fair Park, leading to negligible impacts from the park development.",
+          "evidence_signals": [
+            "Significant distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Creekside NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Creekside NA is also distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Geographical separation",
+            "Minimal local relevance"
+          ]
+        },
+        {
+          "name": "Deep Ellum Community Association",
+          "impact_score": 50,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While Deep Ellum is somewhat distant from Fair Park, the development could attract visitors and residents who may also frequent Deep Ellum, leading to mixed impacts.",
+          "evidence_signals": [
+            "Increased visitor traffic",
+            "Potential for local business growth"
+          ]
+        },
+        {
+          "name": "Deep Ellum Neighbors",
+          "impact_score": 0,
+          "impact_direction": "neutral",
+          "confidence": 0,
+          "reason_en": "No credible localized impact was identified for this geography from the article.",
+          "evidence_signals": []
+        },
+        {
+          "name": "Design District North",
+          "impact_score": 0,
+          "impact_direction": "neutral",
+          "confidence": 0,
+          "reason_en": "No credible localized impact was identified for this geography from the article.",
+          "evidence_signals": []
+        },
+        {
+          "name": "Devonshire NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Devonshire NA is not expected to see significant impacts from the Fair Park development due to its distance.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "Dolphin Heights NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Dolphin Heights NA is also distant from Fair Park, leading to minimal expected effects from the development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited engagement with park initiatives"
+          ]
+        },
+        {
+          "name": "Downtown Residents Council",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Downtown Residents may experience some indirect benefits from increased visitors to Fair Park, but the overall impact is expected to be neutral.",
+          "evidence_signals": [
+            "Increased visitor traffic",
+            "Proximity to Fair Park but limited direct impact"
+          ]
+        },
+        {
+          "name": "East Dallas Coalition for Affordable Housing",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on affordable housing initiatives may remain neutral as the focus is more on park development rather than housing.",
+          "evidence_signals": [
+            "Focus on park rather than housing",
+            "Limited direct impact on affordable housing"
+          ]
+        },
+        {
+          "name": "East Kessler Park NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 40,
+          "reason_en": "East Kessler Park NA is somewhat distant from Fair Park, leading to limited expected impacts from the park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "East Lake June Neighborhood Crime Watch",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "This neighborhood is also distant from Fair Park and is not expected to see significant impacts from the development.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Eastwood NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Eastwood NA is similarly far from Fair Park, leading to minimal expected effects from the development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "Edgemont Park Residents Association",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Edgemont Park is distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Significant distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Edgewood NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Edgewood NA is also far from Fair Park, leading to negligible impacts from the park development.",
+          "evidence_signals": [
+            "Geographical separation",
+            "Minimal local relevance"
+          ]
+        },
+        {
+          "name": "El Tivoli Place NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "El Tivoli Place NA is distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local relevance"
+          ]
+        },
+        {
+          "name": "Elderwood NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Elderwood NA is also far from Fair Park, leading to minimal expected effects from the development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited engagement with park initiatives"
+          ]
+        },
+        {
+          "name": "Elm Thicket - Northpark NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Elm Thicket - Northpark NA is distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Significant distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Elmwood NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Elmwood NA may see some indirect benefits from the Fair Park development, but the overall impact is expected to be minimal.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Limited direct engagement with park development"
+          ]
+        },
+        {
+          "name": "Fair Park Estates NA",
+          "impact_score": 85,
+          "impact_direction": "positive",
+          "confidence": 90,
+          "reason_en": "The development of Fair Park Community Park is likely to significantly enhance the local environment, increase property values, and attract more residents and businesses to the area.",
+          "evidence_signals": [
+            "Increased park amenities",
+            "Higher foot traffic and community engagement"
+          ]
+        },
+        {
+          "name": "Fakes Park Place NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Fakes Park Place NA is also far from Fair Park, leading to negligible impacts from the park development.",
+          "evidence_signals": [
+            "Geographical separation",
+            "Minimal local relevance"
+          ]
+        },
+        {
+          "name": "Five Mile Neighborhood Crime Watch Association",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "This neighborhood is also distant from Fair Park and is not expected to see significant impacts from the development.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Forest Court NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Forest Court NA is distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Significant distance",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Forest Hills NA",
+          "impact_score": 15,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Forest Hills NA is also far from Fair Park, leading to minimal expected effects from the development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited engagement with park initiatives"
+          ]
+        },
+        {
+          "name": "Forest Lakes Greenbelt Association",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Forest Lakes Greenbelt Association is distant from Fair Park, with little expected impact from the park development.",
+          "evidence_signals": [
+            "Geographical separation",
+            "Minimal local relevance"
+          ]
+        },
+        {
+          "name": "Forest Meadow NA",
+          "impact_score": 10,
+          "impact_direction": "negative",
+          "confidence": 30,
+          "reason_en": "Forest Meadow NA is also far from Fair Park, leading to negligible impacts from the park development.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited relevance to park development"
+          ]
+        },
+        {
+          "name": "Fort Worth Ave Development Group",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The development of Fair Park Community Park is likely to enhance the attractiveness of the Fort Worth Ave area, potentially increasing real estate demand and investment.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "enhanced community amenities"
+          ]
+        },
+        {
+          "name": "Frankford Meadows NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The development at Fair Park is geographically distant from Frankford Meadows, resulting in minimal direct impact on this neighborhood.",
+          "evidence_signals": [
+            "limited proximity",
+            "no direct investment signals"
+          ]
+        },
+        {
+          "name": "Friends of State -Thomas",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the park development may have some indirect benefits, the distance from State-Thomas limits its immediate impact on housing demand.",
+          "evidence_signals": [
+            "indirect benefits",
+            "limited local engagement"
+          ]
+        },
+        {
+          "name": "Gilbert-Emory Neighborhood Association",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 70,
+          "reason_en": "The park's development may attract some interest in the Gilbert-Emory area, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased interest",
+            "mixed community responses"
+          ]
+        },
+        {
+          "name": "Glen Meadow Neighborhood Association",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Similar to other distant neighborhoods, Glen Meadow is unlikely to see significant changes due to the Fair Park development.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local changes"
+          ]
+        },
+        {
+          "name": "Glencoe Park NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Glencoe Park may benefit from increased visitors to Fair Park, enhancing local property values and community engagement.",
+          "evidence_signals": [
+            "increased visitor numbers",
+            "potential for local business growth"
+          ]
+        },
+        {
+          "name": "Glendale Heights Neighborhood Association",
+          "impact_score": 25,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Glendale Heights is expected to be limited, with some potential for indirect benefits from nearby developments.",
+          "evidence_signals": [
+            "limited direct impact",
+            "some community interest"
+          ]
+        },
+        {
+          "name": "Glenview NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Glenview is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Greenland Hills NA",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "While Greenland Hills may see some benefits from increased activity in Fair Park, the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased local interest",
+            "mixed community feedback"
+          ]
+        },
+        {
+          "name": "Hampton Hills NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The distance from Fair Park means that Hampton Hills is unlikely to experience any significant changes due to the park development.",
+          "evidence_signals": [
+            "limited proximity",
+            "no direct investment signals"
+          ]
+        },
+        {
+          "name": "Heart of Oak Cliff",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Heart of Oak Cliff may benefit from increased visitors to Fair Park, leading to potential growth in local businesses and real estate.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "business growth opportunities"
+          ]
+        },
+        {
+          "name": "Henderson NA",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Henderson NA may see some positive effects from the park development, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased interest",
+            "mixed community responses"
+          ]
+        },
+        {
+          "name": "Hidden Valley NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Hidden Valley is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Hideaway Valley NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The distance from Fair Park means that Hideaway Valley is unlikely to experience any significant changes due to the park development.",
+          "evidence_signals": [
+            "limited proximity",
+            "no direct investment signals"
+          ]
+        },
+        {
+          "name": "Highland Hills Community Liaison Assoc/Crime Watch",
+          "impact_score": 35,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Highland Hills may see some positive effects from the park development, potentially enhancing community engagement and property values.",
+          "evidence_signals": [
+            "community engagement opportunities",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Highlands of McKamy (IV & V Community Improvement Association)",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Highlands of McKamy is expected to be limited, with some potential for indirect benefits from nearby developments.",
+          "evidence_signals": [
+            "limited direct impact",
+            "some community interest"
+          ]
+        },
+        {
+          "name": "Hillcrest Forest NA",
+          "impact_score": 25,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Hillcrest Forest is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Hillside NA",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Hillside NA may see some benefits from increased activity in Fair Park, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased local interest",
+            "mixed community feedback"
+          ]
+        },
+        {
+          "name": "Hillside Oaks",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Hillside Oaks is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Hillview Terrace NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Hillview Terrace is expected to be limited, with some potential for indirect benefits from nearby developments.",
+          "evidence_signals": [
+            "limited direct impact",
+            "some community interest"
+          ]
+        },
+        {
+          "name": "HMMS Neighborhood Association & Crime Watch",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "HMMS may see some positive effects from the park development, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased interest",
+            "mixed community responses"
+          ]
+        },
+        {
+          "name": "Hockaday NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Hockaday is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Hollywood Santa Monica NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Hollywood Santa Monica is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Homestead Neighborhood Association",
+          "impact_score": 25,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Homestead is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Horizon Estates Association",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The distance from Fair Park means that Horizon Estates is unlikely to experience any significant changes due to the park development.",
+          "evidence_signals": [
+            "limited proximity",
+            "no direct investment signals"
+          ]
+        },
+        {
+          "name": "Independence Park NA (IPNA)",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Independence Park may see some positive effects from the park development, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased interest",
+            "mixed community responses"
+          ]
+        },
+        {
+          "name": "Joppa Freedmans Town Association",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Joppa is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Junius Heights Historic District",
+          "impact_score": 35,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Junius Heights may benefit from increased visitors to Fair Park, enhancing local property values and community engagement.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "business growth opportunities"
+          ]
+        },
+        {
+          "name": "Kenningston Homeowners CW",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Kenningston is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Kessler Heights NA",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Kessler Heights may see some benefits from increased activity in Fair Park, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased local interest",
+            "mixed community feedback"
+          ]
+        },
+        {
+          "name": "Kessler Neighbors United NA",
+          "impact_score": 30,
+          "impact_direction": "mixed",
+          "confidence": 60,
+          "reason_en": "Kessler Neighbors United may see some positive effects from the park development, but the overall impact is expected to be moderate.",
+          "evidence_signals": [
+            "potential for increased interest",
+            "mixed community responses"
+          ]
+        },
+        {
+          "name": "Kessler Plaza/Ravinia Heights Neighborhood Association",
+          "impact_score": 25,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Kessler Plaza is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Kidd Springs NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Kidd Springs may benefit from increased visitors to Fair Park, leading to potential growth in local businesses and real estate.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "business growth opportunities"
+          ]
+        },
+        {
+          "name": "Kiest Forest Estates NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Kiest Forest is not expected to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Kiest Park Community Group",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Kiest Park is unlikely to see significant changes due to the Fair Park development, maintaining a neutral impact.",
+          "evidence_signals": [
+            "geographical distance",
+            "no significant local initiatives"
+          ]
+        },
+        {
+          "name": "Kimball Square Neighborhood Association",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The development of Fair Park Community Park is likely to enhance local amenities, increasing property values and attracting new residents.",
+          "evidence_signals": [
+            "increased local amenities",
+            "potential rise in housing demand"
+          ]
+        },
+        {
+          "name": "Kings Highway Conservation District",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Proximity to the park development may lead to improved neighborhood appeal, positively impacting real estate values.",
+          "evidence_signals": [
+            "enhanced neighborhood appeal",
+            "increased interest in local real estate"
+          ]
+        },
+        {
+          "name": "Kleberg NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the park development is beneficial, its direct impact on Kleberg NA may be limited due to distance from Fair Park.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Kleberg Neighborhood Alliance",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Similar to Kleberg NA, the impact is expected to be minimal due to the geographical distance from the park.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Knox Armstrong NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development may attract more visitors and residents to the area, slightly boosting local real estate.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "potential rise in local interest"
+          ]
+        },
+        {
+          "name": "L Streets Neighborhood Association",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development of Fair Park could enhance the attractiveness of the L Streets area, leading to increased property values.",
+          "evidence_signals": [
+            "increased property values",
+            "enhanced neighborhood attractiveness"
+          ]
+        },
+        {
+          "name": "L.O. Daniel NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The proximity to Fair Park may lead to a slight increase in housing demand and local investment.",
+          "evidence_signals": [
+            "increased housing demand",
+            "local investment interest"
+          ]
+        },
+        {
+          "name": "La Bajada Neighborhood Community Association",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact of the park development is expected to be limited, with no significant changes anticipated in La Bajada.",
+          "evidence_signals": [
+            "limited local changes",
+            "neutral impact expected"
+          ]
+        },
+        {
+          "name": "Lake Highlands Estates NA",
+          "impact_score": 45,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development may have a positive spillover effect on nearby neighborhoods, including Lake Highlands Estates.",
+          "evidence_signals": [
+            "spillover effects",
+            "increased neighborhood interest"
+          ]
+        },
+        {
+          "name": "Lake Park Estates NA, Inc. (LPENA)",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development could enhance the overall appeal of the area, leading to increased property values.",
+          "evidence_signals": [
+            "enhanced area appeal",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Lake Ridge Estates (LRE FAN Club)",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The development may attract more families and residents to the area, positively impacting real estate.",
+          "evidence_signals": [
+            "attraction of families",
+            "increased local real estate interest"
+          ]
+        },
+        {
+          "name": "Lakeland Hills NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Lakeland Hills is expected to be minimal due to distance from the park development.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Lakes of Preston Hollow, Inc.",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development may enhance the attractiveness of the Lakes of Preston Hollow area, leading to increased demand.",
+          "evidence_signals": [
+            "increased demand",
+            "enhanced attractiveness"
+          ]
+        },
+        {
+          "name": "Lakewood Heights NA",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The park development is likely to positively impact property values and attract new residents to Lakewood Heights.",
+          "evidence_signals": [
+            "increased property values",
+            "attraction of new residents"
+          ]
+        },
+        {
+          "name": "Lakewood NA(LNA)",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The development of Fair Park is expected to significantly enhance local amenities, positively impacting Lakewood NA.",
+          "evidence_signals": [
+            "enhanced local amenities",
+            "increased housing demand"
+          ]
+        },
+        {
+          "name": "Lakewood Trails NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development may lead to increased interest in Lakewood Trails, positively affecting real estate.",
+          "evidence_signals": [
+            "increased interest",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Ledbetter NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact of the park development is expected to be limited due to distance from Fair Park.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Liberty Heights NA & CW",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development may enhance the appeal of Liberty Heights, leading to a slight increase in property values.",
+          "evidence_signals": [
+            "enhanced neighborhood appeal",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Little Casa View + Casa View Art Association",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on this area is expected to be minimal, with no significant changes anticipated.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "neutral impact expected"
+          ]
+        },
+        {
+          "name": "Little Casa View NA",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to Little Casa View + Casa View Art Association, the impact is expected to be minimal.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "neutral impact expected"
+          ]
+        },
+        {
+          "name": "Little Forest Hills NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development may attract more visitors and residents, positively impacting local real estate.",
+          "evidence_signals": [
+            "increased foot traffic",
+            "potential rise in local interest"
+          ]
+        },
+        {
+          "name": "Little Mexico Residents Council",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Little Mexico is expected to be limited due to distance from the park development.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Lochwood NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development could enhance the attractiveness of Lochwood, leading to increased property values.",
+          "evidence_signals": [
+            "enhanced neighborhood attractiveness",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Los Altos NA",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development may positively impact Los Altos by attracting more residents and increasing local investment.",
+          "evidence_signals": [
+            "attraction of residents",
+            "increased local investment"
+          ]
+        },
+        {
+          "name": "Love Field West NA",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Love Field West is expected to be minimal due to distance from Fair Park.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Lower Greenville NA (LGNA)",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development may enhance the appeal of Lower Greenville, positively impacting real estate values.",
+          "evidence_signals": [
+            "enhanced neighborhood appeal",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Lowest Greenville West NA",
+          "impact_score": 45,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development could positively impact Lowest Greenville West by increasing local interest and property values.",
+          "evidence_signals": [
+            "increased local interest",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Malcolm X Grand Corridor Association",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development may enhance the attractiveness of the Malcolm X Grand Corridor, leading to increased property values.",
+          "evidence_signals": [
+            "enhanced neighborhood attractiveness",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Maple Lawn NA",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Maple Lawn is expected to be minimal due to distance from the park development.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Meadows NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Meadows NA is expected to be limited, with no significant changes anticipated.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "neutral impact expected"
+          ]
+        },
+        {
+          "name": "Meridian at Kessler Park",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The park development may enhance the appeal of Meridian at Kessler Park, positively impacting local real estate.",
+          "evidence_signals": [
+            "enhanced neighborhood appeal",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Merriman Park/University Manor NA",
+          "impact_score": 45,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The park development could positively impact Merriman Park/University Manor by increasing local interest and property values.",
+          "evidence_signals": [
+            "increased local interest",
+            "potential rise in property values"
+          ]
+        },
+        {
+          "name": "Mill City NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Mill City is expected to be minimal due to distance from the park development.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Monopoly Place Duplexes",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Monopoly Place Duplexes is expected to be limited, with no significant changes anticipated.",
+          "evidence_signals": [
+            "minimal expected impact",
+            "neutral impact expected"
+          ]
+        },
+        {
+          "name": "Moss Farm Alliance (MFA)",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Moss Farm Alliance is expected to be minimal due to distance from the park development.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Mount Auburn NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development at Fair Park may attract more visitors and residents to nearby areas, including Mount Auburn NA, leading to increased housing demand.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Increased foot traffic"
+          ]
+        },
+        {
+          "name": "Mountain Creek Neighborhood Alliance",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "While the Fair Park development may have some indirect benefits, Mountain Creek is relatively far from the area and will likely see minimal impact.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited direct access"
+          ]
+        },
+        {
+          "name": "Munger Place Historic District Association",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The development could enhance the appeal of Munger Place as a historic area, potentially increasing property values.",
+          "evidence_signals": [
+            "Historic appeal",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Neighborhood Planning Group",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on the Neighborhood Planning Group is expected to be limited, as it encompasses a broader area with mixed influences.",
+          "evidence_signals": [
+            "Diverse neighborhood characteristics",
+            "Varied local interests"
+          ]
+        },
+        {
+          "name": "North Oaklawn NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "North Oaklawn may benefit from increased activity and investment in the surrounding areas due to the Fair Park development.",
+          "evidence_signals": [
+            "Increased local investment",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Northaven Park NA, Inc.",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The development is unlikely to have a significant direct impact on Northaven Park, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local development"
+          ]
+        },
+        {
+          "name": "Northern Hills NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Northern Hills is too far from the Fair Park development to see any substantial impact.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Lack of direct connection"
+          ]
+        },
+        {
+          "name": "Northwest Dallas Improvement League, Inc.",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "While there may be some indirect benefits, the impact on Northwest Dallas is expected to be minimal.",
+          "evidence_signals": [
+            "Indirect benefits",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Northwood Estates Neighborhood Association",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The Fair Park development is not expected to significantly affect Northwood Estates due to its distance.",
+          "evidence_signals": [
+            "Limited local influence",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Oak Cliff Gardens CW/NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "As a nearby neighborhood, Oak Cliff Gardens may see increased interest and investment due to the Fair Park development.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased property values"
+          ]
+        },
+        {
+          "name": "Oak Park Estates NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Oak Park Estates is expected to be limited, with some potential for increased interest.",
+          "evidence_signals": [
+            "Limited proximity",
+            "Mixed local development"
+          ]
+        },
+        {
+          "name": "Oakland Terrace NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The Fair Park development may enhance the attractiveness of Oakland Terrace, leading to increased housing demand.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased local investment"
+          ]
+        },
+        {
+          "name": "Oaklawn Heights",
+          "impact_score": 35,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Oaklawn Heights may benefit from increased activity and interest due to the Fair Park development.",
+          "evidence_signals": [
+            "Increased local traffic",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Old Lake Highlands NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Old Lake Highlands is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Owenwood NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Owenwood may see some indirect benefits, but overall impact is expected to be limited.",
+          "evidence_signals": [
+            "Indirect benefits",
+            "Distance from Fair Park"
+          ]
+        },
+        {
+          "name": "Park Central NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "The development at Fair Park could lead to increased interest in Park Central, enhancing property values.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased local investment"
+          ]
+        },
+        {
+          "name": "Park Forest Neighborhood Group",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Park Forest is expected to be minimal, with some potential for indirect benefits.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local development"
+          ]
+        },
+        {
+          "name": "Park Towers Condominiums Assoc.",
+          "impact_score": 35,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "As a nearby residential area, Park Towers may see increased demand and property values due to the Fair Park development.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Increased interest in local real estate"
+          ]
+        },
+        {
+          "name": "Parkdale Lawnview Association of Neighbors",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Parkdale Lawnview is expected to be limited, with some potential for indirect benefits.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Pecan Heights Neighborhood",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Pecan Heights may benefit from increased interest and investment due to the Fair Park development.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased property values"
+          ]
+        },
+        {
+          "name": "Pemberton Hill/Great trinity Forest NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Pemberton Hill is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Peninsula NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Peninsula NA is too far from Fair Park to see any substantial impact.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Lack of direct connection"
+          ]
+        },
+        {
+          "name": "Perry Heights NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Perry Heights may see increased interest and investment due to the Fair Park development.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased property values"
+          ]
+        },
+        {
+          "name": "Phillis Wheatley Neighbors",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Phillis Wheatley is expected to be limited, with some potential for indirect benefits.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Pleasant Grove \"A Community Striving to Thrive\"",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Pleasant Grove is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Pleasant Grove Unidos NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Pleasant Grove Unidos is too far from Fair Park to see any substantial impact.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Lack of direct connection"
+          ]
+        },
+        {
+          "name": "Polk Terrace NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Polk Terrace is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Polk-Vernon NA",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Polk-Vernon is too far from Fair Park to see any substantial impact.",
+          "evidence_signals": [
+            "Geographical distance",
+            "Lack of direct connection"
+          ]
+        },
+        {
+          "name": "Preston Citadel Club NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Preston Citadel is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Preston Hollow West NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Preston Hollow West is expected to be limited, with some potential for indirect benefits.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Preston Port Estates Crime Watch",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Preston Port Estates is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Preston Royal NW NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Preston Royal NW is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Prestonwood on the Park NA (POPNA)",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Prestonwood on the Park is expected to be minimal due to its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Queen City NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Queen City is expected to be limited, with some potential for indirect benefits.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited local influence"
+          ]
+        },
+        {
+          "name": "Rawlins-Hall Group NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Rawlins-Hall may see increased interest and investment due to the Fair Park development.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Potential for increased property values"
+          ]
+        },
+        {
+          "name": "Red Bird-Hampton NA",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The development at Fair Park is likely to enhance local amenities and attract new residents, positively impacting property values in the Red Bird-Hampton area.",
+          "evidence_signals": [
+            "increased local amenities",
+            "potential rise in housing demand"
+          ]
+        },
+        {
+          "name": "Residents United for Change & Opportunity (RUFCO)",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development may lead to increased community engagement and investment in the area, benefiting RUFCO members.",
+          "evidence_signals": [
+            "community engagement",
+            "increased investment opportunities"
+          ]
+        },
+        {
+          "name": "Richardson and North Dallas Coalition Organization (RANDCO Inc)",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 70,
+          "reason_en": "While the Fair Park development may have some indirect benefits, the direct impact on RANDCO is expected to be minimal.",
+          "evidence_signals": [
+            "limited direct connection",
+            "neutral local interest"
+          ]
+        },
+        {
+          "name": "Richland Park Estates NA (RPENA)",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The development could improve the overall attractiveness of the surrounding areas, including Richland Park Estates.",
+          "evidence_signals": [
+            "improved neighborhood appeal",
+            "potential for increased property values"
+          ]
+        },
+        {
+          "name": "Ridgewood Park NA",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Ridgewood Park may see some benefits from increased traffic and interest in the area, but the impact is expected to be moderate.",
+          "evidence_signals": [
+            "moderate local interest",
+            "some increased traffic"
+          ]
+        },
+        {
+          "name": "Rose Garden Neighborhood Improvement League",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development could enhance the local environment and community pride, benefiting the Rose Garden area.",
+          "evidence_signals": [
+            "enhanced local environment",
+            "community pride"
+          ]
+        },
+        {
+          "name": "Royal Highlands Village NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The Fair Park development is not expected to significantly impact Royal Highlands Village, as it is somewhat distanced from the area.",
+          "evidence_signals": [
+            "distance from development",
+            "limited local engagement"
+          ]
+        },
+        {
+          "name": "Royal Northaven NA",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Similar to Royal Highlands, the impact on Royal Northaven is expected to be limited due to its distance from Fair Park.",
+          "evidence_signals": [
+            "limited direct impact",
+            "distance from development"
+          ]
+        },
+        {
+          "name": "Royalwood Estate NA",
+          "impact_score": 30,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The development at Fair Park is unlikely to have a significant effect on Royalwood Estate due to its location.",
+          "evidence_signals": [
+            "location factors",
+            "limited local relevance"
+          ]
+        },
+        {
+          "name": "Ruthmeade Place",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Ruthmeade Place may experience some indirect benefits, but overall impact is expected to be minimal.",
+          "evidence_signals": [
+            "indirect benefits",
+            "minimal overall impact"
+          ]
+        },
+        {
+          "name": "Rylie NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The Fair Park development could lead to increased interest in the Rylie area, positively affecting housing demand.",
+          "evidence_signals": [
+            "increased interest",
+            "potential housing demand rise"
+          ]
+        },
+        {
+          "name": "Samuel Peak Creek NA",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact on Samuel Peak Creek is expected to be moderate, with some potential benefits from increased local activity.",
+          "evidence_signals": [
+            "moderate local activity",
+            "some potential benefits"
+          ]
+        },
+        {
+          "name": "Santa Fe NA & Crime Watch",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development may enhance safety and community engagement, benefiting Santa Fe residents.",
+          "evidence_signals": [
+            "enhanced safety",
+            "community engagement"
+          ]
+        },
+        {
+          "name": "Schreiber Community Volunteer NA",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development could foster community involvement and improvements in the Schreiber area.",
+          "evidence_signals": [
+            "community involvement",
+            "local improvements"
+          ]
+        },
+        {
+          "name": "Shady Hills NA",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "Shady Hills may see some indirect benefits, but the overall impact is expected to be limited.",
+          "evidence_signals": [
+            "indirect benefits",
+            "limited overall impact"
+          ]
+        },
+        {
+          "name": "Shore Acres Beautification Club",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development could enhance the beautification efforts in Shore Acres, leading to positive community outcomes.",
+          "evidence_signals": [
+            "enhanced beautification efforts",
+            "positive community outcomes"
+          ]
+        },
+        {
+          "name": "Singing Hills NA",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact on Singing Hills is expected to be moderate, with some potential benefits from increased local activity.",
+          "evidence_signals": [
+            "moderate local activity",
+            "some potential benefits"
+          ]
+        },
+        {
+          "name": "SOHIP NA",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development may lead to increased community engagement and investment in SOHIP's area.",
+          "evidence_signals": [
+            "community engagement",
+            "increased investment opportunities"
+          ]
+        },
+        {
+          "name": "South Blvd/ Park Row Historic District NA",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The development at Fair Park is likely to enhance local amenities and attract new residents, positively impacting property values in the South Blvd area.",
+          "evidence_signals": [
+            "increased local amenities",
+            "potential rise in housing demand"
+          ]
+        },
+        {
+          "name": "South Central Civic League NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The Fair Park development could lead to improvements in community resources and engagement for the South Central area.",
+          "evidence_signals": [
+            "improved community resources",
+            "increased engagement"
+          ]
+        },
+        {
+          "name": "South East Dallas Civic Association, Inc.",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact on South East Dallas is expected to be moderate, with some potential benefits from increased local activity.",
+          "evidence_signals": [
+            "moderate local activity",
+            "some potential benefits"
+          ]
+        },
+        {
+          "name": "Southern Hills NA",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Southern Hills may see some indirect benefits, but the overall impact is expected to be limited.",
+          "evidence_signals": [
+            "indirect benefits",
+            "limited overall impact"
+          ]
+        },
+        {
+          "name": "St. Andrews NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The Fair Park development could enhance community pride and local engagement in St. Andrews.",
+          "evidence_signals": [
+            "enhanced community pride",
+            "local engagement"
+          ]
+        },
+        {
+          "name": "St. Augustine Heights NA",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact on St. Augustine Heights is expected to be moderate, with some potential benefits from increased local activity.",
+          "evidence_signals": [
+            "moderate local activity",
+            "some potential benefits"
+          ]
+        },
+        {
+          "name": "St. Philips Neighborhood Association",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The Fair Park development may lead to increased community engagement and improvements in the St. Philips area.",
+          "evidence_signals": [
+            "community engagement",
+            "local improvements"
+          ]
+        },
+        {
+          "name": "Stevens Park Estates NA",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development could foster community involvement and improvements in the Stevens Park area.",
+          "evidence_signals": [
+            "community involvement",
+            "local improvements"
+          ]
+        },
+        {
+          "name": "Stevens Park Village NA",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development could enhance the local environment and community pride, benefiting Stevens Park Village.",
+          "evidence_signals": [
+            "enhanced local environment",
+            "community pride"
+          ]
+        },
+        {
+          "name": "Sunset Hill Association of Neighbors",
+          "impact_score": 45,
+          "impact_direction": "neutral",
+          "confidence": 60,
+          "reason_en": "The impact on Sunset Hill is expected to be moderate, with some potential benefits from increased local activity.",
+          "evidence_signals": [
+            "moderate local activity",
+            "some potential benefits"
+          ]
+        },
+        {
+          "name": "Swiss Ave Historic District Association",
+          "impact_score": 60,
+          "impact_direction": "positive",
+          "confidence": 80,
+          "reason_en": "The Fair Park development is likely to enhance local amenities and attract new residents, positively impacting property values in the Swiss Ave area.",
+          "evidence_signals": [
+            "increased local amenities",
+            "potential rise in housing demand"
+          ]
+        },
+        {
+          "name": "Tenth Street Residential Association",
+          "impact_score": 55,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The Fair Park development could enhance community pride and local engagement in the Tenth Street area.",
+          "evidence_signals": [
+            "enhanced community pride",
+            "local engagement"
+          ]
+        },
+        {
+          "name": "The Uptown NA (TUNA)",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development may lead to increased interest and investment in the Uptown area, positively affecting property values.",
+          "evidence_signals": [
+            "increased interest",
+            "potential investment opportunities"
+          ]
+        },
+        {
+          "name": "Truett Area Crime Watch",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "The impact on Truett Area is expected to be limited, with minimal direct benefits from the Fair Park development.",
+          "evidence_signals": [
+            "limited direct impact",
+            "minimal local engagement"
+          ]
+        },
+        {
+          "name": "Turtle Creek Association",
+          "impact_score": 50,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The Fair Park development may enhance community engagement and improvements in the Turtle Creek area.",
+          "evidence_signals": [
+            "community engagement",
+            "local improvements"
+          ]
+        },
+        {
+          "name": "Twelve Hill Nature Center",
+          "impact_score": 35,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The development at Fair Park is unlikely to have a significant effect on the Twelve Hill Nature Center due to its location.",
+          "evidence_signals": [
+            "location factors",
+            "limited local relevance"
+          ]
+        },
+        {
+          "name": "Twin Oaks NA",
+          "impact_score": 40,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Twin Oaks may see some indirect benefits, but the overall impact is expected to be limited.",
+          "evidence_signals": [
+            "indirect benefits",
+            "limited overall impact"
+          ]
+        },
+        {
+          "name": "University Meadows NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development at Fair Park may attract more visitors and residents to nearby areas, including University Meadows, potentially increasing property values.",
+          "evidence_signals": [
+            "Increased foot traffic",
+            "Potential for new local businesses"
+          ]
+        },
+        {
+          "name": "University Terrace NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Similar to University Meadows, the development could enhance the appeal of University Terrace, leading to a modest increase in housing demand.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Community interest in local amenities"
+          ]
+        },
+        {
+          "name": "Urbandale NA",
+          "impact_score": 20,
+          "impact_direction": "positive",
+          "confidence": 60,
+          "reason_en": "Urbandale may see some benefits from increased activity in the Fair Park area, though the impact is expected to be limited.",
+          "evidence_signals": [
+            "Local events at Fair Park",
+            "Increased community engagement"
+          ]
+        },
+        {
+          "name": "Valley View",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Valley View is somewhat distanced from Fair Park, so the impact on real estate and development is likely to be minimal.",
+          "evidence_signals": [
+            "Distance from Fair Park",
+            "Limited direct benefits"
+          ]
+        },
+        {
+          "name": "Vickery Meadow Improvement District (VMID)",
+          "impact_score": 40,
+          "impact_direction": "positive",
+          "confidence": 75,
+          "reason_en": "The VMID could benefit significantly from the Fair Park development, as it may lead to increased investment and revitalization efforts in the area.",
+          "evidence_signals": [
+            "Investment in local infrastructure",
+            "Community development initiatives"
+          ]
+        },
+        {
+          "name": "Vickery Place NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Vickery Place may experience a boost in property values and interest due to its proximity to the Fair Park development.",
+          "evidence_signals": [
+            "Rising property values",
+            "Increased neighborhood desirability"
+          ]
+        },
+        {
+          "name": "Vickery Together NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "The development could enhance community engagement and interest in Vickery Together, leading to potential growth.",
+          "evidence_signals": [
+            "Community events",
+            "Increased local participation"
+          ]
+        },
+        {
+          "name": "Victory Gardens NA & CW",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Victory Gardens may see some indirect benefits from the Fair Park development, but the impact is expected to be limited.",
+          "evidence_signals": [
+            "Indirect community benefits",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "Walnut Ridge Neighborhood Association (WRNA)",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Walnut Ridge is likely to be minimal, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Waterford on the Park NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "Waterford on the Park could benefit from increased visitors to Fair Park, enhancing local property values.",
+          "evidence_signals": [
+            "Increased local traffic",
+            "Potential for new amenities"
+          ]
+        },
+        {
+          "name": "Webb Royal Crime Watch",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Webb Royal is expected to be minimal, as it is primarily focused on crime prevention rather than development.",
+          "evidence_signals": [
+            "Focus on safety",
+            "Limited development interest"
+          ]
+        },
+        {
+          "name": "WendelkinDriskell NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "WendelkinDriskell may see some indirect benefits, but overall impact is expected to be limited.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "West Kessler NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "West Kessler may experience some positive effects from the Fair Park development, but the impact is likely to be modest.",
+          "evidence_signals": [
+            "Proximity to Fair Park",
+            "Limited direct benefits"
+          ]
+        },
+        {
+          "name": "Westmoreland Heights NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Westmoreland Heights is expected to be minimal due to distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Westmoreland Park",
+          "impact_score": 10,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "Westmoreland Park is unlikely to see significant changes due to the Fair Park development.",
+          "evidence_signals": [
+            "Limited direct benefits",
+            "Focus on park amenities"
+          ]
+        },
+        {
+          "name": "Wheatland Meadows/Wisdom Terrace",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Wheatland Meadows/Wisdom Terrace is expected to be limited, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local engagement"
+          ]
+        },
+        {
+          "name": "Whispering Hills NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Whispering Hills may see some indirect benefits, but overall impact is expected to be modest.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "White Rock Forest",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "White Rock Forest could benefit from increased interest in the area due to Fair Park's development.",
+          "evidence_signals": [
+            "Increased local interest",
+            "Potential for new amenities"
+          ]
+        },
+        {
+          "name": "White Rock NA",
+          "impact_score": 30,
+          "impact_direction": "positive",
+          "confidence": 70,
+          "reason_en": "The development at Fair Park may enhance property values and community engagement in White Rock NA.",
+          "evidence_signals": [
+            "Increased property values",
+            "Community events"
+          ]
+        },
+        {
+          "name": "White Rock Valley NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "White Rock Valley may see a boost in housing demand due to the Fair Park development.",
+          "evidence_signals": [
+            "Increased housing interest",
+            "Proximity to Fair Park"
+          ]
+        },
+        {
+          "name": "Wilshire Heights NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Wilshire Heights may experience some indirect benefits, but the overall impact is expected to be limited.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "Winnetka Heights NA",
+          "impact_score": 25,
+          "impact_direction": "positive",
+          "confidence": 65,
+          "reason_en": "Winnetka Heights could benefit from increased interest and investment due to the Fair Park development.",
+          "evidence_signals": [
+            "Increased local investment",
+            "Community engagement"
+          ]
+        },
+        {
+          "name": "Woodbriar",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Woodbriar is expected to be minimal, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Woodlawn Neighborhood Association",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Woodlawn may see some indirect benefits, but overall impact is expected to be modest.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "Woods - Sugarberry NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Woods - Sugarberry is expected to be limited due to distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local engagement"
+          ]
+        },
+        {
+          "name": "Wynnewood Heights NA",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Wynnewood Heights may experience some indirect benefits, but the overall impact is expected to be limited.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        },
+        {
+          "name": "Wynnewood Hills NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Wynnewood Hills is expected to be minimal, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Wynnewood North NA",
+          "impact_score": 15,
+          "impact_direction": "neutral",
+          "confidence": 50,
+          "reason_en": "The impact on Wynnewood North is expected to be limited, given its distance from Fair Park.",
+          "evidence_signals": [
+            "Distance from development",
+            "Limited local interest"
+          ]
+        },
+        {
+          "name": "Zoo Creek Park Neighborhood Association",
+          "impact_score": 20,
+          "impact_direction": "neutral",
+          "confidence": 55,
+          "reason_en": "Zoo Creek Park may see some indirect benefits, but overall impact is expected to be modest.",
+          "evidence_signals": [
+            "Indirect community engagement",
+            "Limited direct investment"
+          ]
+        }
+      ]
+    }
+  }
+]

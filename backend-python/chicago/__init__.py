@@ -1,0 +1,1 @@
+"""Chicago city watcher package."""
