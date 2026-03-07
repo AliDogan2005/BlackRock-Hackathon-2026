@@ -8,7 +8,12 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<LandingPage onLoginSuccess={() => navigate("/app")} />} />
+      <Route
+        path="/"
+        element={
+          <LandingPage onLoginSuccess={() => navigate("/app")} />
+        }
+      />
       <Route path="/app" element={<FintechMainPage />} />
       <Route path="/login" element={<LoginPage onAuthSuccess={() => navigate("/app")} />} />
       <Route path="*" element={<Navigate to="/" replace />} />

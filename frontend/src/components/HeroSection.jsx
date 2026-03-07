@@ -30,7 +30,7 @@ const heroItem = {
   },
 };
 
-export default function HeroSection() {
+export default function HeroSection({ onExploreAssets }) {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-nexus-primary-espresso px-6 pb-24 pt-28 text-nexus-primary-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-32">
       <div className="pointer-events-none absolute inset-0">
@@ -110,6 +110,7 @@ export default function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-4 md:justify-end">
               <button
                 type="button"
+                onClick={onExploreAssets}
                 className="rounded-full bg-nexus-primary-gold px-7 py-3 text-sm font-semibold text-nexus-primary-espresso shadow-[0_8px_24px_rgba(212,175,55,0.35)] transition duration-300 ease-premium hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nexus-primary-gold focus-visible:ring-offset-2 focus-visible:ring-offset-nexus-primary-espresso"
               >
                 Explore Assets

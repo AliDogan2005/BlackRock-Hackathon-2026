@@ -2,6 +2,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import NexusFacetedMark from "./NexusFacetedMark";
+import { loginUser, persistAuth, registerUser } from "../services/authService";
+
+function isNetworkFailure(error) {
+  const message = String(error?.message || "").toLowerCase();
+  return message.includes("failed to fetch") || message.includes("networkerror") || message.includes("network error");
+}
+
+function buildDemoAuthPayload(email) {
+  const localPart = String(email || "").split("@")[0] || "analyst";
+  return {
+    token: `demo-token-${Date.now()}`,
+    tokenType: "Bearer",
+    userId: 0,
+    username: localPart,
+    email,
+    message: "Backend not reachable. Signed in with demo mode.",
+  };
+}
 
 export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "login" }) {
   const [authMode, setAuthMode] = useState("login");
@@ -18,6 +36,7 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
     confirmPassword: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submission, setSubmission] = useState({ type: "idle", message: "" });
   const [transitionPhase, setTransitionPhase] = useState("idle");
   const [transitionRect, setTransitionRect] = useState(null);
   const logoAnchorRef = useRef(null);
@@ -43,6 +62,7 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
       password: "",
       confirmPassword: "",
     });
+    setSubmission({ type: "idle", message: "" });
     setIsSubmitting(false);
     setTransitionPhase("idle");
     setTransitionRect(null);
@@ -70,12 +90,12 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
     timeoutIdsRef.current.push(id);
   };
 
-  const startSuccessSequence = () => {
+  const startSuccessSequence = (authPayload) => {
     const logoRect = logoAnchorRef.current?.getBoundingClientRect();
 
     if (!logoRect) {
       if (onSuccess) {
-        onSuccess();
+        onSuccess(authPayload);
       }
       onClose();
       return;
@@ -98,7 +118,7 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
 
     queueTransitionStep(() => {
       if (onSuccess) {
-        onSuccess();
+        onSuccess(authPayload);
       }
       onClose();
     }, 1700);
@@ -142,6 +162,9 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
     const { name, value } = event.target;
     setForm((previous) => ({ ...previous, [name]: value }));
     setErrors((previous) => ({ ...previous, [name]: "" }));
+    if (submission.type !== "idle") {
+      setSubmission({ type: "idle", message: "" });
+    }
   };
 
   const switchMode = (mode) => {
@@ -156,6 +179,7 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
       password: "",
       confirmPassword: "",
     });
+    setSubmission({ type: "idle", message: "" });
   };
 
   const handleSubmit = async (event) => {
@@ -166,9 +190,44 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => window.setTimeout(resolve, 180));
-    setIsSubmitting(false);
-    startSuccessSequence();
+    setSubmission({ type: "idle", message: "" });
+
+    try {
+      const payload = isLogin
+        ? await loginUser({
+            email: form.email,
+            password: form.password,
+          })
+        : await registerUser({
+            fullName: form.fullName,
+            email: form.email,
+            password: form.password,
+            confirmPassword: form.confirmPassword,
+          });
+
+      persistAuth(payload);
+      setSubmission({
+        type: "success",
+        message: payload.message || (isLogin ? "Login successful." : "Registration successful."),
+      });
+
+      startSuccessSequence(payload);
+    } catch (error) {
+      if (isNetworkFailure(error)) {
+        const demoPayload = buildDemoAuthPayload(form.email);
+        persistAuth(demoPayload);
+        setSubmission({ type: "success", message: demoPayload.message });
+        startSuccessSequence(demoPayload);
+        return;
+      }
+
+      setSubmission({
+        type: "error",
+        message: error?.message || "Request failed. Please check backend connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const isLogin = authMode === "login";
@@ -309,6 +368,19 @@ export default function LoginModal({ isOpen, onClose, onSuccess, initialMode = "
                   >
                     {isSubmitting ? "Processing..." : isLogin ? "Login" : "Register"}
                   </button>
+
+                  {submission.type !== "idle" ? (
+                    <p
+                      className={`rounded-lg border px-3 py-2 text-xs font-medium ${
+                        submission.type === "success"
+                          ? "border-emerald-500/60 bg-emerald-50 text-emerald-700"
+                          : "border-rose-500/60 bg-rose-50 text-rose-700"
+                      }`}
+                      role="status"
+                    >
+                      {submission.message}
+                    </p>
+                  ) : null}
 
                   <p className="pt-1 text-center text-sm text-[#1A120B]/80">
                     {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}

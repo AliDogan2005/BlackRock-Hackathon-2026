@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqItems = [
   {
@@ -65,11 +66,13 @@ export default function FAQContactSection() {
                       {item.question}
                     </span>
                     <span
-                      className={`inline-flex h-8 w-8 items-center justify-center rounded-full border border-nexus-primary-espresso/25 bg-white/70 text-base leading-none transition ${
-                        isOpen ? "rotate-180" : "rotate-0"
+                      className={`inline-flex h-9 w-9 items-center justify-center rounded-full border leading-none transition-all duration-300 ${
+                        isOpen
+                          ? "rotate-180 border-nexus-primary-gold/55 bg-gradient-to-br from-[#f7e5a9] to-[#d4af37] text-[#1A120B] shadow-[0_6px_16px_rgba(212,175,55,0.28)]"
+                          : "rotate-0 border-nexus-primary-espresso/22 bg-white/78 text-nexus-primary-espresso/72"
                       }`}
                     >
-                      <span className="-mt-0.5">⌄</span>
+                      <ChevronDown className="h-4.5 w-4.5" strokeWidth={2.3} />
                     </span>
                   </button>
 

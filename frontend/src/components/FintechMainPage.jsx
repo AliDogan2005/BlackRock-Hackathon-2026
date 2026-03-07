@@ -2,6 +2,16 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
+  clearPersistedAuth,
+  fetchUserProfile,
+  getPersistedToken,
+  getPersistedUser,
+  updateUserDisplayName,
+} from "../services/authService";
+import { fetchPersonalizedAnalysisData } from "../services/analysisService";
+import { fetchExplorerDashboardData } from "../services/dashboardService";
+import { depositToWallet, fetchWalletPortfolioData } from "../services/walletPortfolioService";
+import {
   Area,
   AreaChart,
   Cell,
@@ -22,23 +32,24 @@ import {
   ArrowUpRight,
   Bell,
   Brain,
-  Heart,
   Home,
   LogOut,
   Newspaper,
   Search,
   Settings,
+  Star,
   Wallet,
   ChevronDown,
 } from "lucide-react";
+import NexusFacetedMark from "./NexusFacetedMark";
 
 const NAV_ITEMS = [
   { id: "explorer", label: "Home/Explorer", icon: Home },
-  { id: "bulletin", label: "Bulletin & Trends", icon: Newspaper },
-  { id: "analysis", label: "Personalized Analysis", icon: Brain },
-  { id: "favorites", label: "Favorites", icon: Heart },
+  { id: "bulletin", label: "News & Trends", icon: Newspaper },
+  { id: "analysis", label: "Asset Analysis", icon: Brain },
+  { id: "favorites", label: "Favorites", icon: Star },
   { id: "wallet", label: "Wallet", icon: Wallet },
-  { id: "settings", label: "Settings", icon: Settings },
+  { id: "settings", label: "Profile", icon: Settings },
 ];
 
 const DEFAULT_DATA = {
@@ -256,6 +267,8 @@ function OwnershipRing({ progress }) {
 }
 
 function ExplorerPage({ data, selectedAsset }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   const pulse = selectedAsset
     ? {
         ...data.marketPulse,
@@ -268,6 +281,7 @@ function ExplorerPage({ data, selectedAsset }) {
   const ownershipProgress = Math.max(0, Math.min(100, data.ownership.progress));
   const roiNegative = pulse.roiProjection < 0;
   const newsPoints = PRICE_AND_NEWS_DATA.filter((item) => item.event);
+  const toggleFavorite = () => setIsFavorite((previous) => !previous);
 
   return (
     <motion.div
@@ -281,7 +295,26 @@ function ExplorerPage({ data, selectedAsset }) {
       <header className="rounded-2xl border border-[#1A120B]/10 bg-white px-5 py-4 shadow-[0_12px_30px_rgba(26,18,11,0.08)]">
         <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">Market Explorer</h1>
         <p className="mt-1 text-sm text-[#1A120B]/72">
-          Human + Machine intelligence across tokenized property markets. Focus region: <span className="font-semibold text-[#1A120B]">{data.user.address}</span>
+          Human + Machine intelligence across tokenized property markets. Focus region:{" "}
+          <span className="inline-flex items-center gap-1.5 align-middle">
+            <span className="font-semibold text-[#1A120B]">{data.user.address}</span>
+            <motion.button
+              type="button"
+              onClick={toggleFavorite}
+              aria-label={isFavorite ? "Remove favorite asset" : "Mark as favorite asset"}
+              title={isFavorite ? "Remove from favorites" : "Add to favorites"}
+              whileTap={{ scale: 0.9 }}
+              animate={{ scale: isFavorite ? 1.08 : 1 }}
+              transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-flex h-6 w-6 items-center justify-center rounded-full transition-colors"
+            >
+              <Star
+                className={`h-4.5 w-4.5 transition-colors ${isFavorite ? "text-[#D4AF37]" : "text-[#1A120B]/45"}`}
+                fill={isFavorite ? "#D4AF37" : "none"}
+                strokeWidth={isFavorite ? 2 : 2.1}
+              />
+            </motion.button>
+          </span>
         </p>
         {selectedAsset ? (
           <p className="mt-2 inline-flex rounded-full bg-[#D4AF37]/18 px-3 py-1 text-xs font-semibold text-[#1A120B]">
@@ -534,7 +567,7 @@ function BulletinPage() {
       className="space-y-5"
     >
       <header className="rounded-2xl border border-[#1A120B]/10 bg-white px-5 py-4 shadow-[0_12px_30px_rgba(26,18,11,0.08)]">
-        <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">Bulletin & Trends</h1>
+        <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">News & Trends</h1>
         <p className="mt-1 text-sm text-[#1A120B]/72">Live regional intelligence feed with sentiment, score momentum, and demand pressure.</p>
       </header>
 
@@ -622,10 +655,14 @@ function getRiskScoreStyles(score) {
   };
 }
 
-function AnalysisPage({ data }) {
+function AnalysisPage({ data, analysisData }) {
   const [showAllAssets, setShowAllAssets] = useState(false);
-  const visibleAssets = showAllAssets ? MY_ASSETS : MY_ASSETS.slice(0, 4);
-  const riskStyle = getRiskScoreStyles(ANALYSIS_RISK_SCORE);
+  const assets = analysisData?.assets?.length ? analysisData.assets : MY_ASSETS;
+  const visibleAssets = showAllAssets ? assets : assets.slice(0, 4);
+  const riskScore = analysisData?.riskScore ?? ANALYSIS_RISK_SCORE;
+  const riskStyle = getRiskScoreStyles(riskScore);
+  const analysisSummary = analysisData?.summary
+    || "AI Analysis: Your Berlin tokens are projected to rise by 5% due to recent infrastructure news and improving district liquidity. Antalya Solar District shows mixed momentum as policy risk increased this week. Recommended action: rebalance 8-12% into higher-demand urban inventory to improve downside protection.";
 
   return (
     <motion.div
@@ -694,7 +731,7 @@ function AnalysisPage({ data }) {
             <h2 className="mb-3 font-serif text-xl font-bold text-[#1A120B]">Analyze</h2>
             <article className="rounded-xl border border-[#1A120B]/10 bg-white/70 p-4">
               <p className="text-sm leading-relaxed text-[#1A120B]/80">
-                AI Analysis: Your Berlin tokens are projected to rise by 5% due to recent infrastructure news and improving district liquidity. Antalya Solar District shows mixed momentum as policy risk increased this week. Recommended action: rebalance 8-12% into higher-demand urban inventory to improve downside protection.
+                {analysisSummary}
               </p>
             </article>
           </motion.section>
@@ -708,7 +745,7 @@ function AnalysisPage({ data }) {
             <h2 className="mb-3 font-serif text-xl font-bold text-[#1A120B]">Risk Score</h2>
             <div className={`mx-auto grid aspect-square w-full max-w-[260px] place-items-center rounded-2xl border-2 bg-white/70 ${riskStyle.ring}`}>
               <div className="text-center">
-                <p className={`text-5xl font-black ${riskStyle.text}`}>{ANALYSIS_RISK_SCORE}%</p>
+                <p className={`text-5xl font-black ${riskStyle.text}`}>{riskScore}%</p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#1A120B]/70">{riskStyle.label}</p>
               </div>
             </div>
@@ -856,12 +893,14 @@ function CountUpValue({ value, decimals = 0, prefix = "", className = "" }) {
   return <motion.span className={className}>{prefix}{display}</motion.span>;
 }
 
-function WalletPage() {
-  const availableCash = 185240;
-  const tokenValue = 412860;
-  const totalAssetValue = availableCash + tokenValue;
-  const profitLossPct = 12.5;
-  const valueChange = 66980;
+function WalletPage({ walletData, onDeposit, isDepositing }) {
+  const availableCash = walletData?.availableCash ?? 185240;
+  const tokenValue = walletData?.tokenValue ?? 412860;
+  const totalAssetValue = walletData?.totalAssetValue ?? availableCash + tokenValue;
+  const profitLossPct = walletData?.profitLossPct ?? 12.5;
+  const valueChange = walletData?.valueChange ?? 66980;
+  const allocation = walletData?.allocation?.length ? walletData.allocation : WALLET_ALLOCATION;
+  const transactions = walletData?.transactions?.length ? walletData.transactions : WALLET_TRANSACTIONS;
   const profit = profitLossPct >= 0;
 
   return (
@@ -883,9 +922,11 @@ function WalletPage() {
           <div className="flex items-center gap-2">
             <button
               type="button"
+              onClick={onDeposit}
+              disabled={isDepositing}
               className="rounded-xl bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-105"
             >
-              Deposit
+              {isDepositing ? "Processing..." : "Deposit"}
             </button>
           </div>
         </div>
@@ -934,8 +975,8 @@ function WalletPage() {
           <div className="h-72 w-full rounded-2xl border border-[#1A120B]/10 bg-white/70 p-3">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie data={WALLET_ALLOCATION} dataKey="value" nameKey="name" innerRadius={56} outerRadius={92} paddingAngle={2}>
-                  {WALLET_ALLOCATION.map((entry) => (
+                <Pie data={allocation} dataKey="value" nameKey="name" innerRadius={56} outerRadius={92} paddingAngle={2}>
+                  {allocation.map((entry) => (
                     <Cell key={`alloc-${entry.name}`} fill={entry.color} />
                   ))}
                 </Pie>
@@ -944,7 +985,7 @@ function WalletPage() {
             </ResponsiveContainer>
           </div>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            {WALLET_ALLOCATION.map((entry) => (
+            {allocation.map((entry) => (
               <div key={`legend-${entry.name}`} className="flex items-center gap-1.5 text-xs text-[#1A120B]/78">
                 <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
                 <span>{entry.name}</span>
@@ -966,7 +1007,7 @@ function WalletPage() {
                 </tr>
               </thead>
               <tbody>
-                {WALLET_TRANSACTIONS.map((row) => (
+                {transactions.map((row) => (
                   <tr key={`${row.type}-${row.asset}-${row.date}`} className="border-t border-[#1A120B]/8">
                     <td className="px-4 py-3 font-medium">{row.type}</td>
                     <td className="px-4 py-3">{row.asset}</td>
@@ -983,8 +1024,19 @@ function WalletPage() {
   );
 }
 
-function SettingsPage({ userName = "Analyst" }) {
+function SettingsPage({ userName = "Analyst", onSaveDisplayName, isSavingDisplayName = false, saveStatus = { type: "idle", message: "" } }) {
   const [displayName, setDisplayName] = useState(userName);
+
+  useEffect(() => {
+    setDisplayName(userName || "Analyst");
+  }, [userName]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (onSaveDisplayName) {
+      onSaveDisplayName(displayName);
+    }
+  };
 
   return (
     <motion.div
@@ -996,7 +1048,7 @@ function SettingsPage({ userName = "Analyst" }) {
       className="space-y-4"
     >
       <header className="rounded-2xl border border-[#1A120B]/10 bg-white px-5 py-4 shadow-[0_12px_30px_rgba(26,18,11,0.08)]">
-        <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">Settings</h1>
+        <h1 className="font-serif text-2xl font-bold tracking-[0.01em] text-[#1A120B]">Profile</h1>
         <p className="mt-1 text-sm text-[#1A120B]/72">Manage profile identity, payment method, and account security settings.</p>
       </header>
 
@@ -1023,7 +1075,7 @@ function SettingsPage({ userName = "Analyst" }) {
               </button>
             </div>
 
-            <form className="rounded-2xl border border-[#1A120B]/10 bg-white/70 p-4" onSubmit={(event) => event.preventDefault()}>
+            <form className="rounded-2xl border border-[#1A120B]/10 bg-white/70 p-4" onSubmit={handleSubmit}>
               <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-[#1A120B]/64">Display Name</label>
               <input
                 value={displayName}
@@ -1035,11 +1087,25 @@ function SettingsPage({ userName = "Analyst" }) {
               <div className="mt-4 flex justify-end">
                 <button
                   type="submit"
+                  disabled={isSavingDisplayName}
                   className="rounded-xl bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-105"
                 >
-                  Save Changes
+                  {isSavingDisplayName ? "Saving..." : "Save Changes"}
                 </button>
               </div>
+
+              {saveStatus.type !== "idle" ? (
+                <p
+                  className={`mt-3 rounded-lg border px-3 py-2 text-xs font-medium ${
+                    saveStatus.type === "success"
+                      ? "border-emerald-500/60 bg-emerald-50 text-emerald-700"
+                      : "border-rose-500/60 bg-rose-50 text-rose-700"
+                  }`}
+                  role="status"
+                >
+                  {saveStatus.message}
+                </p>
+              ) : null}
             </form>
           </div>
         </motion.section>
@@ -1110,12 +1176,56 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
   const [activeSection, setActiveSection] = useState("explorer");
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [selectedExplorerAsset, setSelectedExplorerAsset] = useState(null);
+  const [profileName, setProfileName] = useState("");
+  const [apiExplorerData, setApiExplorerData] = useState(null);
+  const [analysisData, setAnalysisData] = useState(null);
+  const [walletData, setWalletData] = useState(null);
+  const [isDepositing, setIsDepositing] = useState(false);
+  const [isSavingDisplayName, setIsSavingDisplayName] = useState(false);
+  const [profileSaveStatus, setProfileSaveStatus] = useState({ type: "idle", message: "" });
   const navigate = useNavigate();
-  const data = useMemo(() => mergeData(explorerData), [explorerData]);
-  const favorites = useMemo(() => explorerData?.favorites ?? DEFAULT_FAVORITES, [explorerData]);
+  const data = useMemo(() => {
+    const merged = mergeData({
+      ...(explorerData ?? {}),
+      ...(apiExplorerData ?? {}),
+      user: {
+        ...(explorerData?.user ?? {}),
+        ...(apiExplorerData?.user ?? {}),
+      },
+      marketPulse: {
+        ...(explorerData?.marketPulse ?? {}),
+        ...(apiExplorerData?.marketPulse ?? {}),
+      },
+      sentiment: {
+        ...(explorerData?.sentiment ?? {}),
+        ...(apiExplorerData?.sentiment ?? {}),
+      },
+      ownership: {
+        ...(explorerData?.ownership ?? {}),
+        ...(apiExplorerData?.ownership ?? {}),
+      },
+    });
+
+    if (!profileName) {
+      return merged;
+    }
+
+    return {
+      ...merged,
+      user: {
+        ...merged.user,
+        name: profileName,
+      },
+    };
+  }, [apiExplorerData, explorerData, profileName]);
+  const favorites = useMemo(
+    () => apiExplorerData?.favorites ?? explorerData?.favorites ?? DEFAULT_FAVORITES,
+    [apiExplorerData, explorerData]
+  );
 
   const handleSignOut = () => {
     setProfileMenuOpen(false);
+    clearPersistedAuth();
     if (onSignOut) {
       onSignOut();
     }
@@ -1129,6 +1239,33 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
   const handleOpenFavorite = (asset) => {
     setSelectedExplorerAsset(asset);
     setActiveSection("explorer");
+  };
+
+  const handleSaveDisplayName = async (nextDisplayName) => {
+    const cleaned = String(nextDisplayName || "").trim();
+    if (!cleaned) {
+      setProfileSaveStatus({ type: "error", message: "Display name cannot be empty." });
+      return;
+    }
+
+    try {
+      setIsSavingDisplayName(true);
+      setProfileSaveStatus({ type: "idle", message: "" });
+
+      const updated = await updateUserDisplayName(cleaned);
+      const fullName = [updated?.firstName, updated?.lastName].filter(Boolean).join(" ").trim();
+      const resolvedName = fullName || updated?.username || cleaned;
+
+      setProfileName(resolvedName);
+      setProfileSaveStatus({ type: "success", message: "Display name updated successfully." });
+    } catch (error) {
+      setProfileSaveStatus({
+        type: "error",
+        message: error?.message || "Could not update display name right now.",
+      });
+    } finally {
+      setIsSavingDisplayName(false);
+    }
   };
 
   useEffect(() => {
@@ -1149,35 +1286,206 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
     return () => window.removeEventListener("click", onGlobalClick);
   }, []);
 
+  useEffect(() => {
+    let active = true;
+
+    const loadExplorerData = async () => {
+      try {
+        const payload = await fetchExplorerDashboardData();
+        if (active) {
+          setApiExplorerData(payload);
+        }
+      } catch {
+        // Keep existing in-memory defaults if API is temporarily unavailable.
+      }
+    };
+
+    loadExplorerData();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadAnalysisData = async () => {
+      try {
+        const payload = await fetchPersonalizedAnalysisData();
+        if (active && payload) {
+          setAnalysisData(payload);
+        }
+      } catch {
+        // Keep existing static analysis cards when API is unavailable.
+      }
+    };
+
+    loadAnalysisData();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadWalletData = async () => {
+      try {
+        const payload = await fetchWalletPortfolioData();
+        if (active && payload) {
+          setWalletData(payload);
+        }
+      } catch {
+        // Keep static fallback for wallet cards when backend is unavailable.
+      }
+    };
+
+    loadWalletData();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleDeposit = async () => {
+    const amountInput = window.prompt("Enter deposit amount (USD)", "100");
+    if (!amountInput) {
+      return;
+    }
+
+    const amount = Number(amountInput);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      window.alert("Please enter a valid amount greater than 0.");
+      return;
+    }
+
+    try {
+      setIsDepositing(true);
+      await depositToWallet(amount);
+      const updated = await fetchWalletPortfolioData();
+      if (updated) {
+        setWalletData(updated);
+      }
+    } catch (error) {
+      window.alert(error?.message || "Deposit failed.");
+    } finally {
+      setIsDepositing(false);
+    }
+  };
+
+  useEffect(() => {
+    let alive = true;
+
+    const hydratedUser = getPersistedUser();
+    const token = getPersistedToken();
+
+    // Fast hydrate to avoid flicker before API response.
+    if (hydratedUser?.username) {
+      setProfileName(hydratedUser.username);
+    }
+
+    if (!hydratedUser?.userId) {
+      return () => {
+        alive = false;
+      };
+    }
+
+    const loadProfile = async () => {
+      try {
+        const user = await fetchUserProfile(hydratedUser.userId, token);
+        const fullName = [user?.firstName, user?.lastName].filter(Boolean).join(" ").trim();
+        const nextName = fullName || user?.username || hydratedUser?.username || "Analyst";
+
+        if (alive) {
+          setProfileName(nextName);
+        }
+      } catch {
+        if (alive && hydratedUser?.username) {
+          setProfileName(hydratedUser.username);
+        }
+      }
+    };
+
+    loadProfile();
+
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const profileInitial = (data.user?.name || "Analyst").trim().charAt(0).toUpperCase() || "A";
+
   return (
     <main className="min-h-screen bg-[#F5F2EA]">
-      <aside className="fixed left-0 top-0 z-40 flex h-screen w-[86px] flex-col items-center border-r border-[#F5F2EA]/12 bg-[#1A120B] py-4">
-        <span className="grid h-10 w-10 place-items-center rounded-2xl border border-[#D4AF37]/35 bg-[#D4AF37]/12 text-xs font-bold text-[#E7CC78]">
-          NX
-        </span>
+      <aside className="group/sidebar fixed left-0 top-0 z-40 flex h-screen w-[86px] flex-col overflow-hidden border-r border-[#F5F2EA]/12 bg-[#1A120B] py-4 transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:w-[200px]">
+        <div className="relative h-10 w-full">
+          <div className="absolute left-[23px] grid h-10 w-10 place-items-center rounded-2xl border border-[#D4AF37]/35 bg-[#D4AF37]/12">
+            <NexusFacetedMark
+              size={30}
+              className="drop-shadow-[0_2px_6px_rgba(212,175,55,0.45)]"
+            />
+          </div>
+          <span className="pointer-events-none absolute left-[76px] top-1/2 select-none overflow-hidden whitespace-nowrap text-lg font-bold tracking-[0.18em] text-[#E7CC78] opacity-0 -translate-y-1/2 translate-x-[-8px] max-w-0 transition-all duration-350 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-hover/sidebar:max-w-[144px]">
+            NEXUS
+          </span>
+        </div>
 
-        <nav className="mt-6 flex flex-1 flex-col items-center gap-3">
+        <nav className="mt-6 flex w-full flex-1 flex-col gap-3">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             const active = item.id === activeSection;
 
             return (
-              <button
-                key={item.id}
-                type="button"
-                title={item.label}
-                onClick={() => setActiveSection(item.id)}
-                className={`grid h-10 w-10 place-items-center rounded-xl border transition ${
-                  active
-                    ? "border-[#D4AF37]/45 bg-[#D4AF37]/14 text-[#E7CC78]"
-                    : "border-[#F5F2EA]/12 bg-[#F5F2EA]/3 text-[#F5F2EA]/72 hover:border-[#D4AF37]/28 hover:text-[#E7CC78]"
-                }`}
-              >
-                <Icon className="h-4.5 w-4.5" />
-              </button>
+              <div key={item.id} className="relative h-10 w-full">
+                <button
+                  type="button"
+                  title={item.label}
+                  onClick={() => setActiveSection(item.id)}
+                  className={`absolute left-[23px] grid h-10 w-10 place-items-center rounded-xl border transition-colors duration-300 ${
+                    active
+                      ? "border-[#D4AF37]/60 bg-[#D4AF37]/18 text-[#E7CC78] shadow-[0_0_0_1px_rgba(212,175,55,0.15)]"
+                      : "border-[#F5F2EA]/40 bg-[#F5F2EA]/10 text-[#F8F5EF] hover:border-[#D4AF37]/45 hover:text-[#E7CC78]"
+                  }`}
+                >
+                  <Icon
+                    className={`h-5 w-5 shrink-0 ${active ? "text-[#E7CC78]" : "text-[#F8F5EF]"}`}
+                    strokeWidth={2.35}
+                  />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveSection(item.id)}
+                  className={`absolute left-[76px] top-1/2 w-[114px] -translate-y-1/2 translate-x-[-8px] overflow-hidden whitespace-nowrap bg-transparent p-0 text-left text-sm font-medium opacity-0 outline-none transition-all duration-300 pointer-events-none group-hover/sidebar:pointer-events-auto group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 ${
+                    active ? "text-[#E7CC78]" : "text-[#F8F5EF]"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              </div>
             );
           })}
         </nav>
+
+        <div className="relative h-10 w-full">
+          <button
+            type="button"
+            title="Sign Out"
+            onClick={handleSignOut}
+            className="absolute left-[23px] grid h-10 w-10 place-items-center rounded-xl border border-rose-300/45 bg-rose-500/14 text-rose-200 transition-colors duration-300 hover:border-rose-300/70 hover:bg-rose-500/24"
+            aria-label="Sign Out"
+          >
+            <LogOut className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+          </button>
+          <button
+            type="button"
+            onClick={handleSignOut}
+            className="absolute left-[76px] top-1/2 w-[100px] -translate-y-1/2 translate-x-[-8px] overflow-hidden whitespace-nowrap bg-transparent p-0 text-left text-sm font-semibold text-rose-200 opacity-0 outline-none transition-all duration-300 pointer-events-none group-hover/sidebar:pointer-events-auto group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100"
+          >
+            Sign Out
+          </button>
+        </div>
       </aside>
 
       <section className="min-h-screen pl-[86px]">
@@ -1207,8 +1515,8 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
                   onClick={() => setProfileMenuOpen((previous) => !previous)}
                   className="inline-flex items-center gap-2 rounded-2xl border border-[#1A120B]/12 bg-white px-2.5 py-1.5 shadow-[0_6px_16px_rgba(26,18,11,0.08)]"
                 >
-                  <span className="grid h-7 w-7 place-items-center rounded-full bg-[#1A120B] text-xs font-semibold text-[#F5F2EA]">A</span>
-                  <span className="text-sm font-medium text-[#1A120B]">Analyst</span>
+                  <span className="grid h-7 w-7 place-items-center rounded-full bg-[#1A120B] text-xs font-semibold text-[#F5F2EA]">{profileInitial}</span>
+                  <span className="text-sm font-medium text-[#1A120B]">{data.user?.name || "Analyst"}</span>
                   <ChevronDown className="h-4 w-4 text-[#1A120B]/70" />
                 </button>
 
@@ -1219,7 +1527,7 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute right-0 top-12 z-50 w-72 rounded-2xl border border-[#D4AF37]/40 bg-white/80 p-2 shadow-[0_18px_40px_rgba(26,18,11,0.22)] backdrop-blur-lg"
+                      className="absolute right-0 top-12 z-50 w-72 rounded-2xl border border-[#D4AF37]/40 bg-white p-2 shadow-[0_18px_40px_rgba(26,18,11,0.22)]"
                     >
                       <div className="space-y-1">
                         {NAV_ITEMS.map((item) => {
@@ -1264,7 +1572,7 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
             ) : activeSection === "bulletin" ? (
               <BulletinPage />
             ) : activeSection === "analysis" ? (
-              <AnalysisPage data={data} />
+              <AnalysisPage data={data} analysisData={analysisData} />
             ) : activeSection === "favorites" ? (
               <FavoritesPage
                 favorites={favorites}
@@ -1272,9 +1580,14 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
                 onOpenFavorite={handleOpenFavorite}
               />
             ) : activeSection === "wallet" ? (
-              <WalletPage />
+              <WalletPage walletData={walletData} onDeposit={handleDeposit} isDepositing={isDepositing} />
             ) : activeSection === "settings" ? (
-              <SettingsPage userName={data.user?.name} />
+              <SettingsPage
+                userName={data.user?.name}
+                onSaveDisplayName={handleSaveDisplayName}
+                isSavingDisplayName={isSavingDisplayName}
+                saveStatus={profileSaveStatus}
+              />
             ) : (
               <PlaceholderPage section={activeSection} />
             )}

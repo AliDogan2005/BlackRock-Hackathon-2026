@@ -1,8 +1,25 @@
 import { useMemo, useState } from "react";
 import NexusLogoMark from "./NexusLogoMark";
+import { loginUser, persistAuth } from "../services/authService";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+
+function isNetworkFailure(error) {
+  const message = String(error?.message || "").toLowerCase();
+  return message.includes("failed to fetch") || message.includes("networkerror") || message.includes("network error");
+}
+
+function buildDemoAuthPayload(email) {
+  const localPart = String(email || "").split("@")[0] || "analyst";
+  return {
+    token: `demo-token-${Date.now()}`,
+    tokenType: "Bearer",
+    userId: 0,
+    username: localPart,
+    email,
+    message: "Backend not reachable. Signed in with demo mode.",
+  };
+}
 
 function EyeIcon({ open }) {
   if (open) {
@@ -83,32 +100,31 @@ export default function LoginPage({ onAuthSuccess }) {
     };
 
     try {
-      // Ready for Spring Boot integration:
-      // const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(payload),
-      // });
-      // if (!response.ok) throw new Error("Login failed");
-      await new Promise((resolve) => window.setTimeout(resolve, 550));
+      const authPayload = await loginUser(payload);
+      persistAuth(authPayload);
 
       setSubmission({
         type: "success",
-        message: "Validation passed. Connect this submit handler to your Spring Boot auth endpoint.",
+        message: authPayload.message || "Login successful.",
       });
 
       if (onAuthSuccess) {
-        onAuthSuccess();
+        onAuthSuccess(authPayload);
+      }
+    } catch (error) {
+      if (isNetworkFailure(error)) {
+        const demoPayload = buildDemoAuthPayload(payload.email);
+        persistAuth(demoPayload);
+        setSubmission({ type: "success", message: demoPayload.message });
+        if (onAuthSuccess) {
+          onAuthSuccess(demoPayload);
+        }
+        return;
       }
 
-      console.info("Prepared login payload for backend:", {
-        endpoint: `${API_BASE_URL}/api/auth/login`,
-        payload,
-      });
-    } catch (error) {
       setSubmission({
         type: "error",
-        message: "Unable to submit right now. Verify backend connectivity and try again.",
+        message: error?.message || "Unable to submit right now. Verify backend connectivity and try again.",
       });
     } finally {
       setIsSubmitting(false);
