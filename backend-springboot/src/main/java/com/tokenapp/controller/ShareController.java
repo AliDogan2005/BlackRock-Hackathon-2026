@@ -1,6 +1,9 @@
 package com.tokenapp.controller;
 
 import com.tokenapp.dto.BuyTokenRequest;
+import com.tokenapp.dto.CreateShareRequest;
+import com.tokenapp.dto.PortfolioProfitLossResponse;
+import com.tokenapp.dto.ProfitLossResponse;
 import com.tokenapp.dto.ShareResponse;
 import com.tokenapp.dto.UserTokenResponse;
 import com.tokenapp.exception.BadRequestException;
@@ -161,6 +164,54 @@ public class ShareController {
             error.put("message", e.getMessage());
             return ResponseEntity.status(500).body((Map<String, Object>)(Object)error);
         }
+    }
+
+    @GetMapping("/profit-loss/portfolio")
+    public ResponseEntity<?> getPortfolioProfitLoss() {
+        log.info("Get portfolio profit/loss request");
+        try {
+            Long userId = extractUserIdFromJwt();
+            if (userId == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or missing JWT token"));
+            }
+
+            PortfolioProfitLossResponse response = shareService.calculatePortfolioProfitLoss(userId);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            log.error("Error calculating portfolio profit/loss: {}", e.getMessage(), e);
+            Map<String, Object> error = new HashMap<>();
+            error.put("error", e.getMessage());
+            return ResponseEntity.status(500).body(error);
+        }
+    }
+
+    @GetMapping("/{shareId}/profit-loss")
+    public ResponseEntity<?> getProfitLossForShare(@PathVariable Long shareId) {
+        log.info("Get profit/loss for share {}", shareId);
+        try {
+            Long userId = extractUserIdFromJwt();
+            if (userId == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or missing JWT token"));
+            }
+
+            ProfitLossResponse response = shareService.calculateProfitLossForShare(userId, shareId);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            log.error("Error calculating profit/loss for share {}: {}", shareId, e.getMessage(), e);
+            Map<String, Object> error = new HashMap<>();
+            error.put("error", e.getMessage());
+            return ResponseEntity.status(500).body(error);
+        }
+    }
+
+    private Long extractUserIdFromJwt() {
+        String token = getJwtFromRequest();
+        if (token != null && jwtTokenProvider.validateToken(token)) {
+            return jwtTokenProvider.getUserIdFromToken(token);
+        }
+        return null;
     }
 
     private String getJwtFromRequest() {

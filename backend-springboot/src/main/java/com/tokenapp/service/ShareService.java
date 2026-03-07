@@ -2,6 +2,8 @@ package com.tokenapp.service;
 
 import com.tokenapp.dto.BuyTokenRequest;
 import com.tokenapp.dto.CreateShareRequest;
+import com.tokenapp.dto.ProfitLossResponse;
+import com.tokenapp.dto.PortfolioProfitLossResponse;
 import com.tokenapp.dto.ShareResponse;
 import com.tokenapp.dto.UserTokenResponse;
 import com.tokenapp.entity.Share;
@@ -13,6 +15,7 @@ import com.tokenapp.exception.BadRequestException;
 import com.tokenapp.exception.DuplicateResourceException;
 import com.tokenapp.exception.ResourceNotFoundException;
 import com.tokenapp.repository.ShareRepository;
+import com.tokenapp.repository.TransactionRepository;
 import com.tokenapp.repository.UserRepository;
 import com.tokenapp.repository.UserTokenRepository;
 import com.tokenapp.repository.UserWalletRepository;
@@ -45,6 +48,9 @@ public class ShareService {
 
     @Autowired
     private UserWalletRepository userWalletRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Autowired
     private TransactionService transactionService;
@@ -403,6 +409,120 @@ public class ShareService {
         result.put("created", created);
         result.put("message", "Successfully synced " + synced + " shares and created " + created + " new shares");
         return result;
+    }
+
+    @Transactional
+    public ProfitLossResponse calculateProfitLossForShare(Long userId, Long shareId) {
+        log.info("Calculating profit/loss for user {} on share {}", userId, shareId);
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        Share share = shareRepository.findById(shareId)
+                .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
+
+        // Get user's current tokens for this share
+        UserToken userToken = userTokenRepository.findByUserIdAndShareId(userId, shareId)
+                .orElse(null);
+
+        if (userToken == null || userToken.getTokenAmount() <= 0) {
+            log.warn("User {} has no tokens for share {}", userId, shareId);
+            throw new BadRequestException("User does not hold any tokens for this share");
+        }
+
+        // Calculate total buy value from transactions
+        BigDecimal totalBuyValue = transactionRepository.calculateTotalBuyValueForShare(userId, shareId);
+
+        // Current value of holdings
+        BigDecimal currentTotalValue = share.getCurrentValue()
+                .multiply(BigDecimal.valueOf(userToken.getTokenAmount()));
+
+        // Calculate profit/loss
+        BigDecimal profitLoss = currentTotalValue.subtract(totalBuyValue);
+
+        // Calculate percentage
+        Double profitLossPercentage = 0.0;
+        if (totalBuyValue.compareTo(BigDecimal.ZERO) > 0) {
+            profitLossPercentage = (profitLoss.doubleValue() / totalBuyValue.doubleValue()) * 100;
+        }
+
+        log.info("Profit/Loss for share {}: {} ({}%)", shareId, profitLoss, profitLossPercentage);
+
+        return ProfitLossResponse.builder()
+                .shareId(shareId)
+                .shareName(share.getName())
+                .profitLoss(profitLoss)
+                .profitLossPercentage(profitLossPercentage)
+                .build();
+    }
+
+    @Transactional
+    public PortfolioProfitLossResponse calculatePortfolioProfitLoss(Long userId) {
+        log.info("Calculating portfolio profit/loss for user {}", userId);
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        List<UserToken> userTokens = userTokenRepository.findByUserId(userId);
+
+        if (userTokens.isEmpty()) {
+            log.info("User {} has no tokens", userId);
+            return PortfolioProfitLossResponse.builder()
+                    .totalProfitLoss(BigDecimal.ZERO)
+                    .totalProfitLossPercentage(0.0)
+                    .profitLossByShare(java.util.Collections.emptyList())
+                    .build();
+        }
+
+        BigDecimal totalBuyValue = BigDecimal.ZERO;
+        BigDecimal totalCurrentValue = BigDecimal.ZERO;
+        Long totalTokensOwned = 0L;
+        java.util.List<ProfitLossResponse> profitLossByShare = new java.util.ArrayList<>();
+
+        for (UserToken userToken : userTokens) {
+            Share share = userToken.getShare();
+            Long tokenAmount = userToken.getTokenAmount();
+
+            // Calculate buy value for this share
+            BigDecimal shareBuyValue = transactionRepository.calculateTotalBuyValueForShare(userId, share.getId());
+            totalBuyValue = totalBuyValue.add(shareBuyValue);
+
+            // Calculate current value
+            BigDecimal shareCurrentValue = share.getCurrentValue()
+                    .multiply(BigDecimal.valueOf(tokenAmount));
+            totalCurrentValue = totalCurrentValue.add(shareCurrentValue);
+
+            totalTokensOwned += tokenAmount;
+
+            // Build profit/loss for this share
+            BigDecimal shareProfitLoss = shareCurrentValue.subtract(shareBuyValue);
+            Double shareProfitLossPercentage = 0.0;
+            if (shareBuyValue.compareTo(BigDecimal.ZERO) > 0) {
+                shareProfitLossPercentage = (shareProfitLoss.doubleValue() / shareBuyValue.doubleValue()) * 100;
+            }
+
+            profitLossByShare.add(ProfitLossResponse.builder()
+                    .shareId(share.getId())
+                    .shareName(share.getName())
+                    .profitLoss(shareProfitLoss)
+                    .profitLossPercentage(shareProfitLossPercentage)
+                    .build());
+        }
+
+        // Calculate total profit/loss
+        BigDecimal totalProfitLoss = totalCurrentValue.subtract(totalBuyValue);
+        Double totalProfitLossPercentage = 0.0;
+        if (totalBuyValue.compareTo(BigDecimal.ZERO) > 0) {
+            totalProfitLossPercentage = (totalProfitLoss.doubleValue() / totalBuyValue.doubleValue()) * 100;
+        }
+
+        log.info("Portfolio profit/loss for user {}: {} ({}%)", userId, totalProfitLoss, totalProfitLossPercentage);
+
+        return PortfolioProfitLossResponse.builder()
+                .totalProfitLoss(totalProfitLoss)
+                .totalProfitLossPercentage(totalProfitLossPercentage)
+                .profitLossByShare(profitLossByShare)
+                .build();
     }
 }
 
