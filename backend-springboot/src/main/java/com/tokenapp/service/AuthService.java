@@ -35,6 +35,9 @@ public class AuthService {
     @Autowired
     private JwtTokenProvider tokenProvider;
 
+    @Autowired
+    private EmailService emailService;
+
     @Transactional
     public AuthResponse register(RegisterRequest registerRequest) {
         log.info("Attempting to register user with username: {}", registerRequest.getUsername());
@@ -66,6 +69,19 @@ public class AuthService {
 
         User savedUser = userRepository.save(user);
         log.info("User registered successfully with id: {}", savedUser.getId());
+
+        // Send welcome email
+        try {
+            String fullName = (registerRequest.getFirstName() != null ? registerRequest.getFirstName() : "")
+                    + (registerRequest.getLastName() != null ? " " + registerRequest.getLastName() : "");
+            emailService.sendRegistrationWelcomeEmail(
+                    savedUser.getEmail(),
+                    fullName.trim().isEmpty() ? savedUser.getUsername() : fullName.trim()
+            );
+            log.info("Welcome email sent to: {}", savedUser.getEmail());
+        } catch (Exception e) {
+            log.warn("Could not send welcome email to: {}", savedUser.getEmail(), e);
+        }
 
         // Generate JWT token
         String token = tokenProvider.generateToken(savedUser.getId(), savedUser.getUsername());

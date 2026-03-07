@@ -23,6 +23,15 @@ import threading
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+# Import Chicago geographies
+try:
+    from chicago.city_geographies import load_geography_catalogs
+    from chicago.official_sources import CHICAGO_CONFIG
+    CHICAGO_AVAILABLE = True
+except ImportError:
+    CHICAGO_AVAILABLE = False
+    print("WARNING: Chicago module not available")
+
 # Flask app oluştur
 app = Flask(__name__)
 
@@ -181,6 +190,67 @@ def api_get_news():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
+@app.route('/api/chicago-neighborhoods', methods=['GET'])
+def api_get_chicago_neighborhoods():
+    """REST API endpoint to get Chicago neighborhoods."""
+    if not CHICAGO_AVAILABLE:
+        return jsonify({"status": "error", "message": "Chicago module not available"}), 500
+
+    try:
+        # Load neighborhood data with proper headers
+        headers = {"User-Agent": "TokenApp/1.0"}
+        geo_data = load_geography_catalogs(CHICAGO_CONFIG, headers)
+        neighborhoods = geo_data.get("neighborhoods", [])
+        areas = geo_data.get("areas", [])
+
+        return jsonify({
+            "status": "success",
+            "city": geo_data.get("city"),
+            "state": geo_data.get("state"),
+            "neighborhoods": neighborhoods,
+            "areas": areas,
+            "total_neighborhoods": len(neighborhoods),
+            "total_areas": len(areas)
+        }), 200
+    except Exception as e:
+        print(f"ERROR [CHICAGO_API] {str(e)}")
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+@app.route('/api/chicago-news', methods=['GET'])
+def api_get_chicago_news():
+    """REST API endpoint to get Chicago news with impact analysis."""
+    try:
+        # Load Chicago news from chicagogov.json
+        chicago_json_path = "chicago/chicagogov.json"
+        with open(chicago_json_path, 'r', encoding='utf-8') as f:
+            news_items = json.load(f)
+
+        # Optional: filter by parameters
+        topic = request.args.get('topic')
+        risk_level = request.args.get('risk_level')
+
+        filtered_items = news_items
+
+        if topic:
+            filtered_items = [item for item in filtered_items if item.get('topic') == topic]
+
+        if risk_level:
+            filtered_items = [item for item in filtered_items if item.get('risk_level') == risk_level]
+
+        return jsonify({
+            "status": "success",
+            "total_items": len(news_items),
+            "filtered_items": len(filtered_items),
+            "items": filtered_items
+        }), 200
+    except FileNotFoundError:
+        return jsonify({"status": "success", "items": []}), 200
+    except Exception as e:
+        print(f"ERROR [CHICAGO_NEWS] {str(e)}")
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
 def extract_affected_shares(ai_comment: str) -> list:
     """Extract affected shares from AI comment."""
     affected = []
@@ -246,6 +316,7 @@ def run_flask_server():
     print(f"INFO [FLASK] Endpoints:")
     print(f"  - POST http://localhost:{FLASK_PORT}/api/analyze-news")
     print(f"  - GET  http://localhost:{FLASK_PORT}/api/news")
+    print(f"  - GET  http://localhost:{FLASK_PORT}/api/chicago-neighborhoods")
     app.run(host="0.0.0.0", port=FLASK_PORT, debug=False, use_reloader=False)
 
 

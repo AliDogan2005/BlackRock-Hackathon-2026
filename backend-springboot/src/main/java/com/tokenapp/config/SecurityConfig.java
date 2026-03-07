@@ -20,6 +20,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 
 @Slf4j
@@ -29,6 +30,7 @@ public class SecurityConfig {
 
     @Autowired
     private CustomUserDetailsService userDetailsService;
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
