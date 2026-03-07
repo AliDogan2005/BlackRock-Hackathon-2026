@@ -155,14 +155,6 @@ const WALLET_ALLOCATION = [
   { name: "Cash", value: 30, color: "#B8AA8A" },
 ];
 
-const WALLET_TRANSACTIONS = [
-  { type: "Deposit", asset: "Cash", amount: 12000, date: "2026-03-07" },
-  { type: "Buy", asset: "Berlin Mitte", amount: 6400, date: "2026-03-06" },
-  { type: "Sell", asset: "Miami Beach Front", amount: 2300, date: "2026-03-05" },
-  { type: "Buy", asset: "Tokyo Bay", amount: 3150, date: "2026-03-04" },
-  { type: "Deposit", asset: "Cash", amount: 8000, date: "2026-03-03" },
-];
-
 const PENDING_DEEP_DIVE_STORAGE_KEY = "nexus.pendingDeepDiveAsset";
 
 function mergeData(incoming) {
@@ -1394,7 +1386,7 @@ function CountUpValue({ value, decimals = 0, prefix = "", className = "" }) {
   return <motion.span className={className}>{prefix}{display}</motion.span>;
 }
 
-function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = [] }) {
+function WalletPage({ walletData, onDeposit, isDepositing }) {
   const [transactionFilter, setTransactionFilter] = useState("ALL");
   const availableCash = walletData?.availableCash ?? 185240;
   const tokenValue = walletData?.tokenValue ?? 412860;
@@ -1402,13 +1394,7 @@ function WalletPage({ walletData, onDeposit, isDepositing, liveTransactions = []
   const profitLossPct = Number(walletData?.profitLossPct ?? 12.5);
   const valueChange = Number(walletData?.valueChange ?? 66980);
   const allocation = walletData?.allocation?.length ? walletData.allocation : WALLET_ALLOCATION;
-  const hasBackendHistory = walletData?.transactionsSource === "backend-history";
-  const baseTransactions = walletData?.transactions?.length
-    ? walletData.transactions
-    : WALLET_TRANSACTIONS;
-  const transactions = hasBackendHistory
-    ? baseTransactions.slice(0, 12)
-    : [...liveTransactions, ...baseTransactions].slice(0, 12);
+  const transactions = walletData?.transactions?.slice(0, 12) ?? [];
   const dedupedTransactions = useMemo(() => {
     const seen = new Set();
     return transactions.filter((row) => {
@@ -1797,7 +1783,6 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
   const [depositModalAmount, setDepositModalAmount] = useState("100");
   const [depositModalError, setDepositModalError] = useState("");
-  const [tradeEvents, setTradeEvents] = useState([]);
     const refreshDashboardData = async () => {
       const [updatedExplorer, updatedWallet, updatedAnalysis] = await Promise.all([
         fetchExplorerDashboardData().catch(() => null),
@@ -2248,16 +2233,6 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
     try {
       setIsDepositing(true);
       await depositToWallet(amount);
-      setTradeEvents((current) => ([
-        {
-          type: "Deposit",
-          asset: "Cash",
-          amount: Number(amount.toFixed(2)),
-          date: new Date().toISOString().slice(0, 10),
-        },
-        ...current,
-      ].slice(0, 12)));
-
       await refreshDashboardData();
     } catch (error) {
       throw new Error(error?.message || "Deposit failed.");
@@ -2283,10 +2258,6 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
   };
 
   const handleTradeComplete = async (tradeEvent) => {
-    if (tradeEvent) {
-      setTradeEvents((current) => [tradeEvent, ...current].slice(0, 12));
-    }
-
     try {
       await refreshDashboardData();
     } catch {
@@ -2523,7 +2494,6 @@ export default function FintechMainPage({ explorerData, onSignOut }) {
                 walletData={walletData}
                 onDeposit={handleWalletDepositClick}
                 isDepositing={isDepositing}
-                liveTransactions={tradeEvents}
               />
             ) : activeSection === "settings" ? (
               <SettingsPage

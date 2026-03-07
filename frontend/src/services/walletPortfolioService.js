@@ -64,19 +64,6 @@ function buildAllocation(positions, availableCash, totalAssetValue) {
   return rows.filter((row) => row.value > 0);
 }
 
-function buildTransactions(positions) {
-  return positions
-    .slice()
-    .sort((a, b) => new Date(b.purchasedAt || 0).getTime() - new Date(a.purchasedAt || 0).getTime())
-    .slice(0, 5)
-    .map((position) => ({
-      type: "Buy",
-      asset: position.asset,
-      amount: position.value,
-      date: position.purchasedAt ? String(position.purchasedAt).slice(0, 10) : "-",
-    }));
-}
-
 function toDisplayType(type) {
   const normalized = String(type || "").trim().toUpperCase();
   if (!normalized) {
@@ -244,7 +231,7 @@ export async function fetchWalletPortfolioData() {
       : fallbackValueChange;
 
   const backendTransactions = mapTransactionHistory(transactionPayload);
-  const transactionsSource = backendTransactions.length ? "backend-history" : "portfolio-fallback";
+  const transactionsSource = backendTransactions.length ? "backend-history" : "backend-empty";
 
   return {
     availableCash,
@@ -253,7 +240,7 @@ export async function fetchWalletPortfolioData() {
     profitLossPct,
     valueChange,
     allocation: buildAllocation(positions, availableCash, totalAssetValue),
-    transactions: backendTransactions.length ? backendTransactions : buildTransactions(positions),
+    transactions: backendTransactions,
     transactionsSource,
     profitLossSource: hasBackendProfitLoss
       ? "backend-profit-loss"

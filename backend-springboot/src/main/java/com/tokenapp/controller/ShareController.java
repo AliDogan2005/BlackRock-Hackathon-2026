@@ -1,6 +1,7 @@
 package com.tokenapp.controller;
 
 import com.tokenapp.dto.BuyTokenRequest;
+import com.tokenapp.dto.AssetHistoryPointResponse;
 import com.tokenapp.dto.CreateShareRequest;
 import com.tokenapp.dto.PortfolioProfitLossResponse;
 import com.tokenapp.dto.ProfitLossResponse;
@@ -48,6 +49,12 @@ public class ShareController {
         log.info("Get share request for id: {}", shareId);
         ShareResponse share = shareService.getShareById(shareId);
         return ResponseEntity.ok(share);
+    }
+
+    @GetMapping("/history")
+    public ResponseEntity<List<AssetHistoryPointResponse>> getShareHistory(@RequestParam String regionId) {
+        log.info("Get share history request for regionId: {}", regionId);
+        return ResponseEntity.ok(shareService.getHistoricalTokenData(regionId));
     }
 
     @PostMapping("/{shareId}/buy")
