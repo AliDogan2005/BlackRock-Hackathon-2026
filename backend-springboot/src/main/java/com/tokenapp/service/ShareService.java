@@ -7,12 +7,14 @@ import com.tokenapp.dto.UserTokenResponse;
 import com.tokenapp.entity.Share;
 import com.tokenapp.entity.User;
 import com.tokenapp.entity.UserToken;
+import com.tokenapp.entity.UserWallet;
 import com.tokenapp.exception.BadRequestException;
 import com.tokenapp.exception.DuplicateResourceException;
 import com.tokenapp.exception.ResourceNotFoundException;
 import com.tokenapp.repository.ShareRepository;
 import com.tokenapp.repository.UserRepository;
 import com.tokenapp.repository.UserTokenRepository;
+import com.tokenapp.repository.UserWalletRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,9 @@ public class ShareService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserWalletRepository userWalletRepository;
 
     @Autowired
     private UserTokenRepository userTokenRepository;
@@ -90,6 +95,23 @@ public class ShareService {
             throw new BadRequestException("Token amount must be greater than 0");
         }
 
+        // Get user wallet and check balance
+        UserWallet wallet = userWalletRepository.findByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Wallet not found for user id: " + userId));
+
+        BigDecimal requiredAmount = share.getCurrentValue()
+                .multiply(BigDecimal.valueOf(buyTokenRequest.getTokenAmount()));
+
+        if (wallet.getBalance().compareTo(requiredAmount) < 0) {
+            throw new BadRequestException("Insufficient balance in wallet. Required: $" + requiredAmount +
+                    ", Available: $" + wallet.getBalance());
+        }
+
+        // Deduct amount from wallet
+        wallet.setBalance(wallet.getBalance().subtract(requiredAmount));
+        userWalletRepository.save(wallet);
+        log.info("Deducted ${} from user {} wallet", requiredAmount, userId);
+
         // Check if user already owns tokens of this share
         UserToken existingUserToken = userTokenRepository.findByUserIdAndShareId(userId, buyTokenRequest.getShareId()).orElse(null);
 
@@ -114,7 +136,7 @@ public class ShareService {
         userToken.setOwnershipPercentage(ownershipPercentage);
         userTokenRepository.save(userToken);
 
-        log.info("User {} successfully bought {} tokens of share {}", userId, buyTokenRequest.getTokenAmount(), buyTokenRequest.getShareId());
+        log.info("User {} successfully bought {} tokens of share {} for ${}", userId, buyTokenRequest.getTokenAmount(), buyTokenRequest.getShareId(), requiredAmount);
 
         return convertToUserTokenResponse(userToken, share);
     }
@@ -150,6 +172,19 @@ public class ShareService {
             throw new BadRequestException("Insufficient tokens to sell");
         }
 
+        // Calculate sale amount
+        Share share = userToken.getShare();
+        BigDecimal saleAmount = share.getCurrentValue()
+                .multiply(BigDecimal.valueOf(tokenAmountToSell));
+
+        // Get user wallet and add the sale amount
+        UserWallet wallet = userWalletRepository.findByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Wallet not found for user id: " + userId));
+
+        wallet.setBalance(wallet.getBalance().add(saleAmount));
+        userWalletRepository.save(wallet);
+        log.info("Added ${} to user {} wallet from token sale", saleAmount, userId);
+
         // Reduce token amount
         userToken.setTokenAmount(userToken.getTokenAmount() - tokenAmountToSell);
 
@@ -162,8 +197,9 @@ public class ShareService {
             double ownershipPercentage = (userToken.getTokenAmount().doubleValue() / userToken.getShare().getTotalTokens()) * 100;
             userToken.setOwnershipPercentage(ownershipPercentage);
             userTokenRepository.save(userToken);
-            log.info("User {} successfully sold {} tokens", userId, tokenAmountToSell);
         }
+
+        log.info("User {} successfully sold {} tokens for ${}", userId, tokenAmountToSell, saleAmount);
     }
 
     @Transactional
@@ -209,5 +245,114 @@ public class ShareService {
                 .purchasedAt(userToken.getPurchasedAt())
                 .build();
     }
-}
 
+    @Transactional
+    public java.util.Map<String, Object> syncSharesFromPricesData(java.util.Map<String, Object> pricesData) {
+        log.info("Syncing shares from prices data");
+
+        java.util.Map<String, Object> result = new java.util.HashMap<>();
+        int createdCount = 0;
+        int updatedCount = 0;
+
+        // Extract cities from prices data
+        java.util.Map<String, Object> citiesData = (java.util.Map<String, Object>) pricesData.get("cities");
+        if (citiesData == null) {
+            log.warn("No cities data in prices payload");
+            return result;
+        }
+
+        // Process each city
+        for (Object cityObj : citiesData.values()) {
+            java.util.Map<String, Object> cityMap = (java.util.Map<String, Object>) cityObj;
+            java.util.List<java.util.Map<String, Object>> neighborhoods =
+                (java.util.List<java.util.Map<String, Object>>) cityMap.get("top_5_neighborhoods");
+
+            if (neighborhoods == null) {
+                neighborhoods = (java.util.List<java.util.Map<String, Object>>) cityMap.get("neighborhoods");
+            }
+
+            if (neighborhoods == null || neighborhoods.isEmpty()) {
+                continue;
+            }
+
+            // Process each neighborhood as a share
+            for (java.util.Map<String, Object> neighborhood : neighborhoods) {
+                String name = (String) neighborhood.get("neighborhood");
+                String city = (String) neighborhood.get("city");
+                String state = (String) neighborhood.get("state");
+                Double estimatedHomePrice = ((Number) neighborhood.get("estimated_average_home_price_usd")).doubleValue();
+                Double livePrice = ((Number) neighborhood.get("share_token_live_price_usd")).doubleValue();
+                String priceAction = (String) neighborhood.get("price_action");
+                Double localNewsScore = ((Number) neighborhood.get("local_news_score")).doubleValue();
+                Double recentMomentumScore = ((Number) neighborhood.get("recent_momentum_score")).doubleValue();
+                Double confidenceScore = ((Number) neighborhood.get("confidence_score")).doubleValue();
+                java.util.List<String> signals = (java.util.List<String>) neighborhood.get("signals");
+
+                String shareName = name + ", " + city; // e.g., "WOODLAWN, Chicago"
+
+                // Check if share already exists
+                Share share = shareRepository.findByName(shareName).orElse(null);
+
+                if (share == null) {
+                    // Create new share
+                    share = Share.builder()
+                            .name(shareName)
+                            .description("Real estate tokenized share for " + name + " neighborhood in " + city + ", " + state)
+                            .totalTokens(10000L) // Default token count
+                            .currentValue(BigDecimal.valueOf(livePrice))
+                            .previousValue(BigDecimal.valueOf(livePrice))
+                            .neighborhood(name)
+                            .estimatedAvgHomePrice(BigDecimal.valueOf(estimatedHomePrice))
+                            .localNewsScore(localNewsScore)
+                            .recentMomentumScore(recentMomentumScore)
+                            .confidenceScore(confidenceScore)
+                            .priceAction(priceAction)
+                            .isActive(true)
+                            .lastPriceUpdate(java.time.LocalDateTime.now())
+                            .build();
+
+                    shareRepository.save(share);
+                    createdCount++;
+                    log.info("Created new share: {}", shareName);
+                } else {
+                    // Update existing share price
+                    if (share.getCurrentValue() != null) {
+                        share.setPreviousValue(share.getCurrentValue());
+                    }
+
+                    share.setCurrentValue(BigDecimal.valueOf(livePrice));
+
+                    // Calculate price change
+                    if (share.getPreviousValue() != null) {
+                        BigDecimal change = share.getCurrentValue().subtract(share.getPreviousValue());
+                        share.setPriceChange(change);
+
+                        if (share.getPreviousValue().compareTo(BigDecimal.ZERO) != 0) {
+                            BigDecimal percentageChange = change.divide(share.getPreviousValue(), 4, java.math.RoundingMode.HALF_UP)
+                                    .multiply(BigDecimal.valueOf(100));
+                            share.setPriceChangePercentage(percentageChange);
+                        }
+                    }
+
+                    share.setNeighborhood(name);
+                    share.setEstimatedAvgHomePrice(BigDecimal.valueOf(estimatedHomePrice));
+                    share.setLocalNewsScore(localNewsScore);
+                    share.setRecentMomentumScore(recentMomentumScore);
+                    share.setConfidenceScore(confidenceScore);
+                    share.setPriceAction(priceAction);
+                    share.setLastPriceUpdate(java.time.LocalDateTime.now());
+
+                    shareRepository.save(share);
+                    updatedCount++;
+                    log.info("Updated share: {} - price: {}", shareName, livePrice);
+                }
+            }
+        }
+
+        result.put("created", createdCount);
+        result.put("updated", updatedCount);
+        log.info("Sync complete: {} created, {} updated", createdCount, updatedCount);
+
+        return result;
+    }
+}

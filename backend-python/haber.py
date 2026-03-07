@@ -2,15 +2,15 @@ import json
 import os
 import sys
 
-# .env dosyasından environment variable'larını yükle
+# Load environment variables from .env
 from dotenv import load_dotenv
 load_dotenv()
 
-# VS Code / farklı Python kullanımında paket hatası verirse bu mesaj çıkar
+# Package import error message for VS Code / different Python installations
 try:
     import requests  # type: ignore[import-untyped]
     import openai  # type: ignore[import-untyped]
-    from flask import Flask, request, jsonify  # REST API için
+    from flask import Flask, request, jsonify  # For REST API
 except ImportError as e:
     print("ERROR [IMPORT] Missing package:", e)
     print("Fix: In VS Code open Terminal (Ctrl+`) and run:")
@@ -32,18 +32,18 @@ except ImportError:
     CHICAGO_AVAILABLE = False
     print("WARNING: Chicago module not available")
 
-# Flask app oluştur
+# Create Flask app
 app = Flask(__name__)
 
-# API Keys: environment variable'lardan oku (asla kodda key'i commit etme!)
+# API Keys: read from environment variables (never commit keys to code!)
 MARKETAUX_TOKEN = os.environ.get("MARKETAUX_TOKEN", "")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 _openai_client = openai.OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 NEWS_JSON_PATH = "news.json"
-POLL_INTERVAL_SECONDS = 60  # kaç saniyede bir yeni haber bakılacak
+POLL_INTERVAL_SECONDS = 60  # How often to check for new news
 FLASK_PORT = 8000  # Flask REST API port
-SERVER_PORT = 5001  # HTTP server port (news.json serve etmek için)
+SERVER_PORT = 5001  # HTTP server port (to serve news.json)
 
 marketaux_url = (
     f"https://api.marketaux.com/v1/news/all"
@@ -98,12 +98,18 @@ def fetch_news():
 
 
 SYSTEM_PROMPT = (
-    "Act as the AI financial strategy expert for the Nexus project, delivering professional analyses that connect traditional equities with tokenized real-world assets (real estate, vehicle fleets, energy infrastructure). Use a BlackRock Aladdin-inspired risk management framework. Write in English, max ~250 characters, always include a Risk Score (0-100) and finish with a buy signal such as Strong Buy Opportunity, Moderate Buy, Low Buy Interest, Avoid, or Sell Alert."
+    "You are a real estate tokenization analyst for neighborhood investment tokens. Analyze news to identify which neighborhoods or regions could be affected (e.g., 'This news about New York City development will impact Manhattan, Brooklyn, or Queens neighborhood tokens'). "
+    "Provide concise analysis in English, max ~250 characters. Always include: "
+    "(1) Affected neighborhood/region names, "
+    "(2) Risk Score (0-100) for those neighborhoods, "
+    "(3) Investment signal: Strong Buy Opportunity, Moderate Buy, Low Buy Interest, Avoid, or Sell Alert. "
+    "Example: 'Manhattan tokens likely to benefit from tech job growth. Risk Score: 45. Strong Buy Opportunity.' "
+    "Focus ONLY on neighborhood/regional real estate token impact, not general stocks."
 )
 
 
 def analyze_with_openai(description: str) -> str:
-    """Get AI financial comment (OpenAI SDK 1.x). Hata olursa konsola tam mesaj yazılır."""
+    """Get AI financial comment (OpenAI SDK 1.x). Full error message printed to console on failure."""
     if not _openai_client:
         return "[Analysis skipped: no API key]"
     try:
@@ -111,7 +117,7 @@ def analyze_with_openai(description: str) -> str:
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": description[:4000]},  # token sınırı için kısalt
+                {"role": "user", "content": description[:4000]},  # Truncate for token limit
             ],
         )
         msg = response.choices[0].message
@@ -120,12 +126,12 @@ def analyze_with_openai(description: str) -> str:
     except Exception as e:
         err_name = type(e).__name__
         err_msg = str(e)
-        # Gerçek hatayı her zaman konsola yaz (API key invalid, quota, vs.)
+        # Always print real error to console (API key invalid, quota, etc.)
         print(f"ERROR [OPENAI] {err_name}: {err_msg}")
         if "RateLimit" in err_name or "rate_limit" in err_msg.lower():
             return "[Analysis skipped: rate limit]"
         if "Authentication" in err_name or "invalid" in err_msg.lower() or "401" in err_msg:
-            print("  -> Çözüm: Geçerli bir OpenAI API key kullan. https://platform.openai.com/api-keys")
+            print("  -> Solution: Use a valid OpenAI API key. https://platform.openai.com/api-keys")
             return "[Analysis failed: invalid or expired API key]"
         if "quota" in err_msg.lower() or "insufficient" in err_msg.lower():
             return "[Analysis failed: quota exceeded]"
@@ -150,7 +156,7 @@ def save_news(all_items):
 
 @app.route('/api/analyze-news', methods=['POST'])
 def api_analyze_news():
-    """REST API endpoint for Spring Boot to call - analyze news text and return affected stocks."""
+    """REST API endpoint for Spring Boot to call - analyze news text and return affected neighborhoods."""
     try:
         data = request.get_json()
         if not data or 'text' not in data:
@@ -161,14 +167,14 @@ def api_analyze_news():
         # Analyze with OpenAI
         ai_comment = analyze_with_openai(news_text)
 
-        # Parse the AI comment to extract affected stocks
-        affected_shares = extract_affected_shares(ai_comment)
+        # Parse the AI comment to extract affected neighborhoods
+        affected_neighborhoods = extract_affected_neighborhoods(ai_comment)
 
         return jsonify({
             "status": "success",
             "text": news_text,
             "ai_comment": ai_comment,
-            "affected_shares": affected_shares,
+            "affected_neighborhoods": affected_neighborhoods,
             "timestamp": datetime.utcnow().isoformat() + "Z"
         }), 200
 
@@ -251,25 +257,46 @@ def api_get_chicago_news():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
-def extract_affected_shares(ai_comment: str) -> list:
-    """Extract affected shares from AI comment."""
+def extract_affected_neighborhoods(ai_comment: str) -> list:
+    """Extract affected neighborhood names from AI comment."""
     affected = []
-    symbols = ['AAPL', 'TSLA', 'AMZN', 'MSFT', 'GOOGL', 'META', 'NVDA']
 
-    for symbol in symbols:
-        if symbol in ai_comment:
-            # Determine impact based on keywords
-            impact = "positive"
-            if any(word in ai_comment.lower() for word in ["negative", "bearish", "down", "sell", "risk"]):
-                impact = "negative"
-            elif any(word in ai_comment.lower() for word in ["neutral", "stable"]):
-                impact = "neutral"
+    # Neighborhood keywords to look for
+    neighborhoods = {
+        'Manhattan': ['Manhattan', 'Midtown', 'Upper East', 'Upper West', 'Downtown', 'Wall Street'],
+        'Brooklyn': ['Brooklyn', 'Brooklyn Heights', 'Williamsburg', 'DUMBO', 'Park Slope', 'Sunset Park'],
+        'Queens': ['Queens', 'Long Island City', 'Astoria', 'Flushing'],
+        'Woodlawn': ['Woodlawn', 'South Side'],
+        'Englewood': ['Englewood', 'West Englewood'],
+        'Chatham': ['Chatham', 'Chicago South'],
+        'Chicago': ['Chicago', 'Illinois'],
+        'Los Angeles': ['Los Angeles', 'LA', 'Bel Air', 'Beverly Hills', 'Granada Hills'],
+        'Dallas': ['Dallas', 'Texas', 'Fort Worth']
+    }
 
-            affected.append({
-                "symbol": symbol,
-                "impact": impact,
-                "score": 0.7
-            })
+    for neighborhood, keywords in neighborhoods.items():
+        for keyword in keywords:
+            if keyword in ai_comment:
+                # Determine impact based on sentiment
+                impact = "positive"
+                if any(word in ai_comment.lower() for word in ["negative", "risk", "decline", "drop", "loss"]):
+                    impact = "negative"
+                elif any(word in ai_comment.lower() for word in ["neutral", "stable", "unchanged"]):
+                    impact = "neutral"
+
+                # Extract risk score if present
+                risk_score = 50
+                import re
+                score_match = re.search(r'Risk Score[:\s]*(\d+)', ai_comment)
+                if score_match:
+                    risk_score = int(score_match.group(1))
+
+                affected.append({
+                    "neighborhood": neighborhood,
+                    "impact": impact,
+                    "risk_score": risk_score
+                })
+                break  # Avoid duplicates
 
     return affected
 
@@ -301,7 +328,7 @@ class NewsHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
     def log_message(self, format, *args):
-        pass  # isteğe bağlı: log'u kapatmak için
+        pass  # Optional: disable logging
 
 
 def run_server():
@@ -339,6 +366,7 @@ def main():
         for news in news_list:
             title = news.get("title", "No title")
             description = news.get("description", "No description")
+            url = news.get("url", "")  # Get URL from API response
 
             # Skip already seen titles (during this run or previous ones)
             if title in known_titles:
@@ -350,6 +378,7 @@ def main():
                 {
                     "title": title,
                     "description": description,
+                    "url": url,  # Add URL to saved item
                     "ai_comment": ai_comment,
                     "timestamp": datetime.utcnow().isoformat() + "Z",
                 }
