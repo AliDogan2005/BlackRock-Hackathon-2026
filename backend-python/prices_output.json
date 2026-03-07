@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-07T01:02:20.217454+00:00",
+  "generated_at": "2026-03-07T04:24:17.433500+00:00",
   "pricing_rule": "share_token_price = estimated_average_home_price / 15000, then adjusted by local news momentum and macro regime",
   "global_market_context": {
     "regime": "panic",
@@ -12,10 +12,10 @@
       "Wall Street Rebounds Midday: Tech Gains and Fed Stability Drive Market Recovery",
       "US stock market crash: Dow, S&P 500 and Nasdaq down today - Here's biggest gainers and losers amid Dow Jones 550 crash"
     ],
-    "fear_score": 19.92,
+    "fear_score": 19.85,
     "stability_score": 0.99,
-    "growth_score": 1.99,
-    "pullback_score": 2.98
+    "growth_score": 1.98,
+    "pullback_score": 2.97
   },
   "cities": {
     "chicago": {
@@ -23,14 +23,14 @@
       "state": "Illinois",
       "baseline_city_home_value_usd": 305295,
       "macro_regime": "panic",
-      "city_average_live_share_price_usd": 23.6831,
-      "top_5_neighborhoods": [
+      "city_average_live_share_price_usd": 23.683,
+      "top_10_neighborhoods": [
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WOODLAWN",
-          "estimated_average_home_price_usd": 331795.7,
-          "share_token_base_price_usd": 22.1197,
+          "estimated_average_home_price_usd": 331793.67,
+          "share_token_base_price_usd": 22.1196,
           "local_news_score": 46.62,
           "recent_momentum_score": 77.6,
           "confidence_score": 79.86,
@@ -46,17 +46,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0647,
-          "share_token_live_price_usd": 25.6696,
+          "share_token_live_price_usd": 25.6695,
           "price_action": "increase",
-          "analysis": "WOODLAWN in Chicago has an estimated average home value of $331,795.70. Local government news score is 46.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.6696."
+          "analysis": "WOODLAWN in Chicago has an estimated average home value of $331,793.67. Local government news score is 46.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.6695."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST ENGLEWOOD",
-          "estimated_average_home_price_usd": 331233.57,
-          "share_token_base_price_usd": 22.0822,
-          "local_news_score": 45.67,
+          "estimated_average_home_price_usd": 331231.88,
+          "share_token_base_price_usd": 22.0821,
+          "local_news_score": 45.66,
           "recent_momentum_score": 71.62,
           "confidence_score": 77.97,
           "premium_adjustment": -0.0029,
@@ -71,17 +71,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0597,
-          "share_token_live_price_usd": 25.5062,
+          "share_token_live_price_usd": 25.506,
           "price_action": "increase",
-          "analysis": "WEST ENGLEWOOD in Chicago has an estimated average home value of $331,233.57. Local government news score is 45.67, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.5062."
+          "analysis": "WEST ENGLEWOOD in Chicago has an estimated average home value of $331,231.88. Local government news score is 45.66, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.5060."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ENGLEWOOD",
-          "estimated_average_home_price_usd": 324930.53,
-          "share_token_base_price_usd": 21.662,
-          "local_news_score": 36.42,
+          "estimated_average_home_price_usd": 324927.65,
+          "share_token_base_price_usd": 21.6618,
+          "local_news_score": 36.41,
           "recent_momentum_score": 85.54,
           "confidence_score": 76.44,
           "premium_adjustment": -0.0057,
@@ -96,16 +96,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0713,
-          "share_token_live_price_usd": 25.2947,
+          "share_token_live_price_usd": 25.2945,
           "price_action": "increase",
-          "analysis": "ENGLEWOOD in Chicago has an estimated average home value of $324,930.53. Local government news score is 36.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2947."
+          "analysis": "ENGLEWOOD in Chicago has an estimated average home value of $324,927.65. Local government news score is 36.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2945."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "CHATHAM",
-          "estimated_average_home_price_usd": 328620.94,
-          "share_token_base_price_usd": 21.9081,
+          "estimated_average_home_price_usd": 328619.41,
+          "share_token_base_price_usd": 21.908,
           "local_news_score": 42.7,
           "recent_momentum_score": 69.81,
           "confidence_score": 78.66,
@@ -121,16 +121,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0582,
-          "share_token_live_price_usd": 25.269,
+          "share_token_live_price_usd": 25.2689,
           "price_action": "increase",
-          "analysis": "CHATHAM in Chicago has an estimated average home value of $328,620.94. Local government news score is 42.7, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2690."
+          "analysis": "CHATHAM in Chicago has an estimated average home value of $328,619.41. Local government news score is 42.7, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2689."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST GARFIELD PARK",
-          "estimated_average_home_price_usd": 327612.49,
-          "share_token_base_price_usd": 21.8408,
+          "estimated_average_home_price_usd": 327610.79,
+          "share_token_base_price_usd": 21.8407,
           "local_news_score": 39.5,
           "recent_momentum_score": 65.8,
           "confidence_score": 72.21,
@@ -146,117 +146,115 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0548,
-          "share_token_live_price_usd": 25.1119,
+          "share_token_live_price_usd": 25.1117,
           "price_action": "increase",
-          "analysis": "WEST GARFIELD PARK in Chicago has an estimated average home value of $327,612.49. Local government news score is 39.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.1119."
-        }
-      ],
-      "neighborhoods": [
+          "analysis": "WEST GARFIELD PARK in Chicago has an estimated average home value of $327,610.79. Local government news score is 39.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.1117."
+        },
         {
           "city": "Chicago",
           "state": "Illinois",
-          "neighborhood": "WOODLAWN",
-          "estimated_average_home_price_usd": 331795.7,
-          "share_token_base_price_usd": 22.1197,
-          "local_news_score": 46.62,
+          "neighborhood": "EAST GARFIELD PARK",
+          "estimated_average_home_price_usd": 323462.91,
+          "share_token_base_price_usd": 21.5642,
+          "local_news_score": 33.92,
           "recent_momentum_score": 77.6,
-          "confidence_score": 79.86,
-          "premium_adjustment": -0.0029,
+          "confidence_score": 66.87,
+          "premium_adjustment": -0.0057,
           "mention_count": 7,
           "signals": [
-            "community wealth-building focus",
-            "proximity to new housing initiatives",
-            "High dependence on federal funding",
-            "Current revitalization efforts at risk"
+            "high poverty rates",
+            "community reliance on social services",
+            "high ridership potential",
+            "community engagement in transportation initiatives"
           ],
-          "reason": "Woodlawn is likely to benefit from the new housing projects as part of the community wealth-building efforts, enhancing local real estate interest.",
+          "reason": "No credible localized impact was identified for this geography from the article.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0647,
-          "share_token_live_price_usd": 25.6696,
+          "share_token_live_price_usd": 25.025,
           "price_action": "increase",
-          "analysis": "WOODLAWN in Chicago has an estimated average home value of $331,795.70. Local government news score is 46.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.6696."
+          "analysis": "EAST GARFIELD PARK in Chicago has an estimated average home value of $323,462.91. Local government news score is 33.92, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0250."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
-          "neighborhood": "WEST ENGLEWOOD",
-          "estimated_average_home_price_usd": 331233.57,
-          "share_token_base_price_usd": 22.0822,
-          "local_news_score": 45.67,
-          "recent_momentum_score": 71.62,
-          "confidence_score": 77.97,
+          "neighborhood": "AUSTIN",
+          "estimated_average_home_price_usd": 323905.28,
+          "share_token_base_price_usd": 21.5937,
+          "local_news_score": 33.18,
+          "recent_momentum_score": 75.17,
+          "confidence_score": 66.87,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
-            "proximity to new developments",
-            "community wealth-building initiatives",
-            "Potential loss of federal funding",
-            "Impact on local redevelopment initiatives"
+            "high unemployment rates",
+            "significant federal program participation",
+            "high ridership potential",
+            "community engagement in transportation initiatives"
           ],
-          "reason": "The approval of medium density homes in nearby areas is likely to increase interest in West Englewood, potentially leading to higher housing demand and redevelopment opportunities.",
+          "reason": "No credible localized impact was identified for this geography from the article.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0597,
-          "share_token_live_price_usd": 25.5062,
+          "local_live_multiplier": 1.0626,
+          "share_token_live_price_usd": 25.0115,
           "price_action": "increase",
-          "analysis": "WEST ENGLEWOOD in Chicago has an estimated average home value of $331,233.57. Local government news score is 45.67, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.5062."
+          "analysis": "AUSTIN in Chicago has an estimated average home value of $323,905.28. Local government news score is 33.18, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0115."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
-          "neighborhood": "CHATHAM",
-          "estimated_average_home_price_usd": 328620.94,
-          "share_token_base_price_usd": 21.9081,
-          "local_news_score": 42.7,
-          "recent_momentum_score": 69.81,
-          "confidence_score": 78.66,
+          "neighborhood": "HUMBOLDT PARK",
+          "estimated_average_home_price_usd": 323010.23,
+          "share_token_base_price_usd": 21.534,
+          "local_news_score": 33.15,
+          "recent_momentum_score": 74.6,
+          "confidence_score": 72.59,
           "premium_adjustment": -0.0057,
           "mention_count": 7,
           "signals": [
-            "New medium density homes approved",
-            "Support for minority-led development teams",
+            "No proximity to mentioned areas",
+            "No related developments",
             "high poverty rates",
-            "significant federal program participation"
+            "community reliance on social services"
           ],
-          "reason": "Chatham is directly mentioned in the article as one of the areas benefiting from the new medium density homes, which is likely to increase housing demand and investment in the area.",
+          "reason": "Humboldt Park is far from the areas mentioned in the article, indicating a very low likelihood of impact from the new developments.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0582,
-          "share_token_live_price_usd": 25.269,
+          "local_live_multiplier": 1.0622,
+          "share_token_live_price_usd": 24.9312,
           "price_action": "increase",
-          "analysis": "CHATHAM in Chicago has an estimated average home value of $328,620.94. Local government news score is 42.7, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2690."
+          "analysis": "HUMBOLDT PARK in Chicago has an estimated average home value of $323,010.23. Local government news score is 33.15, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9312."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
-          "neighborhood": "WEST GARFIELD PARK",
-          "estimated_average_home_price_usd": 327612.49,
-          "share_token_base_price_usd": 21.8408,
-          "local_news_score": 39.5,
-          "recent_momentum_score": 65.8,
-          "confidence_score": 72.21,
-          "premium_adjustment": -0.0029,
+          "neighborhood": "GREATER GRAND CROSSING",
+          "estimated_average_home_price_usd": 321883.84,
+          "share_token_base_price_usd": 21.4589,
+          "local_news_score": 31.23,
+          "recent_momentum_score": 77.6,
+          "confidence_score": 63.85,
+          "premium_adjustment": -0.0057,
           "mention_count": 7,
           "signals": [
-            "support for minority-led development",
-            "focus on neighborhood repopulation",
-            "Threat to federal funding",
-            "Dependence on federal resources for community programs"
+            "high poverty rates",
+            "community reliance on social services",
+            "increased ridership",
+            "community engagement in transport initiatives"
           ],
-          "reason": "As part of the broader initiative, West Garfield Park may benefit from increased investment and interest in medium density housing, contributing to neighborhood revitalization.",
+          "reason": "No credible localized impact was identified for this geography from the article.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0548,
-          "share_token_live_price_usd": 25.1119,
+          "local_live_multiplier": 1.0647,
+          "share_token_live_price_usd": 24.9028,
           "price_action": "increase",
-          "analysis": "WEST GARFIELD PARK in Chicago has an estimated average home value of $327,612.49. Local government news score is 39.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.1119."
+          "analysis": "GREATER GRAND CROSSING in Chicago has an estimated average home value of $321,883.84. Local government news score is 31.23, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9028."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ALBANY PARK",
-          "estimated_average_home_price_usd": 327009.75,
+          "estimated_average_home_price_usd": 327008.77,
           "share_token_base_price_usd": 21.8006,
           "local_news_score": 38.47,
           "recent_momentum_score": 56.4,
@@ -275,17 +273,144 @@
           "local_live_multiplier": 1.047,
           "share_token_live_price_usd": 24.8795,
           "price_action": "increase",
-          "analysis": "ALBANY PARK in Chicago has an estimated average home value of $327,009.75. Local government news score is 38.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.8795."
+          "analysis": "ALBANY PARK in Chicago has an estimated average home value of $327,008.77. Local government news score is 38.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.8795."
+        }
+      ],
+      "neighborhoods": [
+        {
+          "city": "Chicago",
+          "state": "Illinois",
+          "neighborhood": "WOODLAWN",
+          "estimated_average_home_price_usd": 331793.67,
+          "share_token_base_price_usd": 22.1196,
+          "local_news_score": 46.62,
+          "recent_momentum_score": 77.6,
+          "confidence_score": 79.86,
+          "premium_adjustment": -0.0029,
+          "mention_count": 7,
+          "signals": [
+            "community wealth-building focus",
+            "proximity to new housing initiatives",
+            "High dependence on federal funding",
+            "Current revitalization efforts at risk"
+          ],
+          "reason": "Woodlawn is likely to benefit from the new housing projects as part of the community wealth-building efforts, enhancing local real estate interest.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0647,
+          "share_token_live_price_usd": 25.6695,
+          "price_action": "increase",
+          "analysis": "WOODLAWN in Chicago has an estimated average home value of $331,793.67. Local government news score is 46.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.6695."
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois",
+          "neighborhood": "WEST ENGLEWOOD",
+          "estimated_average_home_price_usd": 331231.88,
+          "share_token_base_price_usd": 22.0821,
+          "local_news_score": 45.66,
+          "recent_momentum_score": 71.62,
+          "confidence_score": 77.97,
+          "premium_adjustment": -0.0029,
+          "mention_count": 7,
+          "signals": [
+            "proximity to new developments",
+            "community wealth-building initiatives",
+            "Potential loss of federal funding",
+            "Impact on local redevelopment initiatives"
+          ],
+          "reason": "The approval of medium density homes in nearby areas is likely to increase interest in West Englewood, potentially leading to higher housing demand and redevelopment opportunities.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0597,
+          "share_token_live_price_usd": 25.506,
+          "price_action": "increase",
+          "analysis": "WEST ENGLEWOOD in Chicago has an estimated average home value of $331,231.88. Local government news score is 45.66, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.5060."
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois",
+          "neighborhood": "CHATHAM",
+          "estimated_average_home_price_usd": 328619.41,
+          "share_token_base_price_usd": 21.908,
+          "local_news_score": 42.7,
+          "recent_momentum_score": 69.81,
+          "confidence_score": 78.66,
+          "premium_adjustment": -0.0057,
+          "mention_count": 7,
+          "signals": [
+            "New medium density homes approved",
+            "Support for minority-led development teams",
+            "high poverty rates",
+            "significant federal program participation"
+          ],
+          "reason": "Chatham is directly mentioned in the article as one of the areas benefiting from the new medium density homes, which is likely to increase housing demand and investment in the area.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0582,
+          "share_token_live_price_usd": 25.2689,
+          "price_action": "increase",
+          "analysis": "CHATHAM in Chicago has an estimated average home value of $328,619.41. Local government news score is 42.7, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2689."
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois",
+          "neighborhood": "WEST GARFIELD PARK",
+          "estimated_average_home_price_usd": 327610.79,
+          "share_token_base_price_usd": 21.8407,
+          "local_news_score": 39.5,
+          "recent_momentum_score": 65.8,
+          "confidence_score": 72.21,
+          "premium_adjustment": -0.0029,
+          "mention_count": 7,
+          "signals": [
+            "support for minority-led development",
+            "focus on neighborhood repopulation",
+            "Threat to federal funding",
+            "Dependence on federal resources for community programs"
+          ],
+          "reason": "As part of the broader initiative, West Garfield Park may benefit from increased investment and interest in medium density housing, contributing to neighborhood revitalization.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0548,
+          "share_token_live_price_usd": 25.1117,
+          "price_action": "increase",
+          "analysis": "WEST GARFIELD PARK in Chicago has an estimated average home value of $327,610.79. Local government news score is 39.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.1117."
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois",
+          "neighborhood": "ALBANY PARK",
+          "estimated_average_home_price_usd": 327008.77,
+          "share_token_base_price_usd": 21.8006,
+          "local_news_score": 38.47,
+          "recent_momentum_score": 56.4,
+          "confidence_score": 63.21,
+          "premium_adjustment": -0.0029,
+          "mention_count": 7,
+          "signals": [
+            "high immigrant population",
+            "community reliance on federal funding",
+            "increased ridership",
+            "expanded infrastructure"
+          ],
+          "reason": "No credible localized impact was identified for this geography from the article.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.047,
+          "share_token_live_price_usd": 24.8795,
+          "price_action": "increase",
+          "analysis": "ALBANY PARK in Chicago has an estimated average home value of $327,008.77. Local government news score is 38.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.8795."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "HERMOSA",
-          "estimated_average_home_price_usd": 326181.08,
-          "share_token_base_price_usd": 21.7454,
+          "estimated_average_home_price_usd": 326180.14,
+          "share_token_base_price_usd": 21.7453,
           "local_news_score": 37.06,
           "recent_momentum_score": 53.63,
-          "confidence_score": 60.53,
+          "confidence_score": 60.52,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -298,15 +423,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0447,
-          "share_token_live_price_usd": 24.7618,
+          "share_token_live_price_usd": 24.7617,
           "price_action": "increase",
-          "analysis": "HERMOSA in Chicago has an estimated average home value of $326,181.08. Local government news score is 37.06, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7618."
+          "analysis": "HERMOSA in Chicago has an estimated average home value of $326,180.14. Local government news score is 37.06, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7617."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "DOUGLAS",
-          "estimated_average_home_price_usd": 325454.1,
+          "estimated_average_home_price_usd": 325453.25,
           "share_token_base_price_usd": 21.6969,
           "local_news_score": 35.82,
           "recent_momentum_score": 53.32,
@@ -325,15 +450,15 @@
           "local_live_multiplier": 1.0444,
           "share_token_live_price_usd": 24.7005,
           "price_action": "increase",
-          "analysis": "DOUGLAS in Chicago has an estimated average home value of $325,454.10. Local government news score is 35.82, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7005."
+          "analysis": "DOUGLAS in Chicago has an estimated average home value of $325,453.25. Local government news score is 35.82, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7005."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ENGLEWOOD",
-          "estimated_average_home_price_usd": 324930.53,
-          "share_token_base_price_usd": 21.662,
-          "local_news_score": 36.42,
+          "estimated_average_home_price_usd": 324927.65,
+          "share_token_base_price_usd": 21.6618,
+          "local_news_score": 36.41,
           "recent_momentum_score": 85.54,
           "confidence_score": 76.44,
           "premium_adjustment": -0.0057,
@@ -348,19 +473,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0713,
-          "share_token_live_price_usd": 25.2947,
+          "share_token_live_price_usd": 25.2945,
           "price_action": "increase",
-          "analysis": "ENGLEWOOD in Chicago has an estimated average home value of $324,930.53. Local government news score is 36.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2947."
+          "analysis": "ENGLEWOOD in Chicago has an estimated average home value of $324,927.65. Local government news score is 36.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.2945."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "BELMONT CRAGIN",
-          "estimated_average_home_price_usd": 324605.05,
+          "estimated_average_home_price_usd": 324604.01,
           "share_token_base_price_usd": 21.6403,
-          "local_news_score": 34.38,
+          "local_news_score": 34.37,
           "recent_momentum_score": 53.63,
-          "confidence_score": 58.5,
+          "confidence_score": 58.49,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -375,14 +500,14 @@
           "local_live_multiplier": 1.0447,
           "share_token_live_price_usd": 24.6421,
           "price_action": "increase",
-          "analysis": "BELMONT CRAGIN in Chicago has an estimated average home value of $324,605.05. Local government news score is 34.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6421."
+          "analysis": "BELMONT CRAGIN in Chicago has an estimated average home value of $324,604.01. Local government news score is 34.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6421."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST PULLMAN",
-          "estimated_average_home_price_usd": 324072.47,
-          "share_token_base_price_usd": 21.6048,
+          "estimated_average_home_price_usd": 324070.93,
+          "share_token_base_price_usd": 21.6047,
           "local_news_score": 33.47,
           "recent_momentum_score": 59.15,
           "confidence_score": 62.79,
@@ -398,19 +523,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0493,
-          "share_token_live_price_usd": 24.71,
+          "share_token_live_price_usd": 24.7099,
           "price_action": "increase",
-          "analysis": "WEST PULLMAN in Chicago has an estimated average home value of $324,072.47. Local government news score is 33.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7100."
+          "analysis": "WEST PULLMAN in Chicago has an estimated average home value of $324,070.93. Local government news score is 33.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.7099."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "AUSTIN",
-          "estimated_average_home_price_usd": 323907.77,
-          "share_token_base_price_usd": 21.5939,
-          "local_news_score": 33.19,
+          "estimated_average_home_price_usd": 323905.28,
+          "share_token_base_price_usd": 21.5937,
+          "local_news_score": 33.18,
           "recent_momentum_score": 75.17,
-          "confidence_score": 66.88,
+          "confidence_score": 66.87,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -423,16 +548,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0626,
-          "share_token_live_price_usd": 25.0118,
+          "share_token_live_price_usd": 25.0115,
           "price_action": "increase",
-          "analysis": "AUSTIN in Chicago has an estimated average home value of $323,907.77. Local government news score is 33.19, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0118."
+          "analysis": "AUSTIN in Chicago has an estimated average home value of $323,905.28. Local government news score is 33.18, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0115."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST LAWN",
-          "estimated_average_home_price_usd": 323697.84,
-          "share_token_base_price_usd": 21.5799,
+          "estimated_average_home_price_usd": 323696.47,
+          "share_token_base_price_usd": 21.5798,
           "local_news_score": 32.83,
           "recent_momentum_score": 55.5,
           "confidence_score": 68.15,
@@ -448,19 +573,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0462,
-          "share_token_live_price_usd": 24.61,
+          "share_token_live_price_usd": 24.6099,
           "price_action": "increase",
-          "analysis": "WEST LAWN in Chicago has an estimated average home value of $323,697.84. Local government news score is 32.83, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6100."
+          "analysis": "WEST LAWN in Chicago has an estimated average home value of $323,696.47. Local government news score is 32.83, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6099."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "EAST GARFIELD PARK",
-          "estimated_average_home_price_usd": 323465.47,
-          "share_token_base_price_usd": 21.5644,
+          "estimated_average_home_price_usd": 323462.91,
+          "share_token_base_price_usd": 21.5642,
           "local_news_score": 33.92,
           "recent_momentum_score": 77.6,
-          "confidence_score": 66.88,
+          "confidence_score": 66.87,
           "premium_adjustment": -0.0057,
           "mention_count": 7,
           "signals": [
@@ -473,16 +598,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0647,
-          "share_token_live_price_usd": 25.0252,
+          "share_token_live_price_usd": 25.025,
           "price_action": "increase",
-          "analysis": "EAST GARFIELD PARK in Chicago has an estimated average home value of $323,465.47. Local government news score is 33.92, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0252."
+          "analysis": "EAST GARFIELD PARK in Chicago has an estimated average home value of $323,462.91. Local government news score is 33.92, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0250."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "HUMBOLDT PARK",
-          "estimated_average_home_price_usd": 323012.69,
-          "share_token_base_price_usd": 21.5342,
+          "estimated_average_home_price_usd": 323010.23,
+          "share_token_base_price_usd": 21.534,
           "local_news_score": 33.15,
           "recent_momentum_score": 74.6,
           "confidence_score": 72.59,
@@ -498,15 +623,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0622,
-          "share_token_live_price_usd": 24.9315,
+          "share_token_live_price_usd": 24.9312,
           "price_action": "increase",
-          "analysis": "HUMBOLDT PARK in Chicago has an estimated average home value of $323,012.69. Local government news score is 33.15, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9315."
+          "analysis": "HUMBOLDT PARK in Chicago has an estimated average home value of $323,010.23. Local government news score is 33.15, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9312."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LOOP",
-          "estimated_average_home_price_usd": 322527.66,
+          "estimated_average_home_price_usd": 322527.58,
           "share_token_base_price_usd": 21.5018,
           "local_news_score": 29.35,
           "recent_momentum_score": 23.05,
@@ -525,17 +650,17 @@
           "local_live_multiplier": 1.0192,
           "share_token_live_price_usd": 23.8871,
           "price_action": "increase",
-          "analysis": "LOOP in Chicago has an estimated average home value of $322,527.66. Local government news score is 29.35, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.8871."
+          "analysis": "LOOP in Chicago has an estimated average home value of $322,527.58. Local government news score is 29.35, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.8871."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NEAR NORTH SIDE",
-          "estimated_average_home_price_usd": 322193.63,
+          "estimated_average_home_price_usd": 322193.49,
           "share_token_base_price_usd": 21.4796,
           "local_news_score": 28.63,
           "recent_momentum_score": 23.05,
-          "confidence_score": 65.69,
+          "confidence_score": 65.68,
           "premium_adjustment": 0.0003,
           "mention_count": 7,
           "signals": [
@@ -550,14 +675,14 @@
           "local_live_multiplier": 1.0192,
           "share_token_live_price_usd": 23.8625,
           "price_action": "increase",
-          "analysis": "NEAR NORTH SIDE in Chicago has an estimated average home value of $322,193.63. Local government news score is 28.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.8625."
+          "analysis": "NEAR NORTH SIDE in Chicago has an estimated average home value of $322,193.49. Local government news score is 28.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.8625."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "GREATER GRAND CROSSING",
-          "estimated_average_home_price_usd": 321886.57,
-          "share_token_base_price_usd": 21.4591,
+          "estimated_average_home_price_usd": 321883.84,
+          "share_token_base_price_usd": 21.4589,
           "local_news_score": 31.23,
           "recent_momentum_score": 77.6,
           "confidence_score": 63.85,
@@ -573,19 +698,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0647,
-          "share_token_live_price_usd": 24.903,
+          "share_token_live_price_usd": 24.9028,
           "price_action": "increase",
-          "analysis": "GREATER GRAND CROSSING in Chicago has an estimated average home value of $321,886.57. Local government news score is 31.23, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9030."
+          "analysis": "GREATER GRAND CROSSING in Chicago has an estimated average home value of $321,883.84. Local government news score is 31.23, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.9028."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "BRIGHTON PARK",
-          "estimated_average_home_price_usd": 321851.11,
-          "share_token_base_price_usd": 21.4567,
-          "local_news_score": 29.69,
+          "estimated_average_home_price_usd": 321848.85,
+          "share_token_base_price_usd": 21.4566,
+          "local_news_score": 29.68,
           "recent_momentum_score": 63.97,
-          "confidence_score": 61.85,
+          "confidence_score": 61.84,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -598,16 +723,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0533,
-          "share_token_live_price_usd": 24.6346,
+          "share_token_live_price_usd": 24.6345,
           "price_action": "increase",
-          "analysis": "BRIGHTON PARK in Chicago has an estimated average home value of $321,851.11. Local government news score is 29.69, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6346."
+          "analysis": "BRIGHTON PARK in Chicago has an estimated average home value of $321,848.85. Local government news score is 29.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6345."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "AUBURN GRESHAM",
-          "estimated_average_home_price_usd": 321398.86,
-          "share_token_base_price_usd": 21.4266,
+          "estimated_average_home_price_usd": 321396.63,
+          "share_token_base_price_usd": 21.4264,
           "local_news_score": 30.4,
           "recent_momentum_score": 66.85,
           "confidence_score": 74.68,
@@ -623,17 +748,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0557,
-          "share_token_live_price_usd": 24.6561,
+          "share_token_live_price_usd": 24.6558,
           "price_action": "increase",
-          "analysis": "AUBURN GRESHAM in Chicago has an estimated average home value of $321,398.86. Local government news score is 30.4, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6561."
+          "analysis": "AUBURN GRESHAM in Chicago has an estimated average home value of $321,396.63. Local government news score is 30.4, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6558."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "GRAND BOULEVARD",
-          "estimated_average_home_price_usd": 321261.47,
-          "share_token_base_price_usd": 21.4174,
-          "local_news_score": 30.17,
+          "estimated_average_home_price_usd": 321259.06,
+          "share_token_base_price_usd": 21.4173,
+          "local_news_score": 30.16,
           "recent_momentum_score": 69.25,
           "confidence_score": 63.61,
           "premium_adjustment": -0.0057,
@@ -648,17 +773,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0577,
-          "share_token_live_price_usd": 24.6922,
+          "share_token_live_price_usd": 24.692,
           "price_action": "increase",
-          "analysis": "GRAND BOULEVARD in Chicago has an estimated average home value of $321,261.47. Local government news score is 30.17, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6922."
+          "analysis": "GRAND BOULEVARD in Chicago has an estimated average home value of $321,259.06. Local government news score is 30.16, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6920."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "GAGE PARK",
-          "estimated_average_home_price_usd": 320858.85,
-          "share_token_base_price_usd": 21.3906,
-          "local_news_score": 28.0,
+          "estimated_average_home_price_usd": 320856.46,
+          "share_token_base_price_usd": 21.3904,
+          "local_news_score": 27.99,
           "recent_momentum_score": 66.85,
           "confidence_score": 62.34,
           "premium_adjustment": -0.0029,
@@ -673,16 +798,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0557,
-          "share_token_live_price_usd": 24.6146,
+          "share_token_live_price_usd": 24.6144,
           "price_action": "increase",
-          "analysis": "GAGE PARK in Chicago has an estimated average home value of $320,858.85. Local government news score is 28.0, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6146."
+          "analysis": "GAGE PARK in Chicago has an estimated average home value of $320,856.46. Local government news score is 27.99, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.6144."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "AVALON PARK",
-          "estimated_average_home_price_usd": 320476.22,
-          "share_token_base_price_usd": 21.3651,
+          "estimated_average_home_price_usd": 320474.84,
+          "share_token_base_price_usd": 21.365,
           "local_news_score": 27.34,
           "recent_momentum_score": 50.97,
           "confidence_score": 66.47,
@@ -698,19 +823,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0425,
-          "share_token_live_price_usd": 24.2771,
+          "share_token_live_price_usd": 24.277,
           "price_action": "increase",
-          "analysis": "AVALON PARK in Chicago has an estimated average home value of $320,476.22. Local government news score is 27.34, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.2771."
+          "analysis": "AVALON PARK in Chicago has an estimated average home value of $320,474.84. Local government news score is 27.34, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.2770."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "EAST SIDE",
-          "estimated_average_home_price_usd": 320258.66,
-          "share_token_base_price_usd": 21.3506,
+          "estimated_average_home_price_usd": 320257.15,
+          "share_token_base_price_usd": 21.3505,
           "local_news_score": 26.97,
           "recent_momentum_score": 56.21,
-          "confidence_score": 55.81,
+          "confidence_score": 55.8,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -723,15 +848,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0468,
-          "share_token_live_price_usd": 24.3623,
+          "share_token_live_price_usd": 24.3621,
           "price_action": "increase",
-          "analysis": "EAST SIDE in Chicago has an estimated average home value of $320,258.66. Local government news score is 26.97, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.3623."
+          "analysis": "EAST SIDE in Chicago has an estimated average home value of $320,257.15. Local government news score is 26.97, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.3621."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "AVONDALE",
-          "estimated_average_home_price_usd": 319818.31,
+          "estimated_average_home_price_usd": 319818.23,
           "share_token_base_price_usd": 21.3212,
           "local_news_score": 26.22,
           "recent_momentum_score": 22.82,
@@ -750,14 +875,14 @@
           "local_live_multiplier": 1.019,
           "share_token_live_price_usd": 23.6821,
           "price_action": "increase",
-          "analysis": "AVONDALE in Chicago has an estimated average home value of $319,818.31. Local government news score is 26.22, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6821."
+          "analysis": "AVONDALE in Chicago has an estimated average home value of $319,818.23. Local government news score is 26.22, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6821."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LOGAN SQUARE",
-          "estimated_average_home_price_usd": 319799.31,
-          "share_token_base_price_usd": 21.32,
+          "estimated_average_home_price_usd": 319798.31,
+          "share_token_base_price_usd": 21.3199,
           "local_news_score": 26.19,
           "recent_momentum_score": 38.97,
           "confidence_score": 68.54,
@@ -773,16 +898,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0325,
-          "share_token_live_price_usd": 23.9935,
+          "share_token_live_price_usd": 23.9934,
           "price_action": "increase",
-          "analysis": "LOGAN SQUARE in Chicago has an estimated average home value of $319,799.31. Local government news score is 26.19, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.9935."
+          "analysis": "LOGAN SQUARE in Chicago has an estimated average home value of $319,798.31. Local government news score is 26.19, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.9934."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ARCHER HEIGHTS",
-          "estimated_average_home_price_usd": 319464.2,
-          "share_token_base_price_usd": 21.2976,
+          "estimated_average_home_price_usd": 319462.82,
+          "share_token_base_price_usd": 21.2975,
           "local_news_score": 24.13,
           "recent_momentum_score": 45.5,
           "confidence_score": 53.8,
@@ -798,15 +923,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0379,
-          "share_token_live_price_usd": 24.0946,
+          "share_token_live_price_usd": 24.0945,
           "price_action": "increase",
-          "analysis": "ARCHER HEIGHTS in Chicago has an estimated average home value of $319,464.20. Local government news score is 24.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.0946."
+          "analysis": "ARCHER HEIGHTS in Chicago has an estimated average home value of $319,462.82. Local government news score is 24.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.0945."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "BRIDGEPORT",
-          "estimated_average_home_price_usd": 319421.23,
+          "estimated_average_home_price_usd": 319421.06,
           "share_token_base_price_usd": 21.2947,
           "local_news_score": 25.55,
           "recent_momentum_score": 22.68,
@@ -825,13 +950,13 @@
           "local_live_multiplier": 1.0189,
           "share_token_live_price_usd": 23.6499,
           "price_action": "increase",
-          "analysis": "BRIDGEPORT in Chicago has an estimated average home value of $319,421.23. Local government news score is 25.55, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6499."
+          "analysis": "BRIDGEPORT in Chicago has an estimated average home value of $319,421.06. Local government news score is 25.55, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6499."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "IRVING PARK",
-          "estimated_average_home_price_usd": 319414.78,
+          "estimated_average_home_price_usd": 319414.6,
           "share_token_base_price_usd": 21.2943,
           "local_news_score": 25.54,
           "recent_momentum_score": 22.68,
@@ -850,14 +975,14 @@
           "local_live_multiplier": 1.0189,
           "share_token_live_price_usd": 23.6495,
           "price_action": "increase",
-          "analysis": "IRVING PARK in Chicago has an estimated average home value of $319,414.78. Local government news score is 25.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6495."
+          "analysis": "IRVING PARK in Chicago has an estimated average home value of $319,414.60. Local government news score is 25.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6495."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "CHICAGO LAWN",
-          "estimated_average_home_price_usd": 318834.01,
-          "share_token_base_price_usd": 21.2556,
+          "estimated_average_home_price_usd": 318831.52,
+          "share_token_base_price_usd": 21.2554,
           "local_news_score": 26.03,
           "recent_momentum_score": 67.03,
           "confidence_score": 62.25,
@@ -873,16 +998,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0559,
-          "share_token_live_price_usd": 24.4628,
+          "share_token_live_price_usd": 24.4625,
           "price_action": "increase",
-          "analysis": "CHICAGO LAWN in Chicago has an estimated average home value of $318,834.01. Local government news score is 26.03, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.4628."
+          "analysis": "CHICAGO LAWN in Chicago has an estimated average home value of $318,831.52. Local government news score is 26.03, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.4625."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "CALUMET HEIGHTS",
-          "estimated_average_home_price_usd": 318830.93,
-          "share_token_base_price_usd": 21.2554,
+          "estimated_average_home_price_usd": 318829.35,
+          "share_token_base_price_usd": 21.2553,
           "local_news_score": 24.54,
           "recent_momentum_score": 53.32,
           "confidence_score": 54.47,
@@ -898,17 +1023,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0444,
-          "share_token_live_price_usd": 24.1978,
+          "share_token_live_price_usd": 24.1977,
           "price_action": "increase",
-          "analysis": "CALUMET HEIGHTS in Chicago has an estimated average home value of $318,830.93. Local government news score is 24.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.1978."
+          "analysis": "CALUMET HEIGHTS in Chicago has an estimated average home value of $318,829.35. Local government news score is 24.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.1977."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "FULLER PARK",
-          "estimated_average_home_price_usd": 318649.71,
-          "share_token_base_price_usd": 21.2433,
-          "local_news_score": 25.72,
+          "estimated_average_home_price_usd": 318646.54,
+          "share_token_base_price_usd": 21.2431,
+          "local_news_score": 25.71,
           "recent_momentum_score": 74.6,
           "confidence_score": 62.6,
           "premium_adjustment": -0.0057,
@@ -923,15 +1048,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0622,
-          "share_token_live_price_usd": 24.5947,
+          "share_token_live_price_usd": 24.5944,
           "price_action": "increase",
-          "analysis": "FULLER PARK in Chicago has an estimated average home value of $318,649.71. Local government news score is 25.72, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.5947."
+          "analysis": "FULLER PARK in Chicago has an estimated average home value of $318,646.54. Local government news score is 25.71, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $24.5944."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NORTH CENTER",
-          "estimated_average_home_price_usd": 318573.43,
+          "estimated_average_home_price_usd": 318573.0,
           "share_token_base_price_usd": 21.2382,
           "local_news_score": 24.1,
           "recent_momentum_score": 31.44,
@@ -950,14 +1075,14 @@
           "local_live_multiplier": 1.0262,
           "share_token_live_price_usd": 23.7562,
           "price_action": "increase",
-          "analysis": "NORTH CENTER in Chicago has an estimated average home value of $318,573.43. Local government news score is 24.1, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7562."
+          "analysis": "NORTH CENTER in Chicago has an estimated average home value of $318,573.00. Local government news score is 24.1, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7562."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LINCOLN PARK",
-          "estimated_average_home_price_usd": 318173.52,
-          "share_token_base_price_usd": 21.2116,
+          "estimated_average_home_price_usd": 318173.12,
+          "share_token_base_price_usd": 21.2115,
           "local_news_score": 23.42,
           "recent_momentum_score": 25.77,
           "confidence_score": 66.18,
@@ -973,19 +1098,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0215,
-          "share_token_live_price_usd": 23.6172,
+          "share_token_live_price_usd": 23.617,
           "price_action": "increase",
-          "analysis": "LINCOLN PARK in Chicago has an estimated average home value of $318,173.52. Local government news score is 23.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6172."
+          "analysis": "LINCOLN PARK in Chicago has an estimated average home value of $318,173.12. Local government news score is 23.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6170."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "JEFFERSON PARK",
-          "estimated_average_home_price_usd": 318168.72,
+          "estimated_average_home_price_usd": 318168.0,
           "share_token_base_price_usd": 21.2112,
           "local_news_score": 23.41,
           "recent_momentum_score": 27.3,
-          "confidence_score": 59.62,
+          "confidence_score": 59.61,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -1000,13 +1125,13 @@
           "local_live_multiplier": 1.0228,
           "share_token_live_price_usd": 23.6462,
           "price_action": "increase",
-          "analysis": "JEFFERSON PARK in Chicago has an estimated average home value of $318,168.72. Local government news score is 23.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6462."
+          "analysis": "JEFFERSON PARK in Chicago has an estimated average home value of $318,168.00. Local government news score is 23.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6462."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LAKE VIEW",
-          "estimated_average_home_price_usd": 318104.72,
+          "estimated_average_home_price_usd": 318104.27,
           "share_token_base_price_usd": 21.207,
           "local_news_score": 23.3,
           "recent_momentum_score": 23.05,
@@ -1025,13 +1150,13 @@
           "local_live_multiplier": 1.0192,
           "share_token_live_price_usd": 23.5596,
           "price_action": "increase",
-          "analysis": "LAKE VIEW in Chicago has an estimated average home value of $318,104.72. Local government news score is 23.3, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5596."
+          "analysis": "LAKE VIEW in Chicago has an estimated average home value of $318,104.27. Local government news score is 23.3, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5596."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NEAR WEST SIDE",
-          "estimated_average_home_price_usd": 317256.39,
+          "estimated_average_home_price_usd": 317255.45,
           "share_token_base_price_usd": 21.1504,
           "local_news_score": 21.86,
           "recent_momentum_score": 31.33,
@@ -1050,14 +1175,14 @@
           "local_live_multiplier": 1.0261,
           "share_token_live_price_usd": 23.6558,
           "price_action": "increase",
-          "analysis": "NEAR WEST SIDE in Chicago has an estimated average home value of $317,256.39. Local government news score is 21.86, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6558."
+          "analysis": "NEAR WEST SIDE in Chicago has an estimated average home value of $317,255.45. Local government news score is 21.86, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6558."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "UPTOWN",
-          "estimated_average_home_price_usd": 316957.71,
-          "share_token_base_price_usd": 21.1305,
+          "estimated_average_home_price_usd": 316956.69,
+          "share_token_base_price_usd": 21.1304,
           "local_news_score": 21.35,
           "recent_momentum_score": 36.39,
           "confidence_score": 65.46,
@@ -1073,16 +1198,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0303,
-          "share_token_live_price_usd": 23.7307,
+          "share_token_live_price_usd": 23.7306,
           "price_action": "increase",
-          "analysis": "UPTOWN in Chicago has an estimated average home value of $316,957.71. Local government news score is 21.35, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7307."
+          "analysis": "UPTOWN in Chicago has an estimated average home value of $316,956.69. Local government news score is 21.35, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7306."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ROGERS PARK",
-          "estimated_average_home_price_usd": 316851.06,
-          "share_token_base_price_usd": 21.1234,
+          "estimated_average_home_price_usd": 316850.2,
+          "share_token_base_price_usd": 21.1233,
           "local_news_score": 21.17,
           "recent_momentum_score": 33.82,
           "confidence_score": 64.13,
@@ -1098,17 +1223,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0282,
-          "share_token_live_price_usd": 23.6734,
+          "share_token_live_price_usd": 23.6733,
           "price_action": "increase",
-          "analysis": "ROGERS PARK in Chicago has an estimated average home value of $316,851.06. Local government news score is 21.17, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6734."
+          "analysis": "ROGERS PARK in Chicago has an estimated average home value of $316,850.20. Local government news score is 21.17, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6733."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NEAR SOUTH SIDE",
-          "estimated_average_home_price_usd": 316813.77,
+          "estimated_average_home_price_usd": 316813.37,
           "share_token_base_price_usd": 21.1209,
-          "local_news_score": 21.11,
+          "local_news_score": 21.1,
           "recent_momentum_score": 17.84,
           "confidence_score": 62.73,
           "premium_adjustment": -0.0029,
@@ -1125,15 +1250,15 @@
           "local_live_multiplier": 1.0149,
           "share_token_live_price_usd": 23.364,
           "price_action": "increase",
-          "analysis": "NEAR SOUTH SIDE in Chicago has an estimated average home value of $316,813.77. Local government news score is 21.11, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3640."
+          "analysis": "NEAR SOUTH SIDE in Chicago has an estimated average home value of $316,813.37. Local government news score is 21.1, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3640."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LOWER WEST SIDE",
-          "estimated_average_home_price_usd": 316256.76,
-          "share_token_base_price_usd": 21.0838,
-          "local_news_score": 20.16,
+          "estimated_average_home_price_usd": 316255.71,
+          "share_token_base_price_usd": 21.0837,
+          "local_news_score": 20.15,
           "recent_momentum_score": 33.82,
           "confidence_score": 64.92,
           "premium_adjustment": -0.0029,
@@ -1148,16 +1273,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0282,
-          "share_token_live_price_usd": 23.629,
+          "share_token_live_price_usd": 23.6289,
           "price_action": "increase",
-          "analysis": "LOWER WEST SIDE in Chicago has an estimated average home value of $316,256.76. Local government news score is 20.16, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6290."
+          "analysis": "LOWER WEST SIDE in Chicago has an estimated average home value of $316,255.71. Local government news score is 20.15, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6289."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "LINCOLN SQUARE",
-          "estimated_average_home_price_usd": 315503.68,
-          "share_token_base_price_usd": 21.0336,
+          "estimated_average_home_price_usd": 315503.05,
+          "share_token_base_price_usd": 21.0335,
           "local_news_score": 18.87,
           "recent_momentum_score": 28.82,
           "confidence_score": 52.55,
@@ -1173,16 +1298,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.024,
-          "share_token_live_price_usd": 23.4772,
+          "share_token_live_price_usd": 23.4771,
           "price_action": "increase",
-          "analysis": "LINCOLN SQUARE in Chicago has an estimated average home value of $315,503.68. Local government news score is 18.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4772."
+          "analysis": "LINCOLN SQUARE in Chicago has an estimated average home value of $315,503.05. Local government news score is 18.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4771."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "SOUTH CHICAGO",
-          "estimated_average_home_price_usd": 315337.22,
-          "share_token_base_price_usd": 21.0225,
+          "estimated_average_home_price_usd": 315336.13,
+          "share_token_base_price_usd": 21.0224,
           "local_news_score": 18.59,
           "recent_momentum_score": 41.42,
           "confidence_score": 67.51,
@@ -1198,19 +1323,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0345,
-          "share_token_live_price_usd": 23.7055,
+          "share_token_live_price_usd": 23.7053,
           "price_action": "increase",
-          "analysis": "SOUTH CHICAGO in Chicago has an estimated average home value of $315,337.22. Local government news score is 18.59, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7055."
+          "analysis": "SOUTH CHICAGO in Chicago has an estimated average home value of $315,336.13. Local government news score is 18.59, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.7053."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "BURNSIDE",
-          "estimated_average_home_price_usd": 314893.69,
+          "estimated_average_home_price_usd": 314892.81,
           "share_token_base_price_usd": 20.9929,
           "local_news_score": 17.83,
           "recent_momentum_score": 33.53,
-          "confidence_score": 51.87,
+          "confidence_score": 51.86,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -1225,14 +1350,14 @@
           "local_live_multiplier": 1.0279,
           "share_token_live_price_usd": 23.5216,
           "price_action": "increase",
-          "analysis": "BURNSIDE in Chicago has an estimated average home value of $314,893.69. Local government news score is 17.83, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5216."
+          "analysis": "BURNSIDE in Chicago has an estimated average home value of $314,892.81. Local government news score is 17.83, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5216."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "MORGAN PARK",
-          "estimated_average_home_price_usd": 314784.91,
-          "share_token_base_price_usd": 20.9857,
+          "estimated_average_home_price_usd": 314784.46,
+          "share_token_base_price_usd": 20.9856,
           "local_news_score": 17.65,
           "recent_momentum_score": 28.82,
           "confidence_score": 64.22,
@@ -1248,17 +1373,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.024,
-          "share_token_live_price_usd": 23.4238,
+          "share_token_live_price_usd": 23.4237,
           "price_action": "increase",
-          "analysis": "MORGAN PARK in Chicago has an estimated average home value of $314,784.91. Local government news score is 17.65, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4238."
+          "analysis": "MORGAN PARK in Chicago has an estimated average home value of $314,784.46. Local government news score is 17.65, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4237."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "MCKINLEY PARK",
-          "estimated_average_home_price_usd": 314418.87,
-          "share_token_base_price_usd": 20.9613,
-          "local_news_score": 17.03,
+          "estimated_average_home_price_usd": 314418.14,
+          "share_token_base_price_usd": 20.9612,
+          "local_news_score": 17.02,
           "recent_momentum_score": 26.63,
           "confidence_score": 50.61,
           "premium_adjustment": -0.0029,
@@ -1273,16 +1398,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0222,
-          "share_token_live_price_usd": 23.3548,
+          "share_token_live_price_usd": 23.3547,
           "price_action": "increase",
-          "analysis": "MCKINLEY PARK in Chicago has an estimated average home value of $314,418.87. Local government news score is 17.03, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3548."
+          "analysis": "MCKINLEY PARK in Chicago has an estimated average home value of $314,418.14. Local government news score is 17.02, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3547."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "KENWOOD",
-          "estimated_average_home_price_usd": 314292.01,
-          "share_token_base_price_usd": 20.9528,
+          "estimated_average_home_price_usd": 314291.08,
+          "share_token_base_price_usd": 20.9527,
           "local_news_score": 16.81,
           "recent_momentum_score": 28.88,
           "confidence_score": 64.55,
@@ -1298,15 +1423,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0241,
-          "share_token_live_price_usd": 23.3882,
+          "share_token_live_price_usd": 23.3881,
           "price_action": "increase",
-          "analysis": "KENWOOD in Chicago has an estimated average home value of $314,292.01. Local government news score is 16.81, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3882."
+          "analysis": "KENWOOD in Chicago has an estimated average home value of $314,291.08. Local government news score is 16.81, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3881."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "HYDE PARK",
-          "estimated_average_home_price_usd": 314108.85,
+          "estimated_average_home_price_usd": 314109.46,
           "share_token_base_price_usd": 20.9406,
           "local_news_score": 16.5,
           "recent_momentum_score": 0.0,
@@ -1325,15 +1450,15 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.8253,
           "price_action": "increase",
-          "analysis": "HYDE PARK in Chicago has an estimated average home value of $314,108.85. Local government news score is 16.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.8253."
+          "analysis": "HYDE PARK in Chicago has an estimated average home value of $314,109.46. Local government news score is 16.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.8253."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ARMOUR SQUARE",
-          "estimated_average_home_price_usd": 313596.95,
-          "share_token_base_price_usd": 20.9065,
-          "local_news_score": 15.63,
+          "estimated_average_home_price_usd": 313596.23,
+          "share_token_base_price_usd": 20.9064,
+          "local_news_score": 15.62,
           "recent_momentum_score": 17.54,
           "confidence_score": 49.89,
           "premium_adjustment": -0.0029,
@@ -1348,17 +1473,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0146,
-          "share_token_live_price_usd": 23.1212,
+          "share_token_live_price_usd": 23.1211,
           "price_action": "increase",
-          "analysis": "ARMOUR SQUARE in Chicago has an estimated average home value of $313,596.95. Local government news score is 15.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1212."
+          "analysis": "ARMOUR SQUARE in Chicago has an estimated average home value of $313,596.23. Local government news score is 15.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1211."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ROSELAND",
-          "estimated_average_home_price_usd": 313455.94,
-          "share_token_base_price_usd": 20.8971,
-          "local_news_score": 15.39,
+          "estimated_average_home_price_usd": 313453.83,
+          "share_token_base_price_usd": 20.8969,
+          "local_news_score": 15.38,
           "recent_momentum_score": 46.63,
           "confidence_score": 67.44,
           "premium_adjustment": -0.0029,
@@ -1373,16 +1498,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0389,
-          "share_token_live_price_usd": 23.6629,
+          "share_token_live_price_usd": 23.6627,
           "price_action": "increase",
-          "analysis": "ROSELAND in Chicago has an estimated average home value of $313,455.94. Local government news score is 15.39, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6629."
+          "analysis": "ROSELAND in Chicago has an estimated average home value of $313,453.83. Local government news score is 15.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.6627."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WASHINGTON PARK",
-          "estimated_average_home_price_usd": 312979.43,
-          "share_token_base_price_usd": 20.8653,
+          "estimated_average_home_price_usd": 312977.39,
+          "share_token_base_price_usd": 20.8652,
           "local_news_score": 14.57,
           "recent_momentum_score": 43.93,
           "confidence_score": 66.68,
@@ -1398,17 +1523,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0366,
-          "share_token_live_price_usd": 23.5758,
+          "share_token_live_price_usd": 23.5757,
           "price_action": "increase",
-          "analysis": "WASHINGTON PARK in Chicago has an estimated average home value of $312,979.43. Local government news score is 14.57, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5758."
+          "analysis": "WASHINGTON PARK in Chicago has an estimated average home value of $312,977.39. Local government news score is 14.57, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.5757."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "SOUTH SHORE",
-          "estimated_average_home_price_usd": 312535.4,
-          "share_token_base_price_usd": 20.8357,
-          "local_news_score": 13.82,
+          "estimated_average_home_price_usd": 312533.46,
+          "share_token_base_price_usd": 20.8356,
+          "local_news_score": 13.81,
           "recent_momentum_score": 41.42,
           "confidence_score": 65.94,
           "premium_adjustment": -0.0029,
@@ -1423,16 +1548,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0345,
-          "share_token_live_price_usd": 23.4948,
+          "share_token_live_price_usd": 23.4947,
           "price_action": "increase",
-          "analysis": "SOUTH SHORE in Chicago has an estimated average home value of $312,535.40. Local government news score is 13.82, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4948."
+          "analysis": "SOUTH SHORE in Chicago has an estimated average home value of $312,533.46. Local government news score is 13.81, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.4947."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "OAKLAND",
-          "estimated_average_home_price_usd": 312373.67,
-          "share_token_base_price_usd": 20.8249,
+          "estimated_average_home_price_usd": 312372.01,
+          "share_token_base_price_usd": 20.8248,
           "local_news_score": 13.54,
           "recent_momentum_score": 36.4,
           "confidence_score": 64.61,
@@ -1448,16 +1573,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0303,
-          "share_token_live_price_usd": 23.3877,
+          "share_token_live_price_usd": 23.3876,
           "price_action": "increase",
-          "analysis": "OAKLAND in Chicago has an estimated average home value of $312,373.67. Local government news score is 13.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3877."
+          "analysis": "OAKLAND in Chicago has an estimated average home value of $312,372.01. Local government news score is 13.54, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3876."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "PULLMAN",
-          "estimated_average_home_price_usd": 312103.94,
-          "share_token_base_price_usd": 20.8069,
+          "estimated_average_home_price_usd": 312102.16,
+          "share_token_base_price_usd": 20.8068,
           "local_news_score": 13.08,
           "recent_momentum_score": 36.51,
           "confidence_score": 65.12,
@@ -1473,15 +1598,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0304,
-          "share_token_live_price_usd": 23.3695,
+          "share_token_live_price_usd": 23.3694,
           "price_action": "increase",
-          "analysis": "PULLMAN in Chicago has an estimated average home value of $312,103.94. Local government news score is 13.08, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3695."
+          "analysis": "PULLMAN in Chicago has an estimated average home value of $312,102.16. Local government news score is 13.08, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3694."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST TOWN",
-          "estimated_average_home_price_usd": 311813.99,
+          "estimated_average_home_price_usd": 311814.67,
           "share_token_base_price_usd": 20.7876,
           "local_news_score": 12.59,
           "recent_momentum_score": 0.0,
@@ -1500,13 +1625,13 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.6585,
           "price_action": "increase",
-          "analysis": "WEST TOWN in Chicago has an estimated average home value of $311,813.99. Local government news score is 12.59, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.6585."
+          "analysis": "WEST TOWN in Chicago has an estimated average home value of $311,814.67. Local government news score is 12.59, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.6585."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "PORTAGE PARK",
-          "estimated_average_home_price_usd": 311717.17,
+          "estimated_average_home_price_usd": 311715.86,
           "share_token_base_price_usd": 20.7811,
           "local_news_score": 12.42,
           "recent_momentum_score": 28.82,
@@ -1525,14 +1650,14 @@
           "local_live_multiplier": 1.024,
           "share_token_live_price_usd": 23.1954,
           "price_action": "increase",
-          "analysis": "PORTAGE PARK in Chicago has an estimated average home value of $311,717.17. Local government news score is 12.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1954."
+          "analysis": "PORTAGE PARK in Chicago has an estimated average home value of $311,715.86. Local government news score is 12.42, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1954."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "ASHBURN",
-          "estimated_average_home_price_usd": 311680.14,
-          "share_token_base_price_usd": 20.7787,
+          "estimated_average_home_price_usd": 311679.41,
+          "share_token_base_price_usd": 20.7786,
           "local_news_score": 12.36,
           "recent_momentum_score": 22.82,
           "confidence_score": 46.25,
@@ -1548,19 +1673,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.019,
-          "share_token_live_price_usd": 23.0795,
+          "share_token_live_price_usd": 23.0794,
           "price_action": "increase",
-          "analysis": "ASHBURN in Chicago has an estimated average home value of $311,680.14. Local government news score is 12.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.0795."
+          "analysis": "ASHBURN in Chicago has an estimated average home value of $311,679.41. Local government news score is 12.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.0794."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "EDGEWATER",
-          "estimated_average_home_price_usd": 311426.43,
+          "estimated_average_home_price_usd": 311427.12,
           "share_token_base_price_usd": 20.7618,
-          "local_news_score": 10.29,
+          "local_news_score": 10.3,
           "recent_momentum_score": 0.0,
-          "confidence_score": 47.02,
+          "confidence_score": 47.01,
           "premium_adjustment": 0.0003,
           "mention_count": 7,
           "signals": [
@@ -1575,14 +1700,14 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.6304,
           "price_action": "increase",
-          "analysis": "EDGEWATER in Chicago has an estimated average home value of $311,426.43. Local government news score is 10.29, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.6304."
+          "analysis": "EDGEWATER in Chicago has an estimated average home value of $311,427.12. Local government news score is 10.3, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.6304."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NORTH PARK",
-          "estimated_average_home_price_usd": 311329.57,
-          "share_token_base_price_usd": 20.7553,
+          "estimated_average_home_price_usd": 311328.34,
+          "share_token_base_price_usd": 20.7552,
           "local_news_score": 11.76,
           "recent_momentum_score": 26.63,
           "confidence_score": 59.42,
@@ -1598,17 +1723,17 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0222,
-          "share_token_live_price_usd": 23.1253,
+          "share_token_live_price_usd": 23.1252,
           "price_action": "increase",
-          "analysis": "NORTH PARK in Chicago has an estimated average home value of $311,329.57. Local government news score is 11.76, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1253."
+          "analysis": "NORTH PARK in Chicago has an estimated average home value of $311,328.34. Local government news score is 11.76, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.1252."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NEW CITY",
-          "estimated_average_home_price_usd": 311148.71,
-          "share_token_base_price_usd": 20.7432,
-          "local_news_score": 11.46,
+          "estimated_average_home_price_usd": 311147.15,
+          "share_token_base_price_usd": 20.7431,
+          "local_news_score": 11.45,
           "recent_momentum_score": 31.49,
           "confidence_score": 63.69,
           "premium_adjustment": -0.0029,
@@ -1623,15 +1748,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0262,
-          "share_token_live_price_usd": 23.2034,
+          "share_token_live_price_usd": 23.2033,
           "price_action": "increase",
-          "analysis": "NEW CITY in Chicago has an estimated average home value of $311,148.71. Local government news score is 11.46, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2034."
+          "analysis": "NEW CITY in Chicago has an estimated average home value of $311,147.15. Local government news score is 11.45, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2033."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "CLEARING",
-          "estimated_average_home_price_usd": 310506.46,
+          "estimated_average_home_price_usd": 310506.33,
           "share_token_base_price_usd": 20.7004,
           "local_news_score": 10.36,
           "recent_momentum_score": 0.0,
@@ -1650,13 +1775,13 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.5634,
           "price_action": "increase",
-          "analysis": "CLEARING in Chicago has an estimated average home value of $310,506.46. Local government news score is 10.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5634."
+          "analysis": "CLEARING in Chicago has an estimated average home value of $310,506.33. Local government news score is 10.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5634."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "GARFIELD RIDGE",
-          "estimated_average_home_price_usd": 310506.46,
+          "estimated_average_home_price_usd": 310506.33,
           "share_token_base_price_usd": 20.7004,
           "local_news_score": 10.36,
           "recent_momentum_score": 0.0,
@@ -1675,13 +1800,13 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.5634,
           "price_action": "increase",
-          "analysis": "GARFIELD RIDGE in Chicago has an estimated average home value of $310,506.46. Local government news score is 10.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5634."
+          "analysis": "GARFIELD RIDGE in Chicago has an estimated average home value of $310,506.33. Local government news score is 10.36, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5634."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "OHARE",
-          "estimated_average_home_price_usd": 309498.86,
+          "estimated_average_home_price_usd": 309498.77,
           "share_token_base_price_usd": 20.6333,
           "local_news_score": 7.16,
           "recent_momentum_score": 0.0,
@@ -1700,14 +1825,14 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.4903,
           "price_action": "increase",
-          "analysis": "OHARE in Chicago has an estimated average home value of $309,498.86. Local government news score is 7.16, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.4903."
+          "analysis": "OHARE in Chicago has an estimated average home value of $309,498.77. Local government news score is 7.16, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.4903."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NORTH LAWNDALE",
-          "estimated_average_home_price_usd": 309449.83,
-          "share_token_base_price_usd": 20.63,
+          "estimated_average_home_price_usd": 309447.8,
+          "share_token_base_price_usd": 20.6299,
           "local_news_score": 8.56,
           "recent_momentum_score": 46.63,
           "confidence_score": 66.08,
@@ -1723,16 +1848,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0389,
-          "share_token_live_price_usd": 23.3605,
+          "share_token_live_price_usd": 23.3604,
           "price_action": "increase",
-          "analysis": "NORTH LAWNDALE in Chicago has an estimated average home value of $309,449.83. Local government news score is 8.56, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3605."
+          "analysis": "NORTH LAWNDALE in Chicago has an estimated average home value of $309,447.80. Local government news score is 8.56, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3604."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "SOUTH LAWNDALE",
-          "estimated_average_home_price_usd": 309449.83,
-          "share_token_base_price_usd": 20.63,
+          "estimated_average_home_price_usd": 309447.8,
+          "share_token_base_price_usd": 20.6299,
           "local_news_score": 8.56,
           "recent_momentum_score": 46.63,
           "confidence_score": 66.08,
@@ -1748,19 +1873,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0389,
-          "share_token_live_price_usd": 23.3605,
+          "share_token_live_price_usd": 23.3604,
           "price_action": "increase",
-          "analysis": "SOUTH LAWNDALE in Chicago has an estimated average home value of $309,449.83. Local government news score is 8.56, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3605."
+          "analysis": "SOUTH LAWNDALE in Chicago has an estimated average home value of $309,447.80. Local government news score is 8.56, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.3604."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "HEGEWISCH",
-          "estimated_average_home_price_usd": 308064.65,
+          "estimated_average_home_price_usd": 308064.57,
           "share_token_base_price_usd": 20.5376,
           "local_news_score": 6.2,
           "recent_momentum_score": 0.0,
-          "confidence_score": 45.43,
+          "confidence_score": 45.42,
           "premium_adjustment": -0.0029,
           "mention_count": 7,
           "signals": [
@@ -1775,13 +1900,13 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.386,
           "price_action": "increase",
-          "analysis": "HEGEWISCH in Chicago has an estimated average home value of $308,064.65. Local government news score is 6.2, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3860."
+          "analysis": "HEGEWISCH in Chicago has an estimated average home value of $308,064.57. Local government news score is 6.2, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3860."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "FOREST GLEN",
-          "estimated_average_home_price_usd": 307383.53,
+          "estimated_average_home_price_usd": 307383.49,
           "share_token_base_price_usd": 20.4922,
           "local_news_score": 3.41,
           "recent_momentum_score": 0.0,
@@ -1800,14 +1925,14 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.3365,
           "price_action": "increase",
-          "analysis": "FOREST GLEN in Chicago has an estimated average home value of $307,383.53. Local government news score is 3.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3365."
+          "analysis": "FOREST GLEN in Chicago has an estimated average home value of $307,383.49. Local government news score is 3.41, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3365."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "SOUTH DEERING",
-          "estimated_average_home_price_usd": 307142.6,
-          "share_token_base_price_usd": 20.4762,
+          "estimated_average_home_price_usd": 307141.13,
+          "share_token_base_price_usd": 20.4761,
           "local_news_score": 4.63,
           "recent_momentum_score": 31.49,
           "confidence_score": 60.47,
@@ -1823,16 +1948,16 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0262,
-          "share_token_live_price_usd": 22.9047,
+          "share_token_live_price_usd": 22.9046,
           "price_action": "increase",
-          "analysis": "SOUTH DEERING in Chicago has an estimated average home value of $307,142.60. Local government news score is 4.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.9047."
+          "analysis": "SOUTH DEERING in Chicago has an estimated average home value of $307,141.13. Local government news score is 4.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.9046."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WASHINGTON HEIGHTS",
-          "estimated_average_home_price_usd": 307142.6,
-          "share_token_base_price_usd": 20.4762,
+          "estimated_average_home_price_usd": 307141.13,
+          "share_token_base_price_usd": 20.4761,
           "local_news_score": 4.63,
           "recent_momentum_score": 31.49,
           "confidence_score": 61.15,
@@ -1848,19 +1973,19 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0262,
-          "share_token_live_price_usd": 22.9047,
+          "share_token_live_price_usd": 22.9046,
           "price_action": "increase",
-          "analysis": "WASHINGTON HEIGHTS in Chicago has an estimated average home value of $307,142.60. Local government news score is 4.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.9047."
+          "analysis": "WASHINGTON HEIGHTS in Chicago has an estimated average home value of $307,141.13. Local government news score is 4.63, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.9046."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "DUNNING",
-          "estimated_average_home_price_usd": 306956.44,
+          "estimated_average_home_price_usd": 306956.41,
           "share_token_base_price_usd": 20.4638,
           "local_news_score": 2.68,
           "recent_momentum_score": 0.0,
-          "confidence_score": 44.08,
+          "confidence_score": 44.07,
           "premium_adjustment": 0.0003,
           "mention_count": 7,
           "signals": [
@@ -1875,17 +2000,17 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.3055,
           "price_action": "increase",
-          "analysis": "DUNNING in Chicago has an estimated average home value of $306,956.44. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3055."
+          "analysis": "DUNNING in Chicago has an estimated average home value of $306,956.41. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3055."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "EDISON PARK",
-          "estimated_average_home_price_usd": 306956.44,
+          "estimated_average_home_price_usd": 306956.41,
           "share_token_base_price_usd": 20.4638,
           "local_news_score": 2.68,
           "recent_momentum_score": 0.0,
-          "confidence_score": 44.08,
+          "confidence_score": 44.07,
           "premium_adjustment": 0.0003,
           "mention_count": 7,
           "signals": [
@@ -1900,13 +2025,13 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.3055,
           "price_action": "increase",
-          "analysis": "EDISON PARK in Chicago has an estimated average home value of $306,956.44. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3055."
+          "analysis": "EDISON PARK in Chicago has an estimated average home value of $306,956.41. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3055."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST ELSDON",
-          "estimated_average_home_price_usd": 306947.06,
+          "estimated_average_home_price_usd": 306945.86,
           "share_token_base_price_usd": 20.4631,
           "local_news_score": 4.3,
           "recent_momentum_score": 26.4,
@@ -1925,14 +2050,14 @@
           "local_live_multiplier": 1.022,
           "share_token_live_price_usd": 22.7955,
           "price_action": "increase",
-          "analysis": "WEST ELSDON in Chicago has an estimated average home value of $306,947.06. Local government news score is 4.3, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.7955."
+          "analysis": "WEST ELSDON in Chicago has an estimated average home value of $306,945.86. Local government news score is 4.3, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.7955."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "WEST RIDGE",
-          "estimated_average_home_price_usd": 306824.3,
-          "share_token_base_price_usd": 20.455,
+          "estimated_average_home_price_usd": 306824.25,
+          "share_token_base_price_usd": 20.4549,
           "local_news_score": 4.09,
           "recent_momentum_score": 0.0,
           "confidence_score": 58.42,
@@ -1948,15 +2073,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0,
-          "share_token_live_price_usd": 22.296,
+          "share_token_live_price_usd": 22.2958,
           "price_action": "increase",
-          "analysis": "WEST RIDGE in Chicago has an estimated average home value of $306,824.30. Local government news score is 4.09, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.2960."
+          "analysis": "WEST RIDGE in Chicago has an estimated average home value of $306,824.25. Local government news score is 4.09, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.2958."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "MOUNT GREENWOOD",
-          "estimated_average_home_price_usd": 306708.67,
+          "estimated_average_home_price_usd": 306708.23,
           "share_token_base_price_usd": 20.4472,
           "local_news_score": 3.89,
           "recent_momentum_score": 12.93,
@@ -1975,13 +2100,13 @@
           "local_live_multiplier": 1.0108,
           "share_token_live_price_usd": 22.5276,
           "price_action": "increase",
-          "analysis": "MOUNT GREENWOOD in Chicago has an estimated average home value of $306,708.67. Local government news score is 3.89, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5276."
+          "analysis": "MOUNT GREENWOOD in Chicago has an estimated average home value of $306,708.23. Local government news score is 3.89, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5276."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "NORWOOD PARK",
-          "estimated_average_home_price_usd": 305996.94,
+          "estimated_average_home_price_usd": 305996.91,
           "share_token_base_price_usd": 20.3998,
           "local_news_score": 2.68,
           "recent_momentum_score": 0.0,
@@ -2000,7 +2125,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 22.2358,
           "price_action": "increase",
-          "analysis": "NORWOOD PARK in Chicago has an estimated average home value of $305,996.94. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.2358."
+          "analysis": "NORWOOD PARK in Chicago has an estimated average home value of $305,996.91. Local government news score is 2.68, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.2358."
         },
         {
           "city": "Chicago",
@@ -2031,8 +2156,8 @@
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "RIVERDALE",
-          "estimated_average_home_price_usd": 304899.15,
-          "share_token_base_price_usd": 20.3266,
+          "estimated_average_home_price_usd": 304897.98,
+          "share_token_base_price_usd": 20.3265,
           "local_news_score": 0.81,
           "recent_momentum_score": 20.88,
           "confidence_score": 60.98,
@@ -2048,15 +2173,15 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0174,
-          "share_token_live_price_usd": 22.5415,
+          "share_token_live_price_usd": 22.5414,
           "price_action": "increase",
-          "analysis": "RIVERDALE in Chicago has an estimated average home value of $304,899.15. Local government news score is 0.81, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5415."
+          "analysis": "RIVERDALE in Chicago has an estimated average home value of $304,897.98. Local government news score is 0.81, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.5414."
         },
         {
           "city": "Chicago",
           "state": "Illinois",
           "neighborhood": "MONTCLARE",
-          "estimated_average_home_price_usd": 304894.42,
+          "estimated_average_home_price_usd": 304893.84,
           "share_token_base_price_usd": 20.3263,
           "local_news_score": 0.8,
           "recent_momentum_score": 11.04,
@@ -2075,7 +2200,7 @@
           "local_live_multiplier": 1.0092,
           "share_token_live_price_usd": 22.3595,
           "price_action": "increase",
-          "analysis": "MONTCLARE in Chicago has an estimated average home value of $304,894.42. Local government news score is 0.8, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3595."
+          "analysis": "MONTCLARE in Chicago has an estimated average home value of $304,893.84. Local government news score is 0.8, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $22.3595."
         }
       ]
     },
@@ -2085,7 +2210,7 @@
       "baseline_city_home_value_usd": 301697,
       "macro_regime": "panic",
       "city_average_live_share_price_usd": 22.7199,
-      "top_5_neighborhoods": [
+      "top_10_neighborhoods": [
         {
           "city": "Dallas",
           "state": "Texas",
@@ -2200,6 +2325,121 @@
           "share_token_live_price_usd": 25.4433,
           "price_action": "increase",
           "analysis": "Swiss Ave Historic District Association in Dallas has an estimated average home value of $334,419.52. Local government news score is 56.4, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.4433."
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas",
+          "neighborhood": "Kimball Square Neighborhood Association",
+          "estimated_average_home_price_usd": 333897.35,
+          "share_token_base_price_usd": 22.2598,
+          "local_news_score": 55.5,
+          "recent_momentum_score": 55.5,
+          "confidence_score": 75.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "increased local amenities",
+            "potential rise in housing demand"
+          ],
+          "reason": "The development of Fair Park Community Park is likely to enhance local amenities, increasing property values and attracting new residents.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0462,
+          "share_token_live_price_usd": 25.3854,
+          "price_action": "increase",
+          "analysis": "Kimball Square Neighborhood Association in Dallas has an estimated average home value of $333,897.35. Local government news score is 55.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.3854."
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas",
+          "neighborhood": "Lakewood NA(LNA)",
+          "estimated_average_home_price_usd": 333897.35,
+          "share_token_base_price_usd": 22.2598,
+          "local_news_score": 55.5,
+          "recent_momentum_score": 55.5,
+          "confidence_score": 75.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "enhanced local amenities",
+            "increased housing demand"
+          ],
+          "reason": "The development of Fair Park is expected to significantly enhance local amenities, positively impacting Lakewood NA.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0462,
+          "share_token_live_price_usd": 25.3854,
+          "price_action": "increase",
+          "analysis": "Lakewood NA(LNA) in Dallas has an estimated average home value of $333,897.35. Local government news score is 55.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.3854."
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas",
+          "neighborhood": "Cedar Crest NA",
+          "estimated_average_home_price_usd": 333375.18,
+          "share_token_base_price_usd": 22.225,
+          "local_news_score": 54.6,
+          "recent_momentum_score": 54.6,
+          "confidence_score": 70.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "Proximity to Fair Park",
+            "Potential for increased housing demand"
+          ],
+          "reason": "Cedar Crest NA may see some benefits from the development due to its proximity to Fair Park, potentially leading to increased interest in the area.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0455,
+          "share_token_live_price_usd": 25.3275,
+          "price_action": "increase",
+          "analysis": "Cedar Crest NA in Dallas has an estimated average home value of $333,375.18. Local government news score is 54.6, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.3275."
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas",
+          "neighborhood": "Residents United for Change & Opportunity (RUFCO)",
+          "estimated_average_home_price_usd": 331213.99,
+          "share_token_base_price_usd": 22.0809,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
+          "confidence_score": 75.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "community engagement",
+            "increased investment opportunities"
+          ],
+          "reason": "The Fair Park development may lead to increased community engagement and investment in the area, benefiting RUFCO members.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0424,
+          "share_token_live_price_usd": 25.0887,
+          "price_action": "increase",
+          "analysis": "Residents United for Change & Opportunity (RUFCO) in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas",
+          "neighborhood": "Schreiber Community Volunteer NA",
+          "estimated_average_home_price_usd": 331213.99,
+          "share_token_base_price_usd": 22.0809,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
+          "confidence_score": 75.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "community involvement",
+            "local improvements"
+          ],
+          "reason": "The Fair Park development could foster community involvement and improvements in the Schreiber area.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0424,
+          "share_token_live_price_usd": 25.0887,
+          "price_action": "increase",
+          "analysis": "Schreiber Community Volunteer NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         }
       ],
       "neighborhoods": [
@@ -2393,8 +2633,8 @@
           "neighborhood": "Residents United for Change & Opportunity (RUFCO)",
           "estimated_average_home_price_usd": 331213.99,
           "share_token_base_price_usd": 22.0809,
-          "local_news_score": 50.87,
-          "recent_momentum_score": 50.87,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -2406,9 +2646,9 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0424,
-          "share_token_live_price_usd": 25.0885,
+          "share_token_live_price_usd": 25.0887,
           "price_action": "increase",
-          "analysis": "Residents United for Change & Opportunity (RUFCO) in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0885."
+          "analysis": "Residents United for Change & Opportunity (RUFCO) in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         },
         {
           "city": "Dallas",
@@ -2416,8 +2656,8 @@
           "neighborhood": "Schreiber Community Volunteer NA",
           "estimated_average_home_price_usd": 331213.99,
           "share_token_base_price_usd": 22.0809,
-          "local_news_score": 50.87,
-          "recent_momentum_score": 50.87,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -2429,9 +2669,9 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0424,
-          "share_token_live_price_usd": 25.0885,
+          "share_token_live_price_usd": 25.0887,
           "price_action": "increase",
-          "analysis": "Schreiber Community Volunteer NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0885."
+          "analysis": "Schreiber Community Volunteer NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         },
         {
           "city": "Dallas",
@@ -2439,8 +2679,8 @@
           "neighborhood": "SOHIP NA",
           "estimated_average_home_price_usd": 331213.99,
           "share_token_base_price_usd": 22.0809,
-          "local_news_score": 50.87,
-          "recent_momentum_score": 50.87,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -2452,9 +2692,9 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0424,
-          "share_token_live_price_usd": 25.0885,
+          "share_token_live_price_usd": 25.0887,
           "price_action": "increase",
-          "analysis": "SOHIP NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0885."
+          "analysis": "SOHIP NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         },
         {
           "city": "Dallas",
@@ -2462,8 +2702,8 @@
           "neighborhood": "Stevens Park Estates NA",
           "estimated_average_home_price_usd": 331213.99,
           "share_token_base_price_usd": 22.0809,
-          "local_news_score": 50.87,
-          "recent_momentum_score": 50.87,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -2475,9 +2715,9 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0424,
-          "share_token_live_price_usd": 25.0885,
+          "share_token_live_price_usd": 25.0887,
           "price_action": "increase",
-          "analysis": "Stevens Park Estates NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0885."
+          "analysis": "Stevens Park Estates NA in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         },
         {
           "city": "Dallas",
@@ -2485,8 +2725,8 @@
           "neighborhood": "Tenth Street Residential Association",
           "estimated_average_home_price_usd": 331213.99,
           "share_token_base_price_usd": 22.0809,
-          "local_news_score": 50.87,
-          "recent_momentum_score": 50.87,
+          "local_news_score": 50.88,
+          "recent_momentum_score": 50.88,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -2498,9 +2738,9 @@
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
           "local_live_multiplier": 1.0424,
-          "share_token_live_price_usd": 25.0885,
+          "share_token_live_price_usd": 25.0887,
           "price_action": "increase",
-          "analysis": "Tenth Street Residential Association in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.87, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0885."
+          "analysis": "Tenth Street Residential Association in Dallas has an estimated average home value of $331,213.99. Local government news score is 50.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $25.0887."
         },
         {
           "city": "Dallas",
@@ -3681,8 +3921,8 @@
           "neighborhood": "University Terrace NA",
           "estimated_average_home_price_usd": 314678.67,
           "share_token_base_price_usd": 20.9786,
-          "local_news_score": 22.37,
-          "recent_momentum_score": 22.37,
+          "local_news_score": 22.38,
+          "recent_momentum_score": 22.38,
           "confidence_score": 65.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -3693,10 +3933,10 @@
           "reason": "Similar to University Meadows, the development could enhance the appeal of University Terrace, leading to a modest increase in housing demand.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0186,
-          "share_token_live_price_usd": 23.2929,
+          "local_live_multiplier": 1.0187,
+          "share_token_live_price_usd": 23.2931,
           "price_action": "increase",
-          "analysis": "University Terrace NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2929."
+          "analysis": "University Terrace NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2931."
         },
         {
           "city": "Dallas",
@@ -3704,8 +3944,8 @@
           "neighborhood": "Vickery Together NA",
           "estimated_average_home_price_usd": 314678.67,
           "share_token_base_price_usd": 20.9786,
-          "local_news_score": 22.37,
-          "recent_momentum_score": 22.37,
+          "local_news_score": 22.38,
+          "recent_momentum_score": 22.38,
           "confidence_score": 65.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -3716,10 +3956,10 @@
           "reason": "The development could enhance community engagement and interest in Vickery Together, leading to potential growth.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0186,
-          "share_token_live_price_usd": 23.2929,
+          "local_live_multiplier": 1.0187,
+          "share_token_live_price_usd": 23.2931,
           "price_action": "increase",
-          "analysis": "Vickery Together NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2929."
+          "analysis": "Vickery Together NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2931."
         },
         {
           "city": "Dallas",
@@ -3727,8 +3967,8 @@
           "neighborhood": "White Rock Forest",
           "estimated_average_home_price_usd": 314678.67,
           "share_token_base_price_usd": 20.9786,
-          "local_news_score": 22.37,
-          "recent_momentum_score": 22.37,
+          "local_news_score": 22.38,
+          "recent_momentum_score": 22.38,
           "confidence_score": 65.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -3739,10 +3979,10 @@
           "reason": "White Rock Forest could benefit from increased interest in the area due to Fair Park's development.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0186,
-          "share_token_live_price_usd": 23.2929,
+          "local_live_multiplier": 1.0187,
+          "share_token_live_price_usd": 23.2931,
           "price_action": "increase",
-          "analysis": "White Rock Forest in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2929."
+          "analysis": "White Rock Forest in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2931."
         },
         {
           "city": "Dallas",
@@ -3750,8 +3990,8 @@
           "neighborhood": "White Rock Valley NA",
           "estimated_average_home_price_usd": 314678.67,
           "share_token_base_price_usd": 20.9786,
-          "local_news_score": 22.37,
-          "recent_momentum_score": 22.37,
+          "local_news_score": 22.38,
+          "recent_momentum_score": 22.38,
           "confidence_score": 65.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -3762,10 +4002,10 @@
           "reason": "White Rock Valley may see a boost in housing demand due to the Fair Park development.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0186,
-          "share_token_live_price_usd": 23.2929,
+          "local_live_multiplier": 1.0187,
+          "share_token_live_price_usd": 23.2931,
           "price_action": "increase",
-          "analysis": "White Rock Valley NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2929."
+          "analysis": "White Rock Valley NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2931."
         },
         {
           "city": "Dallas",
@@ -3773,8 +4013,8 @@
           "neighborhood": "Winnetka Heights NA",
           "estimated_average_home_price_usd": 314678.67,
           "share_token_base_price_usd": 20.9786,
-          "local_news_score": 22.37,
-          "recent_momentum_score": 22.37,
+          "local_news_score": 22.38,
+          "recent_momentum_score": 22.38,
           "confidence_score": 65.0,
           "premium_adjustment": 0.0,
           "mention_count": 1,
@@ -3785,10 +4025,10 @@
           "reason": "Winnetka Heights could benefit from increased interest and investment due to the Fair Park development.",
           "macro_regime": "panic",
           "global_news_multiplier": 1.09,
-          "local_live_multiplier": 1.0186,
-          "share_token_live_price_usd": 23.2929,
+          "local_live_multiplier": 1.0187,
+          "share_token_live_price_usd": 23.2931,
           "price_action": "increase",
-          "analysis": "Winnetka Heights NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.37, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2929."
+          "analysis": "Winnetka Heights NA in Dallas has an estimated average home value of $314,678.67. Local government news score is 22.38, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $23.2931."
         },
         {
           "city": "Dallas",
@@ -7696,7 +7936,7 @@
       "baseline_city_home_value_usd": 933111,
       "macro_regime": "panic",
       "city_average_live_share_price_usd": 67.1543,
-      "top_5_neighborhoods": [
+      "top_10_neighborhoods": [
         {
           "city": "Los Angeles",
           "state": "California",
@@ -7821,6 +8061,131 @@
           "share_token_live_price_usd": 69.6639,
           "price_action": "increase",
           "analysis": "FOOTHILL TRAILS DISTRICT NC in Los Angeles has an estimated average home value of $958,677.42. Local government news score is 12.34, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $69.6639."
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California",
+          "neighborhood": "WILMINGTON NC",
+          "estimated_average_home_price_usd": 950971.85,
+          "share_token_base_price_usd": 63.3981,
+          "local_news_score": 11.69,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 59.43,
+          "premium_adjustment": -0.0033,
+          "mention_count": 6,
+          "signals": [
+            "CEO transition",
+            "local utility management",
+            "stable housing market",
+            "limited reliance on public assistance"
+          ],
+          "reason": "Minimal expected impact from the transition, with some potential for future utility enhancements.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 69.1039,
+          "price_action": "increase",
+          "analysis": "WILMINGTON NC in Los Angeles has an estimated average home value of $950,971.85. Local government news score is 11.69, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $69.1039."
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California",
+          "neighborhood": "LOS FELIZ NC",
+          "estimated_average_home_price_usd": 949047.79,
+          "share_token_base_price_usd": 63.2699,
+          "local_news_score": 8.88,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 60.11,
+          "premium_adjustment": 0.0,
+          "mention_count": 6,
+          "signals": [
+            "Historical interest in community development",
+            "Potential for increased property values",
+            "reduced housing support",
+            "community feedback"
+          ],
+          "reason": "Los Feliz could see a boost in real estate values due to potential infrastructure improvements and community-focused projects.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 68.9642,
+          "price_action": "increase",
+          "analysis": "LOS FELIZ NC in Los Angeles has an estimated average home value of $949,047.79. Local government news score is 8.88, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $68.9642."
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California",
+          "neighborhood": "ARTS DISTRICT LITTLE TOKYO NC",
+          "estimated_average_home_price_usd": 946390.68,
+          "share_token_base_price_usd": 63.0927,
+          "local_news_score": 7.4,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 58.85,
+          "premium_adjustment": 0.0,
+          "mention_count": 6,
+          "signals": [
+            "Increased investment in cultural infrastructure",
+            "Potential for improved utility services",
+            "ongoing development projects",
+            "mixed community response"
+          ],
+          "reason": "The Arts District may benefit from renewed focus on infrastructure improvements under new leadership, potentially enhancing real estate values.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 68.771,
+          "price_action": "increase",
+          "analysis": "ARTS DISTRICT LITTLE TOKYO NC in Los Angeles has an estimated average home value of $946,390.68. Local government news score is 7.4, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $68.7710."
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California",
+          "neighborhood": "PORTER RANCH NC",
+          "estimated_average_home_price_usd": 944724.25,
+          "share_token_base_price_usd": 62.9816,
+          "local_news_score": 6.47,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 53.25,
+          "premium_adjustment": 0.0,
+          "mention_count": 6,
+          "signals": [
+            "Potential for new community projects",
+            "Uncertainty in housing market trends",
+            "stable housing market",
+            "limited reliance on LAHSA"
+          ],
+          "reason": "Porter Ranch may see mixed effects from infrastructure improvements, but the overall impact on housing demand is uncertain.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 68.6499,
+          "price_action": "increase",
+          "analysis": "PORTER RANCH NC in Los Angeles has an estimated average home value of $944,724.25. Local government news score is 6.47, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $68.6499."
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California",
+          "neighborhood": "COASTAL SAN PEDRO NC",
+          "estimated_average_home_price_usd": 944653.42,
+          "share_token_base_price_usd": 62.9769,
+          "local_news_score": 6.43,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 57.17,
+          "premium_adjustment": 0.0,
+          "mention_count": 6,
+          "signals": [
+            "Current projects are likely to continue",
+            "Future initiatives may depend on new leadership",
+            "increased housing demand",
+            "reduced assistance availability"
+          ],
+          "reason": "Minimal expected impact from the CEO transition, though future infrastructure improvements could be influenced.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 68.6448,
+          "price_action": "increase",
+          "analysis": "COASTAL SAN PEDRO NC in Los Angeles has an estimated average home value of $944,653.42. Local government news score is 6.43, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $68.6448."
         }
       ],
       "neighborhoods": [
@@ -10307,7 +10672,7 @@
       "baseline_city_home_value_usd": 649000,
       "macro_regime": "panic",
       "city_average_live_share_price_usd": 50.5006,
-      "top_5_neighborhoods": [
+      "top_10_neighborhoods": [
         {
           "city": "New York City",
           "state": "New York",
@@ -10422,6 +10787,121 @@
           "share_token_live_price_usd": 54.6941,
           "price_action": "increase",
           "analysis": "Upper East Side-Carnegie Hill in New York City has an estimated average home value of $752,671.51. Local government news score is 71.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.6941."
+        },
+        {
+          "city": "New York City",
+          "state": "New York",
+          "neighborhood": "Upper West Side (Central)",
+          "estimated_average_home_price_usd": 752671.51,
+          "share_token_base_price_usd": 50.1781,
+          "local_news_score": 71.62,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 85.0,
+          "premium_adjustment": 0.022,
+          "mention_count": 1,
+          "signals": [
+            "support for climate action initiatives",
+            "potential for enhanced community engagement"
+          ],
+          "reason": "The initiative aligns with the upscale nature of the Upper West Side, likely leading to increased property values and interest in sustainable developments.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 54.6941,
+          "price_action": "increase",
+          "analysis": "Upper West Side (Central) in New York City has an estimated average home value of $752,671.51. Local government news score is 71.62, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.6941."
+        },
+        {
+          "city": "New York City",
+          "state": "New York",
+          "neighborhood": "Downtown Brooklyn-DUMBO-Boerum Hill",
+          "estimated_average_home_price_usd": 751903.94,
+          "share_token_base_price_usd": 50.1269,
+          "local_news_score": 82.45,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 90.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "high levels of new construction",
+            "strong demand for sustainable living spaces"
+          ],
+          "reason": "This area is a key site for new developments and is likely to benefit significantly from the push for carbon neutrality and green building practices.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 54.6383,
+          "price_action": "increase",
+          "analysis": "Downtown Brooklyn-DUMBO-Boerum Hill in New York City has an estimated average home value of $751,903.94. Local government news score is 82.45, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.6383."
+        },
+        {
+          "city": "New York City",
+          "state": "New York",
+          "neighborhood": "Midtown South-Flatiron-Union Square",
+          "estimated_average_home_price_usd": 751903.94,
+          "share_token_base_price_usd": 50.1269,
+          "local_news_score": 82.45,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 90.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "high demand for sustainable living",
+            "investment in urban green spaces"
+          ],
+          "reason": "This area is expected to see significant investment in green infrastructure and buildings, enhancing property values and attracting new residents focused on sustainability.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 54.6383,
+          "price_action": "increase",
+          "analysis": "Midtown South-Flatiron-Union Square in New York City has an estimated average home value of $751,903.94. Local government news score is 82.45, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.6383."
+        },
+        {
+          "city": "New York City",
+          "state": "New York",
+          "neighborhood": "East Midtown-Turtle Bay",
+          "estimated_average_home_price_usd": 751267.42,
+          "share_token_base_price_usd": 50.0845,
+          "local_news_score": 70.5,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 80.0,
+          "premium_adjustment": 0.022,
+          "mention_count": 1,
+          "signals": [
+            "high levels of new construction",
+            "strong demand for sustainable living spaces"
+          ],
+          "reason": "This area is likely to benefit significantly from the push for carbon neutrality and green building practices, given its high property values and ongoing developments.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 54.5921,
+          "price_action": "increase",
+          "analysis": "East Midtown-Turtle Bay in New York City has an estimated average home value of $751,267.42. Local government news score is 70.5, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.5921."
+        },
+        {
+          "city": "New York City",
+          "state": "New York",
+          "neighborhood": "Brooklyn Navy Yard",
+          "estimated_average_home_price_usd": 745850.77,
+          "share_token_base_price_usd": 49.7234,
+          "local_news_score": 77.6,
+          "recent_momentum_score": 0.0,
+          "confidence_score": 90.0,
+          "premium_adjustment": 0.0,
+          "mention_count": 1,
+          "signals": [
+            "High potential for new green developments",
+            "Strong support for sustainability initiatives"
+          ],
+          "reason": "The Navy Yard is a hub for innovation and may attract substantial investment in sustainable projects.",
+          "macro_regime": "panic",
+          "global_news_multiplier": 1.09,
+          "local_live_multiplier": 1.0,
+          "share_token_live_price_usd": 54.1985,
+          "price_action": "increase",
+          "analysis": "Brooklyn Navy Yard in New York City has an estimated average home value of $745,850.77. Local government news score is 77.6, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $54.1985."
         }
       ],
       "neighborhoods": [
@@ -11696,7 +12176,7 @@
           "neighborhood": "Astoria (East)-Woodside (North)",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11711,7 +12191,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Astoria (East)-Woodside (North) in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Astoria (East)-Woodside (North) in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11719,7 +12199,7 @@
           "neighborhood": "Bedford Park",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11734,7 +12214,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Bedford Park in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Bedford Park in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11742,7 +12222,7 @@
           "neighborhood": "Bensonhurst",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11757,7 +12237,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Bensonhurst in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Bensonhurst in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11765,7 +12245,7 @@
           "neighborhood": "Brownsville",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11780,7 +12260,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Brownsville in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Brownsville in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11788,7 +12268,7 @@
           "neighborhood": "Canarsie",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11803,7 +12283,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Canarsie in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Canarsie in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11811,7 +12291,7 @@
           "neighborhood": "Prospect Heights",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11826,7 +12306,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Prospect Heights in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Prospect Heights in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",
@@ -11834,7 +12314,7 @@
           "neighborhood": "Windsor Terrace-South Slope",
           "estimated_average_home_price_usd": 724040.62,
           "share_token_base_price_usd": 48.2694,
-          "local_news_score": 60.12,
+          "local_news_score": 60.13,
           "recent_momentum_score": 0.0,
           "confidence_score": 75.0,
           "premium_adjustment": 0.0,
@@ -11849,7 +12329,7 @@
           "local_live_multiplier": 1.0,
           "share_token_live_price_usd": 52.6136,
           "price_action": "increase",
-          "analysis": "Windsor Terrace-South Slope in New York City has an estimated average home value of $724,040.62. Local government news score is 60.12, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
+          "analysis": "Windsor Terrace-South Slope in New York City has an estimated average home value of $724,040.62. Local government news score is 60.13, the macro regime is panic, and the live Nexus share token is trading above the structural share baseline at $52.6136."
         },
         {
           "city": "New York City",

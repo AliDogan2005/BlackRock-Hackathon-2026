@@ -103,6 +103,34 @@ public class ShareController {
         throw new RuntimeException("Invalid or missing JWT token");
     }
 
+
+    /**
+     * Initialize or sync shares from prices data
+     * POST /api/shares/sync/from-prices
+     * Body: prices_output.json content
+     */
+    @PostMapping("/sync/from-prices")
+    public ResponseEntity<Map<String, Object>> syncSharesFromPrices(
+            @RequestBody Map<String, Object> pricesData) {
+        log.info("Syncing shares from prices data");
+
+        try {
+            Map<String, Object> result = shareService.syncSharesFromPricesData(pricesData);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "success");
+            response.put("data", result);
+
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("Error syncing shares from prices: {}", e.getMessage());
+            Map<String, String> error = new HashMap<>();
+            error.put("status", "error");
+            error.put("message", e.getMessage());
+            return ResponseEntity.status(500).body((Map<String, Object>)(Object)error);
+        }
+    }
+
     private String getJwtFromRequest() {
         String bearerToken = request.getHeader("Authorization");
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {

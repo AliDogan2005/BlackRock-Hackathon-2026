@@ -525,10 +525,10 @@ def build_price_book() -> dict[str, Any]:
             "baseline_city_home_value_usd": source.baseline_home_value,
             "macro_regime": global_context["regime"],
             "city_average_live_share_price_usd": round(average_share_price, 4),
-            "top_5_neighborhoods": sorted(
+            "top_10_neighborhoods": sorted(
                 live_rows,
                 key=lambda row: (-float(row["share_token_live_price_usd"]), str(row["neighborhood"]).casefold()),
-            )[:5],
+            )[:10],
             "neighborhoods": live_rows,
         }
 
@@ -556,7 +556,7 @@ def print_summary(payload: dict[str, Any]) -> None:
         print(
             f"INFO [CITY] {city['city']} avg live share ${city['city_average_live_share_price_usd']:.4f}"
         )
-        for row in city["top_5_neighborhoods"][:3]:
+        for row in city["top_10_neighborhoods"][:5]:
             print(
                 "  -",
                 row["neighborhood"],

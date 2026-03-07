@@ -4,10 +4,12 @@ import com.tokenapp.dto.AuthResponse;
 import com.tokenapp.dto.LoginRequest;
 import com.tokenapp.dto.RegisterRequest;
 import com.tokenapp.entity.User;
+import com.tokenapp.entity.UserWallet;
 import com.tokenapp.exception.BadRequestException;
 import com.tokenapp.exception.DuplicateResourceException;
 import com.tokenapp.exception.ResourceNotFoundException;
 import com.tokenapp.repository.UserRepository;
+import com.tokenapp.repository.UserWalletRepository;
 import com.tokenapp.security.JwtTokenProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +21,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Slf4j
 @Service
 public class AuthService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserWalletRepository userWalletRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -69,6 +77,16 @@ public class AuthService {
 
         User savedUser = userRepository.save(user);
         log.info("User registered successfully with id: {}", savedUser.getId());
+
+        // Create wallet for user with initial balance 0
+        UserWallet wallet = UserWallet.builder()
+                .user(savedUser)
+                .balance(BigDecimal.ZERO)
+                .createdAt(LocalDateTime.now())
+                .lastUpdated(LocalDateTime.now())
+                .build();
+        userWalletRepository.save(wallet);
+        log.info("Wallet created for user id: {}", savedUser.getId());
 
         // Send welcome email
         try {
