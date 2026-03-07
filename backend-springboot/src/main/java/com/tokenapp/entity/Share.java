@@ -3,9 +3,11 @@ package com.tokenapp.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -16,6 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "shares")
 @Data
+@EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -87,6 +90,11 @@ public class Share {
     @OneToMany(mappedBy = "share", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
     private Set<UserToken> userTokens = new HashSet<>();
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "favoriteShares", fetch = FetchType.LAZY)
+    @Builder.Default
+    private Set<User> favoriteByUsers = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {

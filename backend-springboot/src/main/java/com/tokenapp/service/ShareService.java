@@ -250,6 +250,62 @@ public class ShareService {
                 .build();
     }
 
+    @Transactional
+    public void addFavorite(Long userId, Long shareId) {
+        log.info("Adding share {} to favorites for user {}", shareId, userId);
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        Share share = shareRepository.findById(shareId)
+                .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
+
+        // Check if share is already in favorites by comparing IDs instead of using contains()
+        boolean alreadyFavorited = user.getFavoriteShares().stream()
+                .anyMatch(s -> s.getId().equals(shareId));
+
+        if (alreadyFavorited) {
+            throw new BadRequestException("Share is already in favorites");
+        }
+
+        user.getFavoriteShares().add(share);
+        userRepository.save(user);
+        log.info("Share {} added to favorites for user {}", shareId, userId);
+    }
+
+    @Transactional
+    public void removeFavorite(Long userId, Long shareId) {
+        log.info("Removing share {} from favorites for user {}", shareId, userId);
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        Share share = shareRepository.findById(shareId)
+                .orElseThrow(() -> new ResourceNotFoundException("Share not found with id: " + shareId));
+
+        // Check if share is in favorites by comparing IDs instead of using contains()
+        boolean found = user.getFavoriteShares().removeIf(s -> s.getId().equals(shareId));
+
+        if (!found) {
+            throw new BadRequestException("Share is not in favorites");
+        }
+
+        userRepository.save(user);
+        log.info("Share {} removed from favorites for user {}", shareId, userId);
+    }
+
+    public List<ShareResponse> getUserFavoriteShares(Long userId) {
+        log.info("Fetching favorite shares for user {}", userId);
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        return user.getFavoriteShares().stream()
+                .map(this::convertToShareResponse)
+                .collect(Collectors.toList());
+    }
+
+
     private UserTokenResponse convertToUserTokenResponse(UserToken userToken, Share share) {
         return UserTokenResponse.builder()
                 .id(userToken.getId())
