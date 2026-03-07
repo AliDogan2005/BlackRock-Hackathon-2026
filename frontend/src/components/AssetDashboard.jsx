@@ -3,22 +3,26 @@ import useAssetData from "../hooks/useAssetData";
 
 const defaultAssets = [
   {
-    name: "Antalya Solar Farm",
+    name: "Antalya Solar District",
+    region: "Antalya Solar District",
     riskScore: 82,
     roi: 14.6,
   },
   {
-    name: "Milan Logistics Fleet",
+    name: "Berlin Mitte Residences",
+    region: "Berlin Mitte",
     riskScore: 63,
     roi: 10.2,
   },
   {
     name: "Lisbon Prime Residences",
+    region: "Lisbon Prime",
     riskScore: 41,
     roi: 7.4,
   },
   {
     name: "Dubai Cold Chain Hub",
+    region: "Dubai Logistics Bay",
     riskScore: 27,
     roi: 5.8,
   },
@@ -80,7 +84,7 @@ const cardVariants = {
   },
 };
 
-export default function AssetDashboard() {
+export default function AssetDashboard({ onOpenDeepDive }) {
   const { assets: dataAssets, loading, error } = useAssetData(
     "http://localhost:8080/api/assets",
     defaultAssets
@@ -148,6 +152,10 @@ export default function AssetDashboard() {
                     {asset.name}
                   </h3>
 
+                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-nexus-primary-beige/65">
+                    Region: {asset.region ?? asset.name}
+                  </p>
+
                   <div className="mt-5 flex items-center justify-between">
                     <span className="text-xs font-medium uppercase tracking-[0.16em] text-nexus-primary-beige/75">
                       Nexus Risk Score
@@ -171,6 +179,18 @@ export default function AssetDashboard() {
                       {formatRoi(asset.roi)}
                     </span>
                   </div>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (onOpenDeepDive) {
+                        onOpenDeepDive(asset);
+                      }
+                    }}
+                    className="mt-5 w-full rounded-xl border border-nexus-primary-gold/35 bg-nexus-primary-gold/12 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-nexus-primary-gold transition hover:border-nexus-primary-gold/65 hover:bg-nexus-primary-gold/18"
+                  >
+                    Open Deep Dive
+                  </button>
                 </motion.article>
               ))}
         </motion.div>

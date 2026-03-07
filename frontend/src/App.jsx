@@ -1,19 +1,17 @@
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import HeroToLightTransition from "./components/HeroToLightTransition";
-import WhatIsNexusSection from "./components/WhatIsNexusSection";
-import AssetDashboard from "./components/AssetDashboard";
-import FAQContactSection from "./components/FAQContactSection";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import FintechMainPage from "./components/FintechMainPage";
+import LandingPage from "./components/LandingPage";
+import LoginPage from "./components/LoginPage";
 
 export default function App() {
+  const navigate = useNavigate();
+
   return (
-    <main className="min-h-screen bg-nexus-primary-beige text-nexus-primary-espresso">
-      <Header />
-      <HeroSection />
-      <HeroToLightTransition />
-      <WhatIsNexusSection />
-      <AssetDashboard />
-      <FAQContactSection />
-    </main>
+    <Routes>
+      <Route path="/" element={<LandingPage onLoginSuccess={() => navigate("/app")} />} />
+      <Route path="/app" element={<FintechMainPage />} />
+      <Route path="/login" element={<LoginPage onAuthSuccess={() => navigate("/app")} />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }

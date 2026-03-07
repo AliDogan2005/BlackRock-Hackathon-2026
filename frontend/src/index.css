@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  color: #1A120B;
-  background-color: #F5F2EA;
+  --nexus-modern-beige: #F5F2EA;
+  --nexus-espresso-brown: #1A120B;
+  color: var(--nexus-espresso-brown);
+  background-color: var(--nexus-modern-beige);
 }
 
 * {
@@ -14,6 +16,6 @@
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  background: #F5F2EA;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  background: var(--nexus-modern-beige);
 }

@@ -17,7 +17,7 @@ function NexusMiniIcon() {
   );
 }
 
-export default function Header() {
+export default function Header({ onLoginSuccess }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOnLightSection, setIsOnLightSection] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -147,6 +147,7 @@ export default function Header() {
         isOpen={isAuthModalOpen}
         initialMode={authMode}
         onClose={() => setIsAuthModalOpen(false)}
+        onSuccess={onLoginSuccess}
       />
     </header>
   );

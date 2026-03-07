@@ -24,7 +24,7 @@ function EyeIcon({ open }) {
   );
 }
 
-export default function LoginPage() {
+export default function LoginPage({ onAuthSuccess }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [touched, setTouched] = useState({ email: false, password: false });
@@ -96,6 +96,10 @@ export default function LoginPage() {
         type: "success",
         message: "Validation passed. Connect this submit handler to your Spring Boot auth endpoint.",
       });
+
+      if (onAuthSuccess) {
+        onAuthSuccess();
+      }
 
       console.info("Prepared login payload for backend:", {
         endpoint: `${API_BASE_URL}/api/auth/login`,
