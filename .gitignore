@@ -36,3 +36,8 @@ build/
 *.py[cod]
 venv/
 **/venv/
+node_modules
+
+# Frontend generated and dependency artifacts
+frontend/node_modules/
+frontend/dist/
